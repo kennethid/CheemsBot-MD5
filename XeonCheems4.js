@@ -12217,7 +12217,7 @@ case 'b-catalog': case 'b-catalogv2': case 'b-bugstik': case 'b-limo': case 'b-s
 	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 break
 //antibug kontol v3
@@ -12226,7 +12226,7 @@ case 'ted': {
 	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 break
 case 'kintil': case 'kuntul': {
@@ -12259,7 +12259,7 @@ if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Vir
 	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
  break
  case 'antilink': case 'antilink': {
