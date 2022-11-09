@@ -2743,7 +2743,7 @@ let documents = [doc1,doc2,doc3]
  let docs = pickRandom(documents)
  toll = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWPsR8t5pGBn5c7WH8iJ2my4BkuI9chAm45B1Kolz_qUdSxQTHQt13dZkTLXDl1p5kLKNcGAJBK1N5jMx9AAEklWWlS0wP8lUDSHl82LdV379ADe6AoDsuiBZEeZrG7cDZPwvOun3Wj4fiYnb93YAW-pOx10BdNES-P7J27Tw_02iIf0ozRBEEEKFD5Q/w1320/IMG_20220828_185931.png`
  konv = await getBuffer(toll)
- baj = fs.readFileSync(`./XeonMedia/theme/blokz.jpg`)
+//////////////// baj = fs.readFileSync(`./XeonMedia/theme/blokz.jpg`)
  let buttons = [ 
  {buttonId: `bot`, buttonText: {displayText: 'Bergabung ke grup'}}
  ] 
