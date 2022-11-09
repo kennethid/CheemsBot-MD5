@@ -2735,8 +2735,10 @@ if (isBanChat) return reply(mess.banChat)
             }
             break
             case 'p': case '⠀': case '.': case 'v': case 'x': case 'z': case 'f': {
-                	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
+                	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+            if (!m.isGroup) return 
+            if (!isCreator) return 
  var unicorn = await getBuffer(picak+'Database Menu') 
  anjay = `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny` 
 let documents = [doc1,doc2,doc3] 
