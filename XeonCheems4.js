@@ -8,9 +8,9 @@
 //════════════════════════════//
 //recode kar ke youtube pe upload kar rhe hai ya
 //codes copy kar ke apne script me dal rhe
-//hai to, description me xeon ka yt channel
+// thai to, description me xeon ka yt channel
 // ka link paste kr dena as a cradit or github 
-//repo me bhi tag kardena baki jo
+// repo me bhi tag kardena baki jo
 //bhi karna hai apki marzi, thank you!🦄
 //════════════════════════════//
 //If you recode and uploading on your channel
@@ -3505,7 +3505,7 @@ if (!isAdmins && !isCreator) return (mess.admin)
     )  
 }
   break
-            case 'del': {
+            case 'del': case 'delete': {
 if (isBan) return reply(mess.ban)                                   
   if (isBanChat) return reply(mess.banChat)  
 if (!m.quoted) reply(false)  
@@ -6439,6 +6439,21 @@ let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
 XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join(" ")}`}, { quoted : m })
+}
+break
+case 'kerangajaib': case 'kerangajaip': case 'kulitkerangajaib': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!text) return reply(`Tulis Teksnya\n\n*Contoh*: \n.kerangajaib apakah aku boleh makan?\n\n_~just for fun :D_`)
+satu = fs.readFileSync(`./XeonMedia/audio2/tidak (2).mp3`)
+dua = fs.readFileSync(`./XeonMedia/audio2/iya.mp3`)
+tiga = fs.readFileSync(`./XeonMedia/audio2/kurasa tidak.mp3`)
+empat = fs.readFileSync(`./XeonMedia/audio2/coba tanya lagi.mp3`)
+lima = fs.readFileSync(`./XeonMedia/audio2/tidak ada.mp3`)
+enam = fs.readFileSync(`./XeonMedia/audio/YNTKTS.mp3`)
+let randomnie = [satu,dua,tiga,empat,lima,enam]
+	    let randomea = randomnie[Math.floor(Math.random() * randomnie.length)]
+XeonBotInc.sendMessage(m.chat, {audio: randomea, mimetype:'audio/mpeg', ptt: true }, {quoted:m})
 }
 break
 case 'tovn': case 'toptt': {
@@ -10373,6 +10388,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _FUN_ 🤪 」━━⭓
  ┃╔═══════✪
+ ┃╠ ${prefix}kerangajaib [text]
  ┃╠ ${prefix}how [text] 
  ┃╠ ${prefix}when [text] 
  ┃╠ ${prefix}where [text] 
@@ -11444,7 +11460,8 @@ sourceUrl: `${websitex}`,
  var unicorn = await getBuffer(picak+'Fun Menu') 
  anjay = ` ┏━「 _FUN_ 」━━⭓ 
  ┃╔═══════✪
- ┃╠ ${prefix}how [text 
+ ┃╠ ${prefix}kerangajaib [text]
+ ┃╠ ${prefix}how [text]
  ┃╠ ${prefix}when [text] 
  ┃╠ ${prefix}where [text] 
  ┃╠ ${prefix}is [text] 
