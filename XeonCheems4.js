@@ -8,7 +8,7 @@
 //════════════════════════════//
 //recode kar ke youtube pe upload kar rhe hai ya
 //codes copy kar ke apne script me dal rhe
-// thai to, description me xeon ka yt channel
+// hai to, description me xeon ka yt channel
 // ka link paste kr dena as a cradit or github 
 // repo me bhi tag kardena baki jo
 //bhi karna hai apki marzi, thank you!🦄
@@ -259,7 +259,7 @@ const AntiLinkTwitter = m.isGroup ? ntilinktwt.includes(from) : false
 const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
 const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiToxic = m.isGroup ? nttoxic.includes(from) : false
-
+const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
 
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
@@ -630,6 +630,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         	if (isAdmins) return
         if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\`\n\nKami Menandai File Dokumen Sebagai Virus\nMaaf, Anda Akan Kami Blokir!\n\nSilakan bertanya atau hubungi owner kami untuk membuka blokir Anda`}, {quoted: m}).then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
         if (!isBotAdmins) return /////////////////////////////////////XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Virus Document?!\n\n_🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
+        if (antiVirtex) return
         	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\n_Sorry, Our System Detected The Document File_ \n_As A Virus!_\n*${pushname}* Will Be Kicked !`},{quoted: fdocs})
         kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -646,6 +647,24 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
 }
 //antitag by jasjus
 if (budy.includes("6281617886295")) {
+cb = fs.readFileSync(`./XeonMedia/sticker/Bacot banget kafir.webp`)
+bs = fs.readFileSync(`./XeonMedia/sticker/Oi.webp`)
+wk = fs.readFileSync(`./XeonMedia/sticker/Penyembah kambing.webp`)
+kb = fs.readFileSync(`./XeonMedia/sticker/Woi.webp`)
+tb = fs.readFileSync(`./XeonMedia/sticker/Gw islam.webp`)
+yk = fs.readFileSync(`./XeonMedia/sticker/Bacot lo babi.webp`)
+ja = fs.readFileSync(`./XeonMedia/sticker/Gelud.webp`)
+js = fs.readFileSync(`./XeonMedia/sticker/Yesus.webp`)
+ka = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
+ha = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
+ks = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja,js,ka,ha,ks]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
+} else {
+}
+
+if (budy.includes("6285602507835")) {
 cb = fs.readFileSync(`./XeonMedia/sticker/Bacot banget kafir.webp`)
 bs = fs.readFileSync(`./XeonMedia/sticker/Oi.webp`)
 wk = fs.readFileSync(`./XeonMedia/sticker/Penyembah kambing.webp`)
@@ -1014,34 +1033,6 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice
  }
  }
  
-        for (let anji of xeonysticker){
-				if (budy === anji){
-					result = fs.readFileSync(`./XeonMedia/sticker/${anji}.webp`)
-					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
-					}
-			}
-			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-			for (let anje of xeonyaudio){
-				if (budy === anje){
-					result = fs.readFileSync(`./XeonMedia/audio/${anje}.mp3`)
-					XeonBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
-					}
-			}
-			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-			for (let anjh of xeonyimage){
-				if (budy === anjh){
-					result = fs.readFileSync(`./XeonMedia/image/${anjh}.jpg`)
-					XeonBotInc.sendMessage(m.chat, { image: result }, { quoted: m })
-					}
-			}
-			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-					for (let anju of xeonyvideo){
-				if (budy === anju){
-					result = fs.readFileSync(`./XeonMedia/video/${anju}.mp4`)
-					XeonBotInc.sendMessage(m.chat, { video: result }, { quoted: m })
-					}
-				  }
-				
 //emoji 
 const emote = (satu, dua) => {
 try{	    
@@ -3037,6 +3028,37 @@ fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc deactivated')
 }
 break
+case 'antivirusdoc': case 'antivirtexdoc': case 'antidocument': case 'antidoc': case 'antivirdoc': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (antiVirtex) return replay('Already activated')
+ntvirtex.push(from)
+replay('Success in turning on antivirdoc in this group')
+var groupe = await XeonBotInc.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send document in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!antiVirtex) return replay('Already deactivated')
+let off = ntvirtex.indexOf(from)
+ntvirtex.splice(off, 1)
+replay('Success in turning off antivirdoc this group')
+} else {
+  let buttonsntvirtex = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await XeonBotInc.sendButtonText(m.chat, buttonsntvirtex, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+break
 case 'antilink': case 'antilinkgc': case 'algc': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -3876,7 +3898,7 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 break
 case 'swm': case 'take': case 'stickerwm': {
-   if (isBan) return reply(mess.ban)	 			
+   if (isBan) return reply(mess.ban)	 			 
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`Example :\nswm kontol|yesus`)
 const swn = args.join(" ")
@@ -3907,7 +3929,7 @@ case 'smeme': case 'stickermeme': case 'stickmeme': try{
  if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*\n\nSimilar Features: smeme2 *text | text*`) 
  if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`) 
  if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`) 
- if (/webp/.test(mime)) return reply(`perlu mengonversi ke gambar terlebih dahulu\ndengan cara balas sticker dengan caption *toimg*`)
+ if (/webp/.test(mime)) return reply(`perlu mengonversi ke gambar terlebih dahulu\nbalas sticker dengan caption *toimg*`)
  reply(mess.wait) 
  mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted) 
  mem = await TelegraPh(mee) 
@@ -6926,11 +6948,14 @@ case 'ig2': case 'igdl2': case 'instagram2': {
 if (isBanChat) return reply(mess.banChat)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 				if (m.message && msgFilter.addFilter(from)) return
+				XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
 				igdon = await fetchJson(`https://api.akuari.my.id/downloader/igdl?link=${text}`)
 				caption = `Here you go!`
-				XeonBotInc.sendMessage(m.chat, {video: {url: igdon.respon.link}, caption}, {quoted: m})
-
-				} catch { reply(`Sorry, the server's currently down, try again later`)}
+				let bwa = await XeonBotInc.sendMessage(m.chat, {video: {url: igdon.respon.link}, caption}, {quoted: m})
+await bwa
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      
+				} catch { reply(`Sorry, the server's currently down, try again later\n\n*Instagram Downloader Alternative Link:* \nhttps://igram.io/id/`)}
 			break
 case 'igdlxxx': case 'instagramxxx': case 'instagramreelsxxx': case 'igreelsxxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -7191,7 +7216,7 @@ if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
 let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
 XeonBotInc.sendMessage(m.chat, { video: {url: jon.url.url }, mimetype: "video/mp4", caption: `*Quality*: HD \n\n_Balas *tovn* untuk mengonversi ke Voice Note_\n_Balas *tomp3 judulfile* untuk mengonversi ke mp3_`}, { quoted: m })
-} catch { reply(`sorry, the server's currently down, try again later`)}
+} catch { reply(`Sorry, the server's currently down, try again later\n\n*Facebook Downloader Alternative Link:* \nhttps://snapsave.app/?utm_source=pwa`)}
 break
 case 'fbdlxxx': case 'fbxxx': case 'facebookxxx': case 'fbmp4xxx': {     	    
    if (isBan) return reply(mess.ban)	 			
@@ -8697,7 +8722,7 @@ break
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
   if (!q) return reply('Where is the link?')
-  reply(mess.wait)
+  XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
   if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
  /////////////  const musim_rambutan = await XeonBotIncTiktok(`${q}`).catch(e => {
 ////// reply(mess.error) 
@@ -8713,8 +8738,7 @@ let buttons = [
 {buttonId: `ttaud ${bab}`, buttonText: {displayText: 'Audio 🎶'}, type: 1},
 {buttonId: `ttvn ${bab}`, buttonText: {displayText: 'Voice Note ▶'}, type: 1}
 ]
-let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/tiktok.jpg')
 let buttonMessage = {
 video: {url:anu.hasil.download_mp4},
 caption: texttk,
@@ -8730,7 +8754,10 @@ mediaUrl: `${bab}`,
 sourceUrl: ``
 }}
 }
-XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
+let jakn = await XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
+await jakn
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      
 } catch { reply(`Maaf saat ini server sedang bermasalah, coba lagi nanti`)}
 break
   case 'tiktoknowmxxx': case 'ttnowmxxx':{
@@ -8747,9 +8774,10 @@ break
     XeonBotInc.sendMessage(from, { video: { url: xeonytiktoknowm }, caption: "Here you go!" }, { quoted: m })
    }
   break
-  case 'ttmp3': case 'tiktokmp3': {
+  case 'ttmp3': case 'tiktokmp3': try{
   	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!q) return reply('Where is the link?')
  ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
@@ -8765,9 +8793,9 @@ XeonBotInc.sendMessage(m.chat, {document: {url: ttaudio.hasil.download_mp3}, mim
 	mediaUrl: `${bapakkau}`,
 	sourceUrl: ``
   	}}}, {quoted: m})
-  }
+  } catch { reply(`Server Down, Try Again Later`)}
   break 
-  case 'ttvn': case 'tiktokvn': {
+  case 'ttvn': case 'tiktokvn': try{
   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
  ja = `⏰`
@@ -8786,9 +8814,9 @@ XeonBotInc.sendMessage(m.chat, {audio: ola, mimetype: "audio/mpeg", ptt: true, c
 	mediaUrl: `${bapakkau}`,
 	sourceUrl: ``
   	}}}, {quoted: m})
-  }
+  } catch { reply(`Server Down, Try Again Later`)}
   break 
-  case 'tiktokaudio': case 'tiktokmusic': case 'ttaud': {
+  case 'tiktokaudio': case 'tiktokmusic': case 'ttaud': try{
   	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
  ja = `⏰`
@@ -8806,7 +8834,7 @@ XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimety
 	mediaUrl: `${bapakkau}`,
 	sourceUrl: ``
   	}}}, {quoted: m})
-  }
+  } catch { reply(`Server Down, Try Again Later`)}
   break
   break
   case 'tiktokaudioxxx':
@@ -8906,7 +8934,7 @@ sourceUrl: ``,
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- } catch { reply(`sorry, the server's currently down, try again later`)}
+ } catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -9071,7 +9099,7 @@ const jetkontol = jetbosok.split(" | ")[1]
                 if (anu.audio.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.audio.audio))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
-let kon = await XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}`, contextInfo:{externalAdReply:{
+let kon = await XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}.mp3`, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`MP3 | 128K`,
 thumbnail: tummb,
@@ -9852,7 +9880,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 										"rowId": `${prefix}toolmenu`
 									},
 									{
-										"title": "Random Image Menu 🌆",
+										"title": "Random Image Menu ??",
 										"description": "Displays The List Of Random Image Features",
 										"rowId": `${prefix}randomimagemenu`
 									},
@@ -10006,6 +10034,9 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}antilinktwit [on/off] 
  ┃╠ ${prefix}antilinkall [on/off] 
  ┃╠ ${prefix}antivirus [on/off] 
+ ┃╠ ${prefix}antivirdoc [on/off]
+ ┃╠ ${prefix}antislayer [on/off]
+ ┃╠ ${prefix}antivirlog [on/off]
  ┃╠ ${prefix}antitoxic [on/off] 
  ┃╠ ${prefix}antiwame [on/off] 
  ┃╠ ${prefix}autoreply [on/off] 
@@ -10540,8 +10571,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
  {buttonId: `owner`, buttonText: {displayText: 'Owner'}, type: 1}
  ] 
-let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
-let pics = pic[Math.floor(Math.random() * (pic.length))]
+let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/allmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -10593,8 +10623,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1} 
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/ownermenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -10631,7 +10660,7 @@ sourceUrl: `${websitex}`,
  ┃╠ ${prefix}groupmode [open/close]
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
- ┃╠ ~${prefix}add [user]~ ❌
+ ┃╠ ~${prefix}add [user]~ 
  ┃╠ ${prefix}kick [reply/tag] 
  ┃╠ ${prefix}hidetag [text] 
  ┃╠ ${prefix}tagall [text] 
@@ -10645,6 +10674,9 @@ sourceUrl: `${websitex}`,
  ┃╠ ${prefix}antilinktwit [on/off] 
  ┃╠ ${prefix}antilinkall [on/off] 
  ┃╠ ${prefix}antivirus [on/off] 
+ ┃╠ ${prefix}antivirdoc [on/off]
+ ┃╠ ${prefix}antislayer [on/off]
+ ┃╠ ${prefix}antivirlog [on/off]
  ┃╠ ${prefix}antitoxic [on/off] 
  ┃╠ ${prefix}antiwame [on/off] 
  ┃╠ ${prefix}autoreply [on/off] 
@@ -10664,8 +10696,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}} //////////////////////// {buttonId: `command`, buttonText: {displayText: 'List Menu 🗂'}} 
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/ownermenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -10711,8 +10742,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/gamemenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -10850,8 +10880,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/makermenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -10905,8 +10934,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/download.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -10967,8 +10995,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/searchmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11032,8 +11059,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
 {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/convertmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11079,8 +11105,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/randomimage.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11128,8 +11153,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/emotemenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11178,8 +11202,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/imageeffect.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11262,8 +11285,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/animemenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11305,8 +11327,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/stickermenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11370,8 +11391,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/animesticker.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11431,8 +11451,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/nsfwmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11532,8 +11551,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/funmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11729,8 +11747,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/soundmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11825,8 +11842,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/gamemenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11904,8 +11920,7 @@ anjay = ` ┏━「 _TOOL_ 」━━⭓
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/toolmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -11948,8 +11963,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `tutorx`, buttonText: {displayText: 'Apa itu Database Menu?'}},{buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/databasemenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -12018,8 +12032,7 @@ break
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/indomenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -12085,8 +12098,7 @@ anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/horoscopemenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
@@ -12141,8 +12153,7 @@ sourceUrl: `${websitex}`,
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/othermenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs, 
@@ -12173,7 +12184,7 @@ break
 					kusut = fs.readFileSync(`./XeonMedia/audio2/Apa.mp3`)
 					XeonBotInc.sendMessage(m.chat, { audio: kusut, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
  break
- case 'antivirtex': case 'antivirus': {
+ case 'antivirtex': case 'antivirus': case 'antivirdoc': case 'antivirlog': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
@@ -12528,6 +12539,7 @@ break
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return
         if (!m.isGroup) return
+        if (AntiLinkGc) return
        ///////////////////////   if (!AntiLinkGc) return XeonBotInc.sendMessage(from, { react: { text: `🔒`, key: m.key }})
         // satu
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
@@ -12624,7 +12636,7 @@ break
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(m.chat, {sticker: dj}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
 await sleep(850)
- if (AntiLinkGc) return XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 tu = `Buddy Christ`
 wa = `Ghetto Jesus`
 tos = [tu,wa]

@@ -91,10 +91,10 @@ global.packname = "Sara(H) • Viloid" //ur sticker watermark packname
 global.author = "Kenneth Morris" //ur sticker watermark author
 
 //Bot theme media
-global.thum = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
-global.log0 = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur logo pic
-global.err4r = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur error pic
-global.thumb = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
+global.thum = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur thumb pic
+global.log0 = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur logo pic
+global.err4r = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur error pic
+global.thumb = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur thumb pic
 
 //damtabase
 global.premium = ['6285773496010'] //ur premium numbers
