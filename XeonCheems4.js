@@ -10934,7 +10934,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/download.jpg')
+ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/downloadmenu.jpg')
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
