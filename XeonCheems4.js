@@ -665,21 +665,24 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
 
 if (budy.includes("6285602507835")) {
-cb = fs.readFileSync(`./XeonMedia/sticker/Bacot banget kafir.webp`)
-bs = fs.readFileSync(`./XeonMedia/sticker/Oi.webp`)
-wk = fs.readFileSync(`./XeonMedia/sticker/Penyembah kambing.webp`)
-kb = fs.readFileSync(`./XeonMedia/sticker/Woi.webp`)
-tb = fs.readFileSync(`./XeonMedia/sticker/Gw islam.webp`)
-yk = fs.readFileSync(`./XeonMedia/sticker/Bacot lo babi.webp`)
-ja = fs.readFileSync(`./XeonMedia/sticker/Gelud.webp`)
-js = fs.readFileSync(`./XeonMedia/sticker/Yesus.webp`)
-ka = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
-ha = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
-ks = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
-tos = [cb,bs,wk,kb,tb,yk,ja,js,ka,ha,ks]
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+cb = `🤜`
+bs = `😘`
+wk = `☝`
+kb = `👍`
+tb = `🫣`
+yk = `😎`
+ja = `🤭`
+ks = `🥳`
+jd = `😆`
+ha = `😂`
+pe = `🗿`
+tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,pe]
 dj = tos[Math.floor(Math.random() * (tos.length))]
-XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
-} else {
+XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
+	                
+                     } else {
 }
 
 //tag balas otomatis
