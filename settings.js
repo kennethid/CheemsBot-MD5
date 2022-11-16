@@ -159,7 +159,7 @@ global.mess = {
     admin: 'This Feature Is Only For Admin!',
     botAdmin: 'Bot Must Be Admin First!',
     owner: 'This Feature Is Only For Owner!',
-    group: 'Feature Used Only For Groups!',
+    group: 'Feature Used Only For Groups!\n\n_Uji Coba *Gratis* selama *1 Hari* Untuk 3 Grup Tercepat_\n\nBot akan keluar setelah uji coba gratis berakhir,\ndan Anda perlu menyewa untuk memperpanjang masa aktif..\n\n~Rp10.000~ ➡️ Rp5.000/14 Hari.\n~Rp20.000~ ➡️ Rp10.000/30 Hari\n\n*PEMBAYARAN*\n💳 DANA: 085842965801 ✅\n💳 ShopeePay: 085842965801 ✅\n\n*Contact Owner*:\nhttp://wa.me/6285892879274/?text=Aku+mau+uji+coba+bot+1+hari',
     private: 'Features Used Only For Private Chat!',
     bot: 'This Feature Is Only For Bot',
     wait: 'In process...',

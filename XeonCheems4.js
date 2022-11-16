@@ -642,7 +642,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } 
 //babi
 if (m.mtype === 'groupInviteMessage') {
-teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\nTunggu sampai owner merespon hambaqu!`
+teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\n*SEWA BOT HAMBAQU! 😁*\n\nCuma 5k/14hari atau 10k/30hari\n\nMau uji coba gratis? boleh..\n\n*Contact Owner*: \nhttp://wa.me/6285892879274/?text=Aku+mau+uji+coba+bot+1+hari`
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/kotakmasuk.jpg'), `${botname}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 //antitag by jasjus
@@ -1204,7 +1204,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle ??\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -6602,6 +6602,7 @@ break
 case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
   if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
   if (m.message && msgFilter.addFilter(from)) return
@@ -6644,6 +6645,7 @@ break
 case 'google': case 'gulugulu': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
 if (m.message && msgFilter.addFilter(from)) return
 let button = [
@@ -6660,6 +6662,7 @@ break
 case 'yts': case 'ytsearch': case 'play': case'ytplay': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
   if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
   if (m.message && msgFilter.addFilter(from)) return
@@ -9456,8 +9459,9 @@ View List Of Messages With ${prefix}listmsg`)
             }
         break
                     case 'anonymous': { 
-                 if (isBan) return reply(mess.ban) 
+                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
                                  this.anonymous = this.anonymous ? this.anonymous : {} 
                                  let buttons = [ 
@@ -9467,8 +9471,9 @@ View List Of Messages With ${prefix}listmsg`)
              } 
                          break 
              case 'keluar': case 'leave': { 
-                     if (isBan) return reply(mess.ban) 
+                       if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
                  this.anonymous = this.anonymous ? this.anonymous : {} 
                  let room = Object.values(this.anonymous).find(room => room.check(m.sender)) 
@@ -9486,8 +9491,9 @@ View List Of Messages With ${prefix}listmsg`)
                  if (command === 'leave') break 
              } 
              case 'mulai': case 'start': { 
-                     if (isBan) return reply(mess.ban) 
+                       if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
                  this.anonymous = this.anonymous ? this.anonymous : {} 
                  if (Object.values(this.anonymous).find(room => room.check(m.sender))) { 
@@ -10622,8 +10628,9 @@ sourceUrl: `${websitex}`,
  }
 break 
  case 'ownermenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Owner Menu') 
  anjay = ` ┏━「 _OWNER_ 」━━⭓ 
  ┃╔═══════✪         
@@ -10674,8 +10681,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'groupmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Group Menu') 
  anjay = ` ┏━「 _GROUP_ 」━━⭓ 
  ┃╔═══════✪
@@ -10747,8 +10755,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'rpgmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Rpg Menu') 
  anjay = ` ┏━「 _RPG_ 」━━⭓ 
  ┃╔═══════✪         
@@ -10793,8 +10802,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'makermenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Maker Menu') 
  anjay = ` ┏━「 _TEXT MAKER_ 🖌 」━━⭓
  ┃╔═══════✪ 
@@ -10931,8 +10941,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'downloadmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Download Menu') 
  anjay = ` ┏━「 _DOWNLOAD_ 」━━⭓ 
  ┃╔═══════✪         
@@ -10985,8 +10996,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'searchmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Search Menu') 
  anjay = `┏━「 _SEARCH_ 」━━⭓ 
  ┃╔═══════✪
@@ -11046,8 +11058,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'convertmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Convert Menu') 
  anjay = ` ┏━「 _CONVERT_ 」━━⭓ 
  ┃╔═══════✪
@@ -11110,8 +11123,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'randomimagemenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Random Image Menu') 
  anjay = ` ┏━「 _RANDOM IMG_ 」━━⭓ 
  ┃╔═══════✪
@@ -11157,8 +11171,9 @@ sourceUrl: `${websitex}`,
  break 
   
  case 'emotemenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Emote Menu') 
  anjay = ` ┏━「 _EMOTE_ 」━━⭓ 
  ┃╔═══════✪
@@ -11204,8 +11219,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'imageeffectmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Image Effect Menu') 
  anjay = ` ┏━「 _IMG EFFECT_ 」━━⭓ 
  ┃╔═════✪ 
@@ -11253,8 +11269,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'animemenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Anime Menu') 
  anjay = ` ┏━「 _ANIME_ 」━━⭓ 
  ┃╔═══════✪  
@@ -11336,8 +11353,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'stickermenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Sticker Menu') 
  anjay = ` ┏━「 _STICKER_ 」━━⭓ 
  ┃╔═══════✪
@@ -11378,8 +11396,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'animestickermenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Anime Sticker Menu') 
  anjay = ` ┏━「 _ANIME STICKER_ 」━━⭓ 
  ┃╔═══════✪
@@ -11442,8 +11461,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'nsfwmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Nsfw Menu') 
  anjay = ` ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
@@ -11502,8 +11522,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'funmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Fun Menu') 
  anjay = ` ┏━「 _FUN_ 」━━⭓ 
  ┃╔═══════✪
@@ -11602,8 +11623,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'soundmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Sound Menu') 
  anjay = ` ┏━「 _SOUND_ 」━━⭓ 
  ┃╔═══════✪
@@ -11798,8 +11820,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'adzanmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(`https://telegra.ph/file/4e72707e3de85cca2e925.jpg`) 
  anjay = `┏━「 _ADZAN REMIX_ 🎧」━━⭓ 
 ┃╔══✪
@@ -11850,8 +11873,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'gamemenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Game Menu') 
  anjay = ` ┏━「 _GAME_ 」━━⭓ 
  ┃╔═══════✪
@@ -11893,8 +11917,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'anonymousmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Anonymous Menu') 
  anjay = ` ┏━「 _ANONYMOUS_ 」━━⭓ 
  ┃╔═══✪
@@ -11933,8 +11958,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'toolmenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Tool Menu') 
 anjay = ` ┏━「 _TOOL_ 」━━⭓ 
  ┃╔═══════✪
@@ -11971,8 +11997,9 @@ sourceUrl: `${websitex}`,
  }
 break 
  case 'databasemenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Database Menu') 
  anjay = ` ┏━「 _DATABASE_ 」━━⭓ 
  ┃╔═══✪ 
@@ -12024,8 +12051,9 @@ case 'tutorx': {
 	}
 break
  case 'indomenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Indo Menu') 
  anjay = ` ┏━「 _INDO_ 」━━⭓ 
  ┃╔═══════✪
@@ -12083,8 +12111,9 @@ sourceUrl: `${websitex}`,
  }
 break 
  case 'indohoroscopemenu': {
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Indo Horoscope Menu') 
 anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓ 
  ┃╔═✪      
@@ -12149,8 +12178,9 @@ sourceUrl: `${websitex}`,
  }
  break 
  case 'othermenu': 
-            if (isBan) return reply(mess.ban) 
+              if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!m.isGroup) return
  var unicorn = await getBuffer(picak+'Other Menu') 
  anjay = ` ┏━「 _OTHER_ 」━━⭓ 
  ┃╔═══════✪      
@@ -12388,7 +12418,7 @@ if (isBanChat) return reply(mess.banChat)
  }
  break
  case 'mencrot': {
- if (isBan) return reply(mess.ban) 
+   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
  let texto = args.join(" ")
@@ -12662,7 +12692,8 @@ break
      let bacot = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
      tos = [kontol,memek,anjing,bacot]
 dj = tos[Math.floor(Math.random() * (tos.length))]
-XeonBotInc.sendMessage(m.chat, {sticker: dj}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
+
+XeonBotInc.sendMessage(m.chat, {text: `[ *Group Link Detected* ]\n\n_GoodBye Hambaqu!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
 await sleep(850)
  await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 tu = `Buddy Christ`
