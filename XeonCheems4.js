@@ -902,8 +902,10 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 XeonBotInc.sendMessage(from, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${kice.split("@")[0]} was kicked because of using bad words in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})}
+await sleep(750)
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 }
 //antilink youtube video by xeon
 if (AntiLinkYoutubeVid)
@@ -1036,6 +1038,23 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice
  }
  }
  
+ //if (Autoreply) //remove forwad slashes to make it autoreply on off
+			for (let anje of xeonyaudio){
+				if (budy === anje){
+					result = fs.readFileSync(`./XeonMedia/audio/${anje}.mp3`)
+					XeonBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					}
+			}
+			  
+			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
+					for (let anju of xeonyvideo){
+				if (budy === anju){
+					result = fs.readFileSync(`./XeonMedia/video/${anju}.mp4`)
+					XeonBotInc.sendMessage(m.chat, { video: result }, { quoted: m })
+					}
+				  }
+				
+ 
 //emoji 
 const emote = (satu, dua) => {
 try{	    
@@ -1095,7 +1114,7 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
             }
             
             
-            let jam = `TimeOut: 2 min`
+            let jam = `Time Out: 2 min`
             
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
             let buttonz = /////////////////[{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah' }, type: 1}, 
@@ -2596,6 +2615,12 @@ if (isBanChat) return reply(mess.banChat)
 reply(`Kirim/Balas pesan orang dengan caption *.getpp* \natau *.getpp @6285xxx*` )
 }
  break
+ case 'limit': {
+ if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+reply(`Tidak Ada Limit / No Limits`)
+}
+ break
 	case 'kick': try{
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -3900,7 +3925,7 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 }
 break
-case 'swm': case 'take': case 'stickerwm': {
+case 'swm': case 'take': case 'stickerwm': case 'wm': {
    if (isBan) return reply(mess.ban)	 			 
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`Example :\nswm kontol|yesus`)
@@ -8700,7 +8725,7 @@ break
                     return zodiak.find(([_,_d]) => d >= _d)[0]
                 }
                 let date = new Date(text)
-                if (date == 'Invalid Date') throw date
+                if (date == 'Invalid Date \n\n*.zodiak bulan hari tahun*\nExample: .zodiak 12 9 1995') throw date
                 let d = new Date()
                 let [tahun, bulan, tanggal] = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
                 let birth = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
