@@ -6992,7 +6992,7 @@ case 'ig2': case 'igdl2': case 'instagram2': {
             }).catch((err) => reply(mess.error))
             }		
 			break
-			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': case 'insta': {
+			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': case 'insta': try{
 				if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
