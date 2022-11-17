@@ -15,7 +15,7 @@
 //════════════════════════════//
 //If you recode and uploading on your channel
 //or copy pasting the codes in ur script, 
-//i give permission to do as long as you
+//if give permission to do as long as you
 //put Xeons youtube channel link in the video
 //description and tag me on githuh repo, 
 //thank you🦄
