@@ -2624,6 +2624,7 @@ XeonBotInc.sendMessage(m.chat, {text: `Tidak Ada Limit / No Limits`}, {quoted: f
 	case 'kick': try{
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (m.message && msgFilter.addFilter(from)) return
 		if (!m.isGroup) return replay(`${mess.group}`)
         if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
@@ -6087,6 +6088,7 @@ if (isBanChat) return reply(mess.banChat)
 case 'ancient':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
      let link = `https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html`
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -6187,6 +6189,7 @@ let anui = await textpro(link, q)
 case 'marvel':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -6197,6 +6200,7 @@ let anui = await textpro(link, q)
 case 'skeleton2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -6227,6 +6231,7 @@ let anui = await textpro(link, q)
 case 'cool':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -6237,6 +6242,7 @@ let anui = await textpro(link, q)
 case 'collwall':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -6247,6 +6253,7 @@ let anui = await textpro(link, q)
 case 'multicolor2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -6277,6 +6284,7 @@ let anui = await textpro(link, q)
 case 'pornhub':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
 reply(mess.wait)
   inilogo4 = args.join(" ")
@@ -6305,6 +6313,7 @@ break
 case 'horror':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
 reply(mess.wait)
   inilogo4 = args.join(" ")
@@ -6319,6 +6328,7 @@ break
 case '8bit':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
 reply(mess.wait)
   inilogo4 = args.join(" ")
@@ -6416,6 +6426,7 @@ break
 case 'mojiemoji': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
 reply(mess.wait)
 emote(q, "9")
@@ -6430,6 +6441,7 @@ break
 case 'emojimix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 if (!q) reply(`*Example :* ${prefix + command} 🦄+🤣`)
 let [emoji1, emoji2] = q.split`+`
 let kuntuh = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
@@ -6442,6 +6454,7 @@ break
 	case 'toimage': case 'toimg': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
@@ -6459,6 +6472,7 @@ break
 case 'tomp4': case 'tovideo': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
@@ -6978,15 +6992,16 @@ case 'ig2': case 'igdl2': case 'instagram2': {
             }).catch((err) => reply(mess.error))
             }		
 			break
-			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': case 'insta': try{
+			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': case 'insta': {
 				if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 				if (m.message && msgFilter.addFilter(from)) return
 				XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-				igdon = await fetchJson(`https://api.akuari.my.id/downloader/igdl?link=${text}`)
+				igdon = await fetchJson(`https://api.akuari.my.id/downloader/igdl2?link=${text}?utm_source=ig_web_copy_link`)
 				caption = `Here you go!`
-				let bwa = await XeonBotInc.sendMessage(m.chat, {video: {url: igdon.respon.link}, caption}, {quoted: m})
+				let bwa = await XeonBotInc.sendMessage(m.chat, {video: {url: igdon.hasil.url_list}, caption}, {quoted: m})
 await bwa
       XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
       
@@ -8756,6 +8771,7 @@ break
 	    case 'tiktok': try{
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!m.isGroup) return reply(mess.group)
   if (!q) return reply('Where is the link?')
   XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
   if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
@@ -12712,7 +12728,7 @@ break
      tos = [kontol,memek,anjing,bacot]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 
-XeonBotInc.sendMessage(m.chat, {text: `[ *Group Link Detected* ]\n\n_GoodBye *${pushname}*!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
+XeonBotInc.sendMessage(m.chat, {text: `*「 Group Link Detected 」*\n\n_GoodBye *${pushname}*!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
 await sleep(750)
  await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 tu = `Buddy Christ`
