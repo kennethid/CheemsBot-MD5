@@ -227,7 +227,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
         const botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
-        const isCreator = [botNumber, ...global.premium, ...global.rkyt, ...['6285842965801'], ...['6285774939323'], ...['6285732604538']].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isCreator = [botNumber, ...global.premium, ...global.rkyt, ...['6285842965801'], ...['6285774939323'], ...['6285732604538'], ...['6285747219408']].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
@@ -260,7 +260,7 @@ const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
 const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiToxic = m.isGroup ? nttoxic.includes(from) : false
 const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
-
+const welcm = m.isGroup ? wlcm.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
 const Autoreply = m.isGroup ? autorep.includes(from) : true
@@ -3514,6 +3514,61 @@ if (isBanChat) return reply(mess.banChat)
                     await XeonBotInc.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 }
             }
+            break
+            case 'welcome': case 'wc': case 'kl': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return reply(mess.group)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (welcm) return replay('Sudah diaktifkan')
+wlcm.push(from)
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+} else if (args[0] === "off") {
+if (!welcm) return replay('Sudah dinonaktifkan')
+let off = wlcm.indexOf(from)
+wlcm.splice(off, 1)
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+} else {
+  let buttonswlcm = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
+  ]
+  await XeonBotInc.sendButtonText(m.chat, buttonswlcm, `Please click the button below\n\n*On* untuk mengaktifkan\n*Off* untuk menonaktifkan`, `${global.botname}`, m)
+  }
+  }
+            break
+            case 'welcome1': {
+            if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+nol = `🗿`
+ji = `🥳`
+ro = `😇`
+lu = `😃`
+pat = `😊`
+mo = `🫱`
+nem = `🤜`
+tu = `🤝`
+tos = [ji,ro,lu,pat,mo,nem,tu,nol]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
+}
+break
+case 'welcome2': {
+            if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+nol = `🗿`
+ji = `😌`
+ro = `👋`
+lu = `🙏`
+pat = `🙂`
+mo = `😢`
+nem = `😇`
+tu = `🤧`
+tos = [ji,ro,lu,pat,mo,nem,tu,nol]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
+}
             break
 case 'grupsetting':
             case 'groupsetting':{
@@ -9813,6 +9868,14 @@ if (isBanChat) return reply(mess.banChat)
 reply(`Chat Owner: wa.me/6285892879274`)
 }
                     break
+                    case 'script': case 'sc': {
+                    	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+XeonBotInc.sendMessage(from, { react: { text: `👍`, key: m.key }})
+	                
+reply(`*Script*:\nhttps://github.com/DGXeon/CheemsBot-MD5`)
+}
+                    break
 case 'scxxx': case 'scriptxxx': case 'donatew': case 'donatexxx': case 'cekupdatexxx': case 'updatebotxxx': case 'cekbotxxx': case 'sourcecodexxx': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -10075,6 +10138,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _GROUP_ 」━━⭓
  ┃╔═══════✪
+ ┃╠ ${prefix}welcome [on/off]
  ┃╠ ${prefix}groupsetting 
  ┃╠ ${prefix}grouplink 
  ┃╠ ${prefix}ephemeral [option] 
@@ -10719,6 +10783,7 @@ sourceUrl: `${websitex}`,
  var unicorn = await getBuffer(picak+'Group Menu') 
  anjay = ` ┏━「 _GROUP_ 」━━⭓ 
  ┃╔═══════✪
+ ┃╠ ${prefix}welcome [on/off]
  ┃╠ ${prefix}grousetting 
  ┃╠ ${prefix}grouplink 
  ┃╠ ${prefix}ephemeral [option] 
