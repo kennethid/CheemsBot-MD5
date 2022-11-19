@@ -111,7 +111,7 @@ global.ntwame = []
 global.nttoxic = []
 global.ntnsfw = []
 global.ntvirtex = []
-global.rkyt = ['6285892879274']
+global.rkyt = ['6285842965801']
 global.wlcm = []
 global.gcrevoke = []
 global.autorep = []
@@ -159,7 +159,7 @@ global.mess = {
     admin: 'This Feature Is Only For Admin!',
     botAdmin: 'Bot Must Be Admin First!',
     owner: 'This Feature Is Only For Owner!',
-    group: 'Fitur ini khusus grup!\n\nSewa Bot Mulai Dari 5K - 10K Perbulan\n_*Contact Owner*_:\nhttp://wa.me/6285892879274/?text=Aku+mau+sewa+bot',
+    group: 'Fitur ini khusus grup!\n\nSewa Bot Mulai Dari 5K - 10K Perbulan\n_*Contact Owner*_:\nhttp://wa.me/6285842965801/?text=Aku+mau+sewa+bot',
     private: 'Features Used Only For Private Chat!',
     bot: 'This Feature Is Only For Bot',
     wait: 'In process...',

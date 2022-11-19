@@ -642,7 +642,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } 
 //babi
 if (m.mtype === 'groupInviteMessage') {
-teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\n*SEWA BOT HAMBAQU! 😁*\n\nCuma 5k/14hari atau 10k/30hari\n\nMau uji coba gratis? boleh..\n\n*Contact Owner*: \nhttp://wa.me/6285892879274/?text=Aku+mau+uji+coba+bot+1+hari`
+teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\n*SEWA BOT HAMBAQU! 😁*\n\nCuma 5k/14hari atau 10k/30hari\n\n*Contact Owner*: \nhttp://wa.me/6285842965801/?text=Aku+mau+sewa+bot`
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/kotakmasuk.jpg'), `${botname}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 //antitag by jasjus
