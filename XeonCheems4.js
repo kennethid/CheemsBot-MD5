@@ -215,7 +215,7 @@ let tebakkalimat = db.data.game.kalimat = []
 let tebaklirik = db.data.game.lirik = []
 let tebaktebakan = db.data.game.tebakan = []
 let vote = db.data.others.vote = []
-let menfess =db.data.game.menfess = []
+let _menfess =db.data.game.menfess = []
 
 module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     try {
@@ -886,6 +886,43 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
+// SEWA BOT
+
+if (budy.includes("sewa"))  {
+                    if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if (m.message && msgFilter.addFilter(from)) return
+ let sections = [{
+								"title": "List Harga",
+								"rows": [
+									{
+										"title": "[SILVER] Sewa 14 Hari",
+										"description": "Rp5.000",
+										"rowId": `${prefix}limaribu`
+									}, {
+										"title": "[PLATINUM] Sewa 30 Hari (Perpanjangan Rp5.000)",
+										"description": "Rp10.000",
+										"rowId": `${prefix}puluhribu`
+									}, {
+										"title": "[PREMIUM] Permanen",
+										"description": "Rp50.000",
+										"rowId": `${prefix}limapuluhribu`
+									}
+								]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
+       footer: `${botname}`,
+       title: "*SEWA BOT*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      } else {
+      	}
 
   //jasjus random reply
 
@@ -1132,6 +1169,32 @@ ${Array.from(room.jawaban, (jawaban, index) => {
            XeonBotInc.sendButtonText(m.chat, buttonb, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }})
            
         } 
+        
+        if (('menfess'+m.chat in _menfess) && isCmd) {
+            kuis = true
+            let room = _menfess['menfess'+m.chat]
+            let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
+            let isSurender = /^((me)?give up|me?nyerah)$/i.test(m.text)
+            if (!isSurender) {
+                let index = room.jawaban.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
+                if (room.terjawab[index]) return !0
+                room.terjawab[index] = m.sender
+            }
+            
+            
+            let jam = `Time Out: 2 min`
+            
+            let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
+            
+let caption = `Tunggu yah, Owner Akan Segera Membalas 😀 `
+            if (isSurender) XeonBotInc.sendMessage(m.chat, {text: caption}, m, { contextInfo: { mentionedJid: parseMention(caption) }}) /////////////////////////////.then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
+            if (isWin) XeonBotInc.sendMessage(m.chat, {text: caption}, m, { contextInfo: { mentionedJid: parseMention(caption) }})
+            if (isWin || isSurender) return delete _menfess['menfess'+m.chat]
+           const wet = await XeonBotInc.sendMessage(m.chat, {text: caption}, m, { contextInfo: { mentionedJid: parseMention(caption) }})
+           await wet
+           delete _menfess['menfess'+m.chat]
+           
+        } 
 
         if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
             kuis = true
@@ -1164,7 +1227,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
+                await XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word ??\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, XeonBotInc.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -1439,6 +1502,8 @@ async function cerpen (category) {
         })
     })
 }
+
+//Sementara
 
 switch(command) {
 	
@@ -9872,7 +9937,6 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                     break
                     
                     // SEWA BOT
-                    
                     case 'sewa': {
                     if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
@@ -9882,13 +9946,17 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
 								"title": "List Harga",
 								"rows": [
 									{
-										"title": "Sewa 14 Hari",
+										"title": "[SILVER] Sewa 14 Hari",
 										"description": "Rp5.000",
 										"rowId": `${prefix}limaribu`
 									}, {
-										"title": "Sewa 30 Hari (Perpanjangan Rp5.000)",
+										"title": "[PLATINUM] Sewa 30 Hari (Perpanjangan Rp5.000)",
 										"description": "Rp10.000",
 										"rowId": `${prefix}puluhribu`
+									}, {
+										"title": "[PREMIUM] Permanen",
+										"description": "Rp50.000",
+										"rowId": `${prefix}limapuluhribu`
 									}
 								]
 							}
@@ -9896,16 +9964,14 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
   const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `Hai, *${pushname}*! 👋\nMau yang berapa hari?\n\n_klik tombol di bawah untuk memilih_`,
+       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
        footer: `${botname}`,
-       title: "*Whatsapp Bot*",
+       title: "*SEWA BOT*",
        buttonText: "KLIK DISINI",
        sections
       }, { quoted : m })
       }
-      
-      
-      break
+break
       case 'limaribu': {
       	if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
@@ -9922,16 +9988,31 @@ let sections = [{
 									}, {
 										"title": "Pulsa Indosat",
 										"rowId": `${prefix}limaribupulsa`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}limaribuovo`
+									}, {
+										"title": "GoPay",
+										"rowId": `${prefix}limaribugopay`
 										}
-								]
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}limaribubni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}limaribusendiri`
+				                     } ]
+								
 							}
 						] 
   const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `Pilih Metode Pembayaran \nYang Anda Inginkan\n\n_klik tombol di bawah untuk memilih_`,
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
        footer: `${botname}`,
-       title: "*PEMBAYARAN*",
+       title: "*METODE PEMBAYARAN*",
        buttonText: "KLIK DISINI",
        sections
       }, { quoted : m })
@@ -9953,14 +10034,74 @@ let sections = [{
 									}, {
 										"title": "Pulsa Indosat",
 										"rowId": `${prefix}puluhribupulsa`
+								    }, {
+										"title": "OVO",
+										"rowId": `${prefix}puluhribuovo`
+									}, {
+										"title": "GoPay",
+										"rowId": `${prefix}puluhribugopay`
 										}
-								]
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}puluhribubni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}puluhribusendiri`
+									}]
 							}
 						] 
   const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `Pilih Metode Pembayaran \nYang Anda Inginkan\n\n_klik tombol di bawah untuk memilih_`,
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      case 'limapuluhribu': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}limapuluhribushopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}limapuluhribudana`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}limapuluhribupulsa`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}limapuluhribuovo`
+									}, {
+										"title": "GoPay",
+										"rowId": `${prefix}limapuluhribugopay`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}limapuluhribubni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}limapuluhribusendiri`
+									}]
+								
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
        footer: `${botname}`,
        title: "*PEMBAYARAN*",
        buttonText: "KLIK DISINI",
@@ -9975,9 +10116,8 @@ let sections = [{
       	if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
- let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1},
- {buttonId: `nantisaja`, buttonText: {displayText: 'Nanti Saja'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp5.000*\n\n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_Mau bayar sekarang apa nanti?_`
+ let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp5.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
  }
  break
@@ -9985,11 +10125,20 @@ let sections = [{
       	if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1},
- {buttonId: `nantisaja`, buttonText: {displayText: 'Nanti Saja'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp10.000*\n\n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_Mau bayar sekarang apa nanti?_`
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke:\n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
  }
+ break
+ case 'limapuluhribushopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp50.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ 
  break
  
  //        DANA
@@ -9998,9 +10147,8 @@ let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membay
       	if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
- let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1},
- {buttonId: `nantisaja`, buttonText: {displayText: 'Nanti Saja'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp5.000*\n\n*DANA*: \`\`\`085842965801\`\`\`\n\n_Mau bayar sekarang apa nanti?_`
+ let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp5.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
  }
  break
@@ -10008,9 +10156,17 @@ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayar
       	if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1},
- {buttonId: `nantisaja`, buttonText: {displayText: 'Nanti Saja'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp10.000*\n\n*DANA*: \`\`\`085842965801\`\`\`\n\n_Mau bayar sekarang apa nanti?_`
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke:\n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribudana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *DANA*\nNominal: *Rp50.000*\n\nKirim ke:\n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
  }
  break
@@ -10021,9 +10177,8 @@ case 'limaribupulsa': {
       	if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1},
- {buttonId: `nantisaja`, buttonText: {displayText: 'Nanti Saja'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp5.000*\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_Mau bayar sekarang apa nanti?_`
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp5.000*\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
  }
  break
@@ -10031,13 +10186,178 @@ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayar
       	if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1},
- {buttonId: `nantisaja`, buttonText: {displayText: 'Nanti Saja'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp10.000*\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_Mau bayar sekarang apa nanti?_`
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
  }
-
+ break
+ case 'limapuluhribupulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp50.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
 break
+
+//      OVO
+
+case 'limaribuovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *OVO*\nNominal: *Rp5.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribuovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *OVO*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribuovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *OVO*\nNominal: *Rp50.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+break
+
+// GOPAY
+
+case 'limaribugopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *GoPay*\nNominal: *Rp5.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribugopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *GoPay*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln) \n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribugopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *GoPay*\nNominal: *Rp50.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+// BNI
+
+case 'limaribubni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *BNI*\nNominal: *Rp5.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribubni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *BNI*\nNominal: *Rp10.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribubni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *BNI*\nNominal: *Rp50.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // Tulis Sendiri
+ case 'limaribusendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nNominal: *Rp5.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            case 'puluhribusendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nNominal: *Rp10.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            case 'limapuluhribusendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nNominal: *Rp50.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
 
 // Akan Membayar
 case 'akanmembayar': {
@@ -10046,8 +10366,8 @@ case 'akanmembayar': {
                  if (m.isGroup) return
    if (m.message && msgFilter.addFilter(from)) return
  let buttons = [{buttonId: `sudahmembayar`, buttonText: {displayText: 'Sudah Membayar'}, type: 1}]
- let caption = `Baik, kami tunggu yah!\n\n_klik tombol di bawah ini_ \n_jika sudah membayar_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ let caption = `Baik, kami tunggu yah! jika sudah silahkan chat 😊`
+ XeonBotInc.sendMessage(m.chat, {text: caption})
  }
  break
  
@@ -12629,7 +12949,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 break
 //antibug kontol v3
 case 'ted': {
-	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!??\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
