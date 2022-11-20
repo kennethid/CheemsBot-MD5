@@ -888,7 +888,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 
 // SEWA BOT
 
-if (budy.includes("sewa"))  {
+if (budy.includes("sew"))  {
                     if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
@@ -910,7 +910,16 @@ if (budy.includes("sewa"))  {
 										"rowId": `${prefix}limapuluhribu`
 									}
 								]
-							}
+							}, { 
+								"title": "Pratinjau",
+								"rows": [
+									{
+										"title": "Pratinjau Menu",
+										"description": "Lihat Tampilan Menu Fitur",
+										"rowId": `${prefix}pratinjaufitur`
+									}
+									]
+									}
 						] 
   const sendm =  XeonBotInc.sendMessage(
       m.chat, 
@@ -1504,9 +1513,1242 @@ async function cerpen (category) {
 }
 
 //Sementara
-
+                     
+ 
 switch(command) {
-	
+	case 'jasjus': {
+ 	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
+bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
+wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
+kb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus4.webp`)
+tb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus5.webp`)
+yk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus6.webp`)
+ja = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus7.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+if (m.message && msgFilter.addFilter(from)) return
+XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
+}
+ break
+	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': {
+		if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+cb = `🫥`
+bs = `😘`
+wk = `☝`
+kb = `🥰️`
+tb = `🥱`
+yk = `😎`
+ja = `🤨`
+ks = `😭`
+jd = `😠`
+ha = `🤔`
+je = `🗿`
+tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,je]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
+  if (m.isGroup) return
+	let buttons = [
+{buttonId: `sewa`, buttonText: {displayText: 'SEWA'}, type: 1}
+]
+caption = `Hai ${pushname}, bot disini 😊\nMau sewa bot?\n\n_silahkan klik tombol di bawah_`
+XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+
+                     }
+                     break
+                     
+                     // SEWA BOT
+                    case 'sewa': {
+                    if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if (m.message && msgFilter.addFilter(from)) return
+ let sections = [{
+								"title": "List Harga",
+								"rows": [
+									{
+										"title": "[SILVER] Sewa 14 Hari",
+										"description": "Rp5.000",
+										"rowId": `${prefix}limaribu`
+									}, {
+										"title": "[PLATINUM] Sewa 30 Hari (Perpanjangan Rp5.000)",
+										"description": "Rp10.000",
+										"rowId": `${prefix}puluhribu`
+									}, {
+										"title": "[PREMIUM] Permanen",
+										"description": "Rp50.000",
+										"rowId": `${prefix}limapuluhribu`
+									}
+								]
+							}, { 
+								"title": "Pratinjau",
+								"rows": [
+									{
+										"title": "Pratinjau Menu",
+										"description": "Lihat Tampilan Menu Fitur",
+										"rowId": `${prefix}pratinjaufitur`
+									}
+									]
+									}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
+       footer: `${botname}`,
+       title: "*SEWA BOT*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+break
+      case 'limaribu': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}limaribushopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}limaribudana`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}limaribupulsa`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}limaribuovo`
+									}, {
+										"title": "GoPay",
+										"rowId": `${prefix}limaribugopay`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}limaribubni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}limaribusendiri`
+				                     } ]
+								
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*METODE PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      case 'puluhribu': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return  
+let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}puluhribushopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}puluhribudana`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}puluhribupulsa`
+								    }, {
+										"title": "OVO",
+										"rowId": `${prefix}puluhribuovo`
+									}, {
+										"title": "GoPay",
+										"rowId": `${prefix}puluhribugopay`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}puluhribubni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}puluhribusendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      case 'limapuluhribu': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}limapuluhribushopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}limapuluhribudana`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}limapuluhribupulsa`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}limapuluhribuovo`
+									}, {
+										"title": "GoPay",
+										"rowId": `${prefix}limapuluhribugopay`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}limapuluhribubni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}limapuluhribusendiri`
+									}]
+								
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //            SHOPEEE 
+      
+      case 'limaribushopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp5.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribushopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke:\n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribushopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp50.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ 
+ break
+ 
+ //        DANA
+ 
+ case 'limaribudana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp5.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribudana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke:\n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribudana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+ let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *DANA*\nNominal: *Rp50.000*\n\nKirim ke:\n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+//         PULSA
+
+case 'limaribupulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp5.000*\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribupulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribupulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp50.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+break
+
+//      OVO
+
+case 'limaribuovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *OVO*\nNominal: *Rp5.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribuovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *OVO*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribuovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *OVO*\nNominal: *Rp50.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+break
+
+// GOPAY
+
+case 'limaribugopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *GoPay*\nNominal: *Rp5.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribugopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *GoPay*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln) \n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribugopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *GoPay*\nNominal: *Rp50.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+// BNI
+
+case 'limaribubni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *BNI*\nNominal: *Rp5.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'puluhribubni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *BNI*\nNominal: *Rp10.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ case 'limapuluhribubni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *BNI*\nNominal: *Rp50.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // Tulis Sendiri
+ case 'limaribusendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nNominal: *Rp5.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            case 'puluhribusendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nNominal: *Rp10.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            case 'limapuluhribusendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nNominal: *Rp50.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+
+// Akan Membayar
+case 'akanmembayar': {
+	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+   if (m.message && msgFilter.addFilter(from)) return
+ let buttons = [{buttonId: `sudahmembayar`, buttonText: {displayText: 'Sudah Membayar'}, type: 1}]
+ let caption = `Baik, kami tunggu yah! jika sudah silahkan chat 😊`
+ XeonBotInc.sendMessage(m.chat, {text: caption})
+ }
+ break
+ case 'pratinjaufitur': {
+	   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	if (!m.isGroup) return
+	if (m.message && msgFilter.addFilter(from)) return
+	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+var unicorn = await getBuffer(picak+'All Menu')
+let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+                
+teks = `~*PRATINJAU MENU BOT*~\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Menu*:\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n ┏━「 _KHUSUS OWNER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}self 
+ ┃╠ ${prefix}public 
+ ┃╠ ${prefix}antitag 
+ ┃╠ ${prefix}rentbot [add/del] 
+ ┃╠ ${prefix}rentlist 
+ ┃╠ ${prefix}ban [add/del] 
+ ┃╠ ${prefix}banchat [on/off]  
+ ┃╠ ${prefix}leavegc 
+ ┃╠ ${prefix}setbio 
+ ┃╠ ${prefix}bcgroup [text] 
+ ┃╠ ${prefix}bcall [text] 
+ ┃╠ ${prefix}bcimage [image] 
+ ┃╠ ${prefix}bcvideo [video] 
+ ┃╠ ${prefix}bcaudio [audio] 
+ ┃╠ ${prefix}bcloc [text] 
+ ┃╠ ${prefix}setppbot [image] 
+ ┃╠ ${prefix}setexif 
+ ┃╠ ${prefix}block [tag/number] 
+ ┃╠ ${prefix}unblock [tag/number] 
+ ┃╠ ${prefix}coowner [add/del] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _GROUP_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}welcome [on/off]
+ ┃╠ ${prefix}groupsetting 
+ ┃╠ ${prefix}grouplink 
+ ┃╠ ${prefix}ephemeral [option] 
+ ┃╠ ${prefix}setgcpp [image] 
+ ┃╠ ${prefix}setname [text] 
+ ┃╠ ${prefix}setdesc [text] 
+ ┃╠ ${prefix}groupmode [open/close]
+ ┃╠ ${prefix}resetgrouplink 
+ ┃╠ ${prefix}editinfo [option] 
+ ┃╠ ~${prefix}add [user]~
+ ┃╠ ${prefix}kick [reply/tag] 
+ ┃╠ ${prefix}hidetag / htag [text] 
+ ┃╠ ${prefix}tagall [text] 
+ ┃╠ ${prefix}antilinkgc [on/off] 
+ ┃╠ ${prefix}antilinktg [on/off] 
+ ┃╠ ${prefix}antilinktt [on/off] 
+ ┃╠ ${prefix}antilinkytch [on/off] 
+ ┃╠ ${prefix}antilinkytvid [on/off] 
+ ┃╠ ${prefix}antilinkig [on/off] 
+ ┃╠ ${prefix}antilinkfb [on/off] 
+ ┃╠ ${prefix}antilinktwit [on/off] 
+ ┃╠ ${prefix}antilinkall [on/off] 
+ ┃╠ ${prefix}antivirus [on/off] 
+ ┃╠ ${prefix}antivirdoc [on/off]
+ ┃╠ ${prefix}antislayer [on/off]
+ ┃╠ ${prefix}antivirlog [on/off]
+ ┃╠ ${prefix}antitoxic [on/off] 
+ ┃╠ ${prefix}antiwame [on/off] 
+ ┃╠ ${prefix}autoreply [on/off] 
+ ┃╠ ${prefix}nsfw [on/off] 
+ ┃╠ ${prefix}promote [reply/tag] 
+ ┃╠ ${prefix}demote [reply/tag] 
+ ┃╠ ${prefix}react [reply emoji] 
+ ┃╠ ${prefix}vote
+ ┃╠ ${prefix}devote 
+ ┃╠ ${prefix}upvote 
+ ┃╠ ${prefix}checkvote 
+ ┃╠ ${prefix}delvote 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _TEXT MAKER_ 」━━⭓
+ ┃╔═══════✪ 
+ ┃╠ ${prefix}candy [text]
+ ┃╠ ${prefix}blackpinkneon [text]
+ ┃╠ ${prefix}deepsea [text]
+ ┃╠ ${prefix}scifi [text]
+ ┃╠ ${prefix}fiction [text]
+ ┃╠ ${prefix}berry [text]
+ ┃╠ ${prefix}fruitjuice [text]
+ ┃╠ ${prefix}biscuit [text]
+ ┃╠ ${prefix}wood [text]
+ ┃╠ ${prefix}chocolate [text]
+ ┃╠ ${prefix}matrix [text]
+ ┃╠ ${prefix}blood [text]
+ ┃╠ ${prefix}halloween [text]
+ ┃╠ ${prefix}wicker [text]
+ ┃╠ ${prefix}darkgold [text]
+ ┃╠ ${prefix}firework [text]
+ ┃╠ ${prefix}skeleton [text]
+ ┃╠ ${prefix}sand [text]
+ ┃╠ ${prefix}glue [text]
+ ┃╠ ${prefix}leaves [text]
+ ┃╠ ${prefix}magma [text]
+ ┃╠ ${prefix}lava [text]
+ ┃╠ ${prefix}rock [text]
+ ┃╠ ${prefix}bloodglas [text]
+ ┃╠ ${prefix}underwater [text]
+ ┃╠ ${prefix}textmaker [text]
+ ┃╠ ${prefix}honey [text]
+ ┃╠ ${prefix}ice [text]
+ ┃╠ ${prefix}watercolor [text]
+ ┃╠ ${prefix}multicolor [text]
+ ┃╠ ${prefix}snow [text]
+ ┃╠ ${prefix}harrypot [text]
+ ┃╠ ${prefix}harrypotter [text]
+ ┃╠ ${prefix}brokenglass [text]
+ ┃╠ ${prefix}waterpipe [text]
+ ┃╠ ${prefix}spooky [text]
+ ┃╠ ${prefix}circuit [text]
+ ┃╠ ${prefix}metallic [text]
+ ┃╠ ${prefix}demon [text]
+ ┃╠ ${prefix}sparklechristmas [text]
+ ┃╠ ${prefix}christmas [text]
+ ┃╠ ${prefix}3dchristmas [text]
+ ┃╠ ${prefix}3dbox [text]
+ ┃╠ ${prefix}waterdrop [text]
+ ┃╠ ${prefix}lion2 [text]
+ ┃╠ ${prefix}papercut [text]
+ ┃╠ ${prefix}transformer [text]
+ ┃╠ ${prefix}neondevil [text]
+ ┃╠ ${prefix}3davengers [text]
+ ┃╠ ${prefix}3dstone [text]
+ ┃╠ ${prefix}3dstone2 [text]
+ ┃╠ ${prefix}summertime [text]
+ ┃╠ ${prefix}thunder [text]
+ ┃╠ ${prefix}window [text]
+ ┃╠ ${prefix}graffiti [text]
+ ┃╠ ${prefix}graffitibike [text]
+ ┃╠ ${prefix}pornhub [text]
+ ┃╠ ${prefix}glitch [text]
+ ┃╠ ${prefix}blackpink [text]
+ ┃╠ ${prefix}glitch2 [text]
+ ┃╠ ${prefix}glitch3 [text]
+ ┃╠ ${prefix}3dspace [text]
+ ┃╠ ${prefix}lion [text]
+ ┃╠ ${prefix}3dneon [text]
+ ┃╠ ${prefix}greenneon [text]
+ ┃╠ ${prefix}bokeh [text]
+ ┃╠ ${prefix}holographic [text]
+ ┃╠ ${prefix}bear [text]
+ ┃╠ ${prefix}wolf [text]
+ ┃╠ ${prefix}joker [text]
+ ┃╠ ${prefix}dropwater [text]
+ ┃╠ ${prefix}dropwater2 [text]
+ ┃╠ ${prefix}thewall [text]
+ ┃╠ ${prefix}neonlight [text]
+ ┃╠ ${prefix}natural [text]
+ ┃╠ ${prefix}carbon [text]
+ ┃╠ ${prefix}pencil [text]
+ ┃╠ ${prefix}blackpink2 [text]
+ ┃╠ ${prefix}neon [text]
+ ┃╠ ${prefix}neonlight2 [text]
+ ┃╠ ${prefix}toxic [text]
+ ┃╠ ${prefix}strawberry [text]
+ ┃╠ ${prefix}discovery [text]
+ ┃╠ ${prefix}1917 [text]
+ ┃╠ ${prefix}sci_fi [text]
+ ┃╠ ${prefix}ancient [text]
+ ┃╠ ${prefix}fabric [text]
+ ┃╠ ${prefix}hoorror [text]
+ ┃╠ ${prefix}whitebear [text]
+ ┃╠ ${prefix}juice [text]
+ ┃╠ ${prefix}batman [text]
+ ┃╠ ${prefix}multicolor [text]
+ ┃╠ ${prefix}collwall [text]
+ ┃╠ ${prefix}wonderful [text]
+ ┃╠ ${prefix}cool [text]
+ ┃╠ ${prefix}sketch [text]
+ ┃╠ ${prefix}marvel [text]
+ ┃╠ ${prefix}foggy [text]
+ ┃╠ ${prefix}writing [text]
+ ┃╠ ${prefix}halloweenfire [text]
+ ┃╠ ${prefix}halloween [text]
+ ┃╠ ${prefix}watercolor [text]
+ ┃╠ ${prefix}classic [text]
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _DOWNLOAD_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}instagram [url] 
+ ┃╠ ${prefix}igtv [url] 
+ ┃╠ ${prefix}igstory [username] 
+ ┃╠ ${prefix}facebook [url]
+ ┃╠ ${prefix}fbmp3 [url] 
+ ┃╠ ${prefix}twitter [url] 
+ ┃╠ ${prefix}twittermp3 [url] 
+ ┃╠ ${prefix}tiktok [url] 
+ ┃╠ ${prefix}tiktokaudio[url] 
+ ┃╠ ${prefix}tiktoknowm [url] 
+ ┃╠ ${prefix}mediafire [url] 
+ ┃╠ ${prefix}ytmp3 [url | quality] 
+ ┃╠ ${prefix}ytmp4 [url | quality] 
+ ┃╠ ${prefix}getmusic [yt link] 
+ ┃╠ ${prefix}getvideo [yt link] 
+ ┃╠ ${prefix}gitclone [repo link] 
+ ┃╠ ${prefix}soundcloud [url] 
+ ┃╠ ${prefix}zippyshare [url] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _SEARCH_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}play [query] 
+ ┃╠ ${prefix}song [query] 
+ ┃╠ ${prefix}yts [query] 
+ ┃╠ ${prefix}lyrics [query] 
+ ┃╠ ${prefix}google [query] 
+ ┃╠ ${prefix}playstore [query] 
+ ┃╠ ${prefix}gimage [query] 
+ ┃╠ ${prefix}pinterest [query] 
+ ┃╠ ${prefix}image [query] 
+ ┃╠ ${prefix}film [query] 
+ ┃╠ ${prefix}wallpaper [query] 
+ ┃╠ ${prefix}searchgc [query] 
+ ┃╠ ${prefix}happymod [query] 
+ ┃╠ ${prefix}servermc 
+ ┃╠ ${prefix}mcpedl [query] 
+ ┃╠ ${prefix}tvsearch [query] 
+ ┃╠ ${prefix}wikimedia [query] 
+ ┃╠ ${prefix}ytsearch [query] 
+ ┃╠ ${prefix}ringtone [query] 
+ ┃╠ ${prefix}webtoon [query] 
+ ┃╠ ${prefix}anime [query] 
+ ┃╠ ${prefix}animestory [query] 
+ ┃╠ ${prefix}manga [query] 
+ ┃╠ ${prefix}wattpad [query] 
+ ┃╠ ${prefix}mcserver [ip|port] 
+ ┃╠ ${prefix}drakor [query] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _CONVERT_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}toimage [reply stick] 
+ ┃╠ ${prefix}sticker [reply img | gif] 
+ ┃╠ ${prefix}take [reply img | gif | stik] 
+ ┃╠ ${prefix}smeme [reply img] 
+ ┃╠ ${prefix}smeme2 [reply img *text | text*]
+ ┃╠ ${prefix}emoji [emoji] 
+ ┃╠ ${prefix}tovideo [reply img] 
+ ┃╠ ${prefix}togif [reply stick] 
+ ┃╠ ${prefix}tourl [reply img] 
+ ┃╠ ${prefix}tovn [reply aud] 
+ ┃╠ ${prefix}tomp3 [reply vn] 
+ ┃╠ ${prefix}toaudio [reply vid] 
+ ┃╠ ${prefix}ebinary [reply txt] 
+ ┃╠ ${prefix}dbinary [reply txt] 
+ ┃╠ ${prefix}tinyurl [link] 
+ ┃╠ ${prefix}styletext [text] 
+ ┃╠ ${prefix}volume [reply aud] 
+ ┃╠ ${prefix}tempo [reply aud] 
+ ┃╠ ${prefix}bass [reply aud] 
+ ┃╠ ${prefix}blown [reply aud] 
+ ┃╠ ${prefix}deep [reply aud] 
+ ┃╠ ${prefix}earrape [reply aud] 
+ ┃╠ ${prefix}fast [reply aud] 
+ ┃╠ ${prefix}fat [reply aud] 
+ ┃╠ ${prefix}nightcore [reply aud] 
+ ┃╠ ${prefix}reverse [reply aud] 
+ ┃╠ ${prefix}robot [reply aud] 
+ ┃╠ ${prefix}slow [reply aud] 
+ ┃╠ ${prefix}squirrel [reply aud] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _IMG EFFECT_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}wanted [reply img]
+ ┃╠ ${prefix}blur [reply img]
+ ┃╠ ${prefix}framed [reply img]
+ ┃╠ ${prefix}gayeffect [reply img]
+ ┃╠ ${prefix}imagesketch [reply img]
+ ┃╠ ${prefix}invert [reply img]
+ ┃╠ ${prefix}burn [reply img]
+ ┃╠ ${prefix}triggeredwebp [reply img]
+ ┃╠ ${prefix}shit [reply img]
+ ┃╠ ${prefix}rip [reply img]
+ ┃╠ ${prefix}jail [reply img]
+ ┃╠ ${prefix}beautifuleffect [reply img]
+ ┃╠ ${prefix}deleteeffect [reply img]
+ ┃╠ ${prefix}pixelate [reply img]
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _RANDOM IMG_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}coffee 
+ ┃╠ ${prefix}woof 
+ ┃╠ ${prefix}meow 
+ ┃╠ ${prefix}lizard 
+ ┃╠ ${prefix}wallneon 
+ ┃╠ ${prefix}wallpubg 
+ ┃╠ ${prefix}wallml 
+ ┃╠ ${prefix}wallrandom 
+ ┃╠ ${prefix}wallcode 
+ ┃╠ ${prefix}animewall [query] 
+ ┃╠ ${prefix}animewall2 [query] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _EMOTE_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}instagramemoji 
+ ┃╠ ${prefix}facebookemoji 
+ ┃╠ ${prefix}iphoneemoji 
+ ┃╠ ${prefix}samsungemoji 
+ ┃╠ ${prefix}joyemoji 
+ ┃╠ ${prefix}skypeemoji 
+ ┃╠ ${prefix}twitteremoji 
+ ┃╠ ${prefix}whatsappemoji 
+ ┃╠ ${prefix}microsoftemoji 
+ ┃╠ ${prefix}googleemoji 
+ ┃╠ ${prefix}pediaemoji 
+ ┃╠ ${prefix}microsoftemoji 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _ANIME_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}naruto 
+ ┃╠ ${prefix}yaoi 
+ ┃╠ ${prefix}neko2 
+ ┃╠ ${prefix}waifu 
+ ┃╠ ${prefix}waifu2 
+ ┃╠ ${prefix}awoo2 
+ ┃╠ ${prefix}shinobu 
+ ┃╠ ${prefix}waifu3 
+ ┃╠ ${prefix}foxgirl 
+ ┃╠ ${prefix}megumin2 
+ ┃╠ ${prefix}loli 
+ ┃╠ ${prefix}8ball 
+ ┃╠ ${prefix}animenom 
+ ┃╠ ${prefix}goose 
+ ┃╠ ${prefix}avatar 
+ ┃╠ ${prefix}tickle 
+ ┃╠ ${prefix}gecg 
+ ┃╠ ${prefix}feed 
+ ┃╠ ${prefix}animeslap 
+ ┃╠ ${prefix}animespank 
+ ┃╠ ${prefix}animepat 
+ ┃╠ ${prefix}animeneko 
+ ┃╠ ${prefix}animekiss 
+ ┃╠ ${prefix}animewlp 
+ ┃╠ ${prefix}animecuddle 
+ ┃╠ ${prefix}animecry 
+ ┃╠ ${prefix}animekill 
+ ┃╠ ${prefix}animelick 
+ ┃╠ ${prefix}animebite 
+ ┃╠ ${prefix}animeyeet 
+ ┃╠ ${prefix}animebully 
+ ┃╠ ${prefix}animebonk 
+ ┃╠ ${prefix}animewink 
+ ┃╠ ${prefix}animepoke 
+ ┃╠ ${prefix}animesmile 
+ ┃╠ ${prefix}animewave 
+ ┃╠ ${prefix}animeawoo 
+ ┃╠ ${prefix}animeblush 
+ ┃╠ ${prefix}animesmug 
+ ┃╠ ${prefix}animeglomp 
+ ┃╠ ${prefix}animehappy 
+ ┃╠ ${prefix}animedance 
+ ┃╠ ${prefix}animecringe 
+ ┃╠ ${prefix}animehighfive 
+ ┃╠ ${prefix}animehandhold 
+ ┃╠ ${prefix}animemegumin 
+ ┃╠ ${prefix}smug2 
+ ┃╠ ${prefix}couplepp 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _STICKER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}patrick 
+ ┃╠ ${prefix}emoji (fitur ini tidak tersedia)
+ ┃╠ ${prefix}emojimix 
+ ┃╠ ${prefix}attp [text]
+ ┃╠ ${prefix}ttp [text]
+ ┃╠ ${prefix}doge 
+ ┃╠ ${prefix}lovesticker 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _ANIME STICKER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}loli 
+ ┃╠ ${prefix}bully 
+ ┃╠ ${prefix}cuddle 
+ ┃╠ ${prefix}cry 
+ ┃╠ ${prefix}hug 
+ ┃╠ ${prefix}awoo 
+ ┃╠ ${prefix}kiss 
+ ┃╠ ${prefix}lick 
+ ┃╠ ${prefix}pat 
+ ┃╠ ${prefix}smug 
+ ┃╠ ${prefix}bonk 
+ ┃╠ ${prefix}yeet 
+ ┃╠ ${prefix}blush 
+ ┃╠ ${prefix}smile 
+ ┃╠ ${prefix}wave 
+ ┃╠ ${prefix}highfive 
+ ┃╠ ${prefix}handhold 
+ ┃╠ ${prefix}nom 
+ ┃╠ ${prefix}glomp 
+ ┃╠ ${prefix}bite 
+ ┃╠ ${prefix}slap 
+ ┃╠ ${prefix}kill 
+ ┃╠ ${prefix}happy 
+ ┃╠ ${prefix}wink 
+ ┃╠ ${prefix}poke 
+ ┃╠ ${prefix}dance 
+ ┃╠ ${prefix}cringe 
+ ┃╠ ${prefix}neko 
+ ┃╠ ${prefix}gura 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _NSFW_ 」━━⭓ 
+ ┃╔═══════✪
+ ┃╠ ${prefix}hentaivideo 
+ ┃╠ ${prefix}yuri (error)
+ ┃╠ ${prefix}masturbation (error)
+ ┃╠ ${prefix}thighs (error)
+ ┃╠ ${prefix}pussy (error)
+ ┃╠ ${prefix}panties (error)
+ ┃╠ ${prefix}orgy (error)
+ ┃╠ ${prefix}ahegao (error)
+ ┃╠ ${prefix}ass (error)
+ ┃╠ ${prefix}bdsm (error)
+ ┃╠ ${prefix}blowjob (error)
+ ┃╠ ${prefix}cuckold (error)
+ ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}gasm 
+ ┃╠ ${prefix}cum (error)
+ ┃╠ ${prefix}femdom (error)
+ ┃╠ ${prefix}foot (error)
+ ┃╠ ${prefix}gangbang (error)
+ ┃╠ ${prefix}glasses (error)
+ ┃╠ ${prefix}jahy (error)
+ ┃╠ ${prefix}trap 
+ ┃╠ ${prefix}blowjobgif 
+ ┃╠ ${prefix}spank 
+ ┃╠ ${prefix}hneko 
+ ┃╠ ${prefix}nwaifu 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _FUN_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}kerangajaib [text]
+ ┃╠ ${prefix}how [text] 
+ ┃╠ ${prefix}when [text] 
+ ┃╠ ${prefix}where [text] 
+ ┃╠ ${prefix}is [text] 
+ ┃╠ ${prefix}what [text] 
+ ┃╠ ${prefix}can [text] 
+ ┃╠ ${prefix}rate [text] 
+ ┃╠ ${prefix}wangy [text] 
+ ┃╠ ${prefix}beautifulcheck [tag] 
+ ┃╠ ${prefix}awesomecheck [tag] 
+ ┃╠ ${prefix}prettycheck [tag] 
+ ┃╠ ${prefix}lesbiancheck [tag] 
+ ┃╠ ${prefix}gaycheck [tag] 
+ ┃╠ ${prefix}cutecheck [tag] 
+ ┃╠ ${prefix}uglycheck [tag] 
+ ┃╠ ${prefix}hornycheck [tag] 
+ ┃╠ ${prefix}charactercheck [tag] 
+ ┃╠ ${prefix}lovelycheck [tag] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _SOUND_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}sound1
+ ┃╠ ||
+ ┃╠ ${prefix}sound161
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _GAME_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}family100
+ ┃╠ ${prefix}truth 
+ ┃╠ ${prefix}dare 
+ ┃╠ ${prefix}tictactoe 
+ ┃╠ ${prefix}delttt 
+ ┃╠ ${prefix}guess [option] 
+ ┃╠ ${prefix}math [mode] 
+ ┃╠ ${prefix}suitpvp [tag] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _TOOL_ 」━━⭓
+ ┃╔═✪ _en = inggris_ / _in = indonesia_
+ ┃╠ ~${prefix}translate en [text]~ (kedaluwarsa)
+ ┃╠ ${prefix}fliptext [text] 
+ ┃╠ ${prefix}toletter [number] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _DATABASE BOT_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}setcmd
+ ┃╠ ${prefix}listcmd 
+ ┃╠ ${prefix}delcmd 
+ ┃╠ ${prefix}lockcmd 
+ ┃╠ ${prefix}addmsg 
+ ┃╠ ${prefix}listmsg 
+ ┃╠ ${prefix}getmsg 
+ ┃╠ ${prefix}delmsg
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _INDO_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}darkjoke 
+ ┃╠ ${prefix}quotes 
+ ┃╠ ${prefix}animequotes 
+ ┃╠ ${prefix}jalantikus-meme 
+ ┃╠ ${prefix}merdeka-news  
+ ┃╠ ${prefix}kontan-news  
+ ┃╠ ${prefix}cnbc-news  
+ ┃╠ ${prefix}tribun-news  
+ ┃╠ ${prefix}indozone-news  
+ ┃╠ ${prefix}kompas-news  
+ ┃╠ ${prefix}detik-news  
+ ┃╠ ${prefix}daily-news  
+ ┃╠ ${prefix}inews-news  
+ ┃╠ ${prefix}okezone-news  
+ ┃╠ ${prefix}sindo-news  
+ ┃╠ ${prefix}tempo-news  
+ ┃╠ ${prefix}antara-news  
+ ┃╠ ${prefix}cnn-news  
+ ┃╠ ${prefix}fajar-news  
+ ┃╠ ${prefix}cinemaschedule 
+ ┃╠ ${prefix}wiki 
+ ┃╠ ${prefix}covidindo 
+ ┃╠ ${prefix}earthquake 
+ ┃╠ ${prefix}tvschedule 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _INDO HSCOPE_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}nomorhoki 
+ ┃╠ ${prefix}artimimpi  
+ ┃╠ ${prefix}artinama  
+ ┃╠ ${prefix}ramaljodoh  
+ ┃╠ ${prefix}ramaljodohbali  
+ ┃╠ ${prefix}suamiistri  
+ ┃╠ ${prefix}ramalcinta  
+ ┃╠ ${prefix}cocoknama  
+ ┃╠ ${prefix}pasangan  
+ ┃╠ ${prefix}jadiannikah  
+ ┃╠ ${prefix}sifatusaha  
+ ┃╠ ${prefix}rezeki  
+ ┃╠ ${prefix}pekerjaan  
+ ┃╠ ${prefix}nasib  
+ ┃╠ ${prefix}penyakit  
+ ┃╠ ${prefix}tarot  
+ ┃╠ ${prefix}fengshui  
+ ┃╠ ${prefix}haribaik  
+ ┃╠ ${prefix}harisangar  
+ ┃╠ ${prefix}harisial 
+ ┃╠ ${prefix}nagahari 
+ ┃╠ ${prefix}arahrezeki 
+ ┃╠ ${prefix}peruntungan  
+ ┃╠ ${prefix}weton  
+ ┃╠ ${prefix}karakter 
+ ┃╠ ${prefix}keberuntungan 
+ ┃╠ ${prefix}memancing 
+ ┃╠ ${prefix}masasubur 
+ ┃╠ ${prefix}zodiak 
+ ┃╠ ${prefix}shio 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _OTHER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}afk 
+ ┃╠ ${prefix}readmore [text] 
+ ┃╠ ${prefix}toviewonce 
+ ┃╠ ${prefix}getpp
+ ┃╠ ${prefix}chatinfo 
+ ┃╠ ${prefix}alive 
+ ┃╠ ${prefix}script 
+ ┃╠ ${prefix}speedtest 
+ ┃╠ ${prefix}ping 
+ ┃╠ ${prefix}owner 
+ ┃╠ ${prefix}menu 
+ ┃╠ ${prefix}delete 
+ ┃╠ ${prefix}chatinfo 
+ ┃╠ ${prefix}quoted 
+ ┃╠ ${prefix}listpc 
+ ┃╠ ${prefix}listgc 
+ ┃╠ ${prefix}donate 
+ ┃╠ ${prefix}request 
+ ┃╠ ${prefix}report [bug] 
+ ┃╚═════════════✪
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+ 
+//////////////////contoh  [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}}
+ let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `sewa`, buttonText: {displayText: 'Sewa Bot'}, type: 1},
+ {buttonId: `donatew`, buttonText: {displayText: 'Donasi'}, type: 1},
+ ] 
+let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/allmenu.jpg')
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: teks, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+	largeThumb: true,
+title: `Jasjus ID 🔰`, 
+ body: `Bot by Kenneth ID`, 
+////// mediaType: 4, 
+ thumbnail: pics, 
+ url: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny`
+///////sourceUrl: `${websitex}`, 
+ //////// mediaUrl: `${websitex}` 
+}} 
+}  
+const klao = await XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+await klao
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+ }
+ break
+ case 'donatew': {
+ 	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+teks = `*「 ${global.botname} Script 」*\n\nDana\\OVO\\ShopeePay: 085842965801\n\nDont forget to donate 🍜`
+let buttons = [
+{buttonId: `menu`, buttonText: {displayText: 'Menu 🌺'}, type: 1}
+]
+let jon = `https://telegra.ph/file/f7b1d02ef576e4b19ab9b.jpg`
+let bah = await getBuffer(jon)
+let buttonMessage = {
+image: thum,
+jpegThumbnail: log0,
+caption: teks,
+footer: `Owner: wa.me/6285892879274`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:"I deserve something for my hardwork",
+body: "Click to donate", 
+thumbnail: bah,
+mediaType:1,
+mediaUrl: 'https://telegra.ph/file/f7b1d02ef576e4b19ab9b.jpg',
+sourceUrl: "https://telegra.ph/file/f7b1d02ef576e4b19ab9b.jpg"
+}}
+}
+XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break        
+//anti bug by kenneth
+       case 'butto': case 'stikto': case 'catalogbug': case 'bugdoc':  case 'allbug': case 'bugloc': case 'bugvn': case 'bugkontak': case 'buglog': case 'bugtext': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
+case 'bugstik': case 'poll': case 'infinite': case 'gasinfinite': case 'infiniteto': case 'buginvite': case 'mintabokep': case 'unlitroli': case 'troli': case 'troli2': 
+case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
+case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadimonyet': case 'jadibug': case 'jadibug1':
+case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
+case 'scatalog': case 'momi': case 'gasinfinite': case 'gasmomo': case 'momo': case 'momoto': case 'buginvite': case 'santet': case 'santetto': case 'gassantet': case 'santet1': case 'santet2': case 'santet3': 
+case 'santet4': case 'santet5': case 'santet10': case 'santet15': case 'slayer1': case 'slayer2': case 'slayer3': 
+case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15': case 'virtex1': case 'virtex2': case 'virtex4': 
+case 'virtex5': case 'virtex10': case 'virtex15': case 'docu': case 'buglokal': case 'gaskal': case 'gasken': 
+case 'jobugvn': case 'jomomo': case 'jomomo2': case 'jomomo3': case 'jomomo4': case 'jomomo5': case 'jomomo6':
+case 'jomomo7': case 'jomomo8': case 'jomomo9': case 'jomomo10': case 'jomomo11': case 'jomomo12': 
+ case 'johello': case 'jopay': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': case 'jodocu2':
+case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': case 'jobugpc': case 'jobug': case 'jobug1': case 'jobug2': case 'jobug3': 
+case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
+case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugstikv2': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
+case 'jobuginvite': case 'jogasbug': case 'jogasbug1': case 'jogasbug2': case 'jogasbug3': case 'jogasbug4': case 'jogasbug5': case 'jogasbug6': case 'jogasbug7': case 'jogasbug8': case 'jogasbug9': case 'jogasbug10': case 'jogasbug11': case 'jogasbug12': case 'jogasbug13': case 'jogasbug14': case 'jogasbug15': 
+case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
+case 'jobuttonbro': case 'jolokas': case 'jopay': case 'joness': case 'joteluh': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
+case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
+case 'catalog15': case 'btroli': case 'brutal': case 'unlijones': case 'unlijoness': 
+case 'rizbugvn': case 'rizmomo': case 'rizmomo2': case 'rizmomo3': case 'rizmomo4': case 'rizmomo5': case 'rizmomo6':
+case 'rizmomo7': case 'rizmomo8': case 'rizmomo9': case 'rizmomo10': case 'rizmomo11': case 'rizmomo12': 
+ case 'rizhello': case 'rizpay': case 'rizsantet': case 'rizinfinite': case 'rizslebew': case 'riztengkorak': case 'rizdocu2':
+case 'rizdocu': case 'riztrol': case 'riztroli': case 'riztroliv2': case 'zhymomo': case 'rizbugpc': case 'rizbug': case 'rizbug1': case 'rizbug2': case 'rizbug3': 
+case 'rizbug4': case 'rizbug5': case 'rizbug6': case 'rizbug7': case 'rizbug8': case 'rizbug9': case 'rizbug10': case 'rizbug11':
+case 'rizbug12': case 'rizbug15': case 'rizbuglist': case 'rizbugstik': case 'rizbugstikv2': case 'rizbugloc': case 'rizbugdoc': case 'rizliveloc': case 'rizlivelocv2': 
+case 'rizbuginvite': case 'riztagwae': case 'rizcatalog': case 'rizcatalogv2': case 'rizthelima': case 'crashcok': case 'rizbutton': case 'rizbugbutton':
+case 'rizbuttonbro': case 'rizlokas': case 'rizness': case 'riztagwae': 
+case 'foxinfinity': case 'foxdoc': case 'lokas': case 'polvot': {
+	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+	if (!isBotAdmins) return 
+XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
+await sleep(850)
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+}
+break
+//anti bug kontol v2
+case 'b-cuy': case 'b-haicok': case 'b-ngntd': case 'b-anjay': case 'b-cokjancok': case 'b-ndasmu': case 'b-ngutang': case 'b-dokumen': 
+case 'b-omaga': case 'b-omaga1': case 'b-omaga2': case 'b-omaga3': case 'b-omaga4': case 'b-omaga5': case 'b-omaga6': case 'b-omaga7': case 'b-omaga8': case 'b-omaga9': case 'b-omaga10': case 'b-omaga11': case 'b-omaga12': 
+case 'b-bugpc': case 'b-ngontol': case 'b-ngontolcok': case 'b-ngntolpler': case 'b-bugvn': case 'b-lokasi': case 'b-bugdoc': case 'b-bugkon': case 'b-bugkon2': case 'b-kontak': case 'b-liveloc': case 'b-livelocv2': case 'b-anjeng': case 'b-buglist': case 'b-tag': 
+case 'b-catalog': case 'b-catalogv2': case 'b-bugstik': case 'b-limo': case 'b-sendvir': case 'b-bugbutton': case 'b-bugbutton2': case 'b-bugbutton3': case 'jadibug-gambar': case 'jadibug-dokumen': {
+	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+	if (!isBotAdmins) return 
+XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
+await sleep(850)
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+}
+break
+//antibug kontol v3
+case 'ted': {
+	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!??\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+	if (!isBotAdmins) return 
+XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
+await sleep(850)
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+}
+break
+case 'kintil': case 'kuntul': {
+	 if (!isBotAdmins) return
+bvl = `🤔`
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
+let caption = `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* 🤔`
+let fgh = `*Group Mode*`
+await sleep(700)
+                let buttons = [
+                        { buttonId: 'groupmode open', buttonText: { displayText: 'Open' }, type: 1 }
+                        
+                    ]
+                    await XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh, m)
+
+             
+            
+///////////await XeonBotInc.updateBlockStatus(kice, "block")
+}
+break
+//anti jadi bug
+case 'jaditroli': case 'jadipeler': case 'jadilokas': case 'jadimonyet': case 'jadibugbutton': 
+case 'tobugstik': case 'jadibugstik': case 'jadibugvn': case 'jadibugdoc': case 'jadijoness':
+case 'jadingeness': case 'jadidarkness': case 'jadikintil': case 'jadikintil': case 'jadikuntul': 
+case 'jadikontol': case 'jadibugloc': case 'jadiliveloc': case 'jadicatalog': case 'jadibuttonimg': {
+if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
+await sleep(850)
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+}
+                     }
+                     
+  if (!m.isGroup) return
+	switch(command) {
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
 if (!isCreator) return replay(mess.owner)
@@ -1580,7 +2822,7 @@ if (q.includes('--help')) return reply(examkosong)
      teksehmazeh += `*🌟Your Gold* : ${getEmas(m.sender)}\n`
      teksehmazeh += `*💎Your Emerald* : ${getEmerald(m.sender)}\n`
      teksehmazeh += `*⏺️Your Limit* : ${getLimit(m.sender)}\n`
-     teksehmazeh += `*🧪Your Potion* : ${getPotion(m.sender)}\n\n`
+     teksehmazeh += `*??Your Potion* : ${getPotion(m.sender)}\n\n`
      teksehmazeh += `_[ 🐺HUNT RESULT🐺 ]_\n`
      teksehmazeh += `*🐟Fish* : ${getIkan(m.sender)}\n`
      teksehmazeh += `*🐔Chicken* : ${getAyam(m.sender)}\n`
@@ -9933,462 +11175,633 @@ if (isBanChat) return reply(mess.banChat)
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
-                   
-                    break
+                   break
+                   case 'pratinjaufitur': {
+	   if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	if (m.isGroup) return
+	if (m.message && msgFilter.addFilter(from)) return
+	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+var unicorn = await getBuffer(picak+'All Menu')
+let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+                
+teks = `~*PRATINJAU MENU BOT*~\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Menu*:\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n ┏━「 _KHUSUS OWNER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}self 
+ ┃╠ ${prefix}public 
+ ┃╠ ${prefix}antitag 
+ ┃╠ ${prefix}rentbot [add/del] 
+ ┃╠ ${prefix}rentlist 
+ ┃╠ ${prefix}ban [add/del] 
+ ┃╠ ${prefix}banchat [on/off]  
+ ┃╠ ${prefix}leavegc 
+ ┃╠ ${prefix}setbio 
+ ┃╠ ${prefix}bcgroup [text] 
+ ┃╠ ${prefix}bcall [text] 
+ ┃╠ ${prefix}bcimage [image] 
+ ┃╠ ${prefix}bcvideo [video] 
+ ┃╠ ${prefix}bcaudio [audio] 
+ ┃╠ ${prefix}bcloc [text] 
+ ┃╠ ${prefix}setppbot [image] 
+ ┃╠ ${prefix}setexif 
+ ┃╠ ${prefix}block [tag/number] 
+ ┃╠ ${prefix}unblock [tag/number] 
+ ┃╠ ${prefix}coowner [add/del] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _GROUP_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}welcome [on/off]
+ ┃╠ ${prefix}groupsetting 
+ ┃╠ ${prefix}grouplink 
+ ┃╠ ${prefix}ephemeral [option] 
+ ┃╠ ${prefix}setgcpp [image] 
+ ┃╠ ${prefix}setname [text] 
+ ┃╠ ${prefix}setdesc [text] 
+ ┃╠ ${prefix}groupmode [open/close]
+ ┃╠ ${prefix}resetgrouplink 
+ ┃╠ ${prefix}editinfo [option] 
+ ┃╠ ~${prefix}add [user]~
+ ┃╠ ${prefix}kick [reply/tag] 
+ ┃╠ ${prefix}hidetag / htag [text] 
+ ┃╠ ${prefix}tagall [text] 
+ ┃╠ ${prefix}antilinkgc [on/off] 
+ ┃╠ ${prefix}antilinktg [on/off] 
+ ┃╠ ${prefix}antilinktt [on/off] 
+ ┃╠ ${prefix}antilinkytch [on/off] 
+ ┃╠ ${prefix}antilinkytvid [on/off] 
+ ┃╠ ${prefix}antilinkig [on/off] 
+ ┃╠ ${prefix}antilinkfb [on/off] 
+ ┃╠ ${prefix}antilinktwit [on/off] 
+ ┃╠ ${prefix}antilinkall [on/off] 
+ ┃╠ ${prefix}antivirus [on/off] 
+ ┃╠ ${prefix}antivirdoc [on/off]
+ ┃╠ ${prefix}antislayer [on/off]
+ ┃╠ ${prefix}antivirlog [on/off]
+ ┃╠ ${prefix}antitoxic [on/off] 
+ ┃╠ ${prefix}antiwame [on/off] 
+ ┃╠ ${prefix}autoreply [on/off] 
+ ┃╠ ${prefix}nsfw [on/off] 
+ ┃╠ ${prefix}promote [reply/tag] 
+ ┃╠ ${prefix}demote [reply/tag] 
+ ┃╠ ${prefix}react [reply emoji] 
+ ┃╠ ${prefix}vote
+ ┃╠ ${prefix}devote 
+ ┃╠ ${prefix}upvote 
+ ┃╠ ${prefix}checkvote 
+ ┃╠ ${prefix}delvote 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _TEXT MAKER_ 」━━⭓
+ ┃╔═══════✪ 
+ ┃╠ ${prefix}candy [text]
+ ┃╠ ${prefix}blackpinkneon [text]
+ ┃╠ ${prefix}deepsea [text]
+ ┃╠ ${prefix}scifi [text]
+ ┃╠ ${prefix}fiction [text]
+ ┃╠ ${prefix}berry [text]
+ ┃╠ ${prefix}fruitjuice [text]
+ ┃╠ ${prefix}biscuit [text]
+ ┃╠ ${prefix}wood [text]
+ ┃╠ ${prefix}chocolate [text]
+ ┃╠ ${prefix}matrix [text]
+ ┃╠ ${prefix}blood [text]
+ ┃╠ ${prefix}halloween [text]
+ ┃╠ ${prefix}wicker [text]
+ ┃╠ ${prefix}darkgold [text]
+ ┃╠ ${prefix}firework [text]
+ ┃╠ ${prefix}skeleton [text]
+ ┃╠ ${prefix}sand [text]
+ ┃╠ ${prefix}glue [text]
+ ┃╠ ${prefix}leaves [text]
+ ┃╠ ${prefix}magma [text]
+ ┃╠ ${prefix}lava [text]
+ ┃╠ ${prefix}rock [text]
+ ┃╠ ${prefix}bloodglas [text]
+ ┃╠ ${prefix}underwater [text]
+ ┃╠ ${prefix}textmaker [text]
+ ┃╠ ${prefix}honey [text]
+ ┃╠ ${prefix}ice [text]
+ ┃╠ ${prefix}watercolor [text]
+ ┃╠ ${prefix}multicolor [text]
+ ┃╠ ${prefix}snow [text]
+ ┃╠ ${prefix}harrypot [text]
+ ┃╠ ${prefix}harrypotter [text]
+ ┃╠ ${prefix}brokenglass [text]
+ ┃╠ ${prefix}waterpipe [text]
+ ┃╠ ${prefix}spooky [text]
+ ┃╠ ${prefix}circuit [text]
+ ┃╠ ${prefix}metallic [text]
+ ┃╠ ${prefix}demon [text]
+ ┃╠ ${prefix}sparklechristmas [text]
+ ┃╠ ${prefix}christmas [text]
+ ┃╠ ${prefix}3dchristmas [text]
+ ┃╠ ${prefix}3dbox [text]
+ ┃╠ ${prefix}waterdrop [text]
+ ┃╠ ${prefix}lion2 [text]
+ ┃╠ ${prefix}papercut [text]
+ ┃╠ ${prefix}transformer [text]
+ ┃╠ ${prefix}neondevil [text]
+ ┃╠ ${prefix}3davengers [text]
+ ┃╠ ${prefix}3dstone [text]
+ ┃╠ ${prefix}3dstone2 [text]
+ ┃╠ ${prefix}summertime [text]
+ ┃╠ ${prefix}thunder [text]
+ ┃╠ ${prefix}window [text]
+ ┃╠ ${prefix}graffiti [text]
+ ┃╠ ${prefix}graffitibike [text]
+ ┃╠ ${prefix}pornhub [text]
+ ┃╠ ${prefix}glitch [text]
+ ┃╠ ${prefix}blackpink [text]
+ ┃╠ ${prefix}glitch2 [text]
+ ┃╠ ${prefix}glitch3 [text]
+ ┃╠ ${prefix}3dspace [text]
+ ┃╠ ${prefix}lion [text]
+ ┃╠ ${prefix}3dneon [text]
+ ┃╠ ${prefix}greenneon [text]
+ ┃╠ ${prefix}bokeh [text]
+ ┃╠ ${prefix}holographic [text]
+ ┃╠ ${prefix}bear [text]
+ ┃╠ ${prefix}wolf [text]
+ ┃╠ ${prefix}joker [text]
+ ┃╠ ${prefix}dropwater [text]
+ ┃╠ ${prefix}dropwater2 [text]
+ ┃╠ ${prefix}thewall [text]
+ ┃╠ ${prefix}neonlight [text]
+ ┃╠ ${prefix}natural [text]
+ ┃╠ ${prefix}carbon [text]
+ ┃╠ ${prefix}pencil [text]
+ ┃╠ ${prefix}blackpink2 [text]
+ ┃╠ ${prefix}neon [text]
+ ┃╠ ${prefix}neonlight2 [text]
+ ┃╠ ${prefix}toxic [text]
+ ┃╠ ${prefix}strawberry [text]
+ ┃╠ ${prefix}discovery [text]
+ ┃╠ ${prefix}1917 [text]
+ ┃╠ ${prefix}sci_fi [text]
+ ┃╠ ${prefix}ancient [text]
+ ┃╠ ${prefix}fabric [text]
+ ┃╠ ${prefix}hoorror [text]
+ ┃╠ ${prefix}whitebear [text]
+ ┃╠ ${prefix}juice [text]
+ ┃╠ ${prefix}batman [text]
+ ┃╠ ${prefix}multicolor [text]
+ ┃╠ ${prefix}collwall [text]
+ ┃╠ ${prefix}wonderful [text]
+ ┃╠ ${prefix}cool [text]
+ ┃╠ ${prefix}sketch [text]
+ ┃╠ ${prefix}marvel [text]
+ ┃╠ ${prefix}foggy [text]
+ ┃╠ ${prefix}writing [text]
+ ┃╠ ${prefix}halloweenfire [text]
+ ┃╠ ${prefix}halloween [text]
+ ┃╠ ${prefix}watercolor [text]
+ ┃╠ ${prefix}classic [text]
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _DOWNLOAD_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}instagram [url] 
+ ┃╠ ${prefix}igtv [url] 
+ ┃╠ ${prefix}igstory [username] 
+ ┃╠ ${prefix}facebook [url]
+ ┃╠ ${prefix}fbmp3 [url] 
+ ┃╠ ${prefix}twitter [url] 
+ ┃╠ ${prefix}twittermp3 [url] 
+ ┃╠ ${prefix}tiktok [url] 
+ ┃╠ ${prefix}tiktokaudio[url] 
+ ┃╠ ${prefix}tiktoknowm [url] 
+ ┃╠ ${prefix}mediafire [url] 
+ ┃╠ ${prefix}ytmp3 [url | quality] 
+ ┃╠ ${prefix}ytmp4 [url | quality] 
+ ┃╠ ${prefix}getmusic [yt link] 
+ ┃╠ ${prefix}getvideo [yt link] 
+ ┃╠ ${prefix}gitclone [repo link] 
+ ┃╠ ${prefix}soundcloud [url] 
+ ┃╠ ${prefix}zippyshare [url] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _SEARCH_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}play [query] 
+ ┃╠ ${prefix}song [query] 
+ ┃╠ ${prefix}yts [query] 
+ ┃╠ ${prefix}lyrics [query] 
+ ┃╠ ${prefix}google [query] 
+ ┃╠ ${prefix}playstore [query] 
+ ┃╠ ${prefix}gimage [query] 
+ ┃╠ ${prefix}pinterest [query] 
+ ┃╠ ${prefix}image [query] 
+ ┃╠ ${prefix}film [query] 
+ ┃╠ ${prefix}wallpaper [query] 
+ ┃╠ ${prefix}searchgc [query] 
+ ┃╠ ${prefix}happymod [query] 
+ ┃╠ ${prefix}servermc 
+ ┃╠ ${prefix}mcpedl [query] 
+ ┃╠ ${prefix}tvsearch [query] 
+ ┃╠ ${prefix}wikimedia [query] 
+ ┃╠ ${prefix}ytsearch [query] 
+ ┃╠ ${prefix}ringtone [query] 
+ ┃╠ ${prefix}webtoon [query] 
+ ┃╠ ${prefix}anime [query] 
+ ┃╠ ${prefix}animestory [query] 
+ ┃╠ ${prefix}manga [query] 
+ ┃╠ ${prefix}wattpad [query] 
+ ┃╠ ${prefix}mcserver [ip|port] 
+ ┃╠ ${prefix}drakor [query] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _CONVERT_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}toimage [reply stick] 
+ ┃╠ ${prefix}sticker [reply img | gif] 
+ ┃╠ ${prefix}take [reply img | gif | stik] 
+ ┃╠ ${prefix}smeme [reply img] 
+ ┃╠ ${prefix}smeme2 [reply img *text | text*]
+ ┃╠ ${prefix}emoji [emoji] 
+ ┃╠ ${prefix}tovideo [reply img] 
+ ┃╠ ${prefix}togif [reply stick] 
+ ┃╠ ${prefix}tourl [reply img] 
+ ┃╠ ${prefix}tovn [reply aud] 
+ ┃╠ ${prefix}tomp3 [reply vn] 
+ ┃╠ ${prefix}toaudio [reply vid] 
+ ┃╠ ${prefix}ebinary [reply txt] 
+ ┃╠ ${prefix}dbinary [reply txt] 
+ ┃╠ ${prefix}tinyurl [link] 
+ ┃╠ ${prefix}styletext [text] 
+ ┃╠ ${prefix}volume [reply aud] 
+ ┃╠ ${prefix}tempo [reply aud] 
+ ┃╠ ${prefix}bass [reply aud] 
+ ┃╠ ${prefix}blown [reply aud] 
+ ┃╠ ${prefix}deep [reply aud] 
+ ┃╠ ${prefix}earrape [reply aud] 
+ ┃╠ ${prefix}fast [reply aud] 
+ ┃╠ ${prefix}fat [reply aud] 
+ ┃╠ ${prefix}nightcore [reply aud] 
+ ┃╠ ${prefix}reverse [reply aud] 
+ ┃╠ ${prefix}robot [reply aud] 
+ ┃╠ ${prefix}slow [reply aud] 
+ ┃╠ ${prefix}squirrel [reply aud] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _IMG EFFECT_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}wanted [reply img]
+ ┃╠ ${prefix}blur [reply img]
+ ┃╠ ${prefix}framed [reply img]
+ ┃╠ ${prefix}gayeffect [reply img]
+ ┃╠ ${prefix}imagesketch [reply img]
+ ┃╠ ${prefix}invert [reply img]
+ ┃╠ ${prefix}burn [reply img]
+ ┃╠ ${prefix}triggeredwebp [reply img]
+ ┃╠ ${prefix}shit [reply img]
+ ┃╠ ${prefix}rip [reply img]
+ ┃╠ ${prefix}jail [reply img]
+ ┃╠ ${prefix}beautifuleffect [reply img]
+ ┃╠ ${prefix}deleteeffect [reply img]
+ ┃╠ ${prefix}pixelate [reply img]
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _RANDOM IMG_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}coffee 
+ ┃╠ ${prefix}woof 
+ ┃╠ ${prefix}meow 
+ ┃╠ ${prefix}lizard 
+ ┃╠ ${prefix}wallneon 
+ ┃╠ ${prefix}wallpubg 
+ ┃╠ ${prefix}wallml 
+ ┃╠ ${prefix}wallrandom 
+ ┃╠ ${prefix}wallcode 
+ ┃╠ ${prefix}animewall [query] 
+ ┃╠ ${prefix}animewall2 [query] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _EMOTE_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}instagramemoji 
+ ┃╠ ${prefix}facebookemoji 
+ ┃╠ ${prefix}iphoneemoji 
+ ┃╠ ${prefix}samsungemoji 
+ ┃╠ ${prefix}joyemoji 
+ ┃╠ ${prefix}skypeemoji 
+ ┃╠ ${prefix}twitteremoji 
+ ┃╠ ${prefix}whatsappemoji 
+ ┃╠ ${prefix}microsoftemoji 
+ ┃╠ ${prefix}googleemoji 
+ ┃╠ ${prefix}pediaemoji 
+ ┃╠ ${prefix}microsoftemoji 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _ANIME_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}naruto 
+ ┃╠ ${prefix}yaoi 
+ ┃╠ ${prefix}neko2 
+ ┃╠ ${prefix}waifu 
+ ┃╠ ${prefix}waifu2 
+ ┃╠ ${prefix}awoo2 
+ ┃╠ ${prefix}shinobu 
+ ┃╠ ${prefix}waifu3 
+ ┃╠ ${prefix}foxgirl 
+ ┃╠ ${prefix}megumin2 
+ ┃╠ ${prefix}loli 
+ ┃╠ ${prefix}8ball 
+ ┃╠ ${prefix}animenom 
+ ┃╠ ${prefix}goose 
+ ┃╠ ${prefix}avatar 
+ ┃╠ ${prefix}tickle 
+ ┃╠ ${prefix}gecg 
+ ┃╠ ${prefix}feed 
+ ┃╠ ${prefix}animeslap 
+ ┃╠ ${prefix}animespank 
+ ┃╠ ${prefix}animepat 
+ ┃╠ ${prefix}animeneko 
+ ┃╠ ${prefix}animekiss 
+ ┃╠ ${prefix}animewlp 
+ ┃╠ ${prefix}animecuddle 
+ ┃╠ ${prefix}animecry 
+ ┃╠ ${prefix}animekill 
+ ┃╠ ${prefix}animelick 
+ ┃╠ ${prefix}animebite 
+ ┃╠ ${prefix}animeyeet 
+ ┃╠ ${prefix}animebully 
+ ┃╠ ${prefix}animebonk 
+ ┃╠ ${prefix}animewink 
+ ┃╠ ${prefix}animepoke 
+ ┃╠ ${prefix}animesmile 
+ ┃╠ ${prefix}animewave 
+ ┃╠ ${prefix}animeawoo 
+ ┃╠ ${prefix}animeblush 
+ ┃╠ ${prefix}animesmug 
+ ┃╠ ${prefix}animeglomp 
+ ┃╠ ${prefix}animehappy 
+ ┃╠ ${prefix}animedance 
+ ┃╠ ${prefix}animecringe 
+ ┃╠ ${prefix}animehighfive 
+ ┃╠ ${prefix}animehandhold 
+ ┃╠ ${prefix}animemegumin 
+ ┃╠ ${prefix}smug2 
+ ┃╠ ${prefix}couplepp 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _STICKER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}patrick 
+ ┃╠ ${prefix}emoji (fitur ini tidak tersedia)
+ ┃╠ ${prefix}emojimix 
+ ┃╠ ${prefix}attp [text]
+ ┃╠ ${prefix}ttp [text]
+ ┃╠ ${prefix}doge 
+ ┃╠ ${prefix}lovesticker 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _ANIME STICKER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}loli 
+ ┃╠ ${prefix}bully 
+ ┃╠ ${prefix}cuddle 
+ ┃╠ ${prefix}cry 
+ ┃╠ ${prefix}hug 
+ ┃╠ ${prefix}awoo 
+ ┃╠ ${prefix}kiss 
+ ┃╠ ${prefix}lick 
+ ┃╠ ${prefix}pat 
+ ┃╠ ${prefix}smug 
+ ┃╠ ${prefix}bonk 
+ ┃╠ ${prefix}yeet 
+ ┃╠ ${prefix}blush 
+ ┃╠ ${prefix}smile 
+ ┃╠ ${prefix}wave 
+ ┃╠ ${prefix}highfive 
+ ┃╠ ${prefix}handhold 
+ ┃╠ ${prefix}nom 
+ ┃╠ ${prefix}glomp 
+ ┃╠ ${prefix}bite 
+ ┃╠ ${prefix}slap 
+ ┃╠ ${prefix}kill 
+ ┃╠ ${prefix}happy 
+ ┃╠ ${prefix}wink 
+ ┃╠ ${prefix}poke 
+ ┃╠ ${prefix}dance 
+ ┃╠ ${prefix}cringe 
+ ┃╠ ${prefix}neko 
+ ┃╠ ${prefix}gura 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _NSFW_ 」━━⭓ 
+ ┃╔═══════✪
+ ┃╠ ${prefix}hentaivideo 
+ ┃╠ ${prefix}yuri (error)
+ ┃╠ ${prefix}masturbation (error)
+ ┃╠ ${prefix}thighs (error)
+ ┃╠ ${prefix}pussy (error)
+ ┃╠ ${prefix}panties (error)
+ ┃╠ ${prefix}orgy (error)
+ ┃╠ ${prefix}ahegao (error)
+ ┃╠ ${prefix}ass (error)
+ ┃╠ ${prefix}bdsm (error)
+ ┃╠ ${prefix}blowjob (error)
+ ┃╠ ${prefix}cuckold (error)
+ ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}gasm 
+ ┃╠ ${prefix}cum (error)
+ ┃╠ ${prefix}femdom (error)
+ ┃╠ ${prefix}foot (error)
+ ┃╠ ${prefix}gangbang (error)
+ ┃╠ ${prefix}glasses (error)
+ ┃╠ ${prefix}jahy (error)
+ ┃╠ ${prefix}trap 
+ ┃╠ ${prefix}blowjobgif 
+ ┃╠ ${prefix}spank 
+ ┃╠ ${prefix}hneko 
+ ┃╠ ${prefix}nwaifu 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _FUN_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}kerangajaib [text]
+ ┃╠ ${prefix}how [text] 
+ ┃╠ ${prefix}when [text] 
+ ┃╠ ${prefix}where [text] 
+ ┃╠ ${prefix}is [text] 
+ ┃╠ ${prefix}what [text] 
+ ┃╠ ${prefix}can [text] 
+ ┃╠ ${prefix}rate [text] 
+ ┃╠ ${prefix}wangy [text] 
+ ┃╠ ${prefix}beautifulcheck [tag] 
+ ┃╠ ${prefix}awesomecheck [tag] 
+ ┃╠ ${prefix}prettycheck [tag] 
+ ┃╠ ${prefix}lesbiancheck [tag] 
+ ┃╠ ${prefix}gaycheck [tag] 
+ ┃╠ ${prefix}cutecheck [tag] 
+ ┃╠ ${prefix}uglycheck [tag] 
+ ┃╠ ${prefix}hornycheck [tag] 
+ ┃╠ ${prefix}charactercheck [tag] 
+ ┃╠ ${prefix}lovelycheck [tag] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _SOUND_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}sound1
+ ┃╠ ||
+ ┃╠ ${prefix}sound161
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _GAME_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}family100
+ ┃╠ ${prefix}truth 
+ ┃╠ ${prefix}dare 
+ ┃╠ ${prefix}tictactoe 
+ ┃╠ ${prefix}delttt 
+ ┃╠ ${prefix}guess [option] 
+ ┃╠ ${prefix}math [mode] 
+ ┃╠ ${prefix}suitpvp [tag] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _TOOL_ 」━━⭓
+ ┃╔═✪ _en = inggris_ / _in = indonesia_
+ ┃╠ ~${prefix}translate en [text]~ (kedaluwarsa)
+ ┃╠ ${prefix}fliptext [text] 
+ ┃╠ ${prefix}toletter [number] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _DATABASE BOT_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}setcmd
+ ┃╠ ${prefix}listcmd 
+ ┃╠ ${prefix}delcmd 
+ ┃╠ ${prefix}lockcmd 
+ ┃╠ ${prefix}addmsg 
+ ┃╠ ${prefix}listmsg 
+ ┃╠ ${prefix}getmsg 
+ ┃╠ ${prefix}delmsg
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _INDO_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}darkjoke 
+ ┃╠ ${prefix}quotes 
+ ┃╠ ${prefix}animequotes 
+ ┃╠ ${prefix}jalantikus-meme 
+ ┃╠ ${prefix}merdeka-news  
+ ┃╠ ${prefix}kontan-news  
+ ┃╠ ${prefix}cnbc-news  
+ ┃╠ ${prefix}tribun-news  
+ ┃╠ ${prefix}indozone-news  
+ ┃╠ ${prefix}kompas-news  
+ ┃╠ ${prefix}detik-news  
+ ┃╠ ${prefix}daily-news  
+ ┃╠ ${prefix}inews-news  
+ ┃╠ ${prefix}okezone-news  
+ ┃╠ ${prefix}sindo-news  
+ ┃╠ ${prefix}tempo-news  
+ ┃╠ ${prefix}antara-news  
+ ┃╠ ${prefix}cnn-news  
+ ┃╠ ${prefix}fajar-news  
+ ┃╠ ${prefix}cinemaschedule 
+ ┃╠ ${prefix}wiki 
+ ┃╠ ${prefix}covidindo 
+ ┃╠ ${prefix}earthquake 
+ ┃╠ ${prefix}tvschedule 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _INDO HSCOPE_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}nomorhoki 
+ ┃╠ ${prefix}artimimpi  
+ ┃╠ ${prefix}artinama  
+ ┃╠ ${prefix}ramaljodoh  
+ ┃╠ ${prefix}ramaljodohbali  
+ ┃╠ ${prefix}suamiistri  
+ ┃╠ ${prefix}ramalcinta  
+ ┃╠ ${prefix}cocoknama  
+ ┃╠ ${prefix}pasangan  
+ ┃╠ ${prefix}jadiannikah  
+ ┃╠ ${prefix}sifatusaha  
+ ┃╠ ${prefix}rezeki  
+ ┃╠ ${prefix}pekerjaan  
+ ┃╠ ${prefix}nasib  
+ ┃╠ ${prefix}penyakit  
+ ┃╠ ${prefix}tarot  
+ ┃╠ ${prefix}fengshui  
+ ┃╠ ${prefix}haribaik  
+ ┃╠ ${prefix}harisangar  
+ ┃╠ ${prefix}harisial 
+ ┃╠ ${prefix}nagahari 
+ ┃╠ ${prefix}arahrezeki 
+ ┃╠ ${prefix}peruntungan  
+ ┃╠ ${prefix}weton  
+ ┃╠ ${prefix}karakter 
+ ┃╠ ${prefix}keberuntungan 
+ ┃╠ ${prefix}memancing 
+ ┃╠ ${prefix}masasubur 
+ ┃╠ ${prefix}zodiak 
+ ┃╠ ${prefix}shio 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _OTHER_ 」━━⭓
+ ┃╔═══════✪
+ ┃╠ ${prefix}afk 
+ ┃╠ ${prefix}readmore [text] 
+ ┃╠ ${prefix}toviewonce 
+ ┃╠ ${prefix}getpp
+ ┃╠ ${prefix}chatinfo 
+ ┃╠ ${prefix}alive 
+ ┃╠ ${prefix}script 
+ ┃╠ ${prefix}speedtest 
+ ┃╠ ${prefix}ping 
+ ┃╠ ${prefix}owner 
+ ┃╠ ${prefix}menu 
+ ┃╠ ${prefix}delete 
+ ┃╠ ${prefix}chatinfo 
+ ┃╠ ${prefix}quoted 
+ ┃╠ ${prefix}listpc 
+ ┃╠ ${prefix}listgc 
+ ┃╠ ${prefix}donate 
+ ┃╠ ${prefix}request 
+ ┃╠ ${prefix}report [bug] 
+ ┃╚═════════════✪
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+ 
+//////////////////contoh  [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}}
+ let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `sewa`, buttonText: {displayText: 'Sewa Bot'}, type: 1},
+ {buttonId: `donatew`, buttonText: {displayText: 'Donasi'}, type: 1},
+ ] 
+let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/allmenu.jpg')
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: teks, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+	largeThumb: true,
+title: `Jasjus ID 🔰`, 
+ body: `Bot by Kenneth ID`, 
+////// mediaType: 4, 
+ thumbnail: pics, 
+ url: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny`
+///////sourceUrl: `${websitex}`, 
+ //////// mediaUrl: `${websitex}` 
+}} 
+}  
+const klao = await XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+await klao
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+ }
+         break
                     
-                    // SEWA BOT
-                    case 'sewa': {
-                    if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
- if (m.message && msgFilter.addFilter(from)) return
- let sections = [{
-								"title": "List Harga",
-								"rows": [
-									{
-										"title": "[SILVER] Sewa 14 Hari",
-										"description": "Rp5.000",
-										"rowId": `${prefix}limaribu`
-									}, {
-										"title": "[PLATINUM] Sewa 30 Hari (Perpanjangan Rp5.000)",
-										"description": "Rp10.000",
-										"rowId": `${prefix}puluhribu`
-									}, {
-										"title": "[PREMIUM] Permanen",
-										"description": "Rp50.000",
-										"rowId": `${prefix}limapuluhribu`
-									}
-								]
-							}
-						] 
-  const sendm =  XeonBotInc.sendMessage(
-      m.chat, 
-      {
-       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
-       footer: `${botname}`,
-       title: "*SEWA BOT*",
-       buttonText: "KLIK DISINI",
-       sections
-      }, { quoted : m })
-      }
-break
-      case 'limaribu': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let sections = [{
-								"title": "Pilih Pembayaran Yang Anda Inginkan",
-								"rows": [
-									{
-										"title": "ShopeePay",
-										"rowId": `${prefix}limaribushopee`
-									}, {
-										"title": "DANA",
-										"rowId": `${prefix}limaribudana`
-									}, {
-										"title": "Pulsa Indosat",
-										"rowId": `${prefix}limaribupulsa`
-									}, {
-										"title": "OVO",
-										"rowId": `${prefix}limaribuovo`
-									}, {
-										"title": "GoPay",
-										"rowId": `${prefix}limaribugopay`
-										}
-								]}, { "title": "Metode Pembayaran Lain",
-								"rows": [
-								{
-										"title": "BNI",
-										"rowId": `${prefix}limaribubni`
-									}, {
-										"title": "Tulis Sendiri 📝",
-										"rowId": `${prefix}limaribusendiri`
-				                     } ]
-								
-							}
-						] 
-  const sendm =  XeonBotInc.sendMessage(
-      m.chat, 
-      {
-       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
-       footer: `${botname}`,
-       title: "*METODE PEMBAYARAN*",
-       buttonText: "KLIK DISINI",
-       sections
-      }, { quoted : m })
-      }
-      break
-      case 'puluhribu': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return  
-let sections = [{
-								"title": "Pilih Pembayaran Yang Anda Inginkan",
-								"rows": [
-									{
-										"title": "ShopeePay",
-										"rowId": `${prefix}puluhribushopee`
-									}, {
-										"title": "DANA",
-										"rowId": `${prefix}puluhribudana`
-									}, {
-										"title": "Pulsa Indosat",
-										"rowId": `${prefix}puluhribupulsa`
-								    }, {
-										"title": "OVO",
-										"rowId": `${prefix}puluhribuovo`
-									}, {
-										"title": "GoPay",
-										"rowId": `${prefix}puluhribugopay`
-										}
-								]}, { "title": "Metode Pembayaran Lain",
-								"rows": [
-								{
-										"title": "BNI",
-										"rowId": `${prefix}puluhribubni`
-									}, {
-										"title": "Tulis Sendiri 📝",
-										"rowId": `${prefix}puluhribusendiri`
-									}]
-							}
-						] 
-  const sendm =  XeonBotInc.sendMessage(
-      m.chat, 
-      {
-       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
-       footer: `${botname}`,
-       title: "*PEMBAYARAN*",
-       buttonText: "KLIK DISINI",
-       sections
-      }, { quoted : m })
-      }
-      break
-      case 'limapuluhribu': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let sections = [{
-								"title": "Pilih Pembayaran Yang Anda Inginkan",
-								"rows": [
-									{
-										"title": "ShopeePay",
-										"rowId": `${prefix}limapuluhribushopee`
-									}, {
-										"title": "DANA",
-										"rowId": `${prefix}limapuluhribudana`
-									}, {
-										"title": "Pulsa Indosat",
-										"rowId": `${prefix}limapuluhribupulsa`
-									}, {
-										"title": "OVO",
-										"rowId": `${prefix}limapuluhribuovo`
-									}, {
-										"title": "GoPay",
-										"rowId": `${prefix}limapuluhribugopay`
-										}
-								]}, { "title": "Metode Pembayaran Lain",
-								"rows": [
-								{
-										"title": "BNI",
-										"rowId": `${prefix}limapuluhribubni`
-									}, {
-										"title": "Tulis Sendiri 📝",
-										"rowId": `${prefix}limapuluhribusendiri`
-									}]
-								
-							}
-						] 
-  const sendm =  XeonBotInc.sendMessage(
-      m.chat, 
-      {
-       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
-       footer: `${botname}`,
-       title: "*PEMBAYARAN*",
-       buttonText: "KLIK DISINI",
-       sections
-      }, { quoted : m })
-      }
-      break
-      
-      //            SHOPEEE 
-      
-      case 'limaribushopee': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
- let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp5.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'puluhribushopee': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke:\n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'limapuluhribushopee': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp50.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- 
- break
- 
- //        DANA
- 
- case 'limaribudana': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
- let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp5.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'puluhribudana': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *DANA*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke:\n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'limapuluhribudana': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
- let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *DANA*\nNominal: *Rp50.000*\n\nKirim ke:\n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- 
-//         PULSA
-
-case 'limaribupulsa': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp5.000*\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'puluhribupulsa': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'limapuluhribupulsa': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp50.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
-break
-
-//      OVO
-
-case 'limaribuovo': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *OVO*\nNominal: *Rp5.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'puluhribuovo': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *OVO*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln)\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'limapuluhribuovo': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *OVO*\nNominal: *Rp50.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
-break
-
-// GOPAY
-
-case 'limaribugopay': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *GoPay*\nNominal: *Rp5.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'puluhribugopay': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *GoPay*\nNominal: *Rp10.000*\n(Perpanjangan Rp5.000/bln) \n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'limapuluhribugopay': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *GoPay*\nNominal: *Rp50.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- 
-// BNI
-
-case 'limaribubni': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nMetode Pembayaran: *BNI*\nNominal: *Rp5.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'puluhribubni': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nMetode Pembayaran: *BNI*\nNominal: *Rp10.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- case 'limapuluhribubni': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
-let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nMetode Pembayaran: *BNI*\nNominal: *Rp50.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
- XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
- }
- break
- 
- // Tulis Sendiri
- case 'limaribusendiri': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
- if ('menfess'+m.chat in _menfess) {
-                    reply('Sesi belum selesai')
-                    reply(false)}
-                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *14 hari*\nNominal: *Rp5.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
-                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
-                let random = anu[Math.floor(Math.random() * anu.length)]
-                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
-                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
-                _menfess['menfess'+m.chat] = {
-                    id: 'menfess'+m.chat,
-                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
-                    ...random,
-                    terjawab: Array.from(random.jawaban, () => false),
-                    hadiah: 6,
-                }
-                
-            }
-            break
-            case 'puluhribusendiri': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
- if ('menfess'+m.chat in _menfess) {
-                    reply('Sesi belum selesai')
-                    reply(false)}
-                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *30 hari*\nNominal: *Rp10.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
-                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
-                let random = anu[Math.floor(Math.random() * anu.length)]
-                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
-                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
-                _menfess['menfess'+m.chat] = {
-                    id: 'menfess'+m.chat,
-                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
-                    ...random,
-                    terjawab: Array.from(random.jawaban, () => false),
-                    hadiah: 6,
-                }
-                
-            }
-            break
-            case 'limapuluhribusendiri': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
- if ('menfess'+m.chat in _menfess) {
-                    reply('Sesi belum selesai')
-                    reply(false)}
-                    let caption = `Nama: *${pushname}*\nPeriode Sewa Bot: *Permanen*\nNominal: *Rp50.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
-                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
-                let random = anu[Math.floor(Math.random() * anu.length)]
-                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
-                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
-                _menfess['menfess'+m.chat] = {
-                    id: 'menfess'+m.chat,
-                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
-                    ...random,
-                    terjawab: Array.from(random.jawaban, () => false),
-                    hadiah: 6,
-                }
-                
-            }
-            break
-
-// Akan Membayar
-case 'akanmembayar': {
-	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-   if (m.message && msgFilter.addFilter(from)) return
- let buttons = [{buttonId: `sudahmembayar`, buttonText: {displayText: 'Sudah Membayar'}, type: 1}]
- let caption = `Baik, kami tunggu yah! jika sudah silahkan chat 😊`
- XeonBotInc.sendMessage(m.chat, {text: caption})
- }
- break
- 
- // Sudah Membayar
- case 'sudahmembayar': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
- XeonBotInc.sendMessage(m.chat, {text: `Terima kasih, Owner akan cek status pembayaran Anda segera 😊`}, {quoted: m})
- }
- break
- 
- //     Nanti Saja
- case 'nantisaja': {
-      	if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return
-   if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(m.chat, {text: `Oke deh 👌`}, {quoted: m})
- }
-break
 if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return  
@@ -10436,33 +11849,7 @@ sourceUrl: "https://telegra.ph/file/f7b1d02ef576e4b19ab9b.jpg"
 XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
-case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': {
-		if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-cb = `🫥`
-bs = `😘`
-wk = `☝`
-kb = `🥰️`
-tb = `🥱`
-yk = `😎`
-ja = `🤨`
-ks = `😭`
-jd = `😠`
-ha = `🤔`
-je = `🗿`
-tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,je]
-dj = tos[Math.floor(Math.random() * (tos.length))]
-XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
-  if (m.isGroup) return
-	let buttons = [
-{buttonId: `sewa`, buttonText: {displayText: 'SEWA'}, type: 1}
-]
-caption = `Hai ${pushname}, bot disini 😊\nMau sewa bot?\n\n_silahkan klik tombol di bawah_`
-XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
 
-                     }
-                     
-                     break
   case 'startx': {
   	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -12897,97 +14284,7 @@ XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Virus Detected 」\`\`\`\n\n *$
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
-        break
-        //anti bug by kenneth
-       case 'butto': case 'stikto': case 'catalogbug': case 'bugdoc':  case 'allbug': case 'bugloc': case 'bugvn': case 'bugkontak': case 'buglog': case 'bugtext': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
-case 'bugstik': case 'poll': case 'infinite': case 'gasinfinite': case 'infiniteto': case 'buginvite': case 'mintabokep': case 'unlitroli': case 'troli': case 'troli2': 
-case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
-case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadimonyet': case 'jadibug': case 'jadibug1':
-case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
-case 'scatalog': case 'momi': case 'gasinfinite': case 'gasmomo': case 'momo': case 'momoto': case 'buginvite': case 'santet': case 'santetto': case 'gassantet': case 'santet1': case 'santet2': case 'santet3': 
-case 'santet4': case 'santet5': case 'santet10': case 'santet15': case 'slayer1': case 'slayer2': case 'slayer3': 
-case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15': case 'virtex1': case 'virtex2': case 'virtex4': 
-case 'virtex5': case 'virtex10': case 'virtex15': case 'docu': case 'buglokal': case 'gaskal': case 'gasken': 
-case 'jobugvn': case 'jomomo': case 'jomomo2': case 'jomomo3': case 'jomomo4': case 'jomomo5': case 'jomomo6':
-case 'jomomo7': case 'jomomo8': case 'jomomo9': case 'jomomo10': case 'jomomo11': case 'jomomo12': 
- case 'johello': case 'jopay': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': case 'jodocu2':
-case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': case 'jobugpc': case 'jobug': case 'jobug1': case 'jobug2': case 'jobug3': 
-case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
-case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugstikv2': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
-case 'jobuginvite': case 'jogasbug': case 'jogasbug1': case 'jogasbug2': case 'jogasbug3': case 'jogasbug4': case 'jogasbug5': case 'jogasbug6': case 'jogasbug7': case 'jogasbug8': case 'jogasbug9': case 'jogasbug10': case 'jogasbug11': case 'jogasbug12': case 'jogasbug13': case 'jogasbug14': case 'jogasbug15': 
-case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
-case 'jobuttonbro': case 'jolokas': case 'jopay': case 'joness': case 'joteluh': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
-case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
-case 'catalog15': case 'btroli': case 'brutal': case 'unlijones': case 'unlijoness': 
-case 'rizbugvn': case 'rizmomo': case 'rizmomo2': case 'rizmomo3': case 'rizmomo4': case 'rizmomo5': case 'rizmomo6':
-case 'rizmomo7': case 'rizmomo8': case 'rizmomo9': case 'rizmomo10': case 'rizmomo11': case 'rizmomo12': 
- case 'rizhello': case 'rizpay': case 'rizsantet': case 'rizinfinite': case 'rizslebew': case 'riztengkorak': case 'rizdocu2':
-case 'rizdocu': case 'riztrol': case 'riztroli': case 'riztroliv2': case 'zhymomo': case 'rizbugpc': case 'rizbug': case 'rizbug1': case 'rizbug2': case 'rizbug3': 
-case 'rizbug4': case 'rizbug5': case 'rizbug6': case 'rizbug7': case 'rizbug8': case 'rizbug9': case 'rizbug10': case 'rizbug11':
-case 'rizbug12': case 'rizbug15': case 'rizbuglist': case 'rizbugstik': case 'rizbugstikv2': case 'rizbugloc': case 'rizbugdoc': case 'rizliveloc': case 'rizlivelocv2': 
-case 'rizbuginvite': case 'riztagwae': case 'rizcatalog': case 'rizcatalogv2': case 'rizthelima': case 'crashcok': case 'rizbutton': case 'rizbugbutton':
-case 'rizbuttonbro': case 'rizlokas': case 'rizness': case 'riztagwae': 
-case 'foxinfinity': case 'foxdoc': case 'lokas': case 'polvot': {
-	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-	if (!isBotAdmins) return 
-XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
-await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-}
-break
-//anti bug kontol v2
-case 'b-cuy': case 'b-haicok': case 'b-ngntd': case 'b-anjay': case 'b-cokjancok': case 'b-ndasmu': case 'b-ngutang': case 'b-dokumen': 
-case 'b-omaga': case 'b-omaga1': case 'b-omaga2': case 'b-omaga3': case 'b-omaga4': case 'b-omaga5': case 'b-omaga6': case 'b-omaga7': case 'b-omaga8': case 'b-omaga9': case 'b-omaga10': case 'b-omaga11': case 'b-omaga12': 
-case 'b-bugpc': case 'b-ngontol': case 'b-ngontolcok': case 'b-ngntolpler': case 'b-bugvn': case 'b-lokasi': case 'b-bugdoc': case 'b-bugkon': case 'b-bugkon2': case 'b-kontak': case 'b-liveloc': case 'b-livelocv2': case 'b-anjeng': case 'b-buglist': case 'b-tag': 
-case 'b-catalog': case 'b-catalogv2': case 'b-bugstik': case 'b-limo': case 'b-sendvir': case 'b-bugbutton': case 'b-bugbutton2': case 'b-bugbutton3': case 'jadibug-gambar': case 'jadibug-dokumen': {
-	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-	if (!isBotAdmins) return 
-XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
-await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-}
-break
-//antibug kontol v3
-case 'ted': {
-	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!??\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-	if (!isBotAdmins) return 
-XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
-await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-}
-break
-case 'kintil': case 'kuntul': {
-	 if (!isBotAdmins) return
-bvl = `🤔`
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
-let caption = `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* 🤔`
-let fgh = `*Group Mode*`
-await sleep(700)
-                let buttons = [
-                        { buttonId: 'groupmode open', buttonText: { displayText: 'Open' }, type: 1 }
-                        
-                    ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh, m)
-
-             
-            
-///////////await XeonBotInc.updateBlockStatus(kice, "block")
-}
-break
-//anti jadi bug
-case 'jaditroli': case 'jadipeler': case 'jadilokas': case 'jadimonyet': case 'jadibugbutton': 
-case 'tobugstik': case 'jadibugstik': case 'jadibugvn': case 'jadibugdoc': case 'jadijoness':
-case 'jadingeness': case 'jadidarkness': case 'jadikintil': case 'jadikintil': case 'jadikuntul': 
-case 'jadikontol': case 'jadibugloc': case 'jadiliveloc': case 'jadicatalog': case 'jadibuttonimg': {
-if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
-XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
-await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-}
+ 
  break
  case 'antilink': case 'antilink': {
 if (isBan) return reply(mess.ban)	 			
@@ -12996,32 +14293,6 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
-}
- break
- case 'jasjus': {
- 	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
-bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
-wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
-kb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus4.webp`)
-tb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus5.webp`)
-yk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus6.webp`)
-ja = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus7.webp`)
-tos = [cb,bs,wk,kb,tb,yk,ja]
-dj = tos[Math.floor(Math.random() * (tos.length))]
-if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
-}
- break
- case 'cobaxxx': {
- if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
-dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
-tiga = `https://apimeme.com/meme?background=${satu}&top=Goodbye&bottom=${pushname}`
- memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*TypeError*: ${jsonformat(err)}`)) 
- await fs.unlinkSync(memek)
 }
  break
  case 'menfessxxx': {
