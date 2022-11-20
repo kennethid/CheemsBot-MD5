@@ -143,7 +143,7 @@ let docs = pickRandom(documents)
 
                    XeonBotInc.ev.on('group-participants.update', async (anu) => { 
          console.log(anu) 
-         /////////// if (!wlcm.includes(anu.id)) return //remove forwad slashes to make it welcome on off
+        ///////// if (!wlcm.includes(anu.id)) return //remove forwad slashes to make it welcome on off
          try { 
              let metadata = await XeonBotInc.groupMetadata(anu.id) 
              let participants = anu.participants 
@@ -152,7 +152,7 @@ let docs = pickRandom(documents)
                  try { 
                      ppuser = await XeonBotInc.profilePictureUrl(num, 'image') 
                  } catch { 
-                     ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg' 
+                     ppuser = await XeonBotInc.profilePictureUrl(anu.id, 'image') 
                  } 
   
                  // Get Profile Picture Group 
@@ -203,7 +203,7 @@ let docs = pickRandom(documents)
  headerType: 4, 
  contextInfo:{externalAdReply:{ 
  title: `${metadata.subject}`, 
- body: `Don't forget to read group description`, 
+ body: `Jangan lupa baca deskripsi`, 
  mediaType:2, 
  thumbnail: XeonWlcm, 
  sourceUrl: ``, 
