@@ -2005,7 +2005,7 @@ case 'akanmembayar': {
  case 'pratinjaufitur': {
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return
+	if (m.isGroup) return
 	if (m.message && msgFilter.addFilter(from)) return
 	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
 var unicorn = await getBuffer(picak+'All Menu')
