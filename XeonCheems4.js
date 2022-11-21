@@ -1532,7 +1532,7 @@ if (m.message && msgFilter.addFilter(from)) return
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
  break
-	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': {
+	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 cb = `🫥`
@@ -1550,13 +1550,2156 @@ tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,je]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
   if (m.isGroup) return
-	let buttons = [
-{buttonId: `sewa`, buttonText: {displayText: 'SEWA'}, type: 1}
-]
-caption = `Hai ${pushname}, bot disini 😊\nMau sewa bot?\n\n_silahkan klik tombol di bawah_`
-XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
-
-                     }
+	let sections = [{
+								"title": "VOUCHER GAMES",
+								"rows": [
+									{
+										"title": "PUBG Mobile",
+										"description": "Mulai dari 35 UC - 2.500 UC",
+										"rowId": `${prefix}pubg1`
+									}, {
+										"title": "Free Fire",
+										"description": "Mulai dari 5 DM - 7.290 DM",
+										"rowId": `${prefix}freefire`
+									}, {
+										"title": "Mobile Legends",
+										"description": "Mulai dari 5 DM - 3.688 DM",
+										"rowId": `${prefix}mobilelegend`
+									}, {
+										"title": "Point Blank - Zapetto (Coming Soon)",
+										"description": "Mulai dari 1.200 Cash - 60.000 Cash",
+										"rowId": `${prefix}pointblank`
+									}, {
+										"title": "Lords Mobile (Coming Soon)",
+										"description": "Mulai dari 123 DM - 246 DM",
+										"rowId": `${prefix}lordsmobile`
+									}, {
+										"title": "SUPERSUS (Coming Soon)",
+										"description": "Mulai dari 100 GS - 5.600 GS",
+										"rowId": `${prefix}supersus`
+									},
+								]
+							}, { 
+								"title": "Sewa Bot Whatsapp Digrup Anda",
+								"rows": [
+									{
+										"title": "Bot Whatsapp",
+										"description": "Berbagai macam fitur",
+										"rowId": `${prefix}sewa`
+									}
+									]
+									}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
+       footer: `${botname}`,
+       title: "*KENNETH SHOP*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break 
+      
+      // PUBG
+      
+      case 'pubg1': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      	let sections = [{
+								"title": "Voucher | PUBG",
+								"rows": [
+									{
+										"title": "35 UC",
+										"description": "Rp9.000",
+										"rowId": `${prefix}tigalimapubg`
+									}, {
+										"title": "50 UC",
+										"description": "Rp15.000",
+										"rowId": `${prefix}limanolpubg`
+									}, {
+										"title": "70 UC",
+										"description": "Rp20.000",
+										"rowId": `${prefix}tujuhnolpubg`
+									}, {
+										"title": "100 UC",
+										"description": "Rp25.000",
+										"rowId": `${prefix}satunolnolpubg`
+									}, {
+										"title": "125 UC",
+										"description": "Rp30.000",
+										"rowId": `${prefix}satudualimapubg`
+									}, {
+										"title": "150 UC",
+										"description": "Rp35.000",
+										"rowId": `${prefix}satulimanolpubg`
+									}, {
+										"title": "210 UC",
+										"description": "Rp45.000",
+										"rowId": `${prefix}duasatunolpubg`
+									}, {
+										"title": "250 UC",
+										"description": "Rp50.000",
+										"rowId": `${prefix}dualimanolpubg`
+									}, {
+										"title": "500 UC",
+										"description": "Rp95.000",
+										"rowId": `${prefix}limanolnolpubg`
+									}, {
+										"title": "700 UC",
+										"description": "Rp140.000",
+										"rowId": `${prefix}tujuhnolnolpubg`
+									}, {
+										"title": "1250 UC",
+										"description": "Rp255.000",
+										"rowId": `${prefix}satudualimanolpubg`
+									}, {
+										"title": "1750 UC",
+										"description": "Rp340.000",
+										"rowId": `${prefix}satutujuhlimanolpubg`
+									}, {
+										"title": "2500 UC",
+										"description": "Rp500.000",
+										"rowId": `${prefix}dualimanolnolpubg`
+									}
+								]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
+       footer: `${botname}`,
+       title: "*VOUCHER PUBG*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      // FREE FIRE
+      
+      case 'freefire': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      	let sections = [{
+								"title": "Voucher | Free Fire",
+								"rows": [
+									{
+										"title": "5 Diamond",
+										"description": "Rp1.000",
+										"rowId": `${prefix}limaff`
+									}, {
+										"title": "10 Diamond",
+										"description": "Rp2.000",
+										"rowId": `${prefix}satunolff`
+									}, {
+										"title": "15 Diamond",
+										"description": "Rp2.600",
+										"rowId": `${prefix}satulimaff`
+									}, {
+										"title": "20 Diamond",
+										"description": "Rp3.000",
+										"rowId": `${prefix}duanolff`
+									}, {
+										"title": "25 Diamond",
+										"description": "Rp3.600",
+										"rowId": `${prefix}dualimaff`
+									}, {
+										"title": "30 Diamond",
+										"description": "Rp4.500",
+										"rowId": `${prefix}tiganolff`
+									}, {
+										"title": "40 Diamond",
+										"description": "Rp5.600",
+										"rowId": `${prefix}empatnolff`
+									}, {
+										"title": "50 Diamond (Super)",
+										"description": "Rp6.600",
+										"rowId": `${prefix}limanolffsp`
+									}, {
+										"title": "50 Diamond",
+										"description": "Rp6.700",
+										"rowId": `${prefix}limanolff`
+									}, {
+										"title": "55 Diamond",
+										"description": "Rp7.500",
+										"rowId": `${prefix}limalimaff`
+									}, {
+										"title": "60 Diamond",
+										"description": "Rp8.500",
+										"rowId": `${prefix}enamnolff`
+									}, {
+										"title": "70 Diamond (Super)",
+										"description": "Rp8.900",
+										"rowId": `${prefix}tujuhnolffsp`
+									}, {
+										"title": "70 Diamond",
+										"description": "Rp9.100",
+										"rowId": `${prefix}tujuhnolff`
+									}, {
+										"title": "75 Diamond",
+										"description": "Rp9.900",
+										"rowId": `${prefix}tujuhlimaff`
+									}, {
+										"title": "80 Diamond",
+										"description": "Rp10.700",
+										"rowId": `${prefix}delapannolff`
+									}, {
+										"title": "90 Diamond",
+										"description": "Rp11.800",
+										"rowId": `${prefix}sembilannolff`
+									}, {
+										"title": "95 Diamond",
+										"description": "Rp12.700",
+										"rowId": `${prefix}sembilanlimaff`
+									}, {
+										"title": "100 Diamond (Super)",
+										"description": "Rp12.900",
+										"rowId": `${prefix}satunolnolffsp`
+									}, {
+										"title": "100 Diamond",
+										"description": "Rp13.100",
+										"rowId": `${prefix}satunolnolff`
+									}, {
+										"title": "130 Diamond",
+										"description": "Rp17.500",
+										"rowId": `${prefix}satutiganolff`
+									}, {
+										"title": "150 Diamond",
+										"description": "Rp20.000",
+										"rowId": `${prefix}satulimanolff`
+									}, {
+										"title": "180 Diamond",
+										"description": "Rp24.000",
+										"rowId": `${prefix}satudelapannolff`
+									}, {
+										"title": "200 Diamond",
+										"description": "Rp26.500",
+										"rowId": `${prefix}duanolnolff`
+									}, {
+										"title": "400 Diamond",
+										"description": "Rp52.000",
+										"rowId": `${prefix}empatnolnolff`
+									}, {
+										"title": "500 Diamond",
+										"description": "Rp64.000",
+										"rowId": `${prefix}limanolnolff`
+									}, {
+										"title": "720 Diamond (Super)",
+										"description": "Rp93.000",
+										"rowId": `${prefix}tujuhduanolffsp`
+									}, {
+										"title": "1000 Diamond",
+										"description": "Rp127.000",
+										"rowId": `${prefix}satunolnolnolff`
+									}, {
+										"title": "1200 Diamond",
+										"description": "Rp151.000",
+										"rowId": `${prefix}satuduanolnolff`
+									}, {
+										"title": "2000 Diamond",
+										"description": "Rp245.000",
+										"rowId": `${prefix}duanolnolnolff`
+									}, {
+										"title": "4000 Diamond",
+										"description": "Rp537.000",
+										"rowId": `${prefix}empatnolnolnolff`
+									}, {
+										"title": "7290 Diamond",
+										"description": "Rp977.000",
+										"rowId": `${prefix}tujuhduasembilannolff`
+									}
+								]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
+       footer: `${botname}`,
+       title: "*VOUCHER FREE FIRE*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      // MOBILE LEGEND
+      
+      case 'mobilelegend': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      	let sections = [{
+								"title": "Voucher | Mobile Legends",
+								"rows": [
+									{
+										"title": "5 Diamond",
+										"description": "Rp2.200",
+										"rowId": `${prefix}limaml`
+									}, {
+										"title": "12 Diamond",
+										"description": "Rp4.500",
+										"rowId": `${prefix}satuduaml`
+									}, {
+										"title": "17 Diamond",
+										"description": "Rp5.400",
+										"rowId": `${prefix}satutujuhml`
+									}, {
+										"title": "19 Diamond",
+										"description": "Rp6.700",
+										"rowId": `${prefix}satusembilanml`
+									}, {
+										"title": "28 Diamond",
+										"description": "Rp9.100",
+										"rowId": `${prefix}duadelapanml`
+									}, {
+										"title": "34 Diamond 🆕",
+										"description": "Rp10.100",
+										"rowId": `${prefix}tigaempatml`
+									}, {
+										"title": "36 Diamond",
+										"description": "Rp11.700",
+										"rowId": `${prefix}tigaenamml`
+									}, {
+										"title": "44 Diamond 🆕",
+										"description": "Rp13.800",
+										"rowId": `${prefix}empatempatml`
+									}, {
+										"title": "50 Diamond",
+										"description": "Rp14.100",
+										"rowId": `${prefix}limanolml`
+									}, {
+										"title": "59 Diamond",
+										"description": "Rp18.100",
+										"rowId": `${prefix}limasembilanml`
+									}, {
+										"title": "66 Diamond 🆕",
+										"description": "Rp18.700",
+										"rowId": `${prefix}enamenamml`
+									}, {
+										"title": "74 Diamond 🆕",
+										"description": "Rp20.800",
+										"rowId": `${prefix}tujuhempatml`
+									}, {
+										"title": "83 Diamond",
+										"description": "Rp22.800",
+										"rowId": `${prefix}delapantigaml`
+									}, {
+										"title": "85 Diamond",
+										"description": "Rp25.700",
+										"rowId": `${prefix}delapanlimaml`
+									}, {
+										"title": "184 Diamond 🆕",
+										"description": "Rp52.000",
+										"rowId": `${prefix}satudelapanempatml`
+									}, {
+										"title": "366 Diamond",
+										"description": "Rp100.000",
+										"rowId": `${prefix}tigaenamenamml`
+									}, {
+										"title": "758 Diamond",
+										"description": "Rp198.000",
+										"rowId": `${prefix}tujuhlimadelapanml`
+									}
+								]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Kualitas Produk terbaik, diamond langsung masuk dalam hitungan detik\n\n_klik tombol dibawah untuk memilih_`,
+       footer: `${botname}`,
+       title: "*VOUCHER MOBILE LEGENDS*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  35 PUBG PEMBAYARAN
+      case 'tigalimapubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}tigalimapubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}tigalimapubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}tigalimapubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}tigalimapubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}tigalimapubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}tigalimapubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}tigalimapubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  50 PUBG PEMBAYARAN
+      case 'limanolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}limanolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}limanolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}limanolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}limanolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}limanolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}limanolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}limanolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  70 PUBG PEMBAYARAN
+      case 'tujuhnolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}tujuhnolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}tujuhnolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}tujuhnolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}tujuhnolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}tujuhnolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}tujuhnolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}tujuhnolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  100 PUBG PEMBAYARAN
+      case 'satunolnolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}satunolnolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}satunolnolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}satunolnolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}satunolnolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}satunolnolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}satunolnolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}satunolnolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  125 PUBG PEMBAYARAN
+      case 'satudualimapubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}satudualimapubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}satudualimapubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}satudualimapubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}satudualimapubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}satudualimapubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}satudualimapubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}satudualimapubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  150 PUBG PEMBAYARAN
+      case 'satulimanolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}satulimanolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}satulimanolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}satulimanolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}satulimanolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}satulimanolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}satulimanolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}satulimanolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  210 PUBG PEMBAYARAN
+      case 'duasatunolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}duasatunolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}duasatunolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}duasatunolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}duasatunolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}duasatunolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}duasatunolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}duasatunolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  250 PUBG PEMBAYARAN
+      case 'dualimanolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}dualimanolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}dualimanolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}dualimanolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}dualimanolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}dualimanolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}dualimanolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}dualimanolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  500 PUBG PEMBAYARAN
+      case 'limanolnolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}limanolnolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}limanolnolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}limanolnolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}limanolnolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}limanolnolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}limanolnolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}limanolnolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+            //  700 PUBG PEMBAYARAN
+      case 'tujuhnolnolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}tujuhnolnolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}tujuhnolnolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}tujuhnolnolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}tujuhnolnolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}tujuhnolnolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}tujuhnolnolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}tujuhnolnolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  1250 PUBG PEMBAYARAN
+      case 'satudualimanolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}satudualimanolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}satudualimanolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}satudualimanolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}satudualimanolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}satudualimanolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}satudualimanolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}satudualimanolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  1750 PUBG PEMBAYARAN
+      case 'satutujuhlimanolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}satutujuhlimanolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}satutujuhlimanolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}satutujuhlimanolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}satutujuhlimanolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}satutujuhlimanolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}satutujuhlimanolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}satutujuhlimanolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+      //  2500 PUBG PEMBAYARAN
+      case 'dualimanolnolpubg': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat) 
+if (m.isGroup) return
+      let sections = [{
+								"title": "Pilih Pembayaran Yang Anda Inginkan",
+								"rows": [
+									{
+										"title": "ShopeePay",
+										"rowId": `${prefix}dualimanolnolpubgshopee`
+									}, {
+										"title": "DANA",
+										"rowId": `${prefix}dualimanolnolpubgdana`
+									}, {
+										"title": "OVO",
+										"rowId": `${prefix}dualimanolnolpubgovo`
+								    }, {
+										"title": "GoPay",
+										"rowId": `${prefix}dualimanolnolpubggopay`
+									}, {
+										"title": "Pulsa Indosat",
+										"rowId": `${prefix}dualimanolnolpubgpulsa`
+										}
+								]}, { "title": "Metode Pembayaran Lain",
+								"rows": [
+								{
+										"title": "BNI",
+										"rowId": `${prefix}dualimanolnolpubgbni`
+									}, {
+										"title": "Tulis Sendiri 📝",
+										"rowId": `${prefix}dualimanolnolpubgsendiri`
+									}]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Pilih Metode Pembayaran Yang Anda Inginkan`,
+       footer: `${botname}`,
+       title: "*PEMBAYARAN*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+      break
+      
+     // 35 PUBG SHOPEE
+     case 'tigalimapubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *35 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp9.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 50 PUBG SHOPEE
+     case 'limanolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *50 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp15.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 70 PUBG SHOPEE
+     case 'tujuhnolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *70 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp20.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 100 PUBG SHOPEE
+     case 'satunolnolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *100 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp25.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 125 PUBG SHOPEE
+     case 'satudualimapubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *125 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp30.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 150 PUBG SHOPEE
+     case 'satulimanolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *150 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp35.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 210 PUBG SHOPEE
+     case 'duasatunolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *210 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp45.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 250 PUBG SHOPEE
+     case 'dualimanolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *250 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp50.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 500 PUBG SHOPEE
+     case 'limanolnolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *500 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp95.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+  // 700 PUBG SHOPEE
+     case 'tujuhnolnolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *700 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp140.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1250 PUBG SHOPEE
+     case 'satudualimanolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1250 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp255.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1750 PUBG SHOPEE
+     case 'satutujuhlimanolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1750 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp340.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 2500 PUBG SHOPEE
+     case 'dualimanolnolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp500.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 35 PUBG DANA
+ case 'tigalimapubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *35 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp9.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 50 PUBG DANA
+     case 'limanolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *50 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp15.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 70 PUBG DANA
+     case 'tujuhnolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *70 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp20.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 100 PUBG DANA
+     case 'satunolnolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *100 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp25.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 125 PUBG DANA
+     case 'satudualimapubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *125 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp30.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 150 PUBG DANA
+     case 'satulimanolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *150 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp35.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 210 PUBG DANA
+     case 'duasatunolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *210 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp45.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+  // 250 PUBG DANA
+     case 'dualimanolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *250 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp50.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 500 PUBG DANA
+     case 'limanolnolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *500 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp95.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 700 PUBG DANA
+     case 'tujuhnolnolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *700 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp140.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1250 PUBG DANA
+     case 'satudualimanolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1250 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp255.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1750 PUBG DANA
+     case 'satutujuhlimanolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1750 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp340.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 2500 PUBG DANA
+     case 'dualimanolnolpubgdana': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nMetode Pembayaran: *DANA*\nNominal: *Rp500.000*\n\nKirim ke: \n*DANA*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 35 PUBG OVO
+ case 'tigalimapubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *35 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp9.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 50 PUBG OVO
+     case 'limanolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *50 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp15.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 70 PUBG OVO
+     case 'tujuhnolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *70 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp20.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 100 PUBG OVO
+     case 'satunolnolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *100 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp25.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 125 PUBG OVO
+     case 'satudualimapubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *125 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp30.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 150 PUBG OVO
+     case 'satulimanolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *150 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp35.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 210 PUBG OVO
+     case 'duasatunolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *210 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp45.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+  // 250 PUBG OVO
+     case 'dualimanolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *250 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp50.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 500 PUBG OVO
+     case 'limanolnolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *500 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp95.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 700 PUBG OVO
+     case 'tujuhnolnolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *700 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp140.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1250 PUBG OVO
+     case 'satudualimanolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1250 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp255.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1750 PUBG OVO
+     case 'satutujuhlimanolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1750 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp340.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 2500 PUBG OVO
+     case 'dualimanolnolpubgovo': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nMetode Pembayaran: *OVO*\nNominal: *Rp500.000*\n\nKirim ke: \n*OVO*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+break
+ 
+ // 35 PUBG GOPAY
+ case 'tigalimapubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *35 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp9.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 50 PUBG GOPAY
+     case 'limanolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *50 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp15.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 70 PUBG GOPAY
+     case 'tujuhnolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *70 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp20.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 100 PUBG GOPAY
+     case 'satunolnolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *100 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp25.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 125 PUBG GOPAY
+     case 'satudualimapubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *125 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp30.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 150 PUBG GOPAY
+     case 'satulimanolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *150 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp35.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 210 PUBG GOPAY
+     case 'duasatunolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *210 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp45.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+  // 250 PUBG GOPAY
+     case 'dualimanolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *250 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp50.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 500 PUBG GOPAY
+     case 'limanolnolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *500 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp95.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 700 PUBG GOPAY
+     case 'tujuhnolnolpubgshopee': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *700 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp140.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1250 PUBG GOPAY
+     case 'satudualimanolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1250 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp255.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1750 PUBG GOPAY
+     case 'satutujuhlimanolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1750 UC | PUBG*\nMetode Pembayaran: *GoPay*\nNominal: *Rp340.000*\n\nKirim ke: \n*GoPay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 2500 PUBG GOPAY
+     case 'dualimanolnolpubggopay': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nMetode Pembayaran: *ShopeePay*\nNominal: *Rp500.000*\n\nKirim ke: \n*ShopeePay*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 35 PUBG PULSA
+ case 'tigalimapubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *35 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp9.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 50 PUBG PULSA
+     case 'limanolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *50 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp15.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 70 PUBG PULSA
+     case 'tujuhnolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *70 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp20.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 100 PUBG PULSA
+     case 'satunolnolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *100 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp25.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 125 PUBG PULSA
+     case 'satudualimapubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *125 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp30.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 150 PUBG PULSA
+     case 'satulimanolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *150 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp35.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 210 PUBG PULSA
+     case 'duasatunolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *210 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp45.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+  // 250 PUBG PULSA
+     case 'dualimanolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *250 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp50.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 500 PUBG PULSA
+     case 'limanolnolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *500 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp95.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 700 PUBG PULSA
+     case 'tujuhnolnolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *700 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp140.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1250 PUBG PULSA
+     case 'satudualimanolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1250 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp255.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1750 PUBG PULSA
+     case 'satutujuhlimanolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1750 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp340.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 2500 PUBG PULSA
+     case 'dualimanolnolpubgpulsa': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nMetode Pembayaran: *Pulsa Indosat*\nNominal: *Rp500.000*\n\nKirim ke: \n*Indosat (IM3)*: \`\`\`085842965801\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 35 PUBG BNI
+ case 'tigalimapubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *35 UC | PUBG*\nMetode Pembayaran: *BNI* \n(Biaya Admin: Rp1.000)\nTotal: *Rp10.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 50 PUBG BNI
+     case 'limanolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *50 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp16.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 70 PUBG BNI
+     case 'tujuhnolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *70 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp21.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 100 PUBG BNI
+     case 'satunolnolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *100 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp26.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 125 PUBG BNI
+     case 'satudualimapubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *125 UC | PUBG*\nMetode Pembayaran: *BNI**n(Biaya Admin: 1.000)\nTotal: *Rp31.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 150 PUBG BNI
+     case 'satulimanolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *150 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp36.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 210 PUBG BNI
+     case 'duasatunolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *210 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp46.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+  // 250 PUBG BNI
+     case 'dualimanolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *250 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp51.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 500 PUBG BNI
+     case 'limanolnolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *500 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp96.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 700 PUBG BNI
+     case 'tujuhnolnolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *700 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp141.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1250 PUBG BNI
+     case 'satudualimanolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1250 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp256.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 1750 PUBG BNI
+     case 'satutujuhlimanolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *1750 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nTotal: *Rp341.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 2500 PUBG BNI
+     case 'dualimanolnolpubgbni': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+let buttons = [{buttonId: `akanmembayar`, buttonText: {displayText: 'Akan Membayar'}, type: 1}]
+let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nMetode Pembayaran: *BNI*\n(Biaya Admin: Rp1.000)\nNominal: *Rp500.000*\n\nKirim ke: \n*BNI*: \`\`\`1447639305\`\`\`\n\n_klik tombol jika Anda akan membayar_\n_Note: *abaikan jika tidak*_`
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+ }
+ break
+ 
+ // 35 PUBG TULIS SENDIRI
+ case 'tigalimapubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *35 UC | PUBG*\nNominal: *Rp9.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 50 PUBG TULIS SENDIRI
+            case 'limanolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *50 UC | PUBG*\nNominal: *Rp15.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 70 PUBG SENDIRI
+            case 'tujuhnolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *70 UC | PUBG*\nNominal: *Rp20.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 100 PUBG SENDIRI
+            case 'satunolnolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *100 UC | PUBG*\nNominal: *Rp25.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 125 PUBG SENDIRI
+            case 'satudualimapubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *125 UC | PUBG*\nNominal: *Rp30.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 150 PUBG TULIS SENDIRI
+ case 'satulimanolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *150 UC | PUBG*\nNominal: *Rp35.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 210 PUBG TULIS SENDIRI
+ case 'duasatunolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *210 UC | PUBG*\nNominal: *Rp45.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 250 PUBG TULIS SENDIRI
+            case 'dualimanolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *250 UC | PUBG*\nNominal: *Rp50.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 500 PUBG TULIS SENDIRI
+ case 'limanolnolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *500 UC | PUBG*\nNominal: *Rp96.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 700 PUBG TULIS SENDIRI
+ case 'tujuhnolnolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *700 UC | PUBG*\nNominal: *Rp140.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 1250 PUBG TULIS SENDIRI
+ case 'satudualimanolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *1250 UC | PUBG*\nNominal: *Rp255.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 1750 PUBG TULIS SENDIRI
+ case 'satutujuhlimanolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *1750 UC | PUBG*\nNominal: *Rp340.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
+            break
+            
+            // 2500 PUBG TULIS SENDIRI
+ case 'dualimanolnolpubgsendiri': {
+      	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return
+ if ('menfess'+m.chat in _menfess) {
+                    reply('Sesi belum selesai')
+                    reply(false)}
+                    let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nNominal: *Rp500.000*\n\n*Silahkan Ketik Sendiri Metode Pembayaran Yang Anda Inginkan*`
+                let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
+                let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
+                _menfess['menfess'+m.chat] = {
+                    id: 'menfess'+m.chat,
+                    pesan: await XeonBotInc.sendMessage(m.chat, {text: caption}),
+                    ...random,
+                    terjawab: Array.from(random.jawaban, () => false),
+                    hadiah: 6,
+                }
+                
+            }
                      break
                      
                      // SEWA BOT
