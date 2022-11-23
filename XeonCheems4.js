@@ -16733,7 +16733,8 @@ And all monkey who helped assemble this sexy script!`)
 }
                      
   if (!m.isGroup) return
-  if (!AntiNsfw) return
+  if (isAdmins) return
+  if (!AntiNsfw) return reply(mess.cmmnd)
 	switch(command) {
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
@@ -24908,7 +24909,7 @@ View List Of Messages With ${prefix}listmsg`)
                 if (room) {
                     let buttons = [
                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop??' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
                     room.b = m.sender
