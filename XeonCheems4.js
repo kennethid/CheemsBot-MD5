@@ -1541,7 +1541,7 @@ if (isBanChat) return reply(mess.banChat)
 	case 'jasjus': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!AntiNsfw && !isCreator) return reply(mess.cmmnd)
+if (!isAdmins && !isCreator) return reply(mess.cmmnd)
 cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
 bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
 wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
@@ -16730,7 +16730,7 @@ reply(`Thanks to
 LUCIFER 🤘
 Kenneth (Me)
 My dog
-And all monkey who helped assemble this sexy script!`
+And all monkey who helped assemble this sexy script!`)
 }
 break
             default:
