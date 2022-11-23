@@ -1541,7 +1541,7 @@ if (isBanChat) return reply(mess.banChat)
 	case 'jasjus': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!AntiNsfw && !isCreator) return reply(mess.cmmnd)
+if (!isAdmins && !isCreator) return reply(mess.cmmnd)
 cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
 bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
 wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
@@ -5063,6 +5063,22 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } 
 
 switch(command) {
+	case 'jasjus': {
+ 	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!AntiNsfw) return reply(mess.cmmnd)
+cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
+bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
+wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
+kb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus4.webp`)
+tb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus5.webp`)
+yk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus6.webp`)
+ja = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus7.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+if (m.message && msgFilter.addFilter(from)) return
+XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
+}
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -12332,7 +12348,7 @@ const { Anime } =require("@shineiichijo/marika")
       details += `\t\t\t\t\t\t\t\t*${result.genres[i].name}*\n`;
     }
     details += `✨ *Based on: ${result.source.toUpperCase()}*\n`;
-    details += `?? *Studios:*\n`;
+    details += `📍 *Studios:*\n`;
     for (let i = 0; i < result.studios.length; i++) {
       details += `\t\t\t\t\t\t\t\t*${result.studios[i].name}*\n`;
     }
