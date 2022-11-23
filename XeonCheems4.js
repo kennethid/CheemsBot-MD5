@@ -1520,6 +1520,7 @@ switch(command) {
 	case 'jasjus': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!AntiNsfw && !isCreator) return reply(mess.cmmnd)
 cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
 bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
 wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
@@ -4890,7 +4891,7 @@ await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 break
-case 'allcommand': {
+case 'allcommand' case 'semuafitur': case 'allfitur': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4923,7 +4924,7 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
                      }
                      
   if (!m.isGroup) return
-  if (!isAdmins && !AntiNsfw) return reply(mess.cmmnd)
+  if (!isAdmins && !AntiNsfw && !isCreator) return reply(mess.cmmnd)
 	switch(command) {
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
