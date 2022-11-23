@@ -29326,7 +29326,7 @@ reply(`Thanks to
 LUCIFER 🤘
 Kenneth (Me)
 My dog
-And all monkey who helped assemble this sexy script!`
+And all monkey who helped assemble this sexy script!`)
 }
 break
             default:
