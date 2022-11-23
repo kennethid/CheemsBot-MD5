@@ -4923,7 +4923,7 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
                      }
                      
   if (!m.isGroup) return
-  if (!isAdmins && AntiNsfw) return reply(mess.cmmnd)
+  if (!isAdmins && !AntiNsfw) return reply(mess.cmmnd)
 	switch(command) {
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
