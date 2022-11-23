@@ -4891,7 +4891,7 @@ await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 break
-case 'allcommand' case 'semuafitur': case 'allfitur': {
+case 'allcommand': case 'semuafitur': case 'allfitur': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
