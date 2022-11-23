@@ -4941,7 +4941,7 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
   ]
   await XeonBotInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
-  }
+  break
                      
                               //antilinkgc
                 
@@ -5061,6 +5061,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 //////////// await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 } 
+}
                      
                      
                      	if (!m.isGroup) return
