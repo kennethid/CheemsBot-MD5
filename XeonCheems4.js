@@ -4919,7 +4919,7 @@ if (!m.isGroup) return replay(mess.group)
 if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
-if (AntiNsfw) return replay('Already activated')
+if (AntiNsfw) return replay('Sudah diaktifkan')
 ntnsfw.push(from)
 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 var groupe = await XeonBotInc.groupMetadata(from)
@@ -4929,7 +4929,7 @@ members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
 } else if (args[0] === "off") {
-if (!AntiNsfw) return replay('Already deactivated')
+if (!AntiNsfw) return replay('Sudah dinonaktifkan')
 let off = ntnsfw.indexOf(from)
 ntnsfw.splice(off, 1)
 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
@@ -4944,12 +4944,10 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
                      }
                               //antilinkgc
                 
-        if (budy.includes(`chat.whatsapp.com`)) {
+        if (budy.includes("chat.whatsapp.com")) {
         if (!isBotAdmins) return
         if (!m.isGroup) return
-     ///////////   if (AntiLinkGc) return
-       ///////////////////////   if (!AntiLinkGc) return XeonBotInc.sendMessage(from, { react: { text: `🔒`, key: m.key }})
-        // satu
+     // satu
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
         let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
         let gclinkw = (`https://chat.whatsapp.com/EaFKoIimOoG828H2GS2i1A`)
@@ -5043,8 +5041,8 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
      tos = [kontol,memek,anjing,bacot]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 
-XeonBotInc.sendMessage(m.chat, {text: `*「 Group Link Detected 」*\n\n_GoodBye *${pushname}*!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
-await sleep(750)
+const baby = await XeonBotInc.sendMessage(m.chat, {text: `*「 Group Link Detected 」*\n\n_GoodBye *${pushname}*!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
+await baby
  await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 tu = `Buddy Christ`
 wa = `Ghetto Jesus`
