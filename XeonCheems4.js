@@ -1517,6 +1517,27 @@ async function cerpen (category) {
                      
  
 switch(command) {
+	case 'tagall': {
+            	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+                if (!m.isGroup) return replay(`${mess.group}`)
+                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
+            if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
+let teks = ` ➲ *Message : ${q ? q : 'no message'}*\n\n`
+                for (let mem of participants) {
+                teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
+                }
+                XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+                }
+                break
+                case 'hidetag': case 'htag': case '⠀': {
+                	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+            if (!m.isGroup) return replay(`${mess.group}`)
+            if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
+            XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+            }
+            break
 	case 'jasjus': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -4922,6 +4943,124 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
   }
   }
                      }
+                              //antilinkgc
+                
+        if (budy.includes(`chat.whatsapp.com`)) {
+        if (!isBotAdmins) return
+        if (!m.isGroup) return
+     ///////////   if (AntiLinkGc) return
+       ///////////////////////   if (!AntiLinkGc) return XeonBotInc.sendMessage(from, { react: { text: `🔒`, key: m.key }})
+        // satu
+        let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
+        let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
+        let gclinkw = (`https://chat.whatsapp.com/EaFKoIimOoG828H2GS2i1A`)
+        let gclinke = (`https://chat.whatsapp.com/KP3BI7xdO54Esc8Q2Goq4o`)
+        let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
+        let gclinkt = (`https://chat.whatsapp.com/CZMD2PI49Bu7XNBD0IohX5`)
+        let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
+        let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
+        let gclinki = (`https://chat.whatsapp.com/FIixIJkctNv55kBAKEp54d`)
+        let gclinko = (`https://chat.whatsapp.com/LG4p80YUXe9EQ9sbcZTa0i`)
+        let gclinkp = (`https://chat.whatsapp.com/Lmbp8ObPMGM6s2L81aGYhf`)
+        let gclinka = (`https://chat.whatsapp.com/CVvpL0w0qrkIP8zZSAFvoa`)
+        let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
+        let gclinkd = (`https://chat.whatsapp.com/Kg3y0VkG9ag9z9JECGCSjR`)
+        let gclinkf = (`https://chat.whatsapp.com/K2mJoQNyjz8EaWUDs6iYjY`)
+        let gclinkg = (`https://chat.whatsapp.com/F6FvVrCEXvp1GH8ChCkSss`)
+        
+        // dua
+        let isLinkThisGc = new RegExp(gclink, 'i')
+        let isLinkThisGcq = new RegExp(gclinkq, 'i')
+        let isLinkThisGcw = new RegExp(gclinkw, 'i')
+        let isLinkThisGce = new RegExp(gclinke, 'i')
+        let isLinkThisGcr = new RegExp(gclinkr, 'i')
+        let isLinkThisGct = new RegExp(gclinkt, 'i')
+        let isLinkThisGcy = new RegExp(gclinky, 'i')
+        let isLinkThisGcu = new RegExp(gclinku, 'i')
+        let isLinkThisGci = new RegExp(gclinki, 'i')
+        let isLinkThisGco = new RegExp(gclinko, 'i')
+        let isLinkThisGcp = new RegExp(gclinkp, 'i')
+        let isLinkThisGca = new RegExp(gclinka, 'i')
+        let isLinkThisGcs = new RegExp(gclinks, 'i')
+        let isLinkThisGcd = new RegExp(gclinkd, 'i')
+        let isLinkThisGcf = new RegExp(gclinkf, 'i')
+        let isLinkThisGcg = new RegExp(gclinkg, 'i')
+        
+        // tiga
+        let isgclink = isLinkThisGc.test(m.text)
+        let isgclinkq = isLinkThisGcq.test(m.text)
+        let isgclinkw = isLinkThisGcw.test(m.text)
+        let isgclinke = isLinkThisGce.test(m.text)
+        let isgclinkr = isLinkThisGcr.test(m.text)
+        let isgclinkt = isLinkThisGct.test(m.text)
+        let isgclinky = isLinkThisGcy.test(m.text)
+        let isgclinku = isLinkThisGcu.test(m.text)
+        let isgclinki = isLinkThisGci.test(m.text)
+        let isgclinko = isLinkThisGco.test(m.text)
+        let isgclinkp = isLinkThisGcp.test(m.text)
+        let isgclinka = isLinkThisGca.test(m.text)
+        let isgclinks = isLinkThisGcs.test(m.text)
+        let isgclinkd = isLinkThisGcd.test(m.text)
+        let isgclinkf = isLinkThisGcf.test(m.text)
+        let isgclinkg = isLinkThisGcg.test(m.text)
+        
+        // empat
+        if (isgclink) return
+        let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
+        if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+        let resultw = fs.readFileSync(`./XeonMedia/sticker2/btslonthe.webp`)
+        if (isgclinkw) return XeonBotInc.sendMessage(m.chat, { sticker : resultw }, {quoted : m})
+        let resulte = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
+        if (isgclinke) return XeonBotInc.sendMessage(m.chat, { sticker : resulte }, {quoted : m})
+        let resultr = fs.readFileSync(`./XeonMedia/sticker2/tuhanbts.webp`)
+        if (isgclinkr) return XeonBotInc.sendMessage(m.chat, { sticker : resultr }, {quoted : m})
+        let resultt = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
+        if (isgclinkt) return XeonBotInc.sendMessage(m.chat, { sticker : resultt }, {quoted : m})
+        let resulty = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
+        if (isgclinky) return XeonBotInc.sendMessage(m.chat, { sticker : resulty }, {quoted : m})
+        let resultu = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
+        if (isgclinku) return XeonBotInc.sendMessage(m.chat, { sticker : resultu }, {quoted : m})
+        let resulti = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
+        if (isgclinki) return XeonBotInc.sendMessage(m.chat, { sticker : resulti }, {quoted : m})
+        let resulto = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
+        if (isgclinko) return XeonBotInc.sendMessage(m.chat, { sticker : resulto }, {quoted : m})
+        if (isgclinkp) return
+        if (isgclinka) return
+        if (isgclinks) return
+        if (isgclinkd) return
+        if (isgclinkf) return 
+        if (isgclinkg) return
+        
+        // admin&creator
+        if (isAdmins) return
+        if (isCreator) return
+        
+        // mengirim
+        if (m.isBaileys && m.fromMe) return
+     let kontol = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
+     let memek = fs.readFileSync(`./XeonMedia/sticker/Kristen memek.webp`)
+     let anjing = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
+     let bacot = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
+     tos = [kontol,memek,anjing,bacot]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+
+XeonBotInc.sendMessage(m.chat, {text: `*「 Group Link Detected 」*\n\n_GoodBye *${pushname}*!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
+await sleep(750)
+ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+tu = `Buddy Christ`
+wa = `Ghetto Jesus`
+tos = [tu,wa]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+ satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
+///////////////////// dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
+//////////////////// tiga = `https://apimeme.com/meme?meme=${dj}&top=Goodbye&bottom=${pushname}`
+//////////////////// memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author })
+//////////// await fs.unlinkSync(memek)
+  //////      await sleep(850)
+  ///////      let kice = m.sender
+//////////// await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+} else {
+} 
                      
   if (!m.isGroup) return
   if (!isAdmins && !AntiNsfw && !isCreator) return reply(mess.cmmnd)
@@ -6224,27 +6363,6 @@ if (isBanChat) return reply(mess.banChat)
                 reply(mess.success)
                 }
                 break
-            case 'tagall': {
-            	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-            if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
-let teks = ` ➲ *Message : ${q ? q : 'no message'}*\n\n`
-                for (let mem of participants) {
-                teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
-                }
-                XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
-                }
-                break
-                case 'hidetag': case 'htag': case '⠀': {
-                	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-            if (!m.isGroup) return replay(`${mess.group}`)
-            if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
-            XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
-            }
-            break
             case 'pxxx': case '⠀': {
                 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -16669,124 +16787,7 @@ break
                     return !0
                 }
                 
-                //antilinkgc
-                
-        if (budy.includes(`chat.whatsapp.com`)) {
-        if (!isBotAdmins) return
-        if (!m.isGroup) return
-     ///////////   if (AntiLinkGc) return
-       ///////////////////////   if (!AntiLinkGc) return XeonBotInc.sendMessage(from, { react: { text: `🔒`, key: m.key }})
-        // satu
-        let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
-        let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
-        let gclinkw = (`https://chat.whatsapp.com/EaFKoIimOoG828H2GS2i1A`)
-        let gclinke = (`https://chat.whatsapp.com/KP3BI7xdO54Esc8Q2Goq4o`)
-        let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
-        let gclinkt = (`https://chat.whatsapp.com/CZMD2PI49Bu7XNBD0IohX5`)
-        let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
-        let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
-        let gclinki = (`https://chat.whatsapp.com/FIixIJkctNv55kBAKEp54d`)
-        let gclinko = (`https://chat.whatsapp.com/LG4p80YUXe9EQ9sbcZTa0i`)
-        let gclinkp = (`https://chat.whatsapp.com/Lmbp8ObPMGM6s2L81aGYhf`)
-        let gclinka = (`https://chat.whatsapp.com/CVvpL0w0qrkIP8zZSAFvoa`)
-        let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
-        let gclinkd = (`https://chat.whatsapp.com/Kg3y0VkG9ag9z9JECGCSjR`)
-        let gclinkf = (`https://chat.whatsapp.com/K2mJoQNyjz8EaWUDs6iYjY`)
-        let gclinkg = (`https://chat.whatsapp.com/F6FvVrCEXvp1GH8ChCkSss`)
-        
-        // dua
-        let isLinkThisGc = new RegExp(gclink, 'i')
-        let isLinkThisGcq = new RegExp(gclinkq, 'i')
-        let isLinkThisGcw = new RegExp(gclinkw, 'i')
-        let isLinkThisGce = new RegExp(gclinke, 'i')
-        let isLinkThisGcr = new RegExp(gclinkr, 'i')
-        let isLinkThisGct = new RegExp(gclinkt, 'i')
-        let isLinkThisGcy = new RegExp(gclinky, 'i')
-        let isLinkThisGcu = new RegExp(gclinku, 'i')
-        let isLinkThisGci = new RegExp(gclinki, 'i')
-        let isLinkThisGco = new RegExp(gclinko, 'i')
-        let isLinkThisGcp = new RegExp(gclinkp, 'i')
-        let isLinkThisGca = new RegExp(gclinka, 'i')
-        let isLinkThisGcs = new RegExp(gclinks, 'i')
-        let isLinkThisGcd = new RegExp(gclinkd, 'i')
-        let isLinkThisGcf = new RegExp(gclinkf, 'i')
-        let isLinkThisGcg = new RegExp(gclinkg, 'i')
-        
-        // tiga
-        let isgclink = isLinkThisGc.test(m.text)
-        let isgclinkq = isLinkThisGcq.test(m.text)
-        let isgclinkw = isLinkThisGcw.test(m.text)
-        let isgclinke = isLinkThisGce.test(m.text)
-        let isgclinkr = isLinkThisGcr.test(m.text)
-        let isgclinkt = isLinkThisGct.test(m.text)
-        let isgclinky = isLinkThisGcy.test(m.text)
-        let isgclinku = isLinkThisGcu.test(m.text)
-        let isgclinki = isLinkThisGci.test(m.text)
-        let isgclinko = isLinkThisGco.test(m.text)
-        let isgclinkp = isLinkThisGcp.test(m.text)
-        let isgclinka = isLinkThisGca.test(m.text)
-        let isgclinks = isLinkThisGcs.test(m.text)
-        let isgclinkd = isLinkThisGcd.test(m.text)
-        let isgclinkf = isLinkThisGcf.test(m.text)
-        let isgclinkg = isLinkThisGcg.test(m.text)
-        
-        // empat
-        if (isgclink) return
-        let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
-        if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
-        let resultw = fs.readFileSync(`./XeonMedia/sticker2/btslonthe.webp`)
-        if (isgclinkw) return XeonBotInc.sendMessage(m.chat, { sticker : resultw }, {quoted : m})
-        let resulte = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
-        if (isgclinke) return XeonBotInc.sendMessage(m.chat, { sticker : resulte }, {quoted : m})
-        let resultr = fs.readFileSync(`./XeonMedia/sticker2/tuhanbts.webp`)
-        if (isgclinkr) return XeonBotInc.sendMessage(m.chat, { sticker : resultr }, {quoted : m})
-        let resultt = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
-        if (isgclinkt) return XeonBotInc.sendMessage(m.chat, { sticker : resultt }, {quoted : m})
-        let resulty = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
-        if (isgclinky) return XeonBotInc.sendMessage(m.chat, { sticker : resulty }, {quoted : m})
-        let resultu = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
-        if (isgclinku) return XeonBotInc.sendMessage(m.chat, { sticker : resultu }, {quoted : m})
-        let resulti = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
-        if (isgclinki) return XeonBotInc.sendMessage(m.chat, { sticker : resulti }, {quoted : m})
-        let resulto = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
-        if (isgclinko) return XeonBotInc.sendMessage(m.chat, { sticker : resulto }, {quoted : m})
-        if (isgclinkp) return
-        if (isgclinka) return
-        if (isgclinks) return
-        if (isgclinkd) return
-        if (isgclinkf) return 
-        if (isgclinkg) return
-        
-        // admin&creator
-        if (isAdmins) return
-        if (isCreator) return
-        
-        // mengirim
-        if (m.isBaileys && m.fromMe) return
-     let kontol = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
-     let memek = fs.readFileSync(`./XeonMedia/sticker/Kristen memek.webp`)
-     let anjing = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
-     let bacot = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
-     tos = [kontol,memek,anjing,bacot]
-dj = tos[Math.floor(Math.random() * (tos.length))]
-
-XeonBotInc.sendMessage(m.chat, {text: `*「 Group Link Detected 」*\n\n_GoodBye *${pushname}*!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
-await sleep(750)
- await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-tu = `Buddy Christ`
-wa = `Ghetto Jesus`
-tos = [tu,wa]
-dj = tos[Math.floor(Math.random() * (tos.length))]
- satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
-///////////////////// dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
-//////////////////// tiga = `https://apimeme.com/meme?meme=${dj}&top=Goodbye&bottom=${pushname}`
-//////////////////// memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author })
-//////////// await fs.unlinkSync(memek)
-  //////      await sleep(850)
-  ///////      let kice = m.sender
-//////////// await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-} else {
-} 
+       
                 
 			//anti-tag
 const listTag = [`${global.ownertag}@s.whatsapp.net`]
