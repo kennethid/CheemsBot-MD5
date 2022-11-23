@@ -111,7 +111,7 @@ global.ntwame = []
 global.nttoxic = []
 global.ntnsfw = []
 global.ntvirtex = []
-global.rkyt = ['6285842965801']
+global.rkyt = ['6285747219408']
 global.wlcm = []
 global.gcrevoke = []
 global.autorep = []
@@ -155,6 +155,7 @@ global.antitags = true
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
+    cmmnd:  '_*Perlu izin admin untuk menggunakan fitur ini*_',
     success: 'Done ✓',
     admin: 'This Feature Is Only For Admin!',
     botAdmin: 'Bot Must Be Admin First!',
