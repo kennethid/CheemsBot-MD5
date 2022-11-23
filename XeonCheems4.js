@@ -4855,7 +4855,7 @@ case 'foxinfinity': case 'foxdoc': case 'lokas': case 'polvot': {
 	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 break
 //anti bug kontol v2
