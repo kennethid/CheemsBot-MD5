@@ -4942,7 +4942,7 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
   await XeonBotInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
-                     }
+                     
                               //antilinkgc
                 
         if (budy.includes(`chat.whatsapp.com`)) {
@@ -5062,7 +5062,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
                      
-                     switch(command) {
+                     
                      	if (!m.isGroup) return
   if (!isAdmins && !isCreator) return
 	switch(command) {
