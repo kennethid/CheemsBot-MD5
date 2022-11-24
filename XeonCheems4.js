@@ -24281,7 +24281,7 @@ case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case '
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid\n\n*Example*: \n.ytmp4 https://youtube.com/watch?v=haKuiJa68ja`)
                 if (m.message && msgFilter.addFilter(from)) return
-let { ytv } = require('./lib/y2mate') 
+let { yt } = require('./lib/y2mate') 
                  if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
                  let quality = args[1] ? args[1] : '360' 
                  let media = await yt(text, quality) 
