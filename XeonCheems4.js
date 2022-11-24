@@ -10267,9 +10267,10 @@ case 'play': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (!m.isGroup) return
+	let kice = m.sender
 	let buttons = [{buttonId: `song`, buttonText: {displayText: "Musik"}},
 	{buttonId: `yts`, buttonText: {displayText: "Video"}}]
-	let caption = `_klik tombol untuk memilih_`
+	let caption = `「 @${kice.split('@')[0]} 」\n_klik tombol untuk memilih_`
 	XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
 	}
 break
@@ -10442,22 +10443,22 @@ case 'ytdonwan': try{
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
                 ///////////////////////////////////XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title} \n\n _Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
-                let button = [
-                {buttonId: `.ytvn ${args.join(" ")} | 360`, buttonText: { displayText: "▶ Voice Note" }, type: 1},
-                {buttonId: `.ytad ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 Audio" }, type: 1},
-                {buttonId: `.ytdc2 ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 MP3" }, type: 1}
-                ]
+          ///////      let button = [
+             ////////////////////////   {buttonId: `.ytvn ${args.join(" ")} | 360`, buttonText: { displayText: "▶ Voice Note" }, type: 1},
+             ////////////////////////   {buttonId: `.ytad ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 Audio" }, type: 1},
+             ////////////////////////   {buttonId: `.ytdc2 ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 MP3" }, type: 1}
+             //   ]
                 caption = `${anu.title}`
-                let buttonMessage = { 
-  video: {url: anu.mp4.download},
- caption: caption,
- buttons: button,
- headerType: 1
-} 
-let bjir = await XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
+     ///////           let buttonMessage = { 
+ ////////// video: {url: anu.mp4.download},
+///// caption: caption,
+//// buttons: button,
+//// headerType: 1
+//} 
+let bjir = await XeonBotInc.sendMessage(m.chat, {video: {url: anu.mp4.download}, caption: caption}, {quoted: m})
                 await bjir
                 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-            } catch { reply(`sorry, the server's currently down, try again later`)}
+            } catch { reply(`_maaf server sedang down, coba lagi nanti_`)}
             break
 case 'googlexxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -21937,7 +21938,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}ytdontu ${i.url}`,
+	     rowId: `${prefix}ytad ${i.url}`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -21979,7 +21980,18 @@ teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.snipp
 XeonBotInc.sendMessage(m.chat, {text: teks}, { quoted: fdocs })
 }
 break
-case 'yts': case 'ytsearch': case 'play': case'ytplay': {
+case 'play': {
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	if (!m.isGroup) return
+	let kice = m.sender
+	let buttons = [{buttonId: `song`, buttonText: {displayText: "Musik"}},
+	{buttonId: `yts`, buttonText: {displayText: "Video"}}]
+	let caption = `「 @${kice.split('@')[0]} 」\n_klik tombol untuk memilih_`
+	XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+	}
+	break
+case 'yts': case 'ytsearch': case'ytplay': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return
@@ -22148,19 +22160,19 @@ case 'ytdonwan': try{
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
                 ///////////////////////////////////XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title} \n\n _Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
-                let button = [
-                {buttonId: `.ytvn ${args.join(" ")} | 360`, buttonText: { displayText: "▶ Voice Note" }, type: 1},
-                {buttonId: `.ytad ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 Audio" }, type: 1},
-                {buttonId: `.ytdc2 ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 MP3" }, type: 1}
-                ]
+             //////   let button = [
+               ///////////////////// {buttonId: `.ytvn ${args.join(" ")} | 360`, buttonText: { displayText: "▶ Voice Note" }, type: 1},
+               //////////////////// {buttonId: `.ytad ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 Audio" }, type: 1},
+                ////////////////////{buttonId: `.ytdc2 ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 MP3" }, type: 1}
+             //   ]
                 caption = `${anu.title}`
-                let buttonMessage = { 
-  video: {url: anu.mp4.download},
- caption: caption,
- buttons: button,
- headerType: 1
-} 
-let bjir = await XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
+            //////    let buttonMessage = { 
+  //////////video: {url: anu.mp4.download},
+////// caption: caption,
+/////// buttons: button,
+////// headerType: 1
+// } 
+let bjir = await XeonBotInc.sendMessage(m.chat, {video: {url: anu.mp4.download}, caption: caption}, {quoted: m})
                 await bjir
                 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
             } catch { reply(`sorry, the server's currently down, try again later`)}
