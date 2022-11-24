@@ -1517,6 +1517,11 @@ async function cerpen (category) {
                      
  
 switch(command) {
+	case 'menu': {
+		if (m.isGroup)
+		reply(`_*Fitur ini digunakan khusus grup*_`)
+		}
+		break
 	case 'tagall': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -10216,7 +10221,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}ytdontu ${i.url}`,
+	     rowId: `${prefix}ytad ${i.url}`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -10258,7 +10263,17 @@ teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.snipp
 XeonBotInc.sendMessage(m.chat, {text: teks}, { quoted: fdocs })
 }
 break
-case 'yts': case 'ytsearch': case 'play': case'ytplay': {
+case 'play': {
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	if (!m.isGroup) return
+	let buttons = [{buttonId: `song`, buttonText: {displayText: "Musik"}},
+	{buttonId: `yts`, buttonText: {displayText: "Video"}}]
+	let caption = `_klik tombol untuk memilih_`
+	XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
+	}
+break
+case 'yts': case 'ytsearch': case'ytplay': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return
@@ -10277,7 +10292,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}fghjk ${i.url} | 360`,
+	     rowId: `${prefix}ytdonwan ${i.url} | 360`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
