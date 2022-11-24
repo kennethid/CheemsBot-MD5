@@ -10346,7 +10346,7 @@ const jetkontol = jetbosok.split(" | ")[1]
                 //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
                 ]
             ///////////////////////////    let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
-                let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n*Note* :\nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
+                let caption = `*Title*: ${anu.title}`///////////////////////\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n*Note* :\nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
                 
  let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -10368,8 +10368,8 @@ sourceUrl: ``,
   mediaUrl: `${linkz}` 
 }} 
 } 
- XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- } catch { XeonBotInc.sendMessage(m.chat, {text: `sorry the server is not responding at this time, try again later`}, {quoted: m})}
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
+ } catch { XeonBotInc.sendMessage(m.chat, {text: `maaf server tidak merespon saat ini, coba lagi nanti`}, {quoted: m})}
  //contoh ^
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
@@ -21985,9 +21985,9 @@ case 'play': {
 	if (isBanChat) return reply(mess.banChat)
 	if (!m.isGroup) return
 	let kice = m.sender
-	let buttons = [{buttonId: `song`, buttonText: {displayText: "Musik"}},
-	{buttonId: `yts`, buttonText: {displayText: "Video"}}]
-	let caption = `「 @${kice.split('@')[0]} 」\n_klik tombol untuk memilih_`
+	let buttons = [{buttonId: `song ${text}`, buttonText: {displayText: "Musik"}},
+	{buttonId: `yts ${text}`, buttonText: {displayText: "Video"}}]
+	let caption = `「 @${kice.split('@')[0]} 」\n\n_*Klik Tombol Untuk Memilih*_`
 	XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
 	}
 	break
@@ -22063,7 +22063,7 @@ const jetkontol = jetbosok.split(" | ")[1]
                 //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
                 ]
             ///////////////////////////    let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
-                let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n*Note* :\nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
+                let caption = `*Title*: ${anu.title}`///////////////////////\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n*Note* :\nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
                 
  let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -22085,8 +22085,8 @@ sourceUrl: ``,
   mediaUrl: `${linkz}` 
 }} 
 } 
- XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- } catch { XeonBotInc.sendMessage(m.chat, {text: `sorry the server is not responding at this time, try again later`}, {quoted: m})}
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
+ } catch { XeonBotInc.sendMessage(m.chat, {text: `maaf server tidak merespon saat ini, coba lagi nanti`}, {quoted: m})}
  //contoh ^
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
