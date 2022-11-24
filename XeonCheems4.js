@@ -24409,16 +24409,16 @@ let { yta } = require('./lib/y2mate')
  let anj = await getBuffer(media.thumb)
                 ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
                   
-const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3`, contextInfo:{externalAdReply:{
+ XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3`, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Audio | 128K`,
 thumbnail: anj,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
-await bjir
- XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))////////////////.catch((err) => reply(`_*maaf fitur sedang error!*_`))
+/////// await bjir
+ ///////////////XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 } catch {(err) => reply(`sorry, the server's currently down, try again later`)
 }
 break
