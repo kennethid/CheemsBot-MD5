@@ -24275,7 +24275,7 @@ let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
                await XeonBotInc.sendMessage(from, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : kntl }).catch((err) => reply(mess.error))
             }
 break
-case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': try{
+case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': {
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
@@ -24293,7 +24293,7 @@ let { ytv } = require('./lib/y2mate')
  {buttonId: `ytvd2 ${text} | 720`, buttonText: {displayText: '720'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
              
- } catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
+ } //////////////////catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
