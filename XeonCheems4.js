@@ -10268,9 +10268,9 @@ case 'play': {
 	if (isBanChat) return reply(mess.banChat)
 	if (!m.isGroup) return
 	let kice = m.sender
-	let buttons = [{buttonId: `song`, buttonText: {displayText: "Musik"}},
-	{buttonId: `yts`, buttonText: {displayText: "Video"}}]
-	let caption = `「 @${kice.split('@')[0]} 」\n_klik tombol untuk memilih_`
+	let buttons = [{buttonId: `song ${text}`, buttonText: {displayText: "Musik"}},
+	{buttonId: `yts ${text}`, buttonText: {displayText: "Video"}}]
+	let caption = `「 @${kice.split('@')[0]} 」\n\n_*Pilih Tipe*_`
 	XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
 	}
 break
@@ -21987,7 +21987,7 @@ case 'play': {
 	let kice = m.sender
 	let buttons = [{buttonId: `song ${text}`, buttonText: {displayText: "Musik"}},
 	{buttonId: `yts ${text}`, buttonText: {displayText: "Video"}}]
-	let caption = `「 @${kice.split('@')[0]} 」\n\n_*Klik Tombol Untuk Memilih*_`
+	let caption = `「 @${kice.split('@')[0]} 」\n\n_*Pilih Tombol*_`
 	XeonBotInc.sendButtonText(m.chat, buttons, caption, botname)
 	}
 	break
