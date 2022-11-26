@@ -4920,8 +4920,6 @@ break
 case 'allcommand': case 'semuafitur': case 'allfitur': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
-if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiNsfw) return replay('Sudah diaktifkan')
@@ -5094,7 +5092,7 @@ if (isBanChat) return reply(mess.banChat)
      txt += `*🐔Chicken* : ${i.ayam}\n`
      txt += `*🐇Rabbit* : ${i.kelinci}\n`
      txt += `*🐑Sheep* : ${i.domba}\n`
-     txt += `*🐄Cow* : ${i.sapi}\n`
+     txt += `*??Cow* : ${i.sapi}\n`
      txt += `*🐘Elephant* : ${i.gajah}\n\n`
      }
     reply(txt)       
@@ -7426,7 +7424,7 @@ case 'attp': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) reply(`Use ${prefix}attp hello\n*Example : ${prefix + command} ${ownername}*` )
-           await XeonBotInc.sendMedia(m.chat, `https://api.akuari.my.id/other/attp?text=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(`sorry, the server's currently down, try again later`))
+           await XeonBotInc.sendMedia(m.chat, `https://apimu.my.id/other/attp?text=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(`sorry, the server's currently down, try again later`))
          }
          break
 case 'ttp': try{
@@ -7439,7 +7437,7 @@ if (isBanChat) return reply(mess.banChat)
                      	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`*Example : ${prefix + command} hello*`)
-           await XeonBotInc.sendMedia(m.chat, `https://api.akuari.my.id/other/ttp?text=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
+           await XeonBotInc.sendMedia(m.chat, `https://apimu.my.id/other/ttp?text=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
          }
                      break
             case 'soundcloud': case 'scdl': {               
@@ -10297,7 +10295,7 @@ if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
 if (m.message && msgFilter.addFilter(from)) return
 let button = [
                 {buttonId: `command`, buttonText: { displayText: "List Menu" }, type: 1}]
-let anu = await fetchJson(`https://api.akuari.my.id/search/google?query=${text}`)
+let anu = await fetchJson(`https://apimu.my.id/search/google?query=${text}`)
 let teks = '*| GOOGLE SEARCH |*\n\n Result From '+text+'\n\n'
 let no = 1
 for( let search of anu.result) {
@@ -10371,9 +10369,9 @@ let search = await yts(args.join(" "))
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
 const jetkontol = jetbosok.split(" | ")[1]
- anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)
-////////////////////////// empat = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=480`)
-////////////////////////// tujuh = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=720`)
+ anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)
+////////////////////////// empat = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=480`)
+////////////////////////// tujuh = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=720`)
                  ///////////////////// if (anu.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(anu))
                /////////////////////  if (empat.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(empat))
                /////////////////////  if (tujuh.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(tujuh))
@@ -10424,20 +10422,16 @@ sourceUrl: ``,
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid\n\n*Example*: \n.ytmp4 https://youtube.com/watch?v=haKuiJa68ja`)
                 if (m.message && msgFilter.addFilter(from)) return
-let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '360' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let caption = `${media.title}\n\n_*Pilih Tipe*_`
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+ let caption = `${nganu.title}\n\n_*Pilih Tipe*_`
  let kice = m.sender
  let buttons = [{buttonId: `ytvn ${text}`, buttonText: {displayText: '▶ Voice Note'}},
  {buttonId: `ytad ${text}`, buttonText: {displayText: '▶ Audio'}},
  {buttonId: `ytdc2 ${text}`, buttonText: {displayText: '▶ MP3'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
              
- } catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
-            break
+ } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_\n\n*Alternative:* https://id.savefrom.net/210/`)}
+           break
             
 case 'ytdonwan': try{ 
             if (isBan) return reply(mess.ban) 
@@ -10449,7 +10443,7 @@ case 'ytdonwan': try{
                 const jetdua = args.join(" ")
                 const one = jetsatu.split(" | ")[0]
                 const two = jetdua.split(" | ")[1]
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${one}&type=${two}`)
+                anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${one}&type=${two}`)
                  if (anu.mp4.size.split('MB')[0] >= 50) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.mp4.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.mp4.download))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
@@ -10610,7 +10604,7 @@ if (!m.isGroup) return reply(mess.group)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 				if (m.message && msgFilter.addFilter(from)) return
 				XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-				igdon = await fetchJson(`https://api.akuari.my.id/downloader/igdl2?link=${text}?utm_source=ig_web_copy_link`)
+				igdon = await fetchJson(`https://apimu.my.id/downloader/igdl2?link=${text}?utm_source=ig_web_copy_link`)
 				caption = `Here you go!`
 				let bwa = await XeonBotInc.sendMessage(m.chat, {video: {url: igdon.hasil.url_list}, caption}, {quoted: m})
 await bwa
@@ -10741,7 +10735,7 @@ if (isBanChat) return reply(mess.banChat)
   if (m.message && msgFilter.addFilter(from)) return
   let ahay = `⏰`
   XeonBotInc.sendMessage(from, { react: { text: ahay, key: m.key }})
-por = await fetchJson(`https://api.akuari.my.id/downloader/twitter2?link=${text}`)
+por = await fetchJson(`https://apimu.my.id/downloader/twitter2?link=${text}`)
 //////////.then(async (data) => {
   let sections = []   
   for (let i of por.hasil.medias) {
@@ -10875,7 +10869,7 @@ if (isBanChat) return reply(mess.banChat)
 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid \n\n*Example*: \n.facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
 if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
-let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
+let jon = await fetchJson(`https://apimu.my.id/downloader/fbdl?link=${text}`)
 XeonBotInc.sendMessage(m.chat, { video: {url: jon.url.url }, mimetype: "video/mp4", caption: `*Quality*: HD \n\n_Balas *tovn* untuk mengonversi ke Voice Note_\n_Balas *tomp3 judulfile* untuk mengonversi ke mp3_`}, { quoted: m })
 } catch { reply(`Sorry, the server's currently down, try again later\n\n*Facebook Downloader Alternative Link:* \nhttps://snapsave.app/?utm_source=pwa`)}
 break
@@ -12393,7 +12387,7 @@ break
 ////////////   const xeontiktokop = musim_rambutan.result.watermark
 const anj = args.join(" ")
 const bab = anj.split(" | ")[0]
-let anu = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bab}`)
+let anu = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bab}`)
 let texttk = `*Username* : ${anu.hasil.username}\n*Title* : ${anu.hasil.video_title}\n\n*Like* : ${anu.hasil.like}\n*Comment* : ${anu.hasil.comment}\n*Share* : ${anu.hasil.share}\n*Music Author* : ${anu.hasil.music_author}`
 let buttons = [
 {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
@@ -12446,7 +12440,7 @@ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,fa
  let pics = pic[Math.floor(Math.random() * (pic.length))]
 const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
-ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+ttaudio = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {document: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
 	body: `MP3 | 128K`,
@@ -12466,7 +12460,7 @@ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,fa
  let pics = pic[Math.floor(Math.random() * (pic.length))]
 const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
-let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+let ttaudio = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bapakkau}`)
 let ola = await getBuffer(ttaudio.hasil.download_mp3)
 XeonBotInc.sendMessage(m.chat, {audio: ola, mimetype: "audio/mpeg", ptt: true, contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
@@ -12487,7 +12481,7 @@ const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
-let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+let ttaudio = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
 	body: `Audio | 128K`,
@@ -12523,7 +12517,7 @@ let yts = require("yt-search")
 let search = await yts(text)
 let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
 let ytvc = await hx.youtube(babi.url)
-let anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${babi.url}`)        
+let anu = await fetchJson(`https://apimu.my.id/downloader/youtube?link=${babi.url}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumb)
                 audio = await getBuffer(anu.audio) 
@@ -12540,7 +12534,7 @@ if (isBan) return reply(mess.ban)
                 let yts = require("yt-search")
 let search = await yts(text)
 let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${text}`)        
+                anu = await fetchJson(`https://apimu.my.id/downloader/youtube?link=${text}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumb)
                 audio = await getBuffer(anu.audio)        
@@ -12548,25 +12542,20 @@ let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
                await XeonBotInc.sendMessage(from, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : kntl }).catch((err) => reply(mess.error))
             }
 break
-case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': try{
+case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': {
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
-                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid\n\n*Example*: \n.ytmp4 https://youtube.com/watch?v=haKuiJa68ja`)
-                if (m.message && msgFilter.addFilter(from)) return
-let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '360' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let caption = `${media.title}\n\n_*Pilih Kualitas Video*_`
+                XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+ let caption = `${nganu.title}\n\n_*Pilih Kualitas Video*_`
  let kice = m.sender
- let buttons = [{buttonId: `ytvd2 ${text} | 360`, buttonText: {displayText: '360p'}},
- {buttonId: `ytvd2 ${text} | 480`, buttonText: {displayText: '480p'}},
- {buttonId: `ytvd2 ${text} | 720`, buttonText: {displayText: '720'}}]
+ let buttons = [{buttonId: `ytvd2 ${text}`, buttonText: {displayText: '360p'}},
+ {buttonId: `ytvd3 ${text}`, buttonText: {displayText: '480p'}},
+ {buttonId: `ytvd4 ${text}`, buttonText: {displayText: '720'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
              
- } catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
+ } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_\n\n*Alternative:* https://id.savefrom.net/210/`)}
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -12616,106 +12605,76 @@ break
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-let { yta } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
-                 let quality = args[1] ? args[1] : '128kbps' 
-                 let media = await yta(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let anj = await getBuffer(media.thumb)
-                ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
-                  
-const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', ptt: true, contextInfo:{externalAdReply:{
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+try {
+let gambar = await getBuffer(anu.thumbnail)
+} catch { let linkgbr = 'https://telegra.ph/file/8e09c9e580358e0dc61dc.png' 
+let gambar = await getBuffer(linkgbr)}
+const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: nganu.audio.audio }, mimetype: 'audio/mpeg', ptt: true, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Voice Note | 128K`,
-thumbnail: anj,
+thumbnail: gambar,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} catch {(err) => reply(`sorry, the server's currently down, try again later`)
+} catch {(err) => reply(`_*Maaf server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)
 }
 break
 case 'ytvd': try{
 	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-   let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '360' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
-                 const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `_*${media.title}*_` }, { quoted: m }) 
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
  await kon
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-             } catch { reply(`_*maaf fitur sedang error!*_`)}
+             } catch {(err) =>  reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
 break
 case 'ytvd2': try{
 	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-	const nsk = args.join(" ")
-	const nso = args.join(" ")
-	const jeijs = nsk.split(" | ")[0]
-	const jsosk = nso.split(" | ")[1]
-   let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '${jsosk}' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
-                 const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `_*${media.title}*_` }, { quoted: m }) 
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
  await kon
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-             } catch { reply(`_*maaf fitur sedang error!*_`)}
+             } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
+ break
+ case 'ytvd3': try{
+	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=480`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
+ await kon
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+             } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
+ break
+ case 'ytvd4': try{
+	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=720`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
+ await kon
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+             } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
 break
 case 'ytad': try{
-   if (isBan) return reply(mess.ban)	 			
+                 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-let { yta } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
-                 let quality = args[1] ? args[1] : '128kbps' 
-                 let media = await yta(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let anj = await getBuffer(media.thumb)
-                ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
-                  
-const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3`, contextInfo:{externalAdReply:{
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+try {
+let gambar = await getBuffer(anu.thumbnail)
+} catch { let linkgbr = 'https://telegra.ph/file/8e09c9e580358e0dc61dc.png' 
+let gambar = await getBuffer(linkgbr)}
+const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: nganu.audio.audio }, mimetype: 'audio/mpeg', contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Audio | 128K`,
-thumbnail: anj,
+thumbnail: gambar,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} catch {(err) => reply(`sorry, the server's currently down, try again later`)
-}
-break
-case 'ytad': try{
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-let { yta } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
-                 let quality = args[1] ? args[1] : '128kbps' 
-                 let media = await yta(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let anj = await getBuffer(media.thumb)
-                ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
-                  
-const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3`, contextInfo:{externalAdReply:{
-title:`${global.botname}`,
-body:`Audio | 128K`,
-thumbnail: anj,
-mediaType:2,
-mediaUrl: `${linkz}`,
-sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
-await bjir
- XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} catch {(err) => reply(`sorry, the server's currently down, try again later`)
+} catch {(err) => reply(`_*Maaf server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)
 }
 break
 case 'ytdc': try{
@@ -12727,7 +12686,7 @@ const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
 const jetkontol = jetbosok.split(" | ")[1]
- anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
+ anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
                 if (anu.audio.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.audio.audio))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -12748,26 +12707,22 @@ case 'ytdc2': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-let { yta } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
-                 let quality = args[1] ? args[1] : '128kbps' 
-                 let media = await yta(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let anj = await getBuffer(media.thumb)
-                ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
-                  
-const bjir = await XeonBotInc.sendMessage(m.chat, { document: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3`, contextInfo:{externalAdReply:{
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+try {
+let gambar = await getBuffer(anu.thumbnail)
+} catch { let linkgbr = 'https://telegra.ph/file/8e09c9e580358e0dc61dc.png' 
+let gambar = await getBuffer(linkgbr)}
+const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: nganu.audio.audio }, mimetype: 'audio/mpeg', contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Audio | 128K`,
-thumbnail: anj,
+thumbnail: gambar,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} catch {(err) => reply(`sorry, the server's currently down, try again later`)
+} catch {(err) => reply(`_*Maaf server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)
 }
 break
             case 'ytdl': {
@@ -12775,7 +12730,7 @@ break
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+                anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
@@ -19153,7 +19108,7 @@ case 'attp': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) reply(`Use ${prefix}attp hello\n*Example : ${prefix + command} ${ownername}*` )
-           await XeonBotInc.sendMedia(m.chat, `https://api.akuari.my.id/other/attp?text=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(`sorry, the server's currently down, try again later`))
+           await XeonBotInc.sendMedia(m.chat, `https://apimu.my.id/other/attp?text=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(`sorry, the server's currently down, try again later`))
          }
          break
 case 'ttp': try{
@@ -19166,7 +19121,7 @@ if (isBanChat) return reply(mess.banChat)
                      	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`*Example : ${prefix + command} hello*`)
-           await XeonBotInc.sendMedia(m.chat, `https://api.akuari.my.id/other/ttp?text=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
+           await XeonBotInc.sendMedia(m.chat, `https://apimu.my.id/other/ttp?text=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
          }
                      break
             case 'soundcloud': case 'scdl': {               
@@ -22024,7 +21979,7 @@ if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
 if (m.message && msgFilter.addFilter(from)) return
 let button = [
                 {buttonId: `command`, buttonText: { displayText: "List Menu" }, type: 1}]
-let anu = await fetchJson(`https://api.akuari.my.id/search/google?query=${text}`)
+let anu = await fetchJson(`https://apimu.my.id/search/google?query=${text}`)
 let teks = '*| GOOGLE SEARCH |*\n\n Result From '+text+'\n\n'
 let no = 1
 for( let search of anu.result) {
@@ -22098,9 +22053,9 @@ let search = await yts(args.join(" "))
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
 const jetkontol = jetbosok.split(" | ")[1]
- anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)
-////////////////////////// empat = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=480`)
-////////////////////////// tujuh = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=720`)
+ anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)
+////////////////////////// empat = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=480`)
+////////////////////////// tujuh = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=720`)
                  ///////////////////// if (anu.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(anu))
                /////////////////////  if (empat.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(empat))
                /////////////////////  if (tujuh.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(tujuh))
@@ -22151,19 +22106,15 @@ sourceUrl: ``,
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid\n\n*Example*: \n.ytmp4 https://youtube.com/watch?v=haKuiJa68ja`)
                 if (m.message && msgFilter.addFilter(from)) return
-let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '360' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let caption = `${media.title}\n\n_*Pilih Tipe*_`
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+ let caption = `${nganu.title}\n\n_*Pilih Tipe*_`
  let kice = m.sender
  let buttons = [{buttonId: `ytvn ${text}`, buttonText: {displayText: '▶ Voice Note'}},
  {buttonId: `ytad ${text}`, buttonText: {displayText: '▶ Audio'}},
  {buttonId: `ytdc2 ${text}`, buttonText: {displayText: '▶ MP3'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
              
- } catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
+ } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_\n\n*Alternative:* https://id.savefrom.net/210/`)}
             break
             
 case 'ytdonwan': try{ 
@@ -22176,7 +22127,7 @@ case 'ytdonwan': try{
                 const jetdua = args.join(" ")
                 const one = jetsatu.split(" | ")[0]
                 const two = jetdua.split(" | ")[1]
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${one}&type=${two}`)
+                anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${one}&type=${two}`)
                  if (anu.mp4.size.split('MB')[0] >= 50) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.mp4.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.mp4.download))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
@@ -22337,7 +22288,7 @@ if (!m.isGroup) return reply(mess.group)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 				if (m.message && msgFilter.addFilter(from)) return
 				XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-				igdon = await fetchJson(`https://api.akuari.my.id/downloader/igdl2?link=${text}?utm_source=ig_web_copy_link`)
+				igdon = await fetchJson(`https://apimu.my.id/downloader/igdl2?link=${text}?utm_source=ig_web_copy_link`)
 				caption = `Here you go!`
 				let bwa = await XeonBotInc.sendMessage(m.chat, {video: {url: igdon.hasil.url_list}, caption}, {quoted: m})
 await bwa
@@ -22468,7 +22419,7 @@ if (isBanChat) return reply(mess.banChat)
   if (m.message && msgFilter.addFilter(from)) return
   let ahay = `⏰`
   XeonBotInc.sendMessage(from, { react: { text: ahay, key: m.key }})
-por = await fetchJson(`https://api.akuari.my.id/downloader/twitter2?link=${text}`)
+por = await fetchJson(`https://apimu.my.id/downloader/twitter2?link=${text}`)
 //////////.then(async (data) => {
   let sections = []   
   for (let i of por.hasil.medias) {
@@ -22602,7 +22553,7 @@ if (isBanChat) return reply(mess.banChat)
 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid \n\n*Example*: \n.facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
 if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
-let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
+let jon = await fetchJson(`https://apimu.my.id/downloader/fbdl?link=${text}`)
 XeonBotInc.sendMessage(m.chat, { video: {url: jon.url.url }, mimetype: "video/mp4", caption: `*Quality*: HD \n\n_Balas *tovn* untuk mengonversi ke Voice Note_\n_Balas *tomp3 judulfile* untuk mengonversi ke mp3_`}, { quoted: m })
 } catch { reply(`Sorry, the server's currently down, try again later\n\n*Facebook Downloader Alternative Link:* \nhttps://snapsave.app/?utm_source=pwa`)}
 break
@@ -24120,7 +24071,7 @@ break
 ////////////   const xeontiktokop = musim_rambutan.result.watermark
 const anj = args.join(" ")
 const bab = anj.split(" | ")[0]
-let anu = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bab}`)
+let anu = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bab}`)
 let texttk = `*Username* : ${anu.hasil.username}\n*Title* : ${anu.hasil.video_title}\n\n*Like* : ${anu.hasil.like}\n*Comment* : ${anu.hasil.comment}\n*Share* : ${anu.hasil.share}\n*Music Author* : ${anu.hasil.music_author}`
 let buttons = [
 {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
@@ -24173,7 +24124,7 @@ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,fa
  let pics = pic[Math.floor(Math.random() * (pic.length))]
 const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
-ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+ttaudio = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {document: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
 	body: `MP3 | 128K`,
@@ -24193,7 +24144,7 @@ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,fa
  let pics = pic[Math.floor(Math.random() * (pic.length))]
 const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
-let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+let ttaudio = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bapakkau}`)
 let ola = await getBuffer(ttaudio.hasil.download_mp3)
 XeonBotInc.sendMessage(m.chat, {audio: ola, mimetype: "audio/mpeg", ptt: true, contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
@@ -24214,7 +24165,7 @@ const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
-let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+let ttaudio = await fetchJson(`https://apimu.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
 	body: `Audio | 128K`,
@@ -24250,7 +24201,7 @@ let yts = require("yt-search")
 let search = await yts(text)
 let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
 let ytvc = await hx.youtube(babi.url)
-let anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${babi.url}`)        
+let anu = await fetchJson(`https://apimu.my.id/downloader/youtube?link=${babi.url}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumb)
                 audio = await getBuffer(anu.audio) 
@@ -24267,7 +24218,7 @@ if (isBan) return reply(mess.ban)
                 let yts = require("yt-search")
 let search = await yts(text)
 let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${text}`)        
+                anu = await fetchJson(`https://apimu.my.id/downloader/youtube?link=${text}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumb)
                 audio = await getBuffer(anu.audio)        
@@ -24279,21 +24230,16 @@ case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case '
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
-                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid\n\n*Example*: \n.ytmp4 https://youtube.com/watch?v=haKuiJa68ja`)
-                if (m.message && msgFilter.addFilter(from)) return
-let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '360' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let caption = `${media.title}\n\n_*Pilih Kualitas Video*_`
+                XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+ let caption = `${nganu.title}\n\n_*Pilih Kualitas Video*_`
  let kice = m.sender
- let buttons = [{buttonId: `ytvd2 ${text} | 360`, buttonText: {displayText: '360p'}},
- {buttonId: `ytvd2 ${text} | 480`, buttonText: {displayText: '480p'}},
- {buttonId: `ytvd2 ${text} | 720`, buttonText: {displayText: '720'}}]
+ let buttons = [{buttonId: `ytvd2 ${text}`, buttonText: {displayText: '360p'}},
+ {buttonId: `ytvd3 ${text}`, buttonText: {displayText: '480p'}},
+ {buttonId: `ytvd4 ${text}`, buttonText: {displayText: '720'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
              
- } //////////////////catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
+ } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_\n\n*Alternative:* https://id.savefrom.net/210/`)}
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -24339,87 +24285,99 @@ reply("Link error!")
 }
 }
 break
+            case 'ytmp33': case 'ytaudio': { 
+                 let { yta } = require('./lib/y2mate') 
+                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
+                 let quality = args[1] ? args[1] : '128kbps' 
+                 let media = await yta(text, quality) 
+                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
+                 XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
+                 XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m }) 
+             }
+ break
+             case 'ytmp44': case 'ytvideo': { 
+                 let { ytv } = require('./lib/y2mate') 
+                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
+                 let quality = args[1] ? args[1] : '360p' 
+                 let media = await ytv(text, quality) 
+                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
+                 XeonBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '360p'}` }, { quoted: m }) 
+             }
+break
  case 'ytvn': try{ 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-let { yta } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
-                 let quality = args[1] ? args[1] : '128kbps' 
-                 let media = await yta(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let anj = await getBuffer(media.thumb)
-                ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
-                  
-const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', ptt: true, contextInfo:{externalAdReply:{
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+try {
+let gambar = await getBuffer(anu.thumbnail)
+} catch { let linkgbr = 'https://telegra.ph/file/8e09c9e580358e0dc61dc.png' 
+let gambar = await getBuffer(linkgbr)}
+const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: nganu.audio.audio }, mimetype: 'audio/mpeg', ptt: true, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Voice Note | 128K`,
-thumbnail: anj,
+thumbnail: gambar,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} catch {(err) => reply(`sorry, the server's currently down, try again later`)
+} catch {(err) => reply(`_*Maaf server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)
 }
 break
 case 'ytvd': try{
-	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (m.message && msgFilter.addFilter(from)) return
 	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-   let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '360' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
-                 const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `_*${media.title}*_` }, { quoted: m }) 
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
  await kon
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-             } catch { reply(`_*maaf fitur sedang error!*_`)}
+             } catch {(err) =>  reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
 break
 case 'ytvd2': try{
 	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-	const nsk = args.join(" ")
-	const nso = args.join(" ")
-	const jeijs = nsk.split(" | ")[0]
-	const jsosk = nso.split(" | ")[1]
-   let { ytv } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p` 
-                 let quality = args[1] ? args[1] : '${jsosk}' 
-                 let media = await ytv(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
-                 const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `_*${media.title}*_` }, { quoted: m }) 
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
  await kon
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-             } catch { reply(`_*maaf fitur sedang error!*_`)}
+             } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
+ break
+ case 'ytvd3': try{
+	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=480`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
+ await kon
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+             } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
+ break
+ case 'ytvd4': try{
+	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=720`)
+const kon = await XeonBotInc.sendMessage(m.chat, { video: { url: nganu.mp4.download }, mimetype: 'video/mp4', fileName: `${nganu.title}.mp4`, caption: `_*${nganu.title}*_` }, { quoted: m }) 
+ await kon
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+             } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)}
 break
 case 'ytad': try{
-   if (isBan) return reply(mess.ban)	 			
+                 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-let { yta } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
-                 let quality = args[1] ? args[1] : '128kbps' 
-                 let media = await yta(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let anj = await getBuffer(media.thumb)
-                ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
-                  
-const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3`, contextInfo:{externalAdReply:{
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+try {
+let gambar = await getBuffer(anu.thumbnail)
+} catch { let linkgbr = 'https://telegra.ph/file/8e09c9e580358e0dc61dc.png' 
+let gambar = await getBuffer(linkgbr)}
+const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: nganu.audio.audio }, mimetype: 'audio/mpeg', contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Audio | 128K`,
-thumbnail: anj,
+thumbnail: gambar,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} catch {(err) => reply(`sorry, the server's currently down, try again later`)
+} catch {(err) => reply(`_*Maaf server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)
 }
 break
 case 'ytdc': try{
@@ -24431,7 +24389,7 @@ const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
 const jetkontol = jetbosok.split(" | ")[1]
- anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
+ anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
                 if (anu.audio.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.audio.audio))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -24452,26 +24410,22 @@ case 'ytdc2': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
-let { yta } = require('./lib/y2mate') 
-                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps` 
-                 let quality = args[1] ? args[1] : '128kbps' 
-                 let media = await yta(text, quality) 
-                 if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media)) 
- let anj = await getBuffer(media.thumb)
-                ////////////////////////////////////////////// XeonBotInc.sendImage(m.chat, media.thumb, `${themeemoji} Title : ${media.title}\n${themeemoji} File Size : ${media.filesizeF}\n${themeemoji} Url : ${isUrl(text)}\n${themeemoji} Ext : MP3\n${themeemoji} Resolution : ${args[1] || '128kbps'}`, m) 
-                  
-const bjir = await XeonBotInc.sendMessage(m.chat, { document: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3`, contextInfo:{externalAdReply:{
+let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)
+try {
+let gambar = await getBuffer(anu.thumbnail)
+} catch { let linkgbr = 'https://telegra.ph/file/8e09c9e580358e0dc61dc.png' 
+let gambar = await getBuffer(linkgbr)}
+const bjir = await XeonBotInc.sendMessage(m.chat, { audio: { url: nganu.audio.audio }, mimetype: 'audio/mpeg', contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Audio | 128K`,
-thumbnail: anj,
+thumbnail: gambar,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*maaf fitur sedang error!*_`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})).catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} catch {(err) => reply(`sorry, the server's currently down, try again later`)
+} catch {(err) => reply(`_*Maaf server tidak merespon, coba lagi nanti*_ \n\n*TypeError*: ${jsonformat(err)}`)
 }
 break
             case 'ytdl': {
@@ -24479,7 +24433,7 @@ break
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+                anu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
