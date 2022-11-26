@@ -1517,7 +1517,7 @@ async function cerpen (category) {
                      
  
 switch(command) {
-	case 'menu': {
+	case 'menu': case 'allmenu': {
 		if (m.isGroup)
 		reply(`_*Fitur ini digunakan khusus grup*_`)
 		}
@@ -4958,12 +4958,12 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
         if (isAdmins) return
         if (isCreator) return
         if (m.isBaileys && m.fromMe) return
-     let kontol = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
-     let memek = fs.readFileSync(`./XeonMedia/sticker/Kristen memek.webp`)
-     let anjing = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
-     let bacot = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
-     tos = [kontol,memek,anjing,bacot]
-dj = tos[Math.floor(Math.random() * (tos.length))]
+  //////////////////////////   let kontol = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
+    //////////////////////////  let memek = fs.readFileSync(`./XeonMedia/sticker/Kristen memek.webp`)
+   //////////////////////////   let anjing = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
+ //////////////////////////     let bacot = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
+ //////////////////////////     tos = [kontol,memek,anjing,bacot]
+////////////////////////// dj = tos[Math.floor(Math.random() * (tos.length))]
 const baby = await XeonBotInc.sendMessage(m.chat, {text: `*「 Group Link Detected 」*\n\n_GoodBye *${pushname}*!_ 👋`}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
 await baby
  await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -12542,7 +12542,7 @@ let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
                await XeonBotInc.sendMessage(from, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : kntl }).catch((err) => reply(mess.error))
             }
 break
-case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': {
+case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': try{
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
@@ -12554,7 +12554,6 @@ let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text
  {buttonId: `ytvd3 ${text}`, buttonText: {displayText: '480p'}},
  {buttonId: `ytvd4 ${text}`, buttonText: {displayText: '720'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
-             
  } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_\n\n*Alternative:* https://id.savefrom.net/210/`)}
 break
  case 'ytmp4xxx': {
@@ -24226,7 +24225,7 @@ let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
                await XeonBotInc.sendMessage(from, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : kntl }).catch((err) => reply(mess.error))
             }
 break
-case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': {
+case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': try{
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
