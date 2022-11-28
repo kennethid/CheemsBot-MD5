@@ -717,7 +717,7 @@ await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
                     ]
                     let fgh = `*${pushname}* Mengirim Virus!`
                     if (m.isBaileys) return
-                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\3000+ Karakter Terdeteksi_\n\n_*Tunggu 1 Menit,*_\n_*Grup Akan Dibuka Otomatis*_`
+                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n3000+ Karakter Terdeteksi_\n\n_*Tunggu 1 Menit,*_\n_*Grup Akan Dibuka Otomatis*_`
                     let buttons = [
                         { buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 }
                       //////////////////////////  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
