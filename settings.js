@@ -155,7 +155,7 @@ global.antitags = true
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
-    cmmnd:  '_*Perlu izin admin untuk menggunakan fitur ini*_',
+    cmmnd:  '_perlu mengaktifkan *.allcmd* untuk menggunakan fitur ini_',
     success: 'Done ✓',
     admin: 'This Feature Is Only For Admin!',
     botAdmin: 'Bot Must Be Admin First!',
