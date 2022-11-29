@@ -621,7 +621,7 @@ let bwa = q.split('|')[0]
 let jumlah = q.split('|')[1]
 if (jumlah >= 5) return reply(`spam`)
 for (let i = 0; i < jumlah; i++) {
-var pollCreation = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({
+var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "pollCreationMessage": {
 "name": botname,
 "options": [
@@ -643,10 +643,11 @@ var pollCreation = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.M
 ],
 "selectableOptionsCount": 5
 	}
-}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc })
+}), { userJid: m.chat, quoted: doc })
 XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, pollCreation.message, { messageId: pollCreation.key.id })
-}
 deploy('Successful sendbug')
+}
+reply(`success`)
 
 }
 break
