@@ -648,7 +648,7 @@ const deploy = (teks) => {
 }
 deploy('Successful sendbug')
 }
-reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*)
+reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
 
 }
 break
