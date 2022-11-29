@@ -643,9 +643,11 @@ var pollCreation = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.M
 ],
 "selectableOptionsCount": 5
 	}
-}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc })}
+}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc })
 XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, pollCreation.message, { messageId: pollCreation.key.id })
+}
 deploy('Successful sendbug')
+
 }
 break
 case 'thisbug': {
