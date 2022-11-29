@@ -97,7 +97,7 @@ global.err4r = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur
 global.thumb = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur thumb pic
 
 //damtabase
-global.premium = ['6285773496010'] //ur premium numbers
+global.premium = ["6285773496010","6289503445265","6281585033934"] //ur premium numbers
 global.ntilinkytvid = []
 global.ntilinkytch = []
 global.ntilinkig = []
@@ -110,6 +110,7 @@ global.nticall = []
 global.ntwame = []
 global.nttoxic = []
 global.ntnsfw = []
+global.ntnsfw2 = []
 global.ntvirtex = []
 global.rkyt = ['6285747219408']
 global.wlcm = []
@@ -155,6 +156,7 @@ global.antitags = true
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
+	premi: '_Fitur Berbayar_\n\nOwner: wa.me/6285842965801',
     cmmnd:  '_perlu mengaktifkan *.allcmd* untuk menggunakan fitur ini_',
     success: 'Done ✓',
     admin: 'This Feature Is Only For Admin!',

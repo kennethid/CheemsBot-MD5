@@ -261,6 +261,7 @@ const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiToxic = m.isGroup ? nttoxic.includes(from) : false
 const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
+const AntiNsfw2 = m.isGroup ? ntnsfw2.includes(from) : false
 const welcm = m.isGroup ? wlcm.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
@@ -8882,7 +8883,7 @@ let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text
  let kice = m.sender
  let buttons = [{buttonId: `ytvd2 ${text}`, buttonText: {displayText: '360p'}},
  {buttonId: `ytvd3 ${text}`, buttonText: {displayText: '480p'}},
- {buttonId: `ytvd4 ${text}`, buttonText: {displayText: '720'}}]
+ {buttonId: `ytvd4 ${text}`, buttonText: {displayText: '720p'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
              
  } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_\n\n*Alternative:* https://id.savefrom.net/210/`)}

