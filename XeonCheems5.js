@@ -262,6 +262,7 @@ const antiToxic = m.isGroup ? nttoxic.includes(from) : false
 const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
 const AntiNsfw2 = m.isGroup ? ntnsfw2.includes(from) : false
+const WallDua = m.isGroup ? walldua.includes(from) : false
 const welcm = m.isGroup ? wlcm.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
