@@ -5094,7 +5094,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
 
-if (!isAdmins && !isCreator) return
+/////////if (!isAdmins && !isCreator) return
   if (!AntiNsfw)
 	switch(command) {
  case 'banchat': case 'b': {

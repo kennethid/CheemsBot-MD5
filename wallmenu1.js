@@ -621,7 +621,6 @@ case 'allmenu': case 'allmenus': case 'menu': {
 	if (!m.isGroup) return reply(mess.group)
 	if (m.message && msgFilter.addFilter(from)) return
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
-var unicorn = await getBuffer(picak+'All Menu')
 let timestamp = speed()
                 let latensi = speed() - timestamp
                 neww = performance.now()
@@ -1211,9 +1210,9 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `sewabot`, buttonText: {displayText: 'Sewa Bot'}, type: 1},
- {buttonId: `rulesbot`, buttonText: {displayText: 'Rules'}, type: 1},
-  {buttonId: `wallmenu`, buttonText: {displayText: 'Ganti Thumbnail Menu'}, type: 1}
+ {buttonId: `sewabot`, buttonText: {displayText: 'Sewa Bot'}},
+ {buttonId: `rulesbot`, buttonText: {displayText: 'Rules'}},
+  {buttonId: `wallmenu`, buttonText: {displayText: 'Ganti Thumbnail Menu'}}
  ] 
 let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/skin 1/allmenu.jpg')
  let buttonMessage = { 
@@ -1226,9 +1225,8 @@ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/skin 1/allmenu.jpg')
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-	largeThumb: true,
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 ////// mediaType: 4, 
  thumbnail: pics, 
  url: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny`
@@ -1282,7 +1280,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1357,7 +1355,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1404,7 +1402,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1543,7 +1541,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1598,7 +1596,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1660,7 +1658,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1725,7 +1723,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1772,7 +1770,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1821,7 +1819,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1871,7 +1869,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1955,7 +1953,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -1998,7 +1996,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2063,7 +2061,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2124,7 +2122,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2225,7 +2223,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2422,7 +2420,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2475,7 +2473,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2519,7 +2517,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2560,7 +2558,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2599,7 +2597,7 @@ anjay = ` ┏━「 _TOOL_ 」━━⭓
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2643,7 +2641,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2714,7 +2712,7 @@ break
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2781,7 +2779,7 @@ anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -2841,7 +2839,7 @@ sourceUrl: `${websitex}`,
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`,
+ body: `PH`,
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: websitex, 
@@ -2860,7 +2858,6 @@ case 'allmenu': case 'allmenus': case 'menu': {
 	if (!m.isGroup) return reply(mess.group)
 	if (m.message && msgFilter.addFilter(from)) return
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
-var unicorn = await getBuffer(picak+'All Menu')
 let timestamp = speed()
                 let latensi = speed() - timestamp
                 neww = performance.now()
@@ -3450,9 +3447,9 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `sewabot`, buttonText: {displayText: 'Sewa Bot'}, type: 1},
- {buttonId: `rulesbot`, buttonText: {displayText: 'Rules'}, type: 1},
-  {buttonId: `wallmenu`, buttonText: {displayText: 'Ganti Thumbnail Menu'}, type: 1}
+ {buttonId: `sewabot`, buttonText: {displayText: 'Sewa Bot'}},
+ {buttonId: `rulesbot`, buttonText: {displayText: 'Rules'}},
+  {buttonId: `wallmenu`, buttonText: {displayText: 'Ganti Thumbnail Menu'}}
  ] 
 let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/skin 1/allmenu.jpg')
  let buttonMessage = { 
@@ -3464,10 +3461,9 @@ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/skin 1/allmenu.jpg')
  footer: `${botname}`, 
  buttons: buttons, 
  headerType: 4,
-contextInfo: { externalAdReply: { 
-	largeThumb: true,
+contextInfo: { externalAdReply: {
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 ////// mediaType: 4, 
  thumbnail: pics, 
  url: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny`
@@ -3521,7 +3517,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -3596,7 +3592,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -3643,7 +3639,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -3782,7 +3778,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -3837,7 +3833,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -3899,7 +3895,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -3964,7 +3960,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4011,7 +4007,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4060,7 +4056,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4110,7 +4106,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4194,7 +4190,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4237,7 +4233,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4302,7 +4298,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4363,7 +4359,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4464,7 +4460,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4661,7 +4657,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4714,7 +4710,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4758,7 +4754,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4799,7 +4795,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4838,7 +4834,7 @@ anjay = ` ┏━「 _TOOL_ 」━━⭓
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4882,7 +4878,7 @@ let documents = [doc1,doc2,doc3]
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -4953,7 +4949,7 @@ break
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -5020,7 +5016,7 @@ anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `PH`, 
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: `${websitex}`, 
@@ -5080,7 +5076,7 @@ sourceUrl: `${websitex}`,
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`,
+ body: `PH`,
 mediaType: 4, 
  thumbnail: pics, 
 sourceUrl: websitex, 
