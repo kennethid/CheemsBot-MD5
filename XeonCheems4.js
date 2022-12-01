@@ -1693,9 +1693,8 @@ if (m.message && msgFilter.addFilter(from)) return
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
  break
-	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': {
+	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': case 'assalamualaikum': case 'anjing': {
 		if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
 cb = `🫥`
 bs = `😘`
 wk = `☝`
