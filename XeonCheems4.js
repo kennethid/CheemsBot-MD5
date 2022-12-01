@@ -269,7 +269,7 @@ const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
 const AntiNsfw2 = m.isGroup ? ntnsfw2.includes(from) : false
 const WallDua = m.isGroup ? walldua.includes(from) : false
 const welcm = m.isGroup ? wlcm.includes(from) : false
-const wlcmout = m.isGroup? wlcmout.includes(from) : false
+///////////////////const wlcmout = m.isGroup? wlcmout.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
 const Autoreply = m.isGroup ? autorep.includes(from) : true
@@ -7155,29 +7155,6 @@ if (isBanChat) return reply(mess.banChat)
                     await XeonBotInc.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 }
             }
-            break
-            case 'out': case 'wlcmout': case 'goodbye': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
-if (!isAdmins && !isCreator) return
-if (args[0] === "on") {
-if (wlcmout) return replay('Sudah diaktifkan')
-wlcmout.push(from)
-XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} else if (args[0] === "off") {
-if (!wlcmout) return replay('Sudah dinonaktifkan')
-let off = wlcmout.indexOf(from)
-wlcmout.splice(off, 1)
-XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} else {
-  let buttonswlcm = [
-  { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
-  { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
-  ]
-  await XeonBotInc.sendButtonText(m.chat, buttonswlcm, `Please click the button below\n\n*On* untuk mengaktifkan\n*Off* untuk menonaktifkan`, `${global.botname}`, m)
-  }
-  }
             break
             case 'welcome': case 'wc': case 'kl': {
    if (isBan) return reply(mess.ban)	 			
