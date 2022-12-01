@@ -613,6 +613,7 @@ templateButtons: [
 
 //Sementara
 if (WallDua)
+
 if (AntiNsfw)
   switch(command) {
 case 'allmenu': case 'allmenus': case 'menu': {
@@ -2854,7 +2855,6 @@ sourceUrl: websitex,
 
 
 if (!isAdmins && !isCreator)
-if (WallDua)
 if (!AntiNsfw)
   switch(command) {
 case 'allmenu': case 'allmenus': case 'menu': {
