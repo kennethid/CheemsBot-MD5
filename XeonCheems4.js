@@ -5035,7 +5035,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
 
-if (!isAdmins && !isCreator) return
+//////////if (!isAdmins && !isCreator) return
   if (!AntiNsfw)
 	switch(command) {
  case 'banchat': case 'b': {
@@ -10664,7 +10664,7 @@ if (!m.isGroup) return reply(mess.group)
 await bwa
       XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
       
-				} catch { reply(`Sorry, the server's currently down, try again later\n\n*Instagram Downloader Alternative Link:* \nhttps://igram.io/id/`)}
+				} catch { reply(mess.serper)}
 			break
 case 'igdlxxx': case 'instagramxxx': case 'instagramreelsxxx': case 'igreelsxxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -10925,7 +10925,7 @@ if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
 let jon = await fetchJson(`https://apimu.my.id/downloader/fbdl?link=${text}`)
 XeonBotInc.sendMessage(m.chat, { video: {url: jon.url.url }, mimetype: "video/mp4", caption: `*Quality*: HD \n\n_Balas *tovn* untuk mengonversi ke Voice Note_\n_Balas *tomp3 judulfile* untuk mengonversi ke mp3_`}, { quoted: m })
-} catch { reply(`Sorry, the server's currently down, try again later\n\n*Facebook Downloader Alternative Link:* \nhttps://snapsave.app/?utm_source=pwa`)}
+} catch { reply(mess.serper)}
 break
 case 'fbdlxxx': case 'fbxxx': case 'facebookxxx': case 'fbmp4xxx': {     	    
    if (isBan) return reply(mess.ban)	 			
@@ -12468,7 +12468,7 @@ let jakn = await XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 await jakn
       XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
       
-} catch { reply(`Maaf saat ini server sedang bermasalah, coba lagi nanti`)}
+} catch { reply(mess.serper)}
 break
   case 'tiktoknowmxxx': case 'ttnowmxxx':{
   	if (isBan) return reply(mess.ban)
