@@ -117,6 +117,7 @@ global.wlcm = []
 global.gcrevoke = []
 global.autorep = []
 global.ntilink = []
+global.walldua = []
 
 //omther
 global.fgclink = { 

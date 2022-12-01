@@ -87,6 +87,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     	
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
 const AntiNsfw2 = m.isGroup ? ntnsfw2.includes(from) : false
+const WallDua = m.isGroup ? walldua.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
 const Autoreply = m.isGroup ? autorep.includes(from) : true
