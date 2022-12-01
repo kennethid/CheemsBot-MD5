@@ -612,9 +612,8 @@ templateButtons: [
 }
 
 //Sementara
-if (!WallDua)
 
-if (AntiNsfw)
+if (AntiNsfw && !WallDua)
   switch(command) {
 case 'allmenu': case 'allmenus': case 'menu': {
 	   if (isBan) return reply(mess.ban)
@@ -2853,7 +2852,7 @@ sourceUrl: websitex,
          }
 
 if (!isAdmins && !isCreator) return
-if (!AntiNsfw)
+if (!AntiNsfw && !WallDua)
   switch(command) {
 case 'allmenu': case 'allmenus': case 'menu': {
 	   if (isBan) return reply(mess.ban)

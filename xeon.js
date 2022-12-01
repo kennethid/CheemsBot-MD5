@@ -407,7 +407,7 @@ fileLength: 0,
             else if (reason === DisconnectReason.timedOut) { console.log("🦄Connection TimedOut, Reconnecting..."); startXeonBotInc(); }
             else XeonBotInc.end(`🦄Unknown DisconnectReason: ${reason}|${connection}`)
         }
-        console.log('Connected...', update)
+       /////// console.log('Connected...', update)
     })
 
     XeonBotInc.ev.on('creds.update', saveState)
