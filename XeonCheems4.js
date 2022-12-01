@@ -608,7 +608,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
         }
         //antispam or auto react
 if (m.message && msgFilter.isFiltered(from)) {
-console.log(`❌ [SPAM]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
+console.log(`❌ [SPAM (1)]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
 return }
 
         //monyet
@@ -1570,6 +1570,64 @@ async function cerpen (category) {
 //Sementara
                      
 switch(command) {
+	case 'wallmenu': {
+ 	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	let sections = [{
+								"title": "Tampilan Thumbnail Menu",
+								"rows": [
+									{
+										"title": "PH",
+										
+										"rowId": `${prefix}wallmenu1 off`
+									}, {
+										"title": "Thunder",
+										
+										"rowId": `${prefix}wallmenu1 on`
+									}
+								]
+							}
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
+       footer: `${botname}`,
+       title: "*THUMBNAIL MENU*",
+       buttonText: "KLIK DISINI",
+       sections
+      }, { quoted : m })
+      }
+ 	
+ break
+ case 'wallmenu1': {
+ 	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+	if (!isAdmins && !isCreator) return reply(mess.admin)
+	if (args[0] === "on") {
+if (WallDua) return replay('Sudah diaktifkan')
+walldua.push(from)
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+var groupe = await XeonBotInc.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+} else if (args[0] === "off") {
+if (!WallDua) return replay('Sudah diaktifkan')
+let off = walldua.indexOf(from)
+walldua.splice(off, 1)
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+} else {
+  let buttonswalldua = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await XeonBotInc.sendButtonText(m.chat, buttonswalldua, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+ 	break
 		case 'allcommand': case 'semuafitur': case 'allfitur': case 'allcmd': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -5036,7 +5094,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
 
-if (!isAdmins && !isCreator) return reply(mess.admin)
+if (!isAdmins && !isCreator) return
   if (!AntiNsfw)
 	switch(command) {
  case 'banchat': case 'b': {
@@ -14310,65 +14368,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
        sections
       }, { quoted : m })
       }
-            break
- case 'wallmenu': {
- 	if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-	let sections = [{
-								"title": "Tampilan Thumbnail Menu",
-								"rows": [
-									{
-										"title": "PH",
-										
-										"rowId": `${prefix}wallmenu1 off`
-									}, {
-										"title": "Thunder",
-										
-										"rowId": `${prefix}wallmenu1 on`
-									}
-								]
-							}
-						] 
-  const sendm =  XeonBotInc.sendMessage(
-      m.chat, 
-      {
-       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
-       footer: `${botname}`,
-       title: "*THUMBNAIL MENU*",
-       buttonText: "KLIK DISINI",
-       sections
-      }, { quoted : m })
-      }
- 	
- break
- case 'wallmenu1': {
- 	if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-	if (!isAdmins && !isCreator) return
-	if (args[0] === "on") {
-if (WallDua) return replay('Sudah diaktifkan')
-walldua.push(from)
-XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-var groupe = await XeonBotInc.groupMetadata(from)
-var members = groupe['participants']
-var mems = []
-members.map(async adm => {
-mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-})
-} else if (args[0] === "off") {
-if (!WallDua) return replay('Sudah dinonaktifkan')
-let off = walldua.indexOf(from)
-walldua.splice(off, 1)
-XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-} else {
-  let buttonswalldua = [
-  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
-  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
-  ]
-  await XeonBotInc.sendButtonText(m.chat, buttonswalldua, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
-  }
-  }
- 	
+      
 break
  case 'apacsc':
  if (isBan) return reply(mess.ban)
