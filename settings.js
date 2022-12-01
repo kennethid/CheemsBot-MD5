@@ -156,6 +156,7 @@ global.antitags = true
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
+	serper: 'Server down, try again later',
 	premi: '_Fitur Berbayar_\n\nOwner: wa.me/6285842965801',
     cmmnd:  '_perlu mengaktifkan *.allcmd* untuk menggunakan fitur ini_',
     success: 'Done ✓',
