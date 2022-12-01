@@ -24,7 +24,7 @@ const emoji = new EmojiAPI()
 const { color, bgcolor } = require('./lib/color')
 const xeontod = require("tod-api")
 
-//Database omther\\
+//Database other\\
 let kontolodon = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/kontol.json'));
 let kontlopodon = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/kontol2.json'));
 let xeonysticker = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
@@ -720,7 +720,7 @@ await sleep(1000)
 reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
 }
 break
-case 'Silently': {
+case 'silently': {
 if (!isPremium && isCreator) return
 if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
 jumlah = `${encodeURI(q)}`
