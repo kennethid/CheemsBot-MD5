@@ -277,6 +277,7 @@ let docs = pickRandom(documents)
  } 
  XeonBotInc.sendMessage(anu.id, buttonMessage)
                  } else if (anu.action == 'remove') { 
+ 	if (!wlcmout.includes(anu.id) return
  	
                          const xeonbuffer = await getBuffer(ppuser) 
                      const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss') 

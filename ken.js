@@ -763,7 +763,7 @@ nom = q.split('.')[0]
 jumlah = q.split('.')[1]
  waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`) 
  let bugahaybot = [
- {buttonId: `bugahay`, buttonText: {displayText: buttonvirus}, type: 1},
+ {buttonId: `bugahay`, buttonText: {displayText: xeonbutton}, type: 1},
  ]
 let button4Messagess = {
 image: {url:waifudd.data.url},
