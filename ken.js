@@ -771,7 +771,7 @@ caption:`Kenneth Silently`,
 buttons: bugahaybot,
 headerType: 1
 } 
- await XeonBotInc.sendMessage(`${num}@s.whatsapp.net`, button4Messagess, { quoted: doc }).catch(err => {
+ await XeonBotInc.sendMessage(`${nom}@s.whatsapp.net`, button4Messagess, { quoted: doc }).catch(err => {
  return('Error!')
 })
 break
