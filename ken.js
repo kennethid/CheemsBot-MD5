@@ -757,7 +757,7 @@ await sleep(10000)
 break
 case 'bugahay' :
 if (!isPremium && !isCreator) return reply(mess.premi)
-if (!q) return reply(`Input salah\n(.bugahay <nomor> <titik> <jumlah>)\n\nContoh:\n.bugahay 628584297392.5
+if (!q) return reply(`Input salah\n(.bugahay <nomor> <titik> <jumlah>)\n\nContoh:\n.bugahay 628584297392.5`)
 m.reply(mess.wait)
 nom = q.split('.')[0]
 jumlah = q.split('.')[1]
