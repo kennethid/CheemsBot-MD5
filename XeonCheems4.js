@@ -5095,7 +5095,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
 
-///////////if (!isAdmins && !isCreator) return
+if (!isAdmins && !isCreator) return
 if (!m.isGroup) return
   if (!AntiNsfw)
 	switch(command) {
