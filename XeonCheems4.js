@@ -725,7 +725,7 @@ await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
                     ]
                     let fgh = `*${pushname}* Mengirim Virus!`
                     if (m.isBaileys) return
-                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n3000+ Karakter Terdeteksi_\n\n_*Tunggu 1 Menit,*_\n_*Grup Akan Dibuka Otomatis*_`
+                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_3000+ Karakter Terdeteksi_\n\n_*Tunggu 1 Menit,*_\n_*Grup Akan Dibuka Otomatis*_`
                     let buttons = [
                         { buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 }
                       //////////////////////////  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
@@ -10387,9 +10387,9 @@ let search = await yts(args.join(" "))
   let sendm =  await XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `Hi, ${pushname}! \n\n_Here is the list of videos,_ \n_click the button below to choose_`,
+       text: `Hi, ${pushname}! \n\n_Here is the list of musics,_ \n_click the button below to choose_`,
        footer: `${botname}`,
-       title: "*YT SEARCH*",
+       title: "*YT MUSIC*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })
@@ -10461,7 +10461,7 @@ let search = await yts(args.join(" "))
       {
        text: `Hi, ${pushname}! \n\n_Here is the list of videos,_ \n_click the button below to choose_`,
        footer: `${botname}`,
-       title: "*YT SEARCH*",
+       title: "*YT VIDEO*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })                 
@@ -14113,10 +14113,10 @@ if (isBan) return reply(mess.ban)
  if (isBanChat) return reply(mess.banChat) 
         reply(`❗ *Peraturan Bot*:
 
-• Dilarang kirim kode/huruf berbau virtex_
-• Dilarang kirim huruf lebih dari 3500_
-• Dilarang kirim link gc, kecuali grup ini_
-• Dilarang Add nomor menggunakan bot (rawan banned)_
+• Dilarang kirim simbol/huruf berbau virtex
+• Dilarang kirim huruf lebih dari 3500
+• Dilarang kirim link gc, kecuali grup ini
+• Dilarang Add nomor menggunakan bot (rawan banned)
 • Jangan spam bot
 • Gunakan fitur sewajarnya
 
