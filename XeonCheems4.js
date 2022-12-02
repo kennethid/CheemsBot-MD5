@@ -5095,6 +5095,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } 
 
 if (!isAdmins && !isCreator) return
+if (!m.isGroup) return
   if (!AntiNsfw)
 	switch(command) {
  case 'banchat': case 'b': {
@@ -10356,7 +10357,7 @@ await sendm
                 })
                 }
 break
-case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3':{
+case 'music': case 'musik': case 'song': case 'lagu': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
