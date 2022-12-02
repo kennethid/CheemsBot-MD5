@@ -1604,6 +1604,7 @@ switch(command) {
  case 'wallmenu1': {
  	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!m.isGroup) return reply(mess.group)
 	if (!isAdmins && !isCreator) return reply(mess.admin)
 	if (args[0] === "on") {
 if (WallDua) return replay('Sudah diaktifkan')
@@ -5094,7 +5095,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
 
-if (!isAdmins && !isCreator) return
+///////////if (!isAdmins && !isCreator) return
 if (!m.isGroup) return
   if (!AntiNsfw)
 	switch(command) {
