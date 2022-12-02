@@ -725,7 +725,7 @@ await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
                     ]
                     let fgh = `*${pushname}* Mengirim Virus!`
                     if (m.isBaileys) return
-                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n3000+ Karakter Terdeteksi_\n\n_*Tunggu 1 Menit,*_\n_*Grup Akan Dibuka Otomatis*_`
+                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_3000+ Karakter Terdeteksi_\n\n_*Tunggu 1 Menit,*_\n_*Grup Akan Dibuka Otomatis*_`
                     let buttons = [
                         { buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 }
                       //////////////////////////  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
@@ -5095,7 +5095,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
 
-///////////if (!isAdmins && !isCreator) return
+//////////if (!isAdmins && !isCreator) return
 if (!m.isGroup) return
   if (!AntiNsfw)
 	switch(command) {
@@ -14113,10 +14113,10 @@ if (isBan) return reply(mess.ban)
  if (isBanChat) return reply(mess.banChat) 
         reply(`❗ *Peraturan Bot*:
 
-• Dilarang kirim kode/huruf berbau virtex_
-• Dilarang kirim huruf lebih dari 3500_
-• Dilarang kirim link gc, kecuali grup ini_
-• Dilarang Add nomor menggunakan bot (rawan banned)_
+• Dilarang kirim simbol/huruf berbau virtex
+• Dilarang kirim huruf lebih dari 3500
+• Dilarang kirim link gc, kecuali grup ini
+• Dilarang Add nomor menggunakan bot (rawan banned)
 • Jangan spam bot
 • Gunakan fitur sewajarnya
 
