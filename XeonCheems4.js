@@ -10387,9 +10387,9 @@ let search = await yts(args.join(" "))
   let sendm =  await XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `Hi, ${pushname}! \n\n_Here is the list of videos,_ \n_click the button below to choose_`,
+       text: `Hi, ${pushname}! \n\n_Here is the list of musics,_ \n_click the button below to choose_`,
        footer: `${botname}`,
-       title: "*YT SEARCH*",
+       title: "*YT MUSIC*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })
@@ -10461,7 +10461,7 @@ let search = await yts(args.join(" "))
       {
        text: `Hi, ${pushname}! \n\n_Here is the list of videos,_ \n_click the button below to choose_`,
        footer: `${botname}`,
-       title: "*YT SEARCH*",
+       title: "*YT VIDEO*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })                 
