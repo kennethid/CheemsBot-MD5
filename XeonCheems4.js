@@ -269,6 +269,7 @@ const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
 const AntiNsfw2 = m.isGroup ? ntnsfw2.includes(from) : false
 const WallDua = m.isGroup ? walldua.includes(from) : false
 const welcm = m.isGroup ? wlcm.includes(from) : false
+///////////////////const wlcmout = m.isGroup? wlcmout.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
 const Autoreply = m.isGroup ? autorep.includes(from) : true
@@ -1603,6 +1604,7 @@ switch(command) {
  case 'wallmenu1': {
  	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!m.isGroup) return reply(mess.group)
 	if (!isAdmins && !isCreator) return reply(mess.admin)
 	if (args[0] === "on") {
 if (WallDua) return replay('Sudah diaktifkan')
@@ -1693,9 +1695,8 @@ if (m.message && msgFilter.addFilter(from)) return
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
  break
-	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': {
+	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': case 'assalamualaikum': case 'anjing': {
 		if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
 cb = `🫥`
 bs = `😘`
 wk = `☝`
@@ -5094,7 +5095,8 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } else {
 } 
 
-/////////if (!isAdmins && !isCreator) return
+///////////if (!isAdmins && !isCreator) return
+if (!m.isGroup) return
   if (!AntiNsfw)
 	switch(command) {
  case 'banchat': case 'b': {
@@ -7156,7 +7158,6 @@ if (isBanChat) return reply(mess.banChat)
                 }
             }
             break
-            
             case 'welcome': case 'wc': case 'kl': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -10357,7 +10358,7 @@ await sendm
                 })
                 }
 break
-case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3':{
+case 'music': case 'musik': case 'song': case 'lagu': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
