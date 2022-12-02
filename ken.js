@@ -37,17 +37,17 @@ let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
 let banchat = JSON.parse(fs.readFileSync('./database/banChat.json'));
 let bad = JSON.parse(fs.readFileSync('./src/toxic/bad.json'))
 xeonbugpic = fs.readFileSync('./XBug/xpic.jpeg')
-const { xeonbut2 } = require('./XBug/xeonbut2')
-const { xeonvirtex } = require('./XBug/xeonvirtex')
-const { xeonbutton } = require('./XBug/xeonbutton')
-const { xeonbrutal } = require('./XBug/xeonbrutal')
+const { xeonbut2 } = require('./XBug/xeonbut2.js')
+const { xeonvirtex } = require('./XBug/xeonvirtex.js')
+const { xeonbutton } = require('./XBug/xeonbutton.js')
+const { xeonbrutal } = require('./XBug/xeonbrutal.js')
 const audionye = fs.readFileSync('./y.mp3')
-const { ngazap } = require('./lib/ngazap')
-const { santedpc } = require('./lib/santedpc')
-const { buttonvirus2 } = require('./lib/buttonvirus2')
-const { buttonvirus } = require('./lib/buttonvirus')
-const { virus } = require('./lib/virus')
-const { buttonkal } = require('./lib/buttonkal')
+const { ngazap } = require('./lib/ngazap.js')
+const { santedpc } = require('./lib/santedpc.js')
+const { buttonvirus2 } = require('./lib/buttonvirus2.js')
+const { buttonvirus } = require('./lib/buttonvirus.js')
+const { virus } = require('./lib/virus.js')
+const { buttonkal } = require('./lib/buttonkal.js')
 
 //read database\\
 
