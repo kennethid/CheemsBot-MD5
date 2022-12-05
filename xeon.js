@@ -104,40 +104,8 @@ async function startXeonBotInc() {
         if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
         m = smsg(XeonBotInc, mek, store)
-        require("./XeonCheems4")(XeonBotInc, m, chatUpdate, store)
+        require("./XeonCheems4")(XeonBotInc, m, chatUpdate, store), require("./XeonCheems5")(XeonBotInc, m, chatUpdate, store), require("./ken")(XeonBotInc, m, chatUpdate, store)
         
-        } catch (err) {
-            console.log(err)
-        }
-    })
-    
-    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
-        ///////////////console.log(JSON.stringify(chatUpdate, undefined, 2))
-        try {
-        mek = chatUpdate.messages[0]
-        if (!mek.message) return
-        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(XeonBotInc, mek, store)
-        require("./XeonCheems5")(XeonBotInc, m, chatUpdate, store)
-        } catch (err) {
-            console.log(err)
-        }
-    })
-    
-    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
-        ///////////////console.log(JSON.stringify(chatUpdate, undefined, 2))
-        try {
-        mek = chatUpdate.messages[0]
-        if (!mek.message) return
-        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(XeonBotInc, mek, store)
-        require("./ken")(XeonBotInc, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }

