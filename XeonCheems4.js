@@ -888,7 +888,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 
 // SEWA BOT
 
-if (budy.includes("sew"))  {
+if (budy.includes("sewxxx"))  {
                     if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
@@ -1637,12 +1637,8 @@ if (args[0] === "on") {
 if (AntiNsfw) return replay('Sudah diaktifkan')
 ntnsfw.push(from)
 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-var groupe = await XeonBotInc.groupMetadata(from)
-var members = groupe['participants']
-var mems = []
-members.map(async adm => {
-mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-})
+mems = []
+mems.push(from)
 } else if (args[0] === "off") {
 if (!AntiNsfw) return replay('Sudah dinonaktifkan')
 let off = ntnsfw.indexOf(from)
@@ -1711,56 +1707,14 @@ tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,je]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
   if (m.isGroup) return
-	let sections = [{
-								"title": "VOUCHER GAMES",
-								"rows": [
-									{
-										"title": "PUBG Mobile",
-										"description": "Mulai dari 35 UC - 2.500 UC",
-										"rowId": `${prefix}pubg1`
-									}, {
-										"title": "Free Fire",
-										"description": "Mulai dari 5 DM - 7.290 DM",
-										"rowId": `${prefix}freefire`
-									}, {
-										"title": "Mobile Legends",
-										"description": "Mulai dari 5 DM - 3.688 DM",
-										"rowId": `${prefix}mobilelegend`
-									}, {
-										"title": "Point Blank - Zapetto (Coming Soon)",
-										"description": "Mulai dari 1.200 Cash - 60.000 Cash",
-										"rowId": `${prefix}pointblank`
-									}, {
-										"title": "Lords Mobile (Coming Soon)",
-										"description": "Mulai dari 123 DM - 246 DM",
-										"rowId": `${prefix}lordsmobile`
-									}, {
-										"title": "SUPERSUS (Coming Soon)",
-										"description": "Mulai dari 100 GS - 5.600 GS",
-										"rowId": `${prefix}supersus`
-									},
-								]
-							}, { 
-								"title": "Sewa Bot Whatsapp Digrup Anda",
-								"rows": [
-									{
-										"title": "Bot Whatsapp",
-										"description": "Berbagai macam fitur",
-										"rowId": `${prefix}sewa`
-									}
-									]
-									}
-						] 
-  const sendm =  XeonBotInc.sendMessage(
-      m.chat, 
-      {
-       text: `Hai, *${pushname}*! 👋\n_klik tombol dibawah untuk memilih_`,
-       footer: `${botname}`,
-       title: "*KENNETH SHOP*",
-       buttonText: "KLIK DISINI",
-       sections
-      }, { quoted : m })
-      }
+ await sleep(8000)
+	reply(`*OPEN SEWA BOT*
+
+🤖 SEWA *2K* / 5 HARI
+🤖 SEWA *8K* / 1 BULAN
+🤖 SEWA *20K* / 3 BULAN
+🤖 SEWA *30K* / JADIBOT (30 Hari)`)
+}
       break 
       
       // PUBG
@@ -4329,7 +4283,6 @@ teks = `~*PRATINJAU MENU BOT*~\n\n*Response Speed* ${latensi.toFixed(4)} _Second
  ┃╠ ${prefix}banchat [on/off]  
  ┃╠ ${prefix}leavegc 
  ┃╠ ${prefix}setbio 
- ┃╠ ${prefix}bcgroup [text] 
  ┃╠ ${prefix}bcall [text] 
  ┃╠ ${prefix}bcimage [image] 
  ┃╠ ${prefix}bcvideo [video] 
@@ -4993,10 +4946,12 @@ case 'foxinfinity': case 'foxdoc': case 'lokas': case 'polvot': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
 	if (isAdmins) return
-XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
-await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-}
+	const njir = await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
+await njir
+await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !\nJgn Diulangi Atau Anda Akan Dikick!\n\n_*Tunggu 30 Detik*_\n_*Grup Akan Dibuka Otomatis*_`}, {quoted: m})
+await sleep(30000)
+                    await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
+           }
 break
 //anti bug kontol v2
 case 'b-cuy': case 'b-haicok': case 'b-ngntd': case 'b-anjay': case 'b-cokjancok': case 'b-ndasmu': case 'b-ngutang': case 'b-dokumen': 
@@ -5007,20 +4962,24 @@ case 'b-catalog': case 'b-catalogv2': case 'b-bugstik': case 'b-limo': case 'b-s
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
 	if (isAdmins) return
-XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
-await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-}
+const njir = await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
+await njir
+await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !\nJgn Diulangi Atau Anda Akan Dikick!\n\n_*Tunggu 30 Detik*_\n_*Grup Akan Dibuka Otomatis*_`}, {quoted: m})
+await sleep(30000)
+                    await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
+           }
 break
 //antibug kontol v3
 case 'ted': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!??\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
 	if (isAdmins) return
-XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
-await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-}
+const njir = await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
+await njir
+await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !\nJgn Diulangi Atau Anda Akan Dikick!\n\n_*Tunggu 30 Detik*_\n_*Grup Akan Dibuka Otomatis*_`}, {quoted: m})
+await sleep(30000)
+                    await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
+           }
 break
 case 'kintil': case 'kuntul': {
 	 if (!isBotAdmins) return
@@ -5055,7 +5014,6 @@ XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
-
                      }
                               //antilinkgc
                 
@@ -5095,8 +5053,7 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 } 
 
 if (!isAdmins && !isCreator) return
-if (!m.isGroup) return
-  if (!AntiNsfw)
+  if (AntiNsfw)
 	switch(command) {
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
@@ -7045,21 +7002,21 @@ if (!m.isGroup) return replay(mess.group)
 if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
-if (antiToxic) return replay('Already activated')
+if (antiToxic) return replay('Sudah diaktifkan')
 nttoxic.push(from)
-replay('Success in turning on antitoxic in this group')
+replay('Antitoxic telah diaktifkan')
 var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to use bad words in this group, one who uses will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Peringatan⚠️ 」\`\`\`\n\nTidak ada yang boleh menggunakan kata-kata jorok di grup ini, yang menggunakan akan langsung dihapus!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
-if (!antiToxic) return replay('Already deactivated')
+if (!antiToxic) return replay('Sudah dinonaktifkan')
 let off = nttoxic.indexOf(from)
 nttoxic.splice(off, 1)
-replay('Success in turning off antitoxic in this group')
+replay('Antitoxic telah dinonaktifkan!')
 } else {
   let buttonsnttoxic = [
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
@@ -7620,7 +7577,7 @@ let media = await quoted.download()
 let encmedia = await XeonBotInc.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+reply(`Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-5 Detik`)
 }
 }
 break
@@ -7645,7 +7602,7 @@ let media = await quoted.download()
 let encmedia = await XeonBotInc.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else {
-reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+reply(`Balas Stiker Dengan Caption ${prefix + command}\nDurasi Stiker Video 1-5 Detik`)
 }
 }
 break
@@ -7670,8 +7627,8 @@ case 'smeme2': case 'stickermeme2': case 'stickmeme2': try{
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let { TelegraPh } = require('./lib/uploader')
-if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text* | *text*`)
-if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption \n${prefix + command} *text* | *text*`)
+if (!text) return reply(`Kirim/Balas Foto Dengan Caption *${prefix + command}* *teks* | *teks*`)
+if (!/image/.test(mime)) return reply(`Kirim/Balas Foto Dengan Caption \n*${prefix + command}* *text* | *text*`)
 reply(mess.wait)
 inilogo4 = args.join(" ")
 inilogo9 = args.join(" ")
@@ -10420,7 +10377,6 @@ break
 case 'play': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return
 	let kice = m.sender
 	let buttons = [{buttonId: `ytbyone ${text}`, buttonText: {displayText: "Musik"}},
 	{buttonId: `yts ${text}`, buttonText: {displayText: "Video"}}]
@@ -10431,7 +10387,6 @@ break
 case 'yts': case 'ytsearch': case'ytplay': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
   if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
   if (m.message && msgFilter.addFilter(from)) return
@@ -14215,7 +14170,6 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
                 case 'command': case 'listmenu': {
                 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return reply(mess.group)
 	let sections = [{
 								"title": "Initial Features Of Bot 🦄",
 								"rows": [
@@ -14372,7 +14326,6 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 case 'allmenu': case 'allmenus': case 'menu': {
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return reply(mess.group)
 	if (m.message && msgFilter.addFilter(from)) return
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 let timestamp = speed()
@@ -14390,14 +14343,6 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}ban [add/del] 
  ┃╠ ${prefix}banchat [on/off]  
  ┃╠ ${prefix}leavegc 
- ┃╠ ${prefix}setbio 
- ┃╠ ${prefix}bcgroup [text] 
- ┃╠ ${prefix}bcall [text] 
- ┃╠ ${prefix}bcimage [image] 
- ┃╠ ${prefix}bcvideo [video] 
- ┃╠ ${prefix}bcaudio [audio] 
- ┃╠ ${prefix}bcloc [text] 
- ┃╠ ${prefix}setppbot [image] 
  ┃╠ ${prefix}setexif 
  ┃╠ ${prefix}block [tag/number] 
  ┃╠ ${prefix}unblock [tag/number] 
@@ -14993,7 +14938,6 @@ break
  case 'ownermenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Owner Menu') 
  anjay = ` ┏━「 _OWNER_ 」━━⭓ 
  ┃╔═══════✪         
@@ -15006,12 +14950,6 @@ break
  ┃╠ ${prefix}setbio 
  ┃╠ ${prefix}block [user] 
  ┃╠ ${prefix}unblock [user] 
- ┃╠ ${prefix}bcgroup [text] 
- ┃╠ ${prefix}bcall [text] 
- ┃╠ ${prefix}bcimage [image] 
- ┃╠ ${prefix}bcvideo [video] 
- ┃╠ ${prefix}bcaudio [audio] 
- ┃╠ ${prefix}bcloc [text] 
  ┃╠ ${prefix}setppbot [image] 
  ┃╠ ${prefix}setexif 
  ┃╚═════════════✪
@@ -15046,7 +14984,6 @@ sourceUrl: `${websitex}`,
  case 'groupmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Group Menu') 
  anjay = ` ┏━「 _GROUP_ 」━━⭓ 
  ┃╔═══════✪
@@ -15121,7 +15058,6 @@ sourceUrl: `${websitex}`,
  case 'rpgmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Rpg Menu') 
  anjay = ` ┏━「 _RPG_ 」━━⭓ 
  ┃╔═══════✪         
@@ -15168,7 +15104,6 @@ sourceUrl: `${websitex}`,
  case 'makermenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Maker Menu') 
  anjay = ` ┏━「 _TEXT MAKER_ 🖌 」━━⭓
  ┃╔═══════✪ 
@@ -15307,7 +15242,6 @@ sourceUrl: `${websitex}`,
  case 'downloadmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Download Menu') 
  anjay = ` ┏━「 _DOWNLOAD_ 」━━⭓ 
  ┃╔═══════✪         
@@ -15362,7 +15296,6 @@ sourceUrl: `${websitex}`,
  case 'searchmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Search Menu') 
  anjay = ` ┏━「 _SEARCH_ 」━━⭓ 
  ┃╔═══════✪
@@ -15424,7 +15357,6 @@ sourceUrl: `${websitex}`,
  case 'convertmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Convert Menu') 
  anjay = ` ┏━「 _CONVERT_ 」━━⭓ 
  ┃╔═══════✪
@@ -15489,7 +15421,6 @@ sourceUrl: `${websitex}`,
  case 'randomimagemenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Random Image Menu') 
  anjay = ` ┏━「 _RANDOM IMG_ 」━━⭓ 
  ┃╔═══════✪
@@ -15537,7 +15468,6 @@ sourceUrl: `${websitex}`,
  case 'emotemenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Emote Menu') 
  anjay = ` ┏━「 _EMOTE_ 」━━⭓ 
  ┃╔═══════✪
@@ -15585,7 +15515,6 @@ sourceUrl: `${websitex}`,
  case 'imageeffectmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Image Effect Menu') 
  anjay = ` ┏━「 _IMG EFFECT_ 」━━⭓ 
  ┃╔═════✪ 
@@ -15635,7 +15564,6 @@ sourceUrl: `${websitex}`,
  case 'animemenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Anime Menu') 
  anjay = ` ┏━「 _ANIME_ 」━━⭓ 
  ┃╔═══════✪  
@@ -15719,7 +15647,6 @@ sourceUrl: `${websitex}`,
  case 'stickermenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Sticker Menu') 
  anjay = ` ┏━「 _STICKER_ 」━━⭓ 
  ┃╔═══════✪
@@ -15762,7 +15689,6 @@ sourceUrl: `${websitex}`,
  case 'animestickermenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Anime Sticker Menu') 
  anjay = ` ┏━「 _ANIME STICKER_ 」━━⭓ 
  ┃╔═══════✪
@@ -15827,7 +15753,6 @@ sourceUrl: `${websitex}`,
  case 'nsfwmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Nsfw Menu') 
  anjay = ` ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
@@ -15888,7 +15813,6 @@ sourceUrl: `${websitex}`,
  case 'funmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Fun Menu') 
  anjay = ` ┏━「 _FUN_ 」━━⭓ 
  ┃╔═══════✪
@@ -15989,7 +15913,6 @@ sourceUrl: `${websitex}`,
  case 'soundmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Sound Menu') 
  anjay = ` ┏━「 _SOUND_ 」━━⭓ 
  ┃╔═══════✪
@@ -16186,7 +16109,6 @@ sourceUrl: `${websitex}`,
  case 'adzanmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(`https://telegra.ph/file/4e72707e3de85cca2e925.jpg`) 
  anjay = `┏━「 _ADZAN REMIX_ 🎧」━━⭓ 
 ┃╔══✪
@@ -16239,7 +16161,6 @@ sourceUrl: `${websitex}`,
  case 'gamemenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Game Menu') 
  anjay = ` ┏━「 _GAME_ 」━━⭓ 
  ┃╔═══════✪
@@ -16283,7 +16204,6 @@ sourceUrl: `${websitex}`,
  case 'anonymousmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Anonymous Menu') 
  anjay = ` ┏━「 _ANONYMOUS_ 」━━⭓ 
  ┃╔═══✪
@@ -16324,7 +16244,6 @@ sourceUrl: `${websitex}`,
  case 'toolmenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Tool Menu') 
 anjay = ` ┏━「 _TOOL_ 」━━⭓ 
  ┃╔═══════✪
@@ -16363,7 +16282,6 @@ break
  case 'databasemenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Database Menu') 
  anjay = ` ┏━「 _DATABASE_ 」━━⭓ 
  ┃╔═══✪ 
@@ -16418,7 +16336,6 @@ break
  case 'indomenu': {
                   if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  var unicorn = await getBuffer(picak+'Indo Menu') 
  anjay = ` ┏━「 _INDO_ 」━━⭓ 
  ┃╔═══════✪
@@ -16478,7 +16395,6 @@ break
  case 'indohoroscopemenu': {
                 if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group) 
  var unicorn = await getBuffer(picak+'Indo Horoscope Menu') 
 anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓ 
  ┃╔═✪      
@@ -16545,8 +16461,6 @@ sourceUrl: `${websitex}`,
  case 'othermenu': 
                 if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group) 
-
  var unicorn = await getBuffer(picak+'Other Menu') 
  anjay = ` ┏━「 _OTHER_ 」━━⭓ 
  ┃╔═══════✪      

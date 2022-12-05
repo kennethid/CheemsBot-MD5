@@ -1310,7 +1310,7 @@ if (budy.includes("sew"))  {
       	}
       
    
-if (AntiNsfw)
+if (!AntiNsfw)
 switch(command) {
 case 'test': {
 	if (!isCreator) return
