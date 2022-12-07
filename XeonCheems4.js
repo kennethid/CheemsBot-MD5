@@ -1636,23 +1636,23 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isAdmins && !isCreator) return replay(mess.admin)
-if (args[0] === "on") {
+if (args[0] === "off") {
 if (AntiNsfw) return replay('Sudah diaktifkan')
 ntnsfw.push(from)
 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 mems = []
 mems.push(from)
-} else if (args[0] === "off") {
+} else if (args[0] === "on") {
 if (!AntiNsfw) return replay('Sudah dinonaktifkan')
-let off = ntnsfw.indexOf(from)
-ntnsfw.splice(off, 1)
+let on = ntnsfw.indexOf(from)
+ntnsfw.splice(on, 1)
 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 } else {
   let buttonsntnsfw = [
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
-  await XeonBotInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  await XeonBotInc.sendButtonText(m.chat, buttonsntnsfw, `klik tombol di bawah\n\nOn untuk mode semua peserta\nOff untuk mode Admin`, `${global.botname}`, m)
   }
   }
   break
@@ -5152,13 +5152,13 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
  const istelahdaftar = datadaftar.includes(m.sender) ? false : true
   cpty = ` ┏━「 _FREE USER_ 」━━⭓ 
  ┃╔═══✪ 
- ┃╠ ${prefix}ytvideo [teks] ${getLimit(m.sender)}
- ┃╠ ${prefix}facebookmp4 [url] ${getLimit(m.sender)}
- ┃╠ ${prefix}tosticker ${getLimit(m.sender)}
+ ┃╠ ${prefix}ytvideo [teks] -1
+ ┃╠ ${prefix}facebookmp4 [url] -1
+ ┃╠ ${prefix}tosticker -1
  ┃╚═════════════✪
- ┗━「 *Limit Anda = ()* 」━⭓`
+ ┗━「 *Limit Harian Anda = ${getLimit(m.sender)}* 」━⭓\n\n_*500 Fitur Masih Terkunci*_\n_Beli Premium Untuk Membuka Semua Fitur_\n_Dan Tidak Ada Limit_`
  let btnp = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
- if (!istelahdaftar) return XeonBotInc.sendMessage(m.chat, {text: `_Bot akan dimulai_`}).then(await sleep(3000)).then(XeonBotInc.sendButtonText(m.chat, btnp, cpty, botname, m))
+ if (!istelahdaftar) return XeonBotInc.sendMessage(m.chat, {text: `_Bot akan dimulai..._`}).then(await sleep(3000)).then(XeonBotInc.sendButtonText(m.chat, btnp, cpty, botname, m))
  let cpt = `*OPEN SEWA BOT*
 
 🤖 SEWA *2K* / 5 HARI
@@ -5170,6 +5170,27 @@ _Klik tombol di bawah untuk memulai_`
  let btnzx = [{buttonId: `mulaing`, buttonText: {displayText: 'Mulai'}}]
  XeonBotInc.sendButtonText(m.chat, btnzx, cpt, botname, m)
 }
+break
+case 'belipremium': {
+	let caption = `◩ *Daftar Harga*
+
+➸ *💣Hemat :* 3K
+➸ *Limit :* Unlimited
+➸ *Expired :* 5 Hari
+
+➸ *💣Bulanan :* 8K
+➸ *Limit :* Unlimited
+➸ *Expired :* 1 Bulan
+
+➸ *💣Premium :* 25K
+➸ *Limit* : Unlimited
+➸ *Expired :* 3 Bulan`
+
+let buttons = [{buttonId: `owner`, buttonText: {displayText: 'Chat Owner'}}]
+let duwe = `Author: *${global.author}*`
+XeonBotInc.sendButtonText(m.chat, buttons, caption, duwe, m)
+	
+	}
 break
 case 'mulaing': {
 	///////////////  let datadaftar = JSON.parse(fs.readFileSync('./database/daftar.json', 'utf8'))
@@ -5186,10 +5207,26 @@ addInventoriLimit(m.sender)
  ┃╠ ${prefix}facebookmp4 [url] -1
  ┃╠ ${prefix}tosticker -1
  ┃╚═════════════✪
- ┗━「 *Limit Anda = ${getLimit(m.sender)}* 」━⭓`
+ ┗━「 *Limit Harian Anda = ${getLimit(m.sender)}* 」━⭓\n\n_*500 Fitur Masih Terkunci*_\n_Beli Premium Untuk Membuka Semua Fitur_\n_Dan Tidak Ada Limit_`
  let buttons = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m)
  }
+ break
+ case 'limit': {
+ 	if (m.isGroup) return
+ let datadaftar = JSON.parse(fs.readFileSync('./database/daftar.json', 'utf8'))
+ const istelahdaftar = datadaftar.includes(m.sender) ? false : true
+ let caption = `Anda Perlu Mendaftar`
+ let bjo = `Author: *${global.author}*`
+ let buttons = [{buttonId: `mulaing`, buttonText: {displayText: 'Mulai'}}]
+  if (istelahdaftar) return XeonBotInc.sendButtonText(m.chat, buttons, caption, bjo, m)
+XeonBotInc.sendMessage(m.chat, {text: `◩ *Limit Anda*
+
+➸ *Nama:* ${pushname}
+➸ *Limit :* ${getLimit(m.sender)}
+➸ *Paket :* Free\n\n☯ Limit akan direset setiap 12 jam`}, {quoted: m})
+
+ 	}
  break
  case 'daftarmenu': {
  if(!istelahdaftar) return XeonBotInc.sendButtonText(m.chat, btnzx, cpt, botname, m)
@@ -6550,12 +6587,6 @@ if (isBanChat) return reply(mess.banChat)
  XeonBotInc.sendMessage(m.chat, {image: kenbuffer, caption: `Here you go!`}, {quoted: m})
  } catch {
 reply(`Kirim/Balas pesan orang dengan caption *.getpp* \natau *.getpp @6285xxx*` )
-}
- break
- case 'limit': {
- if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-XeonBotInc.sendMessage(m.chat, {text: `Tidak Ada Limit / No Limits`}, {quoted: fdocs})
 }
  break
 	case 'kick': try{
@@ -18444,12 +18475,6 @@ if (isBanChat) return reply(mess.banChat)
  XeonBotInc.sendMessage(m.chat, {image: kenbuffer, caption: `Here you go!`}, {quoted: m})
  } catch {
 reply(`Kirim/Balas pesan orang dengan caption *.getpp* \natau *.getpp @6285xxx*` )
-}
- break
- case 'limit': {
- if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-XeonBotInc.sendMessage(m.chat, {text: `Tidak Ada Limit / No Limits`}, {quoted: fdocs})
 }
  break
 	case 'kick': try{
