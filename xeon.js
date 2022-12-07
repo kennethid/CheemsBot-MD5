@@ -88,7 +88,7 @@ async function startXeonBotInc() {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
     let xeonfek = await XeonBotInc.sendContact(callerId, global.rkyt)
-    XeonBotInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
+    XeonBotInc.sendMessage(callerId, { text: `Sistem Blok Otomatis!\nJangan Panggil Bot!\nSilakan Tanyakan Atau Hubungi Pemilik Untuk Membuka Blokir Anda!`}, { quoted : xeonfek })
     await sleep(8000)
     await XeonBotInc.updateBlockStatus(callerId, "block")
     }
@@ -104,76 +104,14 @@ async function startXeonBotInc() {
         if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
         m = smsg(XeonBotInc, mek, store)
-        require("./XeonCheems4")(XeonBotInc, m, chatUpdate, store)
+        require("./XeonCheems4")(XeonBotInc, m, chatUpdate, store), require("./XeonCheems5")(XeonBotInc, m, chatUpdate, store)
         
         } catch (err) {
             console.log(err)
         }
     })
     
-    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
-        ///////////////console.log(JSON.stringify(chatUpdate, undefined, 2))
-        try {
-        mek = chatUpdate.messages[0]
-        if (!mek.message) return
-        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(XeonBotInc, mek, store)
-        require("./XeonCheems5")(XeonBotInc, m, chatUpdate, store)
-        } catch (err) {
-            console.log(err)
-        }
-    })
     
-    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
-        ///////////////console.log(JSON.stringify(chatUpdate, undefined, 2))
-        try {
-        mek = chatUpdate.messages[0]
-        if (!mek.message) return
-        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(XeonBotInc, mek, store)
-        require("./ken")(XeonBotInc, m, chatUpdate, store)
-        } catch (err) {
-            console.log(err)
-        }
-    })
-    
-    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
-        ///////////////console.log(JSON.stringify(chatUpdate, undefined, 2))
-        try {
-        mek = chatUpdate.messages[0]
-        if (!mek.message) return
-        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(XeonBotInc, mek, store)
-        require("./wallmenu1")(XeonBotInc, m, chatUpdate, store)
-        } catch (err) {
-            console.log(err)
-        }
-    })
-    
-    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
-        ///////////////console.log(JSON.stringify(chatUpdate, undefined, 2))
-        try {
-        mek = chatUpdate.messages[0]
-        if (!mek.message) return
-        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(XeonBotInc, mek, store)
-        require("./wallmenu2")(XeonBotInc, m, chatUpdate, store)
-        } catch (err) {
-            console.log(err)
-        }
-    })
     
     // Group Update
     XeonBotInc.ev.on('groups.update', async pea => {
@@ -276,50 +214,7 @@ let docs = pickRandom(documents)
  }} 
  } 
  XeonBotInc.sendMessage(anu.id, buttonMessage)
-                 } else if (anu.action == 'remove') { 
- 	
-                         const xeonbuffer = await getBuffer(ppuser) 
-                     const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss') 
-                         const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY') 
-                         let xeonName = num 
-                     const xeonmembers = metadata.participants.length 
-                     let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: xeonbuffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true} 
-                     xeonbody = `┌─❖ 
- │「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」 
- └┬❖ 「 @${xeonName.split("@")[0]}  」 
-    │✑  𝗟𝗲𝗳𝘁  
-    │✑ ${metadata.subject} 
-    │✑  𝗠𝗲𝗺𝗯𝗲𝗿 :  
-    │✑ ${xeonmembers}th 
-    │✑  𝗧𝗶𝗺𝗲 :  
-    │✑  ${xeontime} ${xeondate} 
-    └───────────────┈ ⳹` 
- jnx = `Goodbye @${xeonName.split("@")[0]}!`
- let buttons = [ 
- {buttonId: `welcome2`, buttonText: {displayText: 'Sayonara 🥀'}, type: 1} 
- ] 
- let buttonMessage = { 
-document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
-mimetype: docs, 
-jpegThumbnail:XeonLft, 
-mentions: [num], 
-fileName: `Jasjus Beta ©`, 
-fileLength: 0, 
- caption: jnx,
- footer: `${botname}`, 
- buttons: buttons, 
- headerType: 4, 
- contextInfo:{externalAdReply:{ 
- title: `${metadata.subject}`, 
- body: `Bye! my friend, take care.`, 
- mediaType:2, 
- thumbnail: XeonLft, 
- sourceUrl: ``, 
- mediaUrl: `` 
- }} 
- } 
- XeonBotInc.sendMessage(anu.id, buttonMessage)
-                 } 
+                 } 
              } 
          } catch (err) { 
              console.log(err) 
@@ -407,7 +302,7 @@ fileLength: 0,
             else if (reason === DisconnectReason.timedOut) { console.log("🦄Connection TimedOut, Reconnecting..."); startXeonBotInc(); }
             else XeonBotInc.end(`🦄Unknown DisconnectReason: ${reason}|${connection}`)
         }
-       /////// console.log('Connected...', update)
+       console.log('Connected...', update)
     })
 
     XeonBotInc.ev.on('creds.update', saveState)
