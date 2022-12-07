@@ -1637,13 +1637,13 @@ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 if (isBanChat) return reply(mess.banChat)
 if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "off") {
-if (AntiNsfw) return replay('Sudah diaktifkan')
+if (AntiNsfw) return replay('Sudah dinonaktifkan')
 ntnsfw.push(from)
 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 mems = []
 mems.push(from)
 } else if (args[0] === "on") {
-if (!AntiNsfw) return replay('Sudah dinonaktifkan')
+if (!AntiNsfw) return replay('Sudah diaktifkan')
 let on = ntnsfw.indexOf(from)
 ntnsfw.splice(on, 1)
 XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
@@ -6168,7 +6168,7 @@ XeonBotInc.sendMessage(from, { text: `*Question* : ${command} ${q}\n*Answer* : $
 case 'can': case 'boleh': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-				if (!text) return replay(`Use Text, Example : ${prefix + command} you fuck her lol `)
+				if (!text) return 
 					const bisa = [`Boleh`,`Ga Boleh`,`Gak Bolehh`,`Tentu Saja Anda Boleh!!!`]
 					const ga = bisa[Math.floor(Math.random() * bisa.length)]
 XeonBotInc.sendMessage(from, { text: `*Question* : ${command} ${q}\n*Answer* : ${ga}` }, { quoted: m })
@@ -10860,10 +10860,10 @@ sourceUrl: ``,
 	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`},{
       	title: `Audio`, 
-	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+	     rowId: `${prefix}nxrad ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`}, {
       	title: `Dokumen`, 
-	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+	     rowId: `${prefix}nxrdc ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`
 	    }))
             nganu.data.mp4.map(v => sections[1].rows.push({
@@ -10902,10 +10902,10 @@ sourceUrl: ``,
 	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`},{
       	title: `Audio`, 
-	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+	     rowId: `${prefix}nxrad ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`}, {
       	title: `Dokumen`, 
-	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+	     rowId: `${prefix}nxrdc ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`
 	    }))
             nganu.data.mp4.map(v => sections[0].rows.push({
@@ -22748,10 +22748,10 @@ sourceUrl: ``,
 	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`},{
       	title: `Audio`, 
-	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+	     rowId: `${prefix}nxrad ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`}, {
       	title: `Dokumen`, 
-	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+	     rowId: `${prefix}nxrdc ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size} | Kualitas: ${v.q}`
 	    }))
             nganu.data.mp4.map(v => sections[1].rows.push({
