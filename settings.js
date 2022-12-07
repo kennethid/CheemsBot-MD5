@@ -98,6 +98,7 @@ global.thumb = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur
 
 //damtabase
 global.premium = ["6285773496010","6289503445265","6281585033934","62895622638061"] //ur premium numbers
+global.vip = [{"id":"6285747219408@s.whatsapp.net","limit":"17 Desember 2022"}]//ur premium numbers
 global.ntilinkytvid = []
 global.ntilinkytch = []
 global.ntilinkig = []
@@ -174,11 +175,539 @@ global.mess = {
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
     ban: 'Kamu Telah Dibanned Oleh Owner, Jika Ingin di Unbanned, chat owner.',
     nsfw: 'Fitur Nsfw Belum Diaktifkan, Silahkan Hubungi Admin Untuk Mengaktifkan',
-    banChat: 'Bot Telah Dibanned Dari Grup, Silahkan Hubungi Owner Untuk Unban!'
+    banChat: 'Bot Telah Dibanned Dari Grup, Silahkan Hubungi Owner Untuk Unban!',
+    menu: `  ┏━「 _KHUSUS OWNER_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #self  
+  ┃╠ #public  
+  ┃╠ #antitag  
+  ┃╠ #rentbot [add/del]  
+  ┃╠ #rentlist  
+  ┃╠ #ban [add/del]  
+  ┃╠ #banchat [on/off]   
+  ┃╠ #leavegc  
+  ┃╠ #setexif  
+  ┃╠ #block [tag/number]  
+  ┃╠ #unblock [tag/number]  
+  ┃╠ #coowner [add/del]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _TEXT MAKER_ 」━━⭓ 
+  ┃╔═══════✪  
+  ┃╠ #candy [text] 
+  ┃╠ #blackpinkneon [text] 
+  ┃╠ #deepsea [text] 
+  ┃╠ #scifi [text] 
+  ┃╠ #fiction [text] 
+  ┃╠ #berry [text] 
+  ┃╠ #fruitjuice [text] 
+  ┃╠ #biscuit [text] 
+  ┃╠ #wood [text] 
+  ┃╠ #chocolate [text] 
+  ┃╠ #matrix [text] 
+  ┃╠ #blood [text] 
+  ┃╠ #halloween [text] 
+  ┃╠ #wicker [text] 
+  ┃╠ #darkgold [text] 
+  ┃╠ #firework [text] 
+  ┃╠ #skeleton [text] 
+  ┃╠ #sand [text] 
+  ┃╠ #glue [text] 
+  ┃╠ #leaves [text] 
+  ┃╠ #magma [text] 
+  ┃╠ #lava [text] 
+  ┃╠ #rock [text] 
+  ┃╠ #bloodglas [text] 
+  ┃╠ #underwater [text] 
+  ┃╠ #textmaker [text] 
+  ┃╠ #honey [text] 
+  ┃╠ #ice [text] 
+  ┃╠ #watercolor [text] 
+  ┃╠ #multicolor [text] 
+  ┃╠ #snow [text] 
+  ┃╠ #harrypot [text] 
+  ┃╠ #harrypotter [text] 
+  ┃╠ #brokenglass [text] 
+  ┃╠ #waterpipe [text] 
+  ┃╠ #spooky [text] 
+  ┃╠ #circuit [text] 
+  ┃╠ #metallic [text] 
+  ┃╠ #demon [text] 
+  ┃╠ #sparklechristmas [text] 
+  ┃╠ #christmas [text] 
+  ┃╠ #3dchristmas [text] 
+  ┃╠ #3dbox [text] 
+  ┃╠ #waterdrop [text] 
+  ┃╠ #lion2 [text] 
+  ┃╠ #papercut [text] 
+  ┃╠ #transformer [text] 
+  ┃╠ #neondevil [text] 
+  ┃╠ #3davengers [text] 
+  ┃╠ #3dstone [text] 
+  ┃╠ #3dstone2 [text] 
+  ┃╠ #summertime [text] 
+  ┃╠ #thunder [text] 
+  ┃╠ #window [text] 
+  ┃╠ #graffiti [text] 
+  ┃╠ #graffitibike [text] 
+  ┃╠ #pornhub [text] 
+  ┃╠ #glitch [text] 
+  ┃╠ #blackpink [text] 
+  ┃╠ #glitch2 [text] 
+  ┃╠ #glitch3 [text] 
+  ┃╠ #3dspace [text] 
+  ┃╠ #lion [text] 
+  ┃╠ #3dneon [text] 
+  ┃╠ #greenneon [text] 
+  ┃╠ #bokeh [text] 
+  ┃╠ #holographic [text] 
+  ┃╠ #bear [text] 
+  ┃╠ #wolf [text] 
+  ┃╠ #joker [text] 
+  ┃╠ #dropwater [text] 
+  ┃╠ #dropwater2 [text] 
+  ┃╠ #thewall [text] 
+  ┃╠ #neonlight [text] 
+  ┃╠ #natural [text] 
+  ┃╠ #carbon [text] 
+  ┃╠ #pencil [text] 
+  ┃╠ #blackpink2 [text] 
+  ┃╠ #neon [text] 
+  ┃╠ #neonlight2 [text] 
+  ┃╠ #toxic [text] 
+  ┃╠ #strawberry [text] 
+  ┃╠ #discovery [text] 
+  ┃╠ #1917 [text] 
+  ┃╠ #sci_fi [text] 
+  ┃╠ #ancient [text] 
+  ┃╠ #fabric [text] 
+  ┃╠ #hoorror [text] 
+  ┃╠ #whitebear [text] 
+  ┃╠ #juice [text] 
+  ┃╠ #batman [text] 
+  ┃╠ #multicolor [text] 
+  ┃╠ #collwall [text] 
+  ┃╠ #wonderful [text] 
+  ┃╠ #cool [text] 
+  ┃╠ #sketch [text] 
+  ┃╠ #marvel [text] 
+  ┃╠ #foggy [text] 
+  ┃╠ #writing [text] 
+  ┃╠ #halloweenfire [text] 
+  ┃╠ #halloween [text] 
+  ┃╠ #watercolor [text] 
+  ┃╠ #classic [text] 
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _DOWNLOAD_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #instagram [url]  
+  ┃╠ #igtv [url]  
+  ┃╠ #igstory [username]  
+  ┃╠ #facebook [url] 
+  ┃╠ #fbmp3 [url]  
+  ┃╠ #twitter [url]  
+  ┃╠ #twittermp3 [url]  
+  ┃╠ #tiktok [url]  
+  ┃╠ #tiktokaudio[url]  
+  ┃╠ #tiktoknowm [url]  
+  ┃╠ #mediafire [url]  
+  ┃╠ #ytmp3 [url | quality]  
+  ┃╠ #ytmp4 [url | quality]  
+  ┃╠ #getmusic [yt link]  
+  ┃╠ #getvideo [yt link]  
+  ┃╠ #gitclone [repo link]  
+  ┃╠ #soundcloud [url]  
+  ┃╠ #zippyshare [url]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _SEARCH_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #play [query]  
+  ┃╠ #song [query]  
+  ┃╠ #yts [query]  
+  ┃╠ #lyrics [query]  
+  ┃╠ #google [query]  
+  ┃╠ #playstore [query]  
+  ┃╠ #gimage [query]  
+  ┃╠ #pinterest [query]  
+  ┃╠ #image [query]  
+  ┃╠ #film [query]  
+  ┃╠ #wallpaper [query]  
+  ┃╠ #searchgc [query]  
+  ┃╠ #happymod [query]  
+  ┃╠ #servermc  
+  ┃╠ #mcpedl [query]  
+  ┃╠ #tvsearch [query]  
+  ┃╠ #wikimedia [query]  
+  ┃╠ #ytsearch [query]  
+  ┃╠ #ringtone [query]  
+  ┃╠ #webtoon [query]  
+  ┃╠ #anime [query]  
+  ┃╠ #animestory [query]  
+  ┃╠ #manga [query]  
+  ┃╠ #wattpad [query]  
+  ┃╠ #mcserver [ip|port]  
+  ┃╠ #drakor [query]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _CONVERT_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #toimage [reply stick]  
+  ┃╠ #sticker [reply img | gif]  
+  ┃╠ #take [reply img | gif | stik]  
+  ┃╠ #smeme [reply img]  
+  ┃╠ #smeme2 [reply img *text | text*] 
+  ┃╠ #emoji [emoji]  
+  ┃╠ #tovideo [reply img]  
+  ┃╠ #togif [reply stick]  
+  ┃╠ #tourl [reply img]  
+  ┃╠ #tovn [reply aud]  
+  ┃╠ #tomp3 [reply vn]  
+  ┃╠ #toaudio [reply vid]  
+  ┃╠ #ebinary [reply txt]  
+  ┃╠ #dbinary [reply txt]  
+  ┃╠ #tinyurl [link]  
+  ┃╠ #styletext [text]  
+  ┃╠ #volume [reply aud]  
+  ┃╠ #tempo [reply aud]  
+  ┃╠ #bass [reply aud]  
+  ┃╠ #blown [reply aud]  
+  ┃╠ #deep [reply aud]  
+  ┃╠ #earrape [reply aud]  
+  ┃╠ #fast [reply aud]  
+  ┃╠ #fat [reply aud]  
+  ┃╠ #nightcore [reply aud]  
+  ┃╠ #reverse [reply aud]  
+  ┃╠ #robot [reply aud]  
+  ┃╠ #slow [reply aud]  
+  ┃╠ #squirrel [reply aud]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _IMG EFFECT_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #wanted [reply img] 
+  ┃╠ #blur [reply img] 
+  ┃╠ #framed [reply img] 
+  ┃╠ #gayeffect [reply img] 
+  ┃╠ #imagesketch [reply img] 
+  ┃╠ #invert [reply img] 
+  ┃╠ #burn [reply img] 
+  ┃╠ #triggeredwebp [reply img] 
+  ┃╠ #shit [reply img] 
+  ┃╠ #rip [reply img] 
+  ┃╠ #jail [reply img] 
+  ┃╠ #beautifuleffect [reply img] 
+  ┃╠ #deleteeffect [reply img] 
+  ┃╠ #pixelate [reply img] 
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _RANDOM IMG_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #coffee  
+  ┃╠ #woof  
+  ┃╠ #meow  
+  ┃╠ #lizard  
+  ┃╠ #wallneon  
+  ┃╠ #wallpubg  
+  ┃╠ #wallml  
+  ┃╠ #wallrandom  
+  ┃╠ #wallcode  
+  ┃╠ #animewall [query]  
+  ┃╠ #animewall2 [query]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _EMOTE_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #instagramemoji  
+  ┃╠ #facebookemoji  
+  ┃╠ #iphoneemoji  
+  ┃╠ #samsungemoji  
+  ┃╠ #joyemoji  
+  ┃╠ #skypeemoji  
+  ┃╠ #twitteremoji  
+  ┃╠ #whatsappemoji  
+  ┃╠ #microsoftemoji  
+  ┃╠ #googleemoji  
+  ┃╠ #pediaemoji  
+  ┃╠ #microsoftemoji  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _ANIME_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #naruto  
+  ┃╠ #yaoi  
+  ┃╠ #neko2  
+  ┃╠ #waifu  
+  ┃╠ #waifu2  
+  ┃╠ #awoo2  
+  ┃╠ #shinobu  
+  ┃╠ #waifu3  
+  ┃╠ #foxgirl  
+  ┃╠ #megumin2  
+  ┃╠ #loli  
+  ┃╠ #8ball  
+  ┃╠ #animenom  
+  ┃╠ #goose  
+  ┃╠ #avatar  
+  ┃╠ #tickle  
+  ┃╠ #gecg  
+  ┃╠ #feed  
+  ┃╠ #animeslap  
+  ┃╠ #animespank  
+  ┃╠ #animepat  
+  ┃╠ #animeneko  
+  ┃╠ #animekiss  
+  ┃╠ #animewlp  
+  ┃╠ #animecuddle  
+  ┃╠ #animecry  
+  ┃╠ #animekill  
+  ┃╠ #animelick  
+  ┃╠ #animebite  
+  ┃╠ #animeyeet  
+  ┃╠ #animebully  
+  ┃╠ #animebonk  
+  ┃╠ #animewink  
+  ┃╠ #animepoke  
+  ┃╠ #animesmile  
+  ┃╠ #animewave  
+  ┃╠ #animeawoo  
+  ┃╠ #animeblush  
+  ┃╠ #animesmug  
+  ┃╠ #animeglomp  
+  ┃╠ #animehappy  
+  ┃╠ #animedance  
+  ┃╠ #animecringe  
+  ┃╠ #animehighfive  
+  ┃╠ #animehandhold  
+  ┃╠ #animemegumin  
+  ┃╠ #smug2  
+  ┃╠ #couplepp  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _STICKER_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #patrick  
+  ┃╠ #emoji (fitur ini tidak tersedia) 
+  ┃╠ #emojimix  
+  ┃╠ #attp [text] 
+  ┃╠ #ttp [text] 
+  ┃╠ #doge  
+  ┃╠ #lovesticker  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _ANIME STICKER_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #loli  
+  ┃╠ #bully  
+  ┃╠ #cuddle  
+  ┃╠ #cry  
+  ┃╠ #hug  
+  ┃╠ #awoo  
+  ┃╠ #kiss  
+  ┃╠ #lick  
+  ┃╠ #pat  
+  ┃╠ #smug  
+  ┃╠ #bonk  
+  ┃╠ #yeet  
+  ┃╠ #blush  
+  ┃╠ #smile  
+  ┃╠ #wave  
+  ┃╠ #highfive  
+  ┃╠ #handhold  
+  ┃╠ #nom  
+  ┃╠ #glomp  
+  ┃╠ #bite  
+  ┃╠ #slap  
+  ┃╠ #kill  
+  ┃╠ #happy  
+  ┃╠ #wink  
+  ┃╠ #poke  
+  ┃╠ #dance  
+  ┃╠ #cringe  
+  ┃╠ #neko  
+  ┃╠ #gura  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _NSFW_ 」━━⭓  
+  ┃╔═══════✪ 
+  ┃╠ #hentaivideo  
+  ┃╠ #yuri (error) 
+  ┃╠ #masturbation (error) 
+  ┃╠ #thighs (error) 
+  ┃╠ #pussy (error) 
+  ┃╠ #panties (error) 
+  ┃╠ #orgy (error) 
+  ┃╠ #ahegao (error) 
+  ┃╠ #ass (error) 
+  ┃╠ #bdsm (error) 
+  ┃╠ #blowjob (error) 
+  ┃╠ #cuckold (error) 
+  ┃╠ #ero (error) 
+  ┃╠ #gasm  
+  ┃╠ #cum (error) 
+  ┃╠ #femdom (error) 
+  ┃╠ #foot (error) 
+  ┃╠ #gangbang (error) 
+  ┃╠ #glasses (error) 
+  ┃╠ #jahy (error) 
+  ┃╠ #trap  
+  ┃╠ #blowjobgif  
+  ┃╠ #spank  
+  ┃╠ #hneko  
+  ┃╠ #nwaifu  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _FUN_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #kerangajaib [text] 
+  ┃╠ #how [text]  
+  ┃╠ #when [text]  
+  ┃╠ #where [text]  
+  ┃╠ #is [text]  
+  ┃╠ #what [text]  
+  ┃╠ #can [text]  
+  ┃╠ #rate [text]  
+  ┃╠ #wangy [text]  
+  ┃╠ #beautifulcheck [tag]  
+  ┃╠ #awesomecheck [tag]  
+  ┃╠ #prettycheck [tag]  
+  ┃╠ #lesbiancheck [tag]  
+  ┃╠ #gaycheck [tag]  
+  ┃╠ #cutecheck [tag]  
+  ┃╠ #uglycheck [tag]  
+  ┃╠ #hornycheck [tag]  
+  ┃╠ #charactercheck [tag]  
+  ┃╠ #lovelycheck [tag]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _SOUND_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #sound1 
+  ┃╠ || 
+  ┃╠ #sound161 
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _GAME_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #family100 
+  ┃╠ #truth  
+  ┃╠ #dare  
+  ┃╠ #tictactoe  
+  ┃╠ #delttt  
+  ┃╠ #guess [option]  
+  ┃╠ #math [mode]  
+  ┃╠ #suitpvp [tag]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _TOOL_ 」━━⭓ 
+  ┃╔═✪ _en = inggris_ / _in = indonesia_ 
+  ┃╠ ~#translate en [text]~ (kedaluwarsa) 
+  ┃╠ #fliptext [text]  
+  ┃╠ #toletter [number]  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _DATABASE BOT_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #setcmd 
+  ┃╠ #listcmd  
+  ┃╠ #delcmd  
+  ┃╠ #lockcmd  
+  ┃╠ #addmsg  
+  ┃╠ #listmsg  
+  ┃╠ #getmsg  
+  ┃╠ #delmsg 
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _INDO_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #darkjoke  
+  ┃╠ #quotes  
+  ┃╠ #animequotes  
+  ┃╠ #jalantikus-meme  
+  ┃╠ #merdeka-news   
+  ┃╠ #kontan-news   
+  ┃╠ #cnbc-news   
+  ┃╠ #tribun-news   
+  ┃╠ #indozone-news   
+  ┃╠ #kompas-news   
+  ┃╠ #detik-news   
+  ┃╠ #daily-news   
+  ┃╠ #inews-news   
+  ┃╠ #okezone-news   
+  ┃╠ #sindo-news   
+  ┃╠ #tempo-news   
+  ┃╠ #antara-news   
+  ┃╠ #cnn-news   
+  ┃╠ #fajar-news   
+  ┃╠ #cinemaschedule  
+  ┃╠ #wiki  
+  ┃╠ #covidindo  
+  ┃╠ #earthquake  
+  ┃╠ #tvschedule  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _INDO HSCOPE_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #nomorhoki  
+  ┃╠ #artimimpi   
+  ┃╠ #artinama   
+  ┃╠ #ramaljodoh   
+  ┃╠ #ramaljodohbali   
+  ┃╠ #suamiistri   
+  ┃╠ #ramalcinta   
+  ┃╠ #cocoknama   
+  ┃╠ #pasangan   
+  ┃╠ #jadiannikah   
+  ┃╠ #sifatusaha   
+  ┃╠ #rezeki   
+  ┃╠ #pekerjaan   
+  ┃╠ #nasib   
+  ┃╠ #penyakit   
+  ┃╠ #tarot   
+  ┃╠ #fengshui   
+  ┃╠ #haribaik   
+  ┃╠ #harisangar   
+  ┃╠ #harisial  
+  ┃╠ #nagahari  
+  ┃╠ #arahrezeki  
+  ┃╠ #peruntungan   
+  ┃╠ #weton   
+  ┃╠ #karakter  
+  ┃╠ #keberuntungan  
+  ┃╠ #memancing  
+  ┃╠ #masasubur  
+  ┃╠ #zodiak  
+  ┃╠ #shio  
+  ┃╚═════════════✪ 
+  ┗━━━━━━━━━━━━━━━━━━━⭓ 
+  ┏━「 _OTHER_ 」━━⭓ 
+  ┃╔═══════✪ 
+  ┃╠ #afk  
+  ┃╠ #readmore [text]  
+  ┃╠ #toviewonce  
+  ┃╠ #getpp 
+  ┃╠ #chatinfo  
+  ┃╠ #alive  
+  ┃╠ #script  
+  ┃╠ #speedtest  
+  ┃╠ #ping  
+  ┃╠ #owner  
+  ┃╠ #menu  
+  ┃╠ #delete  
+  ┃╠ #chatinfo  
+  ┃╠ #quoted  
+  ┃╠ #listpc  
+  ┃╠ #listgc  
+  ┃╠ #donate  
+  ┃╠ #request  
+  ┃╠ #report [bug]  
+  ┃╚═════════════✪ 
+  ┗━「 *Created By Kenneth Morris* 」━⭓`
 }
     global.limitawal = {
     premium: "Infinity",
-    free: 12,
+    free: 8,
     monayawal: 1000
 }
    global.rpg = {

