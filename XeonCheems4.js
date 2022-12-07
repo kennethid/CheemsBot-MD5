@@ -5048,6 +5048,7 @@ await sleep(30000)
 break
 case 'kintil': case 'kuntul': {
 	 if (!isBotAdmins) return
+	if (args.length < 1) return
 bvl = `🤔`
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
