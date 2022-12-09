@@ -3880,7 +3880,7 @@ if (isBanChat) return reply(mess.banChat)
                     await XeonBotInc.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 }
             }
-            break
+ break
             case 'welcome': case 'wc': case 'kl': case 'setwelcome': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -4334,6 +4334,7 @@ break
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
+if (!prefix) return
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await XeonBotInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
@@ -4351,7 +4352,7 @@ break
 case 'swm': case 'take': case 'stickerwm': case 'wm': {
    if (isBan) return reply(mess.ban)	 			 
 if (isBanChat) return reply(mess.banChat)
-if (!args.join(" ")) return reply(`Example :\nswm kontol|yesus`)
+if (!args.join(" ")) return reply(`Example :\nswm teks|teks`)
 const swn = args.join(" ")
 const jmb = args.join(" ")
 const pcknm = swn.split("|")[0];
@@ -6290,7 +6291,7 @@ if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]
 let teds = await thiccysapi.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", [args[1]])
 XeonBotInc.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
 } else {
-reply(`*Text Maker List :*\n•> glitch\n•> glow\n\nExample: textmaker glow kontol`)
+reply(`*Text Maker List :*\n•> glitch\n•> glow\n\nExample: textmaker glow teks`)
 }
 }
 break
@@ -10082,6 +10083,7 @@ View List Of Messages With ${prefix}listmsg`)
              case 'keluar': case 'leave': { 
                            if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!prefix) return
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
                  this.anonymous = this.anonymous ? this.anonymous : {} 
                  let room = Object.values(this.anonymous).find(room => room.check(m.sender)) 
@@ -10100,8 +10102,8 @@ View List Of Messages With ${prefix}listmsg`)
              } 
              case 'mulai': case 'start': { 
                            if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
+         if (isBanChat) return reply(mess.banChat)
+ if (!prefix) return
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
                  this.anonymous = this.anonymous ? this.anonymous : {} 
                  if (Object.values(this.anonymous).find(room => room.check(m.sender))) { 

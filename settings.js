@@ -97,7 +97,7 @@ global.err4r = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur
 global.thumb = fs.readFileSync("./XeonMedia/theme/thumbnail/kennethid.jpg") //ur thumb pic
 
 //damtabase
-global.premium = ["6285773496010","6289503445265","6281585033934","62895622638061"] //ur premium numbers
+global.premium = ["6285773496010","6289503445265","6281585033934","62895622638061","6282245135176","6285773148403"] //ur premium numbers
 global.vip = [{"id":"6285747219408@s.whatsapp.net","limit":"17 Desember 2022"}]//ur premium numbers
 global.ntilinkytvid = []
 global.ntilinkytch = []

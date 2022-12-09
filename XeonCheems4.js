@@ -7509,6 +7509,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
             }
             break
+            
             case 'setwelcome': case 'welcome': case 'wc': case 'kl': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -7947,7 +7948,7 @@ break
 case 'swm': case 'take': case 'stickerwm': case 'wm': {
    if (isBan) return reply(mess.ban)	 			 
 if (isBanChat) return reply(mess.banChat)
-if (!args.join(" ")) return reply(`Example :\nswm kontol|yesus`)
+if (!args.join(" ")) return reply(`Example :\nswm teks|teks`)
 const swn = args.join(" ")
 const jmb = args.join(" ")
 const pcknm = swn.split("|")[0];
@@ -9886,7 +9887,7 @@ if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]
 let teds = await thiccysapi.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", [args[1]])
 XeonBotInc.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
 } else {
-reply(`*Text Maker List :*\n•> glitch\n•> glow\n\nExample: textmaker glow kontol`)
+reply(`*Text Maker List :*\n•> glitch\n•> glow\n\nExample: textmaker glow teks`)
 }
 }
 break
@@ -13644,6 +13645,7 @@ View List Of Messages With ${prefix}listmsg`)
              case 'keluar': case 'leave': { 
                            if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
+ if (!prefix) return
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
                  this.anonymous = this.anonymous ? this.anonymous : {} 
                  let room = Object.values(this.anonymous).find(room => room.check(m.sender)) 
@@ -13663,7 +13665,7 @@ View List Of Messages With ${prefix}listmsg`)
              case 'mulai': case 'start': { 
                            if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
+ if (!prefix) return
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
                  this.anonymous = this.anonymous ? this.anonymous : {} 
                  if (Object.values(this.anonymous).find(room => room.check(m.sender))) { 
@@ -17857,24 +17859,7 @@ default:
                     })
                 }
 			
-		if (m.chat.endsWith('@s.whatsapp.net') && isCmd) {
-                    this.anonymous = this.anonymous ? this.anonymous : {}
-                    let room = Object.values(this.anonymous).find(room => [room.a, room.b].includes(m.sender) && room.state === 'CHATTING')
-                    if (room) {
-                        if (/^.*(next|leave|start)/.test(m.text)) return
-                        if (['.next', '.leave', '.stop', '.start', 'Cari Partner', 'Keluar', 'Lanjut', 'Stop'].includes(m.text)) return
-                        let other = [room.a, room.b].find(user => user !== m.sender)
-                        m.copyNForward(other, true, m.quoted && m.quoted.fromMe ? {
-                            contextInfo: {
-                                ...m.msg.contextInfo,
-                                forwardingScore: 0,
-                                isForwarded: true,
-                                participant: other
-                            }
-                        } : {})
-                    }
-                    return !0
-                }
+		
                 
        
                 
@@ -17909,7 +17894,6 @@ XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800
 }
 
 if (m.isGroup) return
-if (!isCreator) return
 switch(command) {
 case 'allmenu': case 'allmenus': case 'menu': {
 	   if (isBan) return reply(mess.ban)
@@ -26752,102 +26736,53 @@ View List Of Messages With ${prefix}listmsg`)
 		reply(`Delete Successfully '${text}' From The Message list`)
             }
         break
-                    case 'anonymous': { 
-                       if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
-                                 this.anonymous = this.anonymous ? this.anonymous : {} 
-                                 let buttons = [ 
-                     { buttonId: 'Start', buttonText: { displayText: '🚶Start🚶' }, type: 1 } 
-                 ] 
-                 XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await XeonBotInc.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, XeonBotInc.user.name, m) 
-             } 
-                         break 
-             case 'keluar': case 'leave': { 
-                           if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
-                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
-                 this.anonymous = this.anonymous ? this.anonymous : {} 
-                 let room = Object.values(this.anonymous).find(room => room.check(m.sender)) 
-                 if (!room) { 
-                     let buttons = [ 
-                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 } 
-                     ] 
-                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``) 
-                    reply(false) 
-                 } 
-                 reply('Ok') 
-                 let other = room.other(m.sender) 
-                 if (other) await XeonBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m) 
-                 delete this.anonymous[room.id] 
-                 if (command === 'leave') break 
-             } 
-             case 'mulai': case 'start': { 
-                           if (isBan) return reply(mess.ban) 
-         if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
-                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
-                 this.anonymous = this.anonymous ? this.anonymous : {} 
-                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) { 
-                     let buttons = [ 
-                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
-                     ] 
-                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, XeonBotInc.user.name, m) 
-                     reply(false) 
-                 } 
-                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender)) 
-                 if (room) { 
-                     let buttons = [ 
-                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 }, 
-                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
-                     ] 
-                     await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m) 
-                     room.b = m.sender 
-                     room.state = 'CHATTING' 
-                     await XeonBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m) 
-                 } else { 
-                     let id = + new Date 
-                     this.anonymous[id] = { 
-                         id, 
-                         a: m.sender, 
-                         b: '', 
-                         state: 'WAITING', 
-                         check: function (who = '') { 
-                             return [this.a, this.b].includes(who) 
-                         }, 
-                         other: function (who = '') { 
-                             return who === this.a ? this.b : who === this.b ? this.a : '' 
-                         }, 
-                     } 
-                     let buttons = [ 
-                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
-                     ] 
-                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m) 
-                 } 
- }
-                 break 
-             
-            case 'next': case 'lanjut': {
-            	if (isBan) return reply(mess.ban)
+                    case 'anonymous': {
+     	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-                if (m.isGroup) return reply('Features Cannot Be Used For Groups!')
+                if (m.isGroup) return reply(mess.private)
+				this.anonymous = this.anonymous ? this.anonymous : {}
+				let buttons = [
+                    { buttonId: 'Start', buttonText: { displayText: 'Start 🚶' }, type: 1 }
+                ]
+                XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await XeonBotInc.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, XeonBotInc.user.name, m)
+            }
+			break
+            case 'keluar': case 'leave': {
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                if (m.isGroup) return reply('Feature Cannot Be Used In Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
-                let romeo = Object.values(this.anonymous).find(room => room.check(m.sender))
-                if (!romeo) {
+                let room = Object.values(this.anonymous).find(room => room.check(m.sender))
+                if (!room) {
                     let buttons = [
-                        { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
+                        { buttonId: 'start', buttonText: { displayText: 'Start 🚶' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``)
+                   reply(false)
+                }
+                reply('Ok')
+                let other = room.other(m.sender)
+                if (other) await XeonBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                delete this.anonymous[room.id]
+                if (command === 'leave') break
+            }
+            case 'mulai': case 'start': {
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                if (m.isGroup) return reply('Feature Cannot Be Used In Groups!')
+                this.anonymous = this.anonymous ? this.anonymous : {}
+                if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
+                    let buttons = [
+                        { buttonId: 'leave', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
+                    ]
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, XeonBotInc.user.name, m)
                     reply(false)
                 }
-                let other = romeo.other(m.sender)
-                if (other) await XeonBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
-                delete this.anonymous[romeo.id]
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
                 if (room) {
                     let buttons = [
-                        { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 },
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'next', buttonText: { displayText: ' Skip ⏩' }, type: 1 },
+                        { buttonId: 'leave', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
                     room.b = m.sender
@@ -26868,12 +26803,59 @@ View List Of Messages With ${prefix}listmsg`)
                         },
                     }
                     let buttons = [
-                        { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
+                        { buttonId: 'leave', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m)
                 }
                 break
+            }
+            case 'next': case 'lanjut': {
+            	            	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+                if (m.isGroup) return reply('Feature Cannot Be Used In Groups!')
+                this.anonymous = this.anonymous ? this.anonymous : {}
+                let romeo = Object.values(this.anonymous).find(room => room.check(m.sender))
+                if (!romeo) {
+                    let buttons = [
+                        { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
+                    ]
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
+                    reply(false)
                 }
+                let other = romeo.other(m.sender)
+                if (other) await XeonBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
+                delete this.anonymous[romeo.id]
+                let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
+                if (room) {
+                    let buttons = [
+                        { buttonId: 'next', buttonText: { displayText: 'Skip ⏩' }, type: 1 },
+                        { buttonId: 'leave', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
+                    ]
+                    await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
+                    room.b = m.sender
+                    room.state = 'CHATTING'
+                    await XeonBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m)
+                } else {
+                    let id = + new Date
+                    this.anonymous[id] = {
+                        id,
+                        a: m.sender,
+                        b: '',
+                        state: 'WAITING',
+                        check: function (who = '') {
+                            return [this.a, this.b].includes(who)
+                        },
+                        other: function (who = '') {
+                            return who === this.a ? this.b : who === this.b ? this.a : ''
+                        },
+                    }
+                    let buttons = [
+                        { buttonId: 'leave', buttonText: { displayText: 'Stop 🛑' }, type: 1 }
+                    ]
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m)
+                }
+                }
+                break
             case 'public': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -29656,6 +29638,7 @@ if (isBanChat) return reply(mess.banChat)
                  } 
  }
  break
+            }
  case 'menfess': case 'chat': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -29719,6 +29702,93 @@ Kenneth (Me)
 My dog
 And all monkey who helped assemble this sexy script!`)
 }
+break
+
+default:
+                if (budy.startsWith('=>')) {
+                    if (!isCreator) return reply(mess.owner)
+                    function Return(sul) {
+                        sat = JSON.stringify(sul, null, 2)
+                        bang = util.format(sat)
+                            if (sat == undefined) {
+                                bang = util.format(sul)
+                            }
+                            reply(bang)
+                    }
+                    try {
+                        reply(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
+                    } catch (e) {
+                        reply(String(e))
+                    }
+                }
+
+                if (budy.startsWith('>')) {
+                    if (!isCreator) return reply(mess.owner)
+                    try {
+                        let evaled = await eval(budy.slice(2))
+                        if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
+                        await reply(evaled)
+                    } catch (err) {
+                        await reply(String(err))
+                    }
+                }
+
+                if (budy.startsWith('$')) {
+                    if (!isCreator) return reply(mess.owner)
+                    exec(budy.slice(2), (err, stdout) => {
+                        if(err) return reply(err)
+                        if (stdout) return reply(stdout)
+                    })
+                }
+			
+		//anonymous msg forwarder
+if (m.chat.endsWith('@s.whatsapp.net') && isCmd) {
+                    this.anonymous = this.anonymous ? this.anonymous : {}
+                    let room = Object.values(this.anonymous).find(room => [room.a, room.b].includes(m.sender) && room.state === 'CHATTING')
+                    if (room) {
+                        if (/^.*(next|leave|start)/.test(m.text)) return
+                        if (['.next', '.leave', '.stop', '.start', 'Find Partner', 'Keluar', 'Lanjut', 'Stop'].includes(m.text)) return
+                        let other = [room.a, room.b].find(user => user !== m.sender)
+                        m.copyNForward(other, true, m.quoted && m.quoted.fromMe ? {
+                            contextInfo: {
+                                ...m.msg.contextInfo,
+                                forwardingScore: 0,
+                                isForwarded: true,
+                                participant: other
+                            }
+                        } : {})
+                    }
+                    return !0
+                }
+                
+                //anti-tag
+const listTag = [`${global.ownertag}@s.whatsapp.net`]
+const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo : ''
+//anti-tag 2
+if (listTag.includes(partiNum)) {
+if (antitags === false) return
+if (!m.isGroup) return
+if (m.key.fromMe) return
+sendNye = fs.readFileSync('./XeonMedia/theme/yourtag.webp')
+XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
+XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
+}
+//anti-tag 3
+if (budy.includes(`${global.ownertag}`)) {
+if (antitags === false) return
+if (!m.isGroup) return
+if (m.key.fromMe) return
+sendNye = fs.readFileSync('./XeonMedia/theme/yourtag.webp')
+XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
+XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
+}
+		if (isCmd && budy.toLowerCase() != undefined) {
+		    if (m.chat.endsWith('broadcast')) return
+		    if (m.isBaileys) return
+		    let msgs = global.db.data.database
+		    if (!(budy.toLowerCase() in msgs)) return
+		    XeonBotInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
+		}
 }
 
     }catch (err) {
