@@ -611,9 +611,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
             }
         }
         //antispam or auto react
-if (m.message && msgFilter.isFiltered(from)) {
-console.log(`❌ [SPAM (1)]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
-return }
+
 
         //monyet
         //if (m.mtype === 'extendedTextMessage') {
@@ -5160,9 +5158,6 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 break
 	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': case 'assalamualaikum': case 'anjing': {
 		if (isBan) return reply(mess.ban)	 		
-
-if (m.message && msgFilter.addFilter(from)) return repy(`command: *${prefix + command}* \n\nLakukan Perintah Setelah 5 Detik`)
-
 cb = `🫥`
 bs = `😘`
 wk = `☝`
@@ -5178,6 +5173,10 @@ tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,je]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
   if (m.isGroup) return
+ if (m.message && msgFilter.isFiltered(from)) {
+console.log(`❌ [SPAM (1)]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
+return }
+if (m.message && msgFilter.addFilter(from)) return repy(`command: *${prefix + command}* \n\nLakukan Perintah Setelah 5 Detik`)
  let buttons = [{buttonId: `allmenu`, buttonText: {displayText: 'Menu'}}]
  let caption = ` ┌─❖ 
  │「 Hai, Tuan! 」 
