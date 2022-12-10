@@ -7085,7 +7085,7 @@ await sendm
                 })
                 }
 break
-case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': case 'ytplay': {
+case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': case 'ytplay': case 'play': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
@@ -7143,7 +7143,7 @@ teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.snipp
 XeonBotInc.sendMessage(m.chat, {text: teks}, { quoted: fdocs })
 }
 break
-case 'play': {
+case 'playx': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (!args.join(" ")) return replay(`Masukkan Judul..\n\nContoh: *${prefix + command} Yntkts*`)
@@ -7191,8 +7191,7 @@ let search = await yts(args.join(" "))
       }, { quoted : m })                 
       await sendm
       XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-      
-                }).catch((err) => {
+      }).catch((err) => {
                     reply(mess.error)
                 })
             }
@@ -7286,7 +7285,7 @@ sourceUrl: ``,
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Tipe*_`,
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Kualitas*_`,
        footer: `${botname}`,
        title: "*YOUTUBE MUSIC*",
        buttonText: "CLICK HERE",
@@ -7328,7 +7327,7 @@ sourceUrl: ``,
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Tipe*_`,
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Kualitas*_`,
        footer: `${botname}`,
        title: "*YOUTUBE VIDEO*",
        buttonText: "CLICK HERE",

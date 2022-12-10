@@ -611,9 +611,9 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
             }
         }
         //antispam or auto react
-////////////if (m.message && msgFilter.isFiltered(from)) {
-//////////////////////////////////console.log(`❌ [SPAM (1)]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
-//////return }
+if (m.message && msgFilter.isFiltered(from)) {
+console.log(`❌ [SPAM (1)]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
+return reply(`Lakukan Perintah Setelah 5 Detik`)}
 
         //monyet
         //if (m.mtype === 'extendedTextMessage') {
@@ -5159,7 +5159,10 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 }
 break
 	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': case 'assalamualaikum': case 'anjing': {
-		if (isBan) return reply(mess.ban)	 			
+		if (isBan) return reply(mess.ban)	 		
+
+if (m.message && msgFilter.addFilter(from)) return repy(`command: *${prefix + command}* \n\nLakukan Perintah Setelah 5 Detik`)
+
 cb = `🫥`
 bs = `😘`
 wk = `☝`
@@ -5189,15 +5192,27 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
  if (isCreator) return XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m)
  let datadaftar = JSON.parse(fs.readFileSync('./database/daftar.json', 'utf8'))
  const istelahdaftar = datadaftar.includes(m.sender) ? false : true
-  cpty = ` ┏━「 _FREE USER_ 」━━⭓ 
- ┃╔═══✪ 
- ┃╠ ${prefix}ytvideo [teks] -1
- ┃╠ ${prefix}facebookmp4 [url] -1
- ┃╠ ${prefix}tosticker -1
- ┃╚═════════════✪
- ┗━「 *Limit Harian Anda = ${getLimit(m.sender)}* 」━⭓\n\n_*500 Fitur Masih Terkunci*_\n_Beli Premium Untuk Membuka Semua Fitur_\n_Dan Tidak Ada Limit_`
+ let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+cpty = ` ┌─❖ 
+ │「 Hai ! 」 
+ └┬❖ 「 @${m.sender.split("@")[0]}  」 
+    │✑ *Jenis Paket* :
+    │✑ Free
+    │✑ *Limit Anda* :  
+    │✑ 8
+    │✑ *Reset Limit* :
+    │✑ 8/12 Jam 
+    └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
+\n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
+\n*Paket Anda masih gratis 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 2K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+• Bisa join ke grup kamu\n• Boleh request fitur 😁`
  let btnp = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
- if (!istelahdaftar) return XeonBotInc.sendMessage(m.chat, {text: `_Bot akan dimulai..._`}).then(await sleep(3000)).then(XeonBotInc.sendButtonText(m.chat, btnp, cpty, botname, m))
+ reply(`Memeriksa status limit anda...`)
+ await sleep(2000)
+ if (!istelahdaftar) return XeonBotInc.sendMessage(m.chat, {text: `_Anda sudah mendaftar_ ✅\n_ketik *.menus* untuk menampilkan menu..._`})
  let cpt = `*OPEN SEWA BOT*
 
 🤖 SEWA *2K* / 5 HARI
@@ -5205,6 +5220,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 🤖 SEWA *20K* / 3 BULAN
 🤖 SEWA *30K* / JADIBOT (30 Hari)
 
+_*Anda belum mendaftar!*_
 _Klik tombol di bawah untuk memulai_`
  let btnzx = [{buttonId: `mulaing`, buttonText: {displayText: 'Mulai'}}]
  XeonBotInc.sendButtonText(m.chat, btnzx, cpt, botname, m)
@@ -5225,11 +5241,15 @@ case 'belipremium': {
 ➸ *Limit* : Unlimited
 ➸ *Expired :* 3 Bulan`
 
-let buttons = [{buttonId: `owner`, buttonText: {displayText: 'Chat Owner'}}]
+let buttons = [{buttonId: `ownerc`, buttonText: {displayText: 'Chat Owner'}}]
 let duwe = `Author: *${global.author}*`
 XeonBotInc.sendButtonText(m.chat, buttons, caption, duwe, m)
 	
 	}
+	break
+	case 'ownerc': {
+                XeonBotInc.sendContact(m.chat, global.rkyt, m)
+            }
 break
 case 'mulaing': {
 	///////////////  let datadaftar = JSON.parse(fs.readFileSync('./database/daftar.json', 'utf8'))
@@ -5238,17 +5258,49 @@ case 'mulaing': {
 let anjasz = await fs.writeFileSync('./database/daftar.json', JSON.stringify(daftar))
  await anjasz
 addInventoriLimit(m.sender)
+
   reply(`_Bot akan dimulai..._`)
   await sleep(3000)
- caption = ` ┏━「 _FREE USER_ 」━━⭓ 
- ┃╔═══✪ 
- ┃╠ ${prefix}ytvideo [teks] -1
- ┃╠ ${prefix}facebookmp4 [url] -1
- ┃╠ ${prefix}tosticker -1
- ┃╚═════════════✪
- ┗━「 *Limit Harian Anda = ${getLimit(m.sender)}* 」━⭓\n\n_*500 Fitur Masih Terkunci*_\n_Beli Premium Untuk Membuka Semua Fitur_\n_Dan Tidak Ada Limit_`
+ caption = ` ┌─❖ 
+ │「 Hai ! 」 
+ └┬❖ 「 @${m.sender.split("@")[0]}  」 
+    │✑ *Jenis Paket* :
+    │✑ Free
+    │✑ *Limit Anda* :  
+    │✑ 8
+    │✑ *Reset Limit* :
+    │✑ 8/12 Jam 
+    └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
+\n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
+\n*Paket Anda masih gratis 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 2K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+• Bisa join ke grup kamu\n• Boleh request fitur 😁`
  let buttons = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m)
+ }
+ break
+ case 'menus': {
+ 	let datadaftar = JSON.parse(fs.readFileSync('./database/daftar.json', 'utf8'))
+ const istelahdaftar = datadaftar.includes(m.sender) ? false : true
+let caption = `Anda Perlu Mendaftar`
+ let bjo = `Author: *${global.author}*`
+ let buttons = [{buttonId: `mulaing`, buttonText: {displayText: 'Mulai'}}]
+if (istelahdaftar) return XeonBotInc.sendButtonText(m.chat, buttons, caption, bjo, m)
+ cpty = ` ┌─❖ 
+ │「 Hai ! 」 
+ └┬❖ 「 @${m.sender.split("@")[0]}  」 
+    │✑ *Jenis Paket* :
+    │✑ Free
+    │✑ *Limit Anda* :  
+    │✑ 8
+    │✑ *Reset Limit* :
+    │✑ 8/12 Jam 
+    └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
+\n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
+\n*Paket Anda masih gratis 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 2K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+• Bisa join ke grup kamu\n• Boleh request fitur 😁`
+let btnz = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
+let hsjz = `Author: *Kenneth Morris*`
+ XeonBotInc.sendButtonText(m.chat, btnz, cpty, hsjz, m)
  }
  break
  case 'limit': {
@@ -10447,7 +10499,6 @@ break
 case 'mojiemoji': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
 reply(mess.wait)
 emote(q, "9")
@@ -10462,7 +10513,6 @@ break
 case 'emojimix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!q) reply(`*Example :* ${prefix + command} 🦄+🤣`)
 let [emoji1, emoji2] = q.split`+`
 let kuntuh = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
@@ -10475,7 +10525,6 @@ break
 	case 'toimage': case 'toimg': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
@@ -10493,7 +10542,6 @@ break
 case 'tomp4': case 'tovideo': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
@@ -10726,7 +10774,6 @@ break
 case 'google': case 'gulugulu': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
 if (m.message && msgFilter.addFilter(from)) return
 let button = [
@@ -10740,7 +10787,7 @@ teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.snipp
 XeonBotInc.sendMessage(m.chat, {text: teks}, { quoted: fdocs })
 }
 break
-case 'play': {
+case 'playx': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (!args.join(" ")) return replay(`Masukkan Judul..\n\nContoh: *${prefix + command} Yntkts*`)
@@ -10883,7 +10930,7 @@ sourceUrl: ``,
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Tipe*_`,
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Kualitas*_`,
        footer: `${botname}`,
        title: "*YOUTUBE MUSIC*",
        buttonText: "CLICK HERE",
@@ -10925,7 +10972,7 @@ sourceUrl: ``,
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Tipe*_`,
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Kualitas*_`,
        footer: `${botname}`,
        title: "*YOUTUBE VIDEO*",
        buttonText: "CLICK HERE",
@@ -11212,7 +11259,6 @@ case 'ig2': case 'igdl2': case 'instagram2': {
 			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': case 'insta': try{
 				if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 				if (m.message && msgFilter.addFilter(from)) return
 				XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
@@ -12988,7 +13034,6 @@ break
 	    case 'tiktok': case 'tiktoknowm': case 'ttnowm': try{
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return reply(mess.group)
   if (!q) return reply('Where is the link?')
   XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
   if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
@@ -17716,7 +17761,6 @@ if (isBanChat) return reply(mess.banChat)
  case 'mencrot': {
      if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group) 
                  if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
  let texto = args.join(" ")
                  this.anonymous = this.anonymous ? this.anonymous : {} 
@@ -18886,7 +18930,6 @@ case 'resetgclink':
 case 'resetgruplink': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
 if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
 XeonBotInc.groupRevokeInvite(m.chat)
@@ -19186,7 +19229,7 @@ if (isBanChat) return reply(mess.banChat)
             case 'mysoulmate': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-            if (!m.isGroup) return replay(`${mess.group}`)
+            
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -19203,7 +19246,7 @@ if (isBanChat) return reply(mess.banChat)
             case 'couple': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-            if (!m.isGroup) return replay(`${mess.group}`)
+            
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -19777,45 +19820,7 @@ if (isBanChat) return reply(mess.banChat)
                 await XeonBotInc.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
                 }
-                break
-            case 'pxxx': case '⠀': {
-                	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-            if (!m.isGroup) return 
-            if (!isCreator) return 
- var unicorn = await getBuffer(picak+'Database Menu') 
- anjay = `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny` 
-let documents = [doc1,doc2,doc3] 
- let docs = pickRandom(documents)
- toll = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWPsR8t5pGBn5c7WH8iJ2my4BkuI9chAm45B1Kolz_qUdSxQTHQt13dZkTLXDl1p5kLKNcGAJBK1N5jMx9AAEklWWlS0wP8lUDSHl82LdV379ADe6AoDsuiBZEeZrG7cDZPwvOun3Wj4fiYnb93YAW-pOx10BdNES-P7J27Tw_02iIf0ozRBEEEKFD5Q/w1320/IMG_20220828_185931.png`
- konv = await getBuffer(toll)
-//////////////// baj = fs.readFileSync(`./XeonMedia/theme/blokz.jpg`)
- let buttons = [ 
- {buttonId: `bot`, buttonText: {displayText: 'Bergabung ke grup'}}
- ] 
- let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
- let buttonMessage = { 
-  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
- mimetype: docs,
- mentions: [m.sender], 
- fileName: `Hi, everyone!`, 
- caption: anjay, 
- footer: `${botname}`, 
- buttons: buttons, 
- headerType: 4, mentions: participants.map(a => a.id),
-contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
- body: `Join Lurd!`, 
-mediaType: 4, 
- thumbnail: konv,
-sourceUrl: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny`, 
-  mediaUrl: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny` 
-}} 
-} 
- XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- }
-            break
+          break
 	    case 'style': case 'styletext': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -19842,7 +19847,7 @@ if (isBanChat) return reply(mess.banChat)
             await sleep(1000)
             upvote = vote[m.chat][1]
             devote = vote[m.chat][2]
-            teks_vote = `*「 VOTE 」*
+            teks_vote = `*「 VOTE 」* 
 
 *Reason:* ${vote[m.chat][0]}
 
@@ -20528,7 +20533,7 @@ if (isBanChat) return reply(mess.banChat)
             case 'ephemeral': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-                if (!m.isGroup) replay(`${mess.group}`)
+                
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (!text) return replay(`Enter The enable/disable Values`)
@@ -20889,7 +20894,6 @@ break
 case 'listonline': case 'listaktif': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
 let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
 let online = [...Object.keys(store.presences[id]), botNumber]
 let liston = 1
@@ -20991,7 +20995,6 @@ break
             case 'sticker': case 'stiker': case 's': case 'stickergif': case 'sgif': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await XeonBotInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
@@ -21034,7 +21037,6 @@ break
 case 'smeme': case 'stickermeme': case 'stickmeme': try{
 	                if (isBan) return reply(mess.ban)                                  
  if (isBanChat) return reply(mess.banChat) 
- if (!m.isGroup) return reply(mess.group)
  let { TelegraPh } = require('./lib/uploader') 
  if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*\n\nSimilar Features: smeme2 *text | text*`) 
  if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`) 
@@ -21136,8 +21138,6 @@ case 'femdom': case 'cum': case 'ero': case 'cuckold': case 'blowjob': case 'bds
 case 'ahegao': case 'ass': case 'orgy': case 'panties': case 'pussy': case 'thighs': case 'yuri': case 'tentacles': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
-///////////if (!m.isGroup) return replay(mess.group)
 try{
 reply(mess.wait)
 NoHorny = await fetchJson(`https://myselfff.herokuapp.com/docs/nsfw/${command}`)
@@ -21150,7 +21150,6 @@ break
    case 'spank': try{
       if (isBan) return reply(mess.ban)	 			
    if (isBanChat) return reply(mess.banChat)
-  if (!m.isGroup) return replay(mess.group)
   if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
 //////////////// spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
@@ -21168,7 +21167,6 @@ break
 case 'blowjobgif': case 'bj': case 'blowjob':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
 if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
 ////////////// bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
@@ -21185,7 +21183,6 @@ break
 case 'hentaivid': case 'hentaivideo': { 
 	                        	            	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return replay(mess.group)
 	if (m.message && msgFilter.addFilter(from)) return
                 reply(mess.wait)
                 anu = await hentai()
@@ -21203,7 +21200,6 @@ case 'hentaivid': case 'hentaivideo': {
 case 'trap' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
 reply(mess.wait)
  waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
             await XeonBotInc.sendMessage(m.chat, { image: {url:waifudd.data.url}, caption: `Here you go!`}, { quoted:m }).catch(err => {
@@ -21214,7 +21210,6 @@ case 'hentai-neko' :
 case 'hneko' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
     waifuddq = await axios.get(`https://waifu.pics/api/nsfw/neko`)
 let hnekobot = [
 {buttonId: `.hneko`, buttonText: {displayText: `Next ⚡`}, type: 1},
@@ -21233,7 +21228,6 @@ case 'hentai-waifu' :
 case 'nwaifu' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
 reply(mess.wait)
     waifuddw = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
  var nwaifubot = [
@@ -21309,7 +21303,6 @@ break
 case 'animenom' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
     waifuddy = await axios.get(`https://waifu.pics/api/sfw/nom`)
  let xxhnekobot = [
     {buttonId: `animenom`, buttonText: {displayText: `Next ⚡`}, type: 1},
@@ -21346,7 +21339,6 @@ break
 case 'neko2':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return reply(mess.group)
 reply(mess.wait)						
    waifuddi = await axios.get('https://waifu.pics/api/sfw/neko')
          var wbutsss = [
@@ -23167,7 +23159,6 @@ if (isBanChat) return reply(mess.banChat)
 case 'ancient':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
      let link = `https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html`
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -23268,7 +23259,6 @@ let anui = await textpro(link, q)
 case 'marvel':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -23279,7 +23269,6 @@ let anui = await textpro(link, q)
 case 'skeleton2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -23310,7 +23299,6 @@ let anui = await textpro(link, q)
 case 'cool':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 inilogo4 = args.join(" ")
 inilogo9 = args.join(" ")
    var logo4 = inilogo4.split('|')[0]
@@ -23324,7 +23312,6 @@ let link = await textpro(`https://textpro.me/create-a-cool-graffiti-text-on-the-
 case 'collwall':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -23335,7 +23322,6 @@ let anui = await textpro(link, q)
 case 'multicolor2':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 let link = `https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html`
 let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
@@ -23366,7 +23352,6 @@ let anui = await textpro(link, q)
 case 'pornhub':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
 reply(mess.wait)
   inilogo4 = args.join(" ")
@@ -23395,7 +23380,6 @@ break
 case 'horror':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
 reply(mess.wait)
   inilogo4 = args.join(" ")
@@ -23410,7 +23394,6 @@ break
 case '8bit':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if(!q) return reply(`Example: ${prefix + command} ajg | ea`)
 reply(mess.wait)
   inilogo4 = args.join(" ")
@@ -23508,7 +23491,6 @@ break
 case 'mojiemoji': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
 reply(mess.wait)
 emote(q, "9")
@@ -23523,7 +23505,6 @@ break
 case 'emojimix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!q) reply(`*Example :* ${prefix + command} 🦄+🤣`)
 let [emoji1, emoji2] = q.split`+`
 let kuntuh = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
@@ -23536,7 +23517,6 @@ break
 	case 'toimage': case 'toimg': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
@@ -23554,7 +23534,6 @@ break
 case 'tomp4': case 'tovideo': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!m.quoted) return reply('Reply Image')
 if (!/webp/.test(mime)) return reply(`Reply sticker with caption *${prefix + command}*`)
 reply(mess.wait)
@@ -23742,7 +23721,7 @@ await sendm
                 })
                 }
 break
-case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': case 'ytplay': {
+case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': case 'ytplay': case 'play': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
@@ -23787,7 +23766,6 @@ break
 case 'google': case 'gulugulu': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
 if (m.message && msgFilter.addFilter(from)) return
 let button = [
@@ -24273,7 +24251,6 @@ case 'ig2': case 'igdl2': case 'instagram2': {
 			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': case 'insta': try{
 				if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return reply(mess.group)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 				if (m.message && msgFilter.addFilter(from)) return
 				XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
@@ -26049,7 +26026,6 @@ break
 	    case 'tiktok': case 'tiktoknowm': case 'ttnowm': try{
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-	if (!m.isGroup) return reply(mess.group)
   if (!q) return reply('Where is the link?')
   XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
   if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
