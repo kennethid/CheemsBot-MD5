@@ -5258,6 +5258,10 @@ case 'mulaing': {
 let anjasz = await fs.writeFileSync('./database/daftar.json', JSON.stringify(daftar))
  await anjasz
 addInventoriLimit(m.sender)
+let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
 
   reply(`_Bot akan dimulai..._`)
   await sleep(3000)
@@ -5285,6 +5289,10 @@ let caption = `Anda Perlu Mendaftar`
  let bjo = `Author: *${global.author}*`
  let buttons = [{buttonId: `mulaing`, buttonText: {displayText: 'Mulai'}}]
 if (istelahdaftar) return XeonBotInc.sendButtonText(m.chat, buttons, caption, bjo, m)
+let timestamp = speed()
+     let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
  cpty = ` ┌─❖ 
  │「 Hai ! 」 
  └┬❖ 「 @${m.sender.split("@")[0]}  」 
@@ -13402,7 +13410,7 @@ try {
 hx.pinterest(args.join(" ")).then(async(res) => {
 imgnyee = res[Math.floor(Math.random() * res.length)]
 let buttons = [
-{buttonId: `pinterest ${args.join(" ")}`, buttonText: {displayText: 'Next Image 👀'}, type: 1}
+{buttonId: `pinterest ${args.join(" ")}`, buttonText: {displayText: 'Next Image ??'}, type: 1}
 ]
 let buttonMessage = {
 image: { url: imgnyee },
