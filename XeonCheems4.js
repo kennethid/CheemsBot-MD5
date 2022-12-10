@@ -5176,7 +5176,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
  if (m.message && msgFilter.isFiltered(from)) {
 console.log(`❌ [SPAM (1)]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
 return }
-if (m.message && msgFilter.addFilter(from)) return repy(`command: *${prefix + command}* \n\nLakukan Perintah Setelah 5 Detik`)
+if (m.message && msgFilter.addFilter(from)) return reply(`command: *${prefix + command}* \n\nLakukan Perintah Setelah 5 Detik`)
  let buttons = [{buttonId: `allmenu`, buttonText: {displayText: 'Menu'}}]
  let caption = ` ┌─❖ 
  │「 Hai, Tuan! 」 
@@ -5201,12 +5201,12 @@ cpty = ` ┌─❖
     │✑ *Jenis Paket* :
     │✑ Free
     │✑ *Limit Anda* :  
-    │✑ 8
+    │✑ ${getLimit(m.sender)}
     │✑ *Reset Limit* :
     │✑ 8/12 Jam 
     └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
 \n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
-\n*Paket Anda masih gratis 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 2K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+\n*Paket Anda masih gratis* 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 3K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
 • Bisa join ke grup kamu\n• Boleh request fitur 😁`
  let btnp = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
  reply(`Memeriksa status limit anda...`)
@@ -5214,7 +5214,7 @@ cpty = ` ┌─❖
  if (!istelahdaftar) return XeonBotInc.sendMessage(m.chat, {text: `_Anda sudah mendaftar_ ✅\n_ketik *.menus* untuk menampilkan menu..._`})
  let cpt = `*OPEN SEWA BOT*
 
-🤖 SEWA *2K* / 5 HARI
+🤖 SEWA *3K* / 5 HARI
 🤖 SEWA *8K* / 1 BULAN
 🤖 SEWA *20K* / 3 BULAN
 🤖 SEWA *30K* / JADIBOT (30 Hari)
@@ -5270,12 +5270,12 @@ let timestamp = speed()
     │✑ *Jenis Paket* :
     │✑ Free
     │✑ *Limit Anda* :  
-    │✑ 8
+    │✑ ${getLimit(m.sender)}
     │✑ *Reset Limit* :
     │✑ 8/12 Jam 
     └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
 \n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
-\n*Paket Anda masih gratis 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 2K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+\n*Paket Anda masih gratis* 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 3K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
 • Bisa join ke grup kamu\n• Boleh request fitur 😁`
  let buttons = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m)
@@ -5303,7 +5303,7 @@ let timestamp = speed()
     │✑ 8/12 Jam 
     └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
 \n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
-\n*Paket Anda masih gratis 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 2K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+\n*Paket Anda masih gratis* 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 3K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
 • Bisa join ke grup kamu\n• Boleh request fitur 😁`
 let btnz = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
 let hsjz = `Author: *Kenneth Morris*`
