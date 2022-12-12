@@ -1215,7 +1215,6 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
                 room.terjawab[index] = m.sender
             }
             
-            
             let jam = `Time Out: 2 min`
             
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
@@ -1231,10 +1230,10 @@ ${Array.from(room.jawaban, (jawaban, index) => {
     ${isSurender ? '' : `Perfect Player`}`.trim()
             if (isSurender) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }}) /////////////////////////////.then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }})
-            if (isWin || isSurender) return delete _family100['family100'+m.chat]
+            if (isWin || isSurender) return XeonBotInc.sendMessage(m.chat, {text: `deleted`}, {quoted: m}).then( delete _family100['family100'+m.chat])
            XeonBotInc.sendButtonText(m.chat, buttonb, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }})
            
-        } 
+           } 
         
         if (('menfess'+m.chat in _menfess) && isCmd) {
             kuis = true
@@ -5008,7 +5007,7 @@ case '🥜':{
 	if (!isBotAdmins) return 
 	if (isAdmins) return
 	if (isCreator) return
-	if (args.length < 1) return
+	if (!args.length < 1) return
 	await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
 const njir = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !\n*${pushname}* Akan Dikick!\n\n_*Tunggu 8 Detik*_\n_*Grup Akan Dibuka Otomatis*_`}, {quoted: m})
 await njir
@@ -5050,7 +5049,7 @@ await sleep(30000)
                     await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
            }
 break
-case 'kintil': case 'kuntul': {
+case 'kintilx': case 'kuntulx': {
 	 if (!isBotAdmins) return
 	if (args.length < 1) return
 bvl = `🤔`
