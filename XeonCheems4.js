@@ -186,6 +186,30 @@ const {
    const isInventoryMonay = cekDuluJoinAdaApaKagaMonaynyaDiJson(m.sender)
    const ikan = ['🐟','🐠','🐡']   
 
+const hours = moment().tz('Asia/Jakarta').format('HH:mm:ss')
+        if(hours < "23:59:00"){
+        var sayyingTime = 'Selamat Malam 🌃'
+}
+        if(hours < "19:00:00"){
+        var sayyingTime = 'Selamat Petang 🌆'
+}
+        if(hours < "18:00:00"){
+        var sayyingTime = 'Selamat Sore 🌅'
+} 
+        if(hours < "15:00:00"){
+        var sayyingTime = 'Selamat Siang 🏙'
+}
+        if(hours < "10:00:00"){
+        var sayyingTime = 'Selamat Pagi 🌄'
+}
+        if(hours < "05:00:00"){
+        var sayyingTime = 'Selamat Subuh 🌉'
+}
+        if(hours < "03:00:00"){
+        var sayyingTime = 'Selamat Tengah Malam 🌌'
+}
+
+
 //rpg database\\
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/hasil_buruan.json'));
@@ -1400,6 +1424,8 @@ Typed *surrender* to surrender and admited defeat`
 	    delete this.game[room.id]
 	    }
 	    }
+	
+	
 
         //Suit PvP\\
 	    this.suit = this.suit ? this.suit : {}
@@ -17907,24 +17933,7 @@ default:
                         if(err) return reply(err)
                         if (stdout) return reply(stdout)
                     })
-                }
-			
-		
-                
-       
-                
-			//anti-tag
-const listTag = [`${global.ownertag}@s.whatsapp.net`]
-const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo : ''
-//anti-tag 2
-if (listTag.includes(partiNum)) {
-if (antitags === false) return
-if (!m.isGroup) return
-if (m.key.fromMe) return
-sendNye = fs.readFileSync('./XeonMedia/theme/yourtag.webp')
-XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
-XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
-}
+              }
 //anti-tag 3
 if (budy.includes(`${global.ownertag}`)) {
 if (antitags === false) return
