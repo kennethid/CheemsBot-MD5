@@ -4632,6 +4632,10 @@ let sections = [{
 										"title": "Ukhty",
 										"description": "Displays The List Of Ukhty",
 										"rowId": `${prefix}asupanukhty`
+									}, {
+										"title": "Tiktok",
+										"description": "Displays The List Of Tiktok",
+										"rowId": `${prefix}asupantiktok`
 									}
 								]
 							}]
@@ -4689,6 +4693,15 @@ XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quo
          XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
         }
         } catch { reply(`_server sedang bermasalah_`)}
+        break
+        case 'asupantiktok': try{
+        	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+let tiktok = await fetchJson(`https://api.akuari.my.id/asupan/tiktok`)
+await XeonBotInc.sendMessage(m.chat, { video: {url: tiktok}, caption: `*Nih*`}, {quoted: m})
+} catch { reply(`_server sedang bermasalah_`)}
             break
 case 'trap' :
    if (isBan) return reply(mess.ban)	 			
@@ -7349,21 +7362,21 @@ await sendm
                 })
                 }
 break
-case 'google': case 'gulugulu': {
+case 'google': case 'gulugulu': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
 if (m.message && msgFilter.addFilter(from)) return
 let button = [
                 {buttonId: `command`, buttonText: { displayText: "List Menu" }, type: 1}]
-let anu = await fetchJson(`https://api.akuari.my.id/search/google?query=${text}`)
+let anu = await fetchJson(`https://api.akuari.my.id/search/bingsearch?query=${text}`)
 let teks = '*| GOOGLE SEARCH |*\n\n Result From '+text+'\n\n'
 let no = 1
-for( let search of anu.result) {
-teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.snippet}\n*Link* : ${search.link}\n\n─────────────────\n\n`
+for( let search of anu.hasil.results) {
+teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.description}\n*Link* : ${search.url}\n\n─────────────────\n\n`
 }
 XeonBotInc.sendMessage(m.chat, {text: teks}, { quoted: fdocs })
-}
+} catch { reply(`_server sedang bermasalah_`)}
 break
 case 'playx': {
 	if (isBan) return reply(mess.ban)
@@ -8694,6 +8707,7 @@ break
 case 'film':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!prefix) return
 	reply(mess.wait)
 if (!q) return reply(`What film you wanna search?\nExample: ${prefix}film Spiderman`)
 xeonkey.Film(q)
@@ -9444,6 +9458,7 @@ break
             case 'rejeki': case 'rezeki': {
             	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!prefix) return
                 if (!text) return reply(`Example : ${prefix + command} 7, 7, 2005`)
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
@@ -9454,6 +9469,7 @@ break
             case 'pekerjaan': case 'kerja': {
             	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!prefix) return
                 if (!text) return reply(`Example : ${prefix + command} 7, 7, 2005`)
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
