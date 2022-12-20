@@ -535,11 +535,13 @@ message: {
 	
 	//group target \\
 const reply = (teks) => {
-           XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+           XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": 
+{"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${websitex}`}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": 
+{"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${websitex}`}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -7151,41 +7153,6 @@ replay('Success in turning off antivirdoc this group')
   }
   }
 break
-case 'antilink': case 'antilinkgc': case 'algc': {
-if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
-if (!isBotAdmins) return replay(mess.botAdmin)
-if (!isAdmins && !isCreator) return replay(mess.admin)
-if (args[0] === "on") {
-if (AntiLinkGc) return replay('Already activated')
-ntilink.push(from)
- ja = `✅`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-////////////replay('Success in turning on antilink gc in this group')
-var groupe = await XeonBotInc.groupMetadata(from)
-var members = groupe['participants']
-var mems = []
-members.map(async adm => {
-mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-})
-/////////////////////////XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube video link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-} else if (args[0] === "off") {
-if (!AntiLinkGc) return replay('Already deactivated')
-let off = ntilink.indexOf(from)
-ntilink.splice(off, 1)
- ja = `✅`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-///////////////////replay('Success in turning off gc antilink in this group')
-} else {
-  let buttonsntilink = [
-  { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
-  { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
-  ]
-  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
-  }
-  }
-break
   case 'antilinkyoutubevideo': case 'antilinkyoutubevid': case 'antilinkytvid': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -8232,6 +8199,10 @@ let sections = [{
 										"title": "Tiktok",
 										"description": "Displays The List Of Tiktok",
 										"rowId": `${prefix}asupantiktok`
+									}, {
+										"title": "Santuy",
+										"description": "Displays The List Of Santuy",
+										"rowId": `${prefix}asupantiktok`
 									}
 								]
 							}]
@@ -8253,11 +8224,7 @@ if (!prefix) return
 XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
 let teks = `*Nih!*`
 let asupan = await fetchJson(`https://api.akuari.my.id/asupan/bocil`)
-   if (/image/.test(mime)) {
-XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
-        } else if (/video/.test(mime)) {
-         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
-        }
+  await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
   } catch { reply(`_server sedang bermasalah_`)}
         break
         case 'asupanghea': try {
@@ -8268,11 +8235,7 @@ if (!prefix) return
 XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
 let teks = `*Nih!*`
 let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ghea`)
-if (/image/.test(mime)) {
-XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
-        } else if (/video/.test(mime)) {
-         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
-        }
+await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
         } catch { reply(`_server sedang bermasalah_`)}
         break
         case 'asupanukhty': try {
@@ -8283,21 +8246,29 @@ if (!prefix) return
 XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
 let teks = `*Nih!*`
 let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ukhty`)
-if (/image/.test(mime)) {
-XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
-        } else if (/video/.test(mime)) {
-         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
-        }
+await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
         } catch { reply(`_server sedang bermasalah_`)}
         break
-        case 'asupantiktok': try{
+        case 'asupantiktok': try {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (!prefix) return
-let tiktok = await fetchJson(`https://api.akuari.my.id/asupan/tiktok`)
-await XeonBotInc.sendMessage(m.chat, { video: {url: tiktok}, caption: `*Nih*`}, {quoted: m})
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+await XeonBotInc.sendMessage(m.chat, {video: {url: `https://api.akuari.my.id/asupan/tiktok`}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
 } catch { reply(`_server sedang bermasalah_`)}
+break
+case 'asupansantuy': try {
+        	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/santuy`)
+await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
+        } catch { reply(`_server sedang bermasalah_`)}
             break
 case 'trap' :
    if (isBan) return reply(mess.ban)	 			
@@ -11216,7 +11187,7 @@ await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
             	}
             	break
-            case 'nxrvn': {
+            case 'nxrvn': try {
            XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
            const siji = q.split('|')[0]
            const loro = q.split('|')[1]
@@ -11239,9 +11210,10 @@ sourceUrl: ``
 }}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-            	}
+            	} catch {XeonBotInc.sendMessage("6285700945188@s.whatsapp.net", {text: `ada yg error nich\n*Command*: ${command}`}, {quoted:m})
+            reply(`_ada yang error, coba lagi_`)}
             break
-            case 'nxrad': {
+            case 'nxrad': try {
            XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
            const siji = q.split('|')[0]
            const loro = q.split('|')[1]
@@ -11264,9 +11236,10 @@ sourceUrl: ``
 }}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-            	}
+            	} catch {XeonBotInc.sendMessage("6285700945188@s.whatsapp.net", {text: `ada yg error nich\n*Command*: ${command}`}, {quoted:m})
+            reply(`_ada yang error, coba lagi_`)}
             break
-            case 'nxrdc': {
+            case 'nxrdc': try {
            XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
            const siji = q.split('|')[0]
            const loro = q.split('|')[1]
@@ -11289,7 +11262,8 @@ sourceUrl: ``
 }}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-            	}
+            	} catch {XeonBotInc.sendMessage("6285700945188@s.whatsapp.net", {text: `ada yg error nich\n*Command*: ${command}`}, {quoted:m})
+            reply(`_ada yang error, coba lagi_`)}
             break
             	case 'ytdontu': try{
             	if (isBan) return reply(mess.ban) 
@@ -12154,6 +12128,7 @@ if (isBanChat) return reply(mess.banChat)
                 case 'anime':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!prefix) return
 	    if(!q) return reply(`Which anime do you want to search?\nExample ${prefix}manga naruto`)
 reply(mess.wait)						
 const { Anime } =require("@shineiichijo/marika")
@@ -17865,13 +17840,13 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
  
  break
- case 'antilink': case 'antilink': {
+ case 'antilink': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
         if (!isAdmins) return replay(`${mess.admin}`)
-        if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
-        reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
+        if (!isBotAdmins) return replay(`*Antilink off*\n\nJadikan bot admin untuk mengaktifkan antilink`)
+        reply(`*Antilink on*\n\n_Unadmin bot untuk menonaktifkan Antilink_`)
 }
  break
  case 'menfessxxx': {
@@ -21350,6 +21325,10 @@ let sections = [{
 										"title": "Tiktok",
 										"description": "Displays The List Of Tiktok",
 										"rowId": `${prefix}asupantiktok`
+									}, {
+										"title": "Santuy",
+										"description": "Displays The List Of Santuy",
+										"rowId": `${prefix}asupantiktok`
 									}
 								]
 							}]
@@ -21371,11 +21350,7 @@ if (!prefix) return
 XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
 let teks = `*Nih!*`
 let asupan = await fetchJson(`https://api.akuari.my.id/asupan/bocil`)
-   if (/image/.test(mime)) {
-XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
-        } else if (/video/.test(mime)) {
-         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
-        }
+  await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
   } catch { reply(`_server sedang bermasalah_`)}
         break
         case 'asupanghea': try {
@@ -21386,11 +21361,7 @@ if (!prefix) return
 XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
 let teks = `*Nih!*`
 let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ghea`)
-if (/image/.test(mime)) {
-XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
-        } else if (/video/.test(mime)) {
-         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
-        }
+await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
         } catch { reply(`_server sedang bermasalah_`)}
         break
         case 'asupanukhty': try {
@@ -21401,21 +21372,29 @@ if (!prefix) return
 XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
 let teks = `*Nih!*`
 let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ukhty`)
-if (/image/.test(mime)) {
-XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
-        } else if (/video/.test(mime)) {
-         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
-        }
+await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
         } catch { reply(`_server sedang bermasalah_`)}
         break
-        case 'asupantiktok': try{
+        case 'asupantiktok': try {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (!prefix) return
-let tiktok = await fetchJson(`https://api.akuari.my.id/asupan/tiktok`)
-await XeonBotInc.sendMessage(m.chat, { video: {url: tiktok}, caption: `*Nih*`}, {quoted: m})
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+await XeonBotInc.sendMessage(m.chat, {video: {url: `https://api.akuari.my.id/asupan/tiktok`}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
 } catch { reply(`_server sedang bermasalah_`)}
+break
+case 'asupansantuy': try {
+        	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/santuy`)
+await XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks, fileName: `bocil.mp4`},{quoted: m })
+        } catch { reply(`_server sedang bermasalah_`)}
             break
 case 'trap' :
    if (isBan) return reply(mess.ban)	 			
@@ -23852,7 +23831,7 @@ let audio = await toAudio(media, 'mp4')
 XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join(" ")}.mp3`}, { quoted : m })
 }
 break
-case 'kerangajaib': case 'kerangajaip': case 'kulitkerangajaib': {
+case 'kerangajaib': case 'kerangajaip': case 'kulitkerangajaib': case 'apakah': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!text) return reply(`Tulis Teksnya\n\n*Contoh*: \n.kerangajaib apakah aku boleh makan?\n\n_~just for fun :D_`)
@@ -24321,7 +24300,7 @@ await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
             	}
             	break
-            case 'nxrvn': {
+            case 'nxrvn': try {
            XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
            const siji = q.split('|')[0]
            const loro = q.split('|')[1]
@@ -24344,9 +24323,10 @@ sourceUrl: ``
 }}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-            	}
+            	} catch {XeonBotInc.sendMessage("6285700945188@s.whatsapp.net", {text: `ada yg error nich\n*Command*: ${command}`}, {quoted:m})
+            reply(`_ada yang error, coba lagi_`)}
             break
-            case 'nxrad': {
+            case 'nxrad': try {
            XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
            const siji = q.split('|')[0]
            const loro = q.split('|')[1]
@@ -24369,9 +24349,10 @@ sourceUrl: ``
 }}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-            	}
+            	} catch {XeonBotInc.sendMessage("6285700945188@s.whatsapp.net", {text: `ada yg error nich\n*Command*: ${command}`}, {quoted:m})
+            reply(`_ada yang error, coba lagi_`)}
             break
-            case 'nxrdc': {
+            case 'nxrdc': try {
            XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
            const siji = q.split('|')[0]
            const loro = q.split('|')[1]
@@ -24394,7 +24375,8 @@ sourceUrl: ``
 }}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m}))///////////////////////////.catch((err) => reply(`_*Error!*_ \n\n*TypeError*: ${jsonformat(err)}`))
 await bjir
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
-            	}
+            	} catch {XeonBotInc.sendMessage("6285700945188@s.whatsapp.net", {text: `ada yg error nich\n*Command*: ${command}`}, {quoted:m})
+            reply(`_ada yang error, coba lagi_`)}
             break
             	case 'ytdontu': try{
             	if (isBan) return reply(mess.ban) 
@@ -25259,6 +25241,7 @@ if (isBanChat) return reply(mess.banChat)
                 case 'anime':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
+	if (!prefix) return
 	    if(!q) return reply(`Which anime do you want to search?\nExample ${prefix}manga naruto`)
 reply(mess.wait)						
 const { Anime } =require("@shineiichijo/marika")
@@ -29823,13 +29806,13 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
  
  break
- case 'antilink': case 'antilink': {
+ case 'antilink': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
         if (!isAdmins) return replay(`${mess.admin}`)
-        if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
-        reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
+        if (!isBotAdmins) return replay(`*Antilink off*\n\nJadikan bot admin untuk mengaktifkan antilink`)
+        reply(`*Antilink on*\n\n_Unadmin bot untuk menonaktifkan Antilink_`)
 }
  break
  case 'menfessxxx': {
