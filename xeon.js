@@ -43,6 +43,29 @@ try {
   low = require('./lib/lowdb')
 }
 
+const hours = moment().tz('Asia/Jakarta').format('HH:mm:ss')
+        if(hours < "23:59:00"){
+        var sayyingTime = 'Selamat Malam 🌃'
+}
+        if(hours < "19:00:00"){
+        var sayyingTime = 'Selamat Petang 🌆'
+}
+        if(hours < "18:00:00"){
+        var sayyingTime = 'Selamat Sore 🌅'
+} 
+        if(hours < "15:00:00"){
+        var sayyingTime = 'Selamat Siang 🏙'
+}
+        if(hours < "10:00:00"){
+        var sayyingTime = 'Selamat Pagi 🌄'
+}
+        if(hours < "05:00:00"){
+        var sayyingTime = 'Selamat Subuh 🌉'
+}
+        if(hours < "03:00:00"){
+        var sayyingTime = 'Selamat Tengah Malam 🌌'
+}
+
 const { Low, JSONFile } = low
 const mongoDB = require('./lib/mongoDB')
 
@@ -198,7 +221,7 @@ let docs = pickRandom(documents)
  mimetype: docs, 
  jpegThumbnail:XeonWlcm, 
  mentions: [num], 
- fileName: `Jasjus Beta ©`, 
+ fileName: `${sayyingTime}`, 
  fileLength: 0, 
  caption: oam,
  footer: `${botname}`, 
