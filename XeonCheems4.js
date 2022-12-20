@@ -58,8 +58,6 @@ const xeontod = require("tod-api")
 const { pinterest } = require("./lib/pinterest")
 const toHur = require('@develoka/angka-terbilang-js')
 const { hentai } = require('./lib/scraper2.js')
-const openai = require('openai')
-const api = new openai.Api('')
 const Jimp = require('jimp')
 const {
  FajarNews, 
