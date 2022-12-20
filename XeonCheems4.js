@@ -58,6 +58,9 @@ const xeontod = require("tod-api")
 const { pinterest } = require("./lib/pinterest")
 const toHur = require('@develoka/angka-terbilang-js')
 const { hentai } = require('./lib/scraper2.js')
+const openai = require('openai')
+const api = new openai.Api('')
+const Jimp = require('jimp')
 const {
  FajarNews, 
  BBCNews,
@@ -186,6 +189,30 @@ const {
    const isInventoryMonay = cekDuluJoinAdaApaKagaMonaynyaDiJson(m.sender)
    const ikan = ['🐟','🐠','🐡']   
 
+const hours = moment().tz('Asia/Jakarta').format('HH:mm:ss')
+        if(hours < "23:59:00"){
+        var sayyingTime = 'Selamat Malam 🌃'
+}
+        if(hours < "19:00:00"){
+        var sayyingTime = 'Selamat Petang 🌆'
+}
+        if(hours < "18:00:00"){
+        var sayyingTime = 'Selamat Sore 🌅'
+} 
+        if(hours < "15:00:00"){
+        var sayyingTime = 'Selamat Siang 🏙'
+}
+        if(hours < "10:00:00"){
+        var sayyingTime = 'Selamat Pagi 🌄'
+}
+        if(hours < "05:00:00"){
+        var sayyingTime = 'Selamat Subuh 🌉'
+}
+        if(hours < "03:00:00"){
+        var sayyingTime = 'Selamat Tengah Malam 🌌'
+}
+
+
 //rpg database\\
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/hasil_buruan.json'));
@@ -235,7 +262,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
         const botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
-        const isCreator = [botNumber, ...global.premium, ...global.rkyt, ...['6285842965801'], ...['6285774939323'], ...['6285732604538'], ...['6285747219408']].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isCreator = [botNumber, ...global.premium, ...global.rkyt, ...['6285842965801'], ...['6285774939323'], ...['6285732604538'], ...['6285700945188']].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
@@ -1400,6 +1427,8 @@ Typed *surrender* to surrender and admited defeat`
 	    delete this.game[room.id]
 	    }
 	    }
+	
+	
 
         //Suit PvP\\
 	    this.suit = this.suit ? this.suit : {}
@@ -1677,7 +1706,7 @@ if (isBanChat) return reply(mess.banChat)
 	case 'jasjus': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!isAdmins && !isCreator) return replay(mess.cmmnd)
+if (!isAdmins && !isCreator) return
 cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
 bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
 wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
@@ -3793,7 +3822,7 @@ let caption = `Nama: *${pushname}*\nVoucher: *2500 UC | PUBG*\nMetode Pembayaran
                      break
                      
                      // SEWA BOT
-                    case 'sewa': {
+                    case 'sewax': {
                     if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
                  if (m.isGroup) return
@@ -4653,25 +4682,8 @@ teks = `~*PRATINJAU MENU BOT*~\n\n*Response Speed* ${latensi.toFixed(4)} _Second
  ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}asupan
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -4845,7 +4857,7 @@ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/allmenu.jpg')
  headerType: 4,
 contextInfo: { externalAdReply: { 
 	largeThumb: true,
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Bot by Kenneth ID`, 
 ////// mediaType: 4, 
  thumbnail: pics, 
@@ -5205,7 +5217,7 @@ cpty = ` ┌─❖
     │✑ 8/12 Jam 
     └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
 \n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
-\n*Paket Anda masih gratis* 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 3K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏*Paket Anda masih gratis* 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 3K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
 • Bisa join ke grup kamu\n• Boleh request fitur 😁`
  let btnp = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
  reply(`Memeriksa status limit anda...`)
@@ -5274,7 +5286,7 @@ let timestamp = speed()
     │✑ 8/12 Jam 
     └───────────────┈ ⳹\n\n*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*Berikut perintah yang dapat Anda gunakan :*
 \n➸ #tosticker\n◩ Mengubah gambar menjadi stiker\n\n➸ #ytvideo <judul>\n◩ Cari musik/video dengan cepat\n\n➸ #facebookmp4 <link>\n◩ Download video dari facebook lebih cepat, tinggal tempel link
-\n*Paket Anda masih gratis* 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 3K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
+\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏*Paket Anda masih gratis* 😢, yuk *upgrade ke premium* sekarang!\n\n\`\`\`Harga mulai dari 3K\`\`\`\n\n*Keuntungan Premium:*\n• Membuka semua fitur yang terkunci\n• Limit tanpa batas
 • Bisa join ke grup kamu\n• Boleh request fitur 😁`
  let buttons = [{buttonId: `belipremium`, buttonText: {displayText: 'Beli Premium'}}]
  XeonBotInc.sendButtonText(m.chat, buttons, caption, botname, m)
@@ -6331,6 +6343,7 @@ if (isBanChat) return reply(mess.banChat)
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
+					
                     case 'stupid':
       case 'foolish':
       case 'smart':
@@ -6833,7 +6846,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4, mentions: participants.map(a => a.id),
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Join Lurd!`, 
 mediaType: 4, 
  thumbnail: konv,
@@ -8197,6 +8210,84 @@ case 'hentaivid': case 'hentaivideo': {
                 XeonBotInc.sendMessage(m.chat, button3Messages, { quoted: m })
             }
             break
+            case 'asupan': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+let sections = [{
+								"title": "Asupan",
+								"rows": [
+									{
+										"title": "Bocil",
+										"description": "Displays The List Of Bocil",
+										"rowId": `${prefix}asupanbocil`
+									}, {
+										"title": "Ghea",
+										"description": "Displays The List Of Ghea",
+										"rowId": `${prefix}asupanghea`
+									}, {
+										"title": "Ukhty",
+										"description": "Displays The List Of Ukhty",
+										"rowId": `${prefix}asupanukhty`
+									}
+								]
+							}]
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `🤔`,
+       footer: `${sayyingTime}\n${botname}`,
+       buttonText: "List",
+       sections
+      }, { quoted : m })
+      } 
+            break
+case 'asupanbocil': try {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/bocil`)
+   if (/image/.test(mime)) {
+XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
+        } else if (/video/.test(mime)) {
+         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
+        }
+  } catch { reply(`_server sedang bermasalah_`)}
+        break
+        case 'asupanghea': try {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ghea`)
+if (/image/.test(mime)) {
+XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
+        } else if (/video/.test(mime)) {
+         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
+        }
+        } catch { reply(`_server sedang bermasalah_`)}
+        break
+        case 'asupanukhty': try {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ukhty`)
+if (/image/.test(mime)) {
+XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
+        } else if (/video/.test(mime)) {
+         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
+        }
+        } catch { reply(`_server sedang bermasalah_`)}
+            break
 case 'trap' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -9217,21 +9308,83 @@ replay(`Error!`)
 }
 }
 break
-case 'translate': case 'trans': {
+case 'translate': case 'trans': try{
 if (isBan) return reply(mess.ban)
-//////// const bakk = args.join(" ")
-///////const baksd = args.join(" ")
-//////////////////// if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
-//////////////////// if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
-/////////// const ka = bakk.split(" | ")[0];
-/////////// const ko = baksd.split(" | ")[1];
-///////////////////// if (!text.includes(' | ')) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
-///////////////// tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${text}`)
-//////// Infoo = tes.info
-///////Detek = tes.translate
-///////////////// replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
-reply(`*EXPIRED FEATURE*\n\nmaaf fitur ini sudah kedaluwarsa, akan segera diperbarui`)
-}
+if (!text) return reply(`Example: ${prefix + command} <text>`)
+let trans = await fetchJson(`https://api.akuari.my.id/edukasi/terjemah?query=${text}&kode=en`)
+let sections = [{
+								"title": "Select Language",
+								"rows": [
+									{
+										"title": "English",
+										"rowId": `${prefix}translator en|${text}`
+									}, {
+										"title": "France",
+										"rowId": `${prefix}translator fr|${text}`
+									}, {
+										"title": "Indonesia",
+										"rowId": `${prefix}translator id|${text}`
+									}, {
+										"title": "Portugese",
+										"rowId": `${prefix}translator pt|${text}`
+									}, {
+										"title": "Russian",
+										"rowId": `${prefix}translator ru|${text}`
+									}, {
+										"title": "Spain",
+										"rowId": `${prefix}translator es|${text}`
+									}
+								]
+							}]
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `*🌐Translate:* \n_${trans.query}_\n\n*📘Result:* \n_${trans.terjemah}_`,
+       footer: `© Google Translate`,
+       buttonText: "List",
+       sections
+      }, { quoted : m })
+      
+} catch { reply(`_maaf server tidak merespon_`)}
+break
+case 'translator': try{
+	if (isBan) return
+	if (!q.split('|')[0]) return reply(`Example: ${prefix + command} en|apa iya?`)
+	let trans = await fetchJson(`https://api.akuari.my.id/edukasi/terjemah?query=${q.split('|')[1]}&kode=${q.split('|')[0]}`)
+let sections = [{
+								"title": "Select Language",
+								"rows": [
+									{
+										"title": "English",
+										"rowId": `${prefix}translator en|${q.split('|')[1]}`
+									}, {
+										"title": "France",
+										"rowId": `${prefix}translator fr|${q.split('|')[1]}`
+									}, {
+										"title": "Indonesia",
+										"rowId": `${prefix}translator id|${q.split('|')[1]}`
+									}, {
+										"title": "Portugese",
+										"rowId": `${prefix}translator pt|${q.split('|')[1]}`
+									}, {
+										"title": "Russian",
+										"rowId": `${prefix}translator ru|${q.split('|')[1]}`
+									}, {
+										"title": "Spain",
+										"rowId": `${prefix}translator es|${q.split('|')[1]}`
+									}
+								]
+							}]
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `*🌐Translate:* \n_${trans.query}_\n\n*📘Result:* \n_${trans.terjemah}_`,
+       footer: `© Google Translate`,
+       buttonText: "List",
+       sections
+      }, { quoted : m })
+      
+} catch { reply(`_maaf server tidak merespon_`)}
 break
 case 'sound1':
 case 'sound2':
@@ -10735,7 +10888,7 @@ await sendm
                 })
                 }
 break
-case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': case 'ytplay': {
+case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic': case 'youtubemp3': case 'ytplay': case 'play': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
@@ -10752,7 +10905,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}apinxr ${i.url}|${i.title}`,
+	     rowId: `${prefix}playnxr ${i.url}|${i.title}`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -10765,7 +10918,7 @@ let search = await yts(args.join(" "))
       {
        text: `Hai, ${pushname}! \n\n_Berikut adalah daftar *${text}*,_ \n_klik tombol di bawah untuk memilih_`,
        footer: `${botname}`,
-       title: "*YT MUSIC*",
+       title: "*YOUTUBE*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })
@@ -10889,7 +11042,7 @@ const jetkontol = jetbosok.split(" | ")[1]
  buttons: button, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `By Kenneth ID`, 
 mediaType: 4, 
  thumbnail: tummb, 
@@ -10904,7 +11057,7 @@ sourceUrl: ``,
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
                 
             break
-            case 'apinxr': {
+            case 'playnxr': {
             const jan = q.split('|')[0]
             const cok = q.split('|')[1]
         let nganu = await fetchJson(`https://yt.nxr.my.id/yt3?url=${jan}`)
@@ -10916,6 +11069,7 @@ sourceUrl: ``,
                 title: 'Video', 
                 rows: [] 
              }]
+ try {
               nganu.data.mp3.map(v => sections[0].rows.push({
 	     title: `Voice Note`, 
 	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
@@ -10932,7 +11086,50 @@ sourceUrl: ``,
 	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size}`	     
 	    }))
-	
+	} catch { reply(`_Ada yang error, coba lagi_`)}
+     const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Kualitas*_`,
+       footer: `${botname}`,
+       title: "*YOUTUBE*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : m })                 
+      await sendm
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      }
+      break
+            case 'apinxr': {
+            const jan = q.split('|')[0]
+            const cok = q.split('|')[1]
+        let nganu = await fetchJson(`https://yt.nxr.my.id/yt3?url=${jan}`)
+  // saatuuuu
+              let sections = [{ 
+                title: 'Audio', 
+                rows: [] 
+             }, { 
+                title: 'Video', 
+                rows: [] 
+             }]
+ try {
+              nganu.data.mp3.map(v => sections[0].rows.push({
+	     title: `Voice Note`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`},{
+      	title: `Audio`, 
+	     rowId: `${prefix}nxrad ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`}, {
+      	title: `Dokumen`, 
+	     rowId: `${prefix}nxrdc ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`
+	    }))
+            nganu.data.mp4.map(v => sections[1].rows.push({
+	     title: `${v.q}`, 
+	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size}`	     
+	    }))
+	} catch { reply(`_Ada yang error, coba lagi_`)}
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
@@ -10958,6 +11155,7 @@ sourceUrl: ``,
                 title: 'Audio', 
                 rows: [] 
              }]
+ try {
               nganu.data.mp3.map(v => sections[1].rows.push({
 	     title: `Voice Note`, 
 	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
@@ -10974,6 +11172,7 @@ sourceUrl: ``,
 	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size}`	     
 	    }))
+	} catch { reply(`_Ada yang error, coba lagi_`)}
 	
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
@@ -13104,7 +13303,7 @@ const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
 ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {document: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
-	title: `Jasjus ID 🔰`,
+	title: `Ken- Bot ID 🔰`,
 	body: `MP3 | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
@@ -13124,7 +13323,7 @@ const bapakkau = jetbosok.split(" | ")[0]
 let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 let ola = await getBuffer(ttaudio.hasil.download_mp3)
 XeonBotInc.sendMessage(m.chat, {audio: ola, mimetype: "audio/mpeg", ptt: true, contextInfo: { externalAdReply: {
-	title: `Jasjus ID 🔰`,
+	title: `Ken- Bot ID 🔰`,
 	body: `Voice Note | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
@@ -13143,7 +13342,7 @@ const bapakkau = jetbosok.split(" | ")[0]
 let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/tiktok.jpg')
 let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
-	title: `Jasjus ID 🔰`,
+	title: `Ken- Bot ID 🔰`,
 	body: `Audio | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
@@ -14430,25 +14629,8 @@ teks = `~*PRATINJAU MENU BOT*~\n\n*Response Speed* ${latensi.toFixed(4)} _Second
  ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}asupan
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -14622,7 +14804,7 @@ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/allmenu.jpg')
  headerType: 4,
 contextInfo: { externalAdReply: { 
 	largeThumb: true,
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Bot by Kenneth ID`, 
 ////// mediaType: 4, 
  thumbnail: pics, 
@@ -14681,7 +14863,7 @@ _~Bot ini sudah otomatis Anti-Link dan Virtex, jadi jika ada orang yang mengirim
                     case 'sewabot': {
                     if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-reply(`Chat Owner: \nwa.me/6285747219408/?text=kak+mau+sewa+bot`)
+reply(`Chat Owner: \nwa.me/6285700945188/?text=kak+mau+sewa+bot`)
 }
                     break
                     case 'script': case 'sc': {
@@ -15314,25 +15496,8 @@ let timestamp = speed()
  ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}asupan
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -15501,13 +15666,13 @@ let btnMessage = {
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: doc3,
  mentions: [m.sender], 
- fileName: `${pushname}`, 
+ fileName: `${sayyingTime} ${pushname}`, 
  caption: tex, 
  footer: `${botname}`, 
  buttons: btns, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 ////// mediaType: 4, 
  thumbnail: kenbuffer, 
@@ -15916,25 +16081,8 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}asupan
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -16101,13 +16249,13 @@ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/skin 2/allmenu.jpg')
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
  mentions: [m.sender], 
- fileName: `Hi, ${pushname} 👋`, 
+ fileName: `${sayyingTime} ${pushname} 👋`, 
  caption: teks, 
  footer: `${botname}`, 
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 ////// mediaType: 4, 
  thumbnail: pics, 
@@ -16154,7 +16302,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16228,7 +16376,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16274,7 +16422,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16412,7 +16560,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16466,7 +16614,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16527,7 +16675,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16591,7 +16739,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16637,7 +16785,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16685,7 +16833,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16734,7 +16882,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16817,7 +16965,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16859,7 +17007,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16923,7 +17071,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -16941,25 +17089,8 @@ sourceUrl: `${websitex}`,
  anjay = ` ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}asupan
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -16983,7 +17114,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17083,7 +17214,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17279,7 +17410,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17331,7 +17462,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17374,7 +17505,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17414,7 +17545,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17452,7 +17583,7 @@ anjay = ` ┏━「 _TOOL_ 」━━⭓
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17495,7 +17626,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17565,7 +17696,7 @@ break
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17631,7 +17762,7 @@ anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -17689,7 +17820,7 @@ sourceUrl: `${websitex}`,
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`,
 mediaType: 4, 
  thumbnail: pics, 
@@ -17907,24 +18038,7 @@ default:
                         if(err) return reply(err)
                         if (stdout) return reply(stdout)
                     })
-                }
-			
-		
-                
-       
-                
-			//anti-tag
-const listTag = [`${global.ownertag}@s.whatsapp.net`]
-const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo : ''
-//anti-tag 2
-if (listTag.includes(partiNum)) {
-if (antitags === false) return
-if (!m.isGroup) return
-if (m.key.fromMe) return
-sendNye = fs.readFileSync('./XeonMedia/theme/yourtag.webp')
-XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id])
-XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
-}
+              }
 //anti-tag 3
 if (budy.includes(`${global.ownertag}`)) {
 if (antitags === false) return
@@ -18321,25 +18435,8 @@ let timestamp = speed()
  ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}asupan
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -18495,8 +18592,14 @@ let timestamp = speed()
  ┗━「 *Created By Kenneth Morris* 」━⭓`
  
 //////////////////contoh  [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}}
-
- let buttons = [ 
+const reSize = (buffer, ukur1, ukur2) => {
+    return new Promise(async(resolve, reject) => {
+        var baper = await Jimp.read(buffer);
+        var ab = await baper.resize(ukur1, ukur2).getBufferAsync(Jimp.MIME_JPEG)
+        resolve(ab)
+    })
+}
+ let btns = [ 
  {buttonId: `sewabot`, buttonText: {displayText: 'Sewa Bot'}},
  {buttonId: `rulesbot`, buttonText: {displayText: 'Rules'}}
    ] 
@@ -18506,28 +18609,30 @@ let timestamp = speed()
                  } catch { 
                      ppuser = await fs.readFileSync('./XeonMedia/theme/thumbnail/skin 2/allmenu.jpg')
                  }
- const kenbuffer = await getBuffer(ppuser)
+ const buffer = await getBuffer(ppuser)
 let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: doc3,
  mentions: [m.sender], 
- fileName: `${pushname}`, 
+ fileName: `${sayyingTime} ${pushname}`, 
  caption: teks, 
  footer: `${botname}`, 
- buttons: buttons, 
+ buttons: btns, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 ////// mediaType: 4, 
- thumbnail: kenbuffer, 
+ thumbnail: buffer, 
  url: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny`
 ///////sourceUrl: `${websitex}`, 
  //////// mediaUrl: `${websitex}` 
 }} 
 }  
- XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- }
+//XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ XeonBotInc.sendMessage(m.chat, { caption: `${teks}`, location: { jpegThumbnail: await reSize(buffer, 200, 200) }, buttons: btns, footer: botname, mentions: [m.sender] })
+
+}
 break
  case 'banchat': case 'b': {
  if (isBan) return reply(mess.ban)	 			
@@ -19277,6 +19382,7 @@ XeonBotInc.sendMessage(from, { text: `*Question* : Is ${q}\n*Answer* : ${kah}` }
 					            case 'what': case 'apa': 
 					if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!prefix) return
 				if (!text) return ////////////////////replay(`Use Text, Example : ${prefix + command} he married `)
 					const lel = [`Tanya Pacar Ko`, `Gatau`, `Gatau, Coba Tanya Bapak Kau`]
 					const kahk = lel[Math.floor(Math.random() * lel.length)]
@@ -19351,6 +19457,11 @@ if (isBanChat) return reply(mess.banChat)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
+					break
+					case 'simi': try{
+						let respon = await fetchJson(`https://api.akuari.my.id/simi/simi?query=${text}`)
+						XeonBotInc.sendMessage(m.chat, {text: `${respon.respon}`}, {quoted: m})
+						} catch { return }
 					break
                     case 'stupid':
       case 'foolish':
@@ -20555,6 +20666,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
 if (!isAdmins) return
+if (!prefix) return
 if (args[0] === "on") {
 if (welcm) return replay('Sudah diaktifkan')
 wlcm.push(from)
@@ -21202,6 +21314,81 @@ case 'hentaivid': case 'hentaivideo': {
   }      
                 XeonBotInc.sendMessage(m.chat, button3Messages, { quoted: m })
             }
+            break
+            case 'asupan': {
+      	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!prefix) return
+let sections = [{
+								"title": "Asupan",
+								"rows": [
+									{
+										"title": "Bocil",
+										"description": "Displays The List Of Bocil",
+										"rowId": `${prefix}asupanbocil`
+									}, {
+										"title": "Ghea",
+										"description": "Displays The List Of Ghea",
+										"rowId": `${prefix}asupanghea`
+									}, {
+										"title": "Ukhty",
+										"description": "Displays The List Of Ukhty",
+										"rowId": `${prefix}asupanukhty`
+									}
+								]
+							}]
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `🤔`,
+       footer: `${sayyingTime}\n${botname}`,
+       buttonText: "List",
+       sections
+      }, { quoted : m })
+      } 
+            break
+case 'asupanbocil': try {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/bocil`)
+   if (/image/.test(mime)) {
+XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
+        } else if (/video/.test(mime)) {
+         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
+        }
+  } catch { reply(`_server sedang bermasalah_`)}
+        break
+        case 'asupanghea': try {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ghea`)
+if (/image/.test(mime)) {
+XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
+        } else if (/video/.test(mime)) {
+         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
+        }
+        } catch { reply(`_server sedang bermasalah_`)}
+        break
+        case 'asupanukhty': try {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!prefix) return
+XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key}})
+let teks = `*Nih!*`
+let asupan = await fetchJson(`https://api.akuari.my.id/asupan/ukhty`)
+if (/image/.test(mime)) {
+XeonBotInc.sendMessage(m.chat, {image: {url: asupan.respon}, caption: teks},{quoted: m })
+        } else if (/video/.test(mime)) {
+         XeonBotInc.sendMessage(m.chat, {video: {url: asupan.respon}, caption: teks},{quoted: m })
+        }
+        } catch { reply(`_server sedang bermasalah_`)}
             break
 case 'trap' :
    if (isBan) return reply(mess.ban)	 			
@@ -22218,21 +22405,83 @@ replay(`Error!`)
 }
 }
 break
-case 'translate': case 'trans': {
+case 'translate': case 'trans': try{
 if (isBan) return reply(mess.ban)
-//////// const bakk = args.join(" ")
-///////const baksd = args.join(" ")
-//////////////////// if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
-//////////////////// if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
-/////////// const ka = bakk.split(" | ")[0];
-/////////// const ko = baksd.split(" | ")[1];
-///////////////////// if (!text.includes(' | ')) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
-///////////////// tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${text}`)
-//////// Infoo = tes.info
-///////Detek = tes.translate
-///////////////// replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
-reply(`*EXPIRED FEATURE*\n\nmaaf fitur ini sudah kedaluwarsa, akan segera diperbarui`)
-}
+if (!text) return reply(`Example: ${prefix + command} <text>`)
+let trans = await fetchJson(`https://api.akuari.my.id/edukasi/terjemah?query=${text}&kode=en`)
+let sections = [{
+								"title": "Select Language",
+								"rows": [
+									{
+										"title": "English",
+										"rowId": `${prefix}translator en|${text}`
+									}, {
+										"title": "France",
+										"rowId": `${prefix}translator fr|${text}`
+									}, {
+										"title": "Indonesia",
+										"rowId": `${prefix}translator id|${text}`
+									}, {
+										"title": "Portugese",
+										"rowId": `${prefix}translator pt|${text}`
+									}, {
+										"title": "Russian",
+										"rowId": `${prefix}translator ru|${text}`
+									}, {
+										"title": "Spain",
+										"rowId": `${prefix}translator es|${text}`
+									}
+								]
+							}]
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `*🌐Translate:* \n_${trans.query}_\n\n*📘Result:* \n_${trans.terjemah}_`,
+       footer: `© Google Translate`,
+       buttonText: "List",
+       sections
+      }, { quoted : m })
+      
+} catch { reply(`_maaf server tidak merespon_`)}
+break
+case 'translator': try{
+	if (isBan) return
+	if (!q.split('|')[0]) return reply(`Example: ${prefix + command} en|apa iya?`)
+	let trans = await fetchJson(`https://api.akuari.my.id/edukasi/terjemah?query=${q.split('|')[1]}&kode=${q.split('|')[0]}`)
+let sections = [{
+								"title": "Select Language",
+								"rows": [
+									{
+										"title": "English",
+										"rowId": `${prefix}translator en|${q.split('|')[1]}`
+									}, {
+										"title": "France",
+										"rowId": `${prefix}translator fr|${q.split('|')[1]}`
+									}, {
+										"title": "Indonesia",
+										"rowId": `${prefix}translator id|${q.split('|')[1]}`
+									}, {
+										"title": "Portugese",
+										"rowId": `${prefix}translator pt|${q.split('|')[1]}`
+									}, {
+										"title": "Russian",
+										"rowId": `${prefix}translator ru|${q.split('|')[1]}`
+									}, {
+										"title": "Spain",
+										"rowId": `${prefix}translator es|${q.split('|')[1]}`
+									}
+								]
+							}]
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `*🌐Translate:* \n_${trans.query}_\n\n*📘Result:* \n_${trans.terjemah}_`,
+       footer: `© Google Translate`,
+       buttonText: "List",
+       sections
+      }, { quoted : m })
+      
+} catch { reply(`_maaf server tidak merespon_`)}
 break
 case 'sound1':
 case 'sound2':
@@ -23744,7 +23993,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}apinxr ${i.url}|${i.title}`,
+	     rowId: `${prefix}playnxr ${i.url}|${i.title}`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -23757,7 +24006,7 @@ let search = await yts(args.join(" "))
       {
        text: `Hai, ${pushname}! \n\n_Berikut adalah daftar *${text}*,_ \n_klik tombol di bawah untuk memilih_`,
        footer: `${botname}`,
-       title: "*YT MUSIC*",
+       title: "*YOUTUBE*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })
@@ -23785,7 +24034,7 @@ teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.snipp
 XeonBotInc.sendMessage(m.chat, {text: teks}, { quoted: fdocs })
 }
 break
-case 'play': {
+case 'playxx': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (!args.join(" ")) return replay(`Masukkan Judul..\n\nContoh: *${prefix + command} Yntkts*`)
@@ -23881,7 +24130,7 @@ const jetkontol = jetbosok.split(" | ")[1]
  buttons: button, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `By Kenneth ID`, 
 mediaType: 4, 
  thumbnail: tummb, 
@@ -23896,7 +24145,7 @@ sourceUrl: ``,
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
                 
             break
-            case 'apinxr': {
+            case 'playnxr': {
             const jan = q.split('|')[0]
             const cok = q.split('|')[1]
         let nganu = await fetchJson(`https://yt.nxr.my.id/yt3?url=${jan}`)
@@ -23908,6 +24157,7 @@ sourceUrl: ``,
                 title: 'Video', 
                 rows: [] 
              }]
+ try {
               nganu.data.mp3.map(v => sections[0].rows.push({
 	     title: `Voice Note`, 
 	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
@@ -23924,6 +24174,50 @@ sourceUrl: ``,
 	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size}`	     
 	    }))
+	} catch { reply(`_Ada yang error, coba lagi_`)}
+     const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `\`\`\`${cok}\`\`\` \n\n\n_*Pilih Kualitas*_`,
+       footer: `${botname}`,
+       title: "*YOUTUBE*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : m })                 
+      await sendm
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      }
+      break
+            case 'apinxr': {
+            const jan = q.split('|')[0]
+            const cok = q.split('|')[1]
+        let nganu = await fetchJson(`https://yt.nxr.my.id/yt3?url=${jan}`)
+  // saatuuuu
+              let sections = [{ 
+                title: 'Audio', 
+                rows: [] 
+             }, { 
+                title: 'Video', 
+                rows: [] 
+             }]
+ try {
+              nganu.data.mp3.map(v => sections[0].rows.push({
+	     title: `Voice Note`, 
+	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`},{
+      	title: `Audio`, 
+	     rowId: `${prefix}nxrad ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`}, {
+      	title: `Dokumen`, 
+	     rowId: `${prefix}nxrdc ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size} | Kualitas: ${v.q}`
+	    }))
+            nganu.data.mp4.map(v => sections[1].rows.push({
+	     title: `${v.q}`, 
+	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
+      description: `Size: ${v.size}`	     
+	    }))
+	} catch { reply(`_Ada yang error, coba lagi_`)}
 	
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
@@ -23950,6 +24244,7 @@ sourceUrl: ``,
                 title: 'Audio', 
                 rows: [] 
              }]
+ try {
               nganu.data.mp3.map(v => sections[1].rows.push({
 	     title: `Voice Note`, 
 	     rowId: `${prefix}nxrvn ${jan}|${nganu.id}|mp3|128|${v.size}|${nganu.token}|${nganu.expires}`,
@@ -23966,6 +24261,7 @@ sourceUrl: ``,
 	     rowId: `${prefix}nxrvd ${jan}|${nganu.id}|mp4|${v.k}|${v.size}|${nganu.token}|${nganu.expires}`,
       description: `Size: ${v.size}`	     
 	    }))
+	} catch { reply(`_Ada yang error, coba lagi_`)}
 	
      const sendm =  XeonBotInc.sendMessage(
       m.chat, 
@@ -26096,7 +26392,7 @@ const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
 ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {document: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
-	title: `Jasjus ID 🔰`,
+	title: `Ken- Bot ID 🔰`,
 	body: `MP3 | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
@@ -26116,7 +26412,7 @@ const bapakkau = jetbosok.split(" | ")[0]
 let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 let ola = await getBuffer(ttaudio.hasil.download_mp3)
 XeonBotInc.sendMessage(m.chat, {audio: ola, mimetype: "audio/mpeg", ptt: true, contextInfo: { externalAdReply: {
-	title: `Jasjus ID 🔰`,
+	title: `Ken- Bot ID 🔰`,
 	body: `Voice Note | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
@@ -26135,7 +26431,7 @@ const bapakkau = jetbosok.split(" | ")[0]
 let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/tiktok.jpg')
 let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
-	title: `Jasjus ID 🔰`,
+	title: `Ken- Bot ID 🔰`,
 	body: `Audio | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
@@ -27463,25 +27759,8 @@ teks = `~*PRATINJAU MENU BOT*~\n\n*Response Speed* ${latensi.toFixed(4)} _Second
  ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
+ ┃╠ ${prefix}asupan
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -27655,7 +27934,7 @@ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/allmenu.jpg')
  headerType: 4,
 contextInfo: { externalAdReply: { 
 	largeThumb: true,
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Bot by Kenneth ID`, 
 ////// mediaType: 4, 
  thumbnail: pics, 
@@ -27714,7 +27993,7 @@ _~Bot ini sudah otomatis Anti-Link dan Virtex, jadi jika ada orang yang mengirim
                     case 'sewabot': {
                     if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-reply(`Chat Owner: \nwa.me/6285747219408/?text=kak+mau+sewa+bot`)
+reply(`Chat Owner: \nwa.me/6285700945188/?text=kak+mau+sewa+bot`)
 }
                     break
                     case 'script': case 'sc': {
@@ -27965,7 +28244,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28039,7 +28318,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28085,7 +28364,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28223,7 +28502,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28277,7 +28556,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28338,7 +28617,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28402,7 +28681,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28448,7 +28727,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28496,7 +28775,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28545,7 +28824,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28628,7 +28907,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28670,7 +28949,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28734,7 +29013,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28752,25 +29031,8 @@ sourceUrl: `${websitex}`,
  anjay = ` ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri (error)
- ┃╠ ${prefix}masturbation (error)
- ┃╠ ${prefix}thighs (error)
- ┃╠ ${prefix}pussy (error)
- ┃╠ ${prefix}panties (error)
- ┃╠ ${prefix}orgy (error)
- ┃╠ ${prefix}ahegao (error)
- ┃╠ ${prefix}ass (error)
- ┃╠ ${prefix}bdsm (error)
- ┃╠ ${prefix}blowjob (error)
- ┃╠ ${prefix}cuckold (error)
- ┃╠ ${prefix}ero (error)
- ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum (error)
- ┃╠ ${prefix}femdom (error)
- ┃╠ ${prefix}foot (error)
- ┃╠ ${prefix}gangbang (error)
- ┃╠ ${prefix}glasses (error)
- ┃╠ ${prefix}jahy (error)
+ ┃╠ ${prefix}asupan
+ ┃╠ ${prefix}gasm
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -28794,7 +29056,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -28894,7 +29156,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29090,7 +29352,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29142,7 +29404,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29185,7 +29447,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29225,7 +29487,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29263,7 +29525,7 @@ anjay = ` ┏━「 _TOOL_ 」━━⭓
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29306,7 +29568,7 @@ let documents = [doc1,doc2,doc3]
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29376,7 +29638,7 @@ break
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29442,7 +29704,7 @@ anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`, 
 mediaType: 4, 
  thumbnail: pics, 
@@ -29500,7 +29762,7 @@ sourceUrl: `${websitex}`,
  buttons: buttons, 
  headerType: 4,
 contextInfo: { externalAdReply: { 
-title: `Jasjus ID 🔰`, 
+title: `Ken- Bot ID 🔰`, 
  body: `Thunder`,
 mediaType: 4, 
  thumbnail: pics, 
@@ -29634,11 +29896,38 @@ case 'tqtt': {
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (m.message && msgFilter.addFilter(from)) return
-reply(`Thanks to
+tex = `Thanks to
 LUCIFER 🤘
 Kenneth (Me)
 My dog
-And all monkey who helped assemble this sexy script!`)
+And all monkey who helped assemble this sexy script!`
+let btn = [{
+urlButton: {
+displayText: 'YouTube ??',
+url: `${global.websitex}`
+}
+}, {
+urlButton: {
+displayText: 'Script 🍜',
+url: `${global.botscript}`
+}
+}, {
+quickReplyButton: {
+displayText: 'Bot Status 🚀',
+id: 'ping'
+}
+}, {
+quickReplyButton: {
+displayText: 'Menu 🐰',
+id: 'menu'
+}  
+}, {
+quickReplyButton: {
+displayText: 'Owner 😈',
+id: 'owner'
+}
+}]
+await XeonBotInc.send5ButMsg(from, tex, botname, btn)
 }
 break
 
