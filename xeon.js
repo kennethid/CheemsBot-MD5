@@ -43,6 +43,29 @@ try {
   low = require('./lib/lowdb')
 }
 
+const hours = moment().tz('Asia/Jakarta').format('HH:mm:ss')
+        if(hours < "23:59:00"){
+        var sayyingTime = 'Selamat Malam 🌃'
+}
+        if(hours < "19:00:00"){
+        var sayyingTime = 'Selamat Petang 🌆'
+}
+        if(hours < "18:00:00"){
+        var sayyingTime = 'Selamat Sore 🌅'
+} 
+        if(hours < "15:00:00"){
+        var sayyingTime = 'Selamat Siang 🏙'
+}
+        if(hours < "10:00:00"){
+        var sayyingTime = 'Selamat Pagi 🌄'
+}
+        if(hours < "05:00:00"){
+        var sayyingTime = 'Selamat Subuh 🌉'
+}
+        if(hours < "03:00:00"){
+        var sayyingTime = 'Selamat Tengah Malam 🌌'
+}
+
 const { Low, JSONFile } = low
 const mongoDB = require('./lib/mongoDB')
 
@@ -171,6 +194,7 @@ let docs = pickRandom(documents)
  XeonWlcm = await getBuffer(ppuser) 
  XeonLft = await getBuffer(ppuser) 
                  if (anu.action == 'add') { 
+ 	if (num.startsWith('62')) return XeonBotInc.sendMessage(anu.id, { text: `62 terdeteksi`})
  	const pushname = anu.pushName || "No Name"
                  const xeonbuffer = await getBuffer(ppuser) 
                  let xeonName = num 
@@ -198,7 +222,7 @@ let docs = pickRandom(documents)
  mimetype: docs, 
  jpegThumbnail:XeonWlcm, 
  mentions: [num], 
- fileName: `Jasjus Beta ©`, 
+ fileName: `${sayyingTime}`, 
  fileLength: 0, 
  caption: oam,
  footer: `${botname}`, 

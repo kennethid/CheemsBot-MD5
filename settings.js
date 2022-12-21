@@ -113,13 +113,14 @@ global.nttoxic = []
 global.ntnsfw = []
 global.ntnsfw2 = []
 global.ntvirtex = []
-global.rkyt = ['6285747219408']
+global.rkyt = ['6285700945188']
 global.wlcm = []
 global.wlcmout = []
 global.gcrevoke = []
 global.autorep = []
 global.ntilink = []
 global.walldua = []
+global.simisimi = []
 
 //omther
 global.fgclink = { 
@@ -163,12 +164,12 @@ global.mess = {
 	premi: '_Fitur Berbayar_\n\nOwner: wa.me/6285842965801',
     cmmnd:  '_perlu mengaktifkan *.allcmd* untuk menggunakan fitur ini_',
     success: 'Done ✓',
-    admin: 'Fitur Ini Khusus Untuk Admin!',
+    admin: 'Khusus Admin!',
     botAdmin: 'Bot Harus Jadi Admin Dulu!',
-    owner: 'Fitur Ini Khusus Untuk Owner/Premium!',
+    owner: 'Fitur Ini Khusus Owner & Premium!',
     group: 'Fitur ini khusus grup!\n\nSewa Bot Mulai Dari 5K - 10K Perbulan\n_*Contact Owner*_:\nhttp://wa.me/6285842965801/?text=Aku+mau+sewa+bot',
     private: 'Fitur Digunakan Khusus Chat Pribadi!',
-    bot: 'Fitur Ini Khusus Untuk Bot!',
+    bot: 'Fitur Ini Khusus Bot!',
     wait: 'Sedang diproses...',
     linkm: 'Mana Linknya?',
     error: 'Error!!',
