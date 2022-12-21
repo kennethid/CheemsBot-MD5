@@ -5649,7 +5649,7 @@ case 'xnxx': try {
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return reply(mess.group)
 if (!prefix) return
-if (!text) return reply(`_contoh: ${prefix + command} japanese`)
+if (!text) return reply(`_contoh: ${prefix + command} japanese_`)
 XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key }})
 let xnxx = await fetchJson(`https://malesin.xyz/xnxxsearch?q=${text}`)
 let sections = []   
@@ -12794,7 +12794,7 @@ let btnMessage = {
  mimetype: doc3,
  mentions: [m.sender], 
  fileName: `${sayyingTime} ${pushname}`, 
- caption: menu, 
+ caption: menuvip, 
  footer: `${botname}`, 
  buttons: buttons, 
  headerType: 4,
@@ -12812,7 +12812,7 @@ let pics = fs.readFileSync('./XeonMedia/theme/thumbnail/skin 2/allmenu.jpg')
  mimetype: doc3,
  mentions: [m.sender], 
  fileName: `${sayyingTime} ${pushname} 👋`, 
- caption: teks, 
+ caption: menu, 
  footer: `${botname}`, 
  buttons: buttons, 
  headerType: 4,
