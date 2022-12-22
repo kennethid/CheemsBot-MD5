@@ -14403,7 +14403,6 @@ sourceUrl: `${websitex}`,
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs, 
- /////////////// jpegThumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic2.jpg'), 
  mentions: [m.sender], 
  fileName: `Hi, ${pushname} 👋`, 
 ///// fileLength: 666, 

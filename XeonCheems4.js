@@ -62,7 +62,7 @@ const Jimp = require('jimp')
 const { Configuration, OpenAIApi } = require("openai");
 const { url } = require("inspector");
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 const openai = new OpenAIApi(configuration);
 const {
@@ -17519,7 +17519,6 @@ sourceUrl: `${websitex}`,
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs, 
- /////////////// jpegThumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic2.jpg'), 
  mentions: [m.sender], 
  fileName: `Hi, ${pushname} 👋`, 
 ///// fileLength: 666, 
@@ -29079,7 +29078,6 @@ sourceUrl: `${websitex}`,
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs, 
- /////////////// jpegThumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic2.jpg'), 
  mentions: [m.sender], 
  fileName: `Hi, ${pushname} 👋`, 
 ///// fileLength: 666, 
