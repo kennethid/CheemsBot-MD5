@@ -62,7 +62,7 @@ const Jimp = require('jimp')
 const { Configuration, OpenAIApi } = require("openai");
 const { url } = require("inspector");
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 const openai = new OpenAIApi(configuration);
 const {
