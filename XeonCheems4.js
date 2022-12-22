@@ -59,6 +59,12 @@ const { pinterest } = require("./lib/pinterest")
 const toHur = require('@develoka/angka-terbilang-js')
 const { hentai } = require('./lib/scraper2.js')
 const Jimp = require('jimp')
+const { Configuration, OpenAIApi } = require("openai");
+const { url } = require("inspector");
+const configuration = new Configuration({
+  apiKey: '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',
+});
+const openai = new OpenAIApi(configuration);
 const {
  FajarNews, 
  BBCNews,
@@ -575,6 +581,35 @@ jumlahcmd = `${data.value}`
 dataa = await fetchJson(`https://api.countapi.xyz/hit/CheemsBot${moment.tz('Asia/Kolkata').format('DDMMYYYY')}/visits`)
 jumlahharian = `${dataa.value}`
 }
+        
+         switch(command) {
+         	case 'ask': case 'ai': {
+            var qst = `Q: ${text}\nA:`;
+            const response = await openai.createCompletion({
+                model: "text-davinci-003",
+                prompt: qst,
+                temperature: 0,
+                max_tokens: 300,
+                top_p: 1.0,
+                frequency_penalty: 0.0,
+                presence_penalty: 0.0,
+            });
+            reply(response.data.choices[0].text);
+        }
+        break
+        case 'draw': {
+            var qst = `Q: ${text}\nA:`;
+            const response = await openai.createImage({
+                prompt: text,
+                n: 1,
+                size: '512x512'
+            });
+            var imgUrl = response.data.data[0].url;
+            let capt = `*Your Image!*`
+            await XeonBotInc.sendMessage(m.chat, { image: {url: `${imgUrl}`}, caption: capt})
+        }
+    }
+        
         
 	//auto set bio\\
 	if (db.data.settings[botNumber].autobio) {
@@ -20277,7 +20312,7 @@ lu = `🙏`
 pat = `🙂`
 mo = `😢`
 nem = `😇`
-tu = `🤧`
+tu = `??`
 tos = [ji,ro,lu,pat,mo,nem,tu,nol]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
