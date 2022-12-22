@@ -5170,7 +5170,8 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 }
 break
-	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': case 'diamond': case 'ff': case 'ml': case 'assalamualaikum': case 'anjing': {
+	case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': case 'p': case 'hai': case 'halo': case 'hay': case 'join': case 'gabung': case 'bang': case 'sv': case 'tc': case 'masuk': case 'beli': case 'dm': case 'pubg': 
+case 'diamond': case 'ff': case 'ml': case 'assalamualaikum': case 'anjing': case 'woy': case 'maksudnya': case 'maksud': case 'woi': {
 		if (isBan) return reply(mess.ban)	 		
 cb = `🫥`
 bs = `😘`
@@ -5186,7 +5187,11 @@ je = `🗿`
 tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,je]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
-  if (m.isGroup) return
+if (!text) return
+if (!AntiNsfw) return
+let respon = await fetchJson(`https://api.akuari.my.id/simi/simi?query=${command + text}`)
+XeonBotInc.sendMessage(m.chat, {text: `${respon.respon}`}, {quoted: m})
+if (m.isGroup) return
  if (m.message && msgFilter.isFiltered(from)) {
 console.log(`❌ [SPAM (1)]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
 return }
@@ -19054,11 +19059,6 @@ if (isBanChat) return reply(mess.banChat)
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
-					case 'simi': try{
-						let respon = await fetchJson(`https://api.akuari.my.id/simi/simi?query=${text}`)
-						XeonBotInc.sendMessage(m.chat, {text: `${respon.respon}`}, {quoted: m})
-						} catch { return }
-					break
                     case 'stupid':
       case 'foolish':
       case 'smart':
@@ -23476,6 +23476,7 @@ empat = fs.readFileSync(`./XeonMedia/audio2/coba tanya lagi.mp3`)
 lima = fs.readFileSync(`./XeonMedia/audio2/tidak ada.mp3`)
 enam = fs.readFileSync(`./XeonMedia/audio/YNTKTS.mp3`)
 let randomnie = [satu,dua,tiga,empat,lima,enam]
+
 	    let randomea = randomnie[Math.floor(Math.random() * randomnie.length)]
 XeonBotInc.sendMessage(m.chat, {audio: randomea, mimetype:'audio/mpeg', ptt: true }, {quoted:m})
 }
